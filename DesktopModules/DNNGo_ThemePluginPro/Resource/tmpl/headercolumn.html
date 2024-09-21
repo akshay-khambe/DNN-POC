@@ -1,0 +1,67 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#generalOptions" aria-controls="layout" role="tab" data-toggle="tab">General</a></li>
+  {{if ThemeOptions.BootstrapVersion =="v4"}}
+  <li role="presentation"><a href="#DesignOptions" aria-controls="pane" role="tab" data-toggle="tab">Background Settings</a></li>
+  {{else}}
+  <li role="presentation"><a href="#DesignOptions" aria-controls="pane" role="tab" data-toggle="tab">Design Options</a></li>
+  {{/if}}
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="generalOptions">
+
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Column width:</label>
+      <div class="control-cont">
+        <input type="text" class="dnnOptions form-control" value="${width}"  placeholder="% & px" data-name="width"> 
+      </div>  
+    </div>
+ 
+    <div class="form-group">
+      <label for="firstname" class="control-label">Arrangement:</label>
+      <div class="control-cont">
+          <select class="dnnOptions form-control" data-value="${dir}" data-name="dir">
+              <option value="vertical">Vertical</option>
+              <option value="horizontal">Horizontal</option>
+            </select>
+      </div>  
+    </div>
+    <div class="form-group">
+        <label for="firstname" class="control-label">Text Align:</label>
+        <div class="control-cont">
+            <select class="dnnOptions form-control" data-value="${align}" data-name="align">
+                <option value="">Theme Options</option>
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+              </select>
+        </div>  
+      </div>
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Extra class name:</label>
+      <div class="control-cont">
+        <input type="text" class="dnnOptions form-control" value="${classname}" data-name="classname">
+      </div>
+    </div>
+
+
+    <div class="form-group hide">
+      <label for="firstname" class="control-label">ID:</label>
+      <div class="control-cont">
+        <input type="text" class="dnnOptions form-control randomid" value="${id}" data-name="id">
+      </div>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="DesignOptions">
+    {{tmpl($data,options ={}) '#tmpl-design-options'}}
+  </div>
+
+</div>
+
+
+<input type="text" class="dnnOptions form-control hide" value="${name}" data-name="name">
+<input type="text" class="dnnOptions form-control hide" value="${areaname}" data-name="areaname">
+<input type="text" class="dnnOptions form-control hide" value="${active}" data-name="active">
+<input type="text" class="dnnOptions form-control hide randomid" value="${id}" data-name="id">
+

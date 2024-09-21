@@ -1,0 +1,48 @@
+﻿@if (Model.FormId > 0)
+{
+    <div class="form-html" id="form-@(Model.FormId)" data-name="@(Model.FormItem.Name)">
+        @(Model.FormHTML)
+    </div>
+   @if(Model.HasEdit){
+    <p style="pointer-events: all;"> 
+    <a onclick="window.open('@(Model.ManagerUrl_FormDesign)')" href='@(Model.ManagerUrl_FormDesign)' target="_blank" class="cog-btn-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" style="width: 1em;height:1em;fill: currentColor;vertical-align: middle;margin-bottom: 4px;">
+        <path d="M389.934,120.308c0-55.019-44.851-99.786-99.972-99.786c-15.055,0-29.552,3.274-43.045,9.696   c-1.064,0.497-1.982,1.179-2.763,1.958l0,0L32.953,242.983c-1.542,1.539-2.519,3.518-2.822,5.651l-19.994,139.7   c-0.439,3.108,0.605,6.246,2.821,8.458c1.884,1.881,4.442,2.914,7.059,2.914c0.459,0,0.938-0.039,1.416-0.098l139.961-19.957   c2.138-0.302,4.12-1.296,5.663-2.816l211.045-210.65l0.02-0.02l0.137-0.137l0,0c0.781-0.779,1.435-1.695,1.962-2.758   C386.673,149.805,389.934,135.334,389.934,120.308z M369.939,120.308c0,11.479-2.382,22.529-7.078,32.868l-22.992,22.949   c-2.099-57.318-48.404-103.538-105.83-105.632l22.991-22.949c10.359-4.688,21.43-7.065,32.931-7.065   C334.071,40.479,369.939,76.281,369.939,120.308z M40.129,319.879l8.455-59.15c3.788-0.478,7.605-0.722,11.442-0.722   c49.605,0,89.975,40.295,89.975,89.808c0,3.81-0.244,7.64-0.722,11.411l-59.261,8.448   C89.958,342.252,67.621,319.938,40.129,319.879z M212.405,92.087c5.76-1.141,11.657-1.715,17.573-1.715   c21.215,0,40.731,7.366,56.127,19.674L130.348,265.513c-18.12-15.065-41.131-24.449-66.28-25.365L212.386,92.106L212.405,92.087z    M144.504,279.604l155.758-155.467c12.311,15.368,19.711,34.848,19.711,56.022c0,5.905-0.576,11.791-1.718,17.54L169.937,345.741   c-0.918-25.103-10.319-48.07-25.413-66.157L144.504,279.604z M37.249,339.973c0.928-0.078,1.845-0.137,2.783-0.137   c16.538,0,29.992,13.428,29.992,29.936c0,0.936-0.039,1.852-0.137,2.777l-38.076,5.428L37.249,339.973z"></path>
+    </svg> Edit</a> &nbsp;
+    <a onclick="window.open('@(Model.ManagerUrl_HistoryRecordIndex)')" href='@(Model.ManagerUrl_HistoryRecordIndex)' target="_blank" class="cog-btn-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" style="width: 1em;height:1em;fill: currentColor;vertical-align: middle;margin-bottom: 4px;">
+        <path d="M189.99,399.707c-50.748,0-98.43-19.714-134.318-55.525C19.773,308.38,0.042,260.768,0.042,210.134   c0-29.595,6.639-57.951,19.75-84.281c2.46-4.922,8.465-6.938,13.405-4.483c4.94,2.446,6.951,8.439,4.491,13.37   c-11.715,23.523-17.651,48.889-17.651,75.375c0,93.539,76.239,169.636,169.953,169.636c93.714,0,169.953-76.097,169.953-169.636   S283.704,40.479,189.99,40.479c-5.058,0-9.294-3.752-9.919-8.761c-0.615-5.009,2.597-9.676,7.498-10.895l79.978-19.957   c5.36-1.335,10.778,1.91,12.116,7.26c1.337,5.35-1.914,10.758-7.273,12.093l-30.158,7.523c30.714,8.721,58.87,25.151,82.057,48.304   c35.869,35.802,55.629,83.415,55.629,134.067c0,50.653-19.76,98.246-55.629,134.048c-35.869,35.803-83.57,55.525-134.298,55.525   V399.707z"></path>
+        <path d="M189.99,220.629c-1.757,0-3.554-0.458-5.155-1.433l-99.973-60.407c-4.725-2.855-6.238-8.984-3.378-13.711   c2.851-4.735,8.992-6.227,13.727-3.381l99.973,60.417c4.725,2.854,6.248,8.975,3.388,13.711c-1.884,3.089-5.184,4.804-8.562,4.804   H189.99z"></path>
+    </svg> Records</a>
+    </p>
+    }
+
+    @if(Model.GoogleRecaptcha_Enable) {
+        <script>
+            jQuery(document.body).ready(function (jQ) {
+                function setgrecaptcha@(Model.FormId)() {
+                    grecaptcha.execute('@(Model.GoogleRecaptcha_SiteKey)', { action: '/form@(Model.FormId)' }).then(function (token) {
+                        jQ("#GoogleRecaptcha_Encoded@(Model.FormId)").val(token);
+                        console.log("grecaptcha-val:", jQ("#GoogleRecaptcha_Encoded@(Model.FormId)").val());
+                    });
+                }
+                var Async_grecaptcha@(Model.FormId) = setInterval(function () {
+                    if ("undefined" != typeof grecaptcha) {
+                        grecaptcha.ready(function () {
+                            setgrecaptcha@(Model.FormId)();
+                            ref = setInterval(function () {
+                                 setgrecaptcha@(Model.FormId)();
+                            }, 1000 * 60 * 2);
+                        });
+                        clearInterval(Async_grecaptcha@(Model.FormId));
+                    }
+                }, 100);
+            });
+        </script>
+    }
+}
+else
+{
+<div class="form-html">Please bind the form in the settings</div>
+}
+
+
+

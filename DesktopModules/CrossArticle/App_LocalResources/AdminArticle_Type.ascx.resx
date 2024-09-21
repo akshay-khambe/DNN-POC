@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAddType.Text" xml:space="preserve">
+    <value>Add Department</value>
+  </data>
+  <data name="ControlTitle_adminarticle_type.Text" xml:space="preserve">
+    <value>Department Management</value>
+  </data>
+  <data name="plName.Help" xml:space="preserve">
+    <value>Article department name</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Department Name</value>
+  </data>
+  <data name="plFieldEnable_Quote.Help" xml:space="preserve">
+    <value>Module has some built-in fields for article information. Like "Quote / Author / Image / Source / Summary / Link Url / Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current department, then when posting articles which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Quote.Text" xml:space="preserve">
+    <value>Enable "Quote" Field</value>
+  </data>
+  <data name="plName.Text" xml:space="preserve">
+    <value>Department Name</value>
+  </data>
+  <data name="lblOrder.Text" xml:space="preserve">
+    <value>Sort Order</value>
+  </data>
+  <data name="plDetailPage.Help" xml:space="preserve">
+    <value>Select which page to dispaly article detail which belong to this department. You should put a CrossArticle_Detail sub module instance on that page and select its "Department" property to this item. Note, module will automatic fill this value when you put CrossArticle_Detail sub module instance on page first time.</value>
+  </data>
+  <data name="plDetailPage.Text" xml:space="preserve">
+    <value>CrossArticle_Detail sub module page</value>
+  </data>
+  <data name="plImage.Help" xml:space="preserve">
+    <value>Specify a image for this department (optional)</value>
+  </data>
+  <data name="plImage.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="plListPage.Help" xml:space="preserve">
+    <value>Select which page to dispaly articles which belong to this department when user search article or click article category. You should put a CrossArticle_List sub module instance on that page and select its "Department" to this item. Note, module will automatic fill this value when you put CrossArticle_List sub module instance on page first time.</value>
+  </data>
+  <data name="plListPage.Text" xml:space="preserve">
+    <value>CrossArticle_List sub module page</value>
+  </data>
+  <data name="plOrder.Help" xml:space="preserve">
+    <value>Specify item order for sorting.</value>
+  </data>
+  <data name="plOrder.Text" xml:space="preserve">
+    <value>Sort Order</value>
+  </data>
+  <data name="btnDetailWizard.Text" xml:space="preserve">
+    <value>Run detail page setting wizards</value>
+  </data>
+  <data name="plEnableField.Help" xml:space="preserve">
+    <value>Specifications are detail description (html based long content) of articles which belong to current department. Cross Article already has a built-in specification field - "Article Detail" for all departments. This field &lt;font color="red"&gt;is enough&lt;/font&gt; in most cases.&lt;br/&gt;
+    Besides that, Cross Article also supports up to 5 additional specification fields which you can customize. If you need extra html based long content, you can enable them and specify their title and default value.&lt;br/&gt;
+    For example, if you publish listings of notebook, besides "Article Detail", you may also want to add a "Technical Details" specification for it.&lt;br/&gt;
+    Note, use these specification fields for long content (html or text based ) only. If you want to customize short specific content, choose "CrossArticle_Admin sub module - Admin Control Panel - System Data - Attributes" feature instead.&lt;br/&gt;</value>
+  </data>
+  <data name="plEnableField.Text" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="plFieldDefault.Help" xml:space="preserve">
+    <value>Default value for this specification. Author can modify it to fit his listings.</value>
+  </data>
+  <data name="plFieldDefault.Text" xml:space="preserve">
+    <value>Default Value</value>
+  </data>
+  <data name="plFieldTitle.Help" xml:space="preserve">
+    <value>Enter title for this specification, e.g. "Technical Details"</value>
+  </data>
+  <data name="plFieldTitle.Text" xml:space="preserve">
+    <value>Specification Title</value>
+  </data>
+  <data name="divSpecification_1.Text" xml:space="preserve">
+    <value>Specification 1</value>
+  </data>
+  <data name="divSpecification_2.Text" xml:space="preserve">
+    <value>Specification 2</value>
+  </data>
+  <data name="divSpecification_3.Text" xml:space="preserve">
+    <value>Specification 3</value>
+  </data>
+  <data name="divSpecification_4.Text" xml:space="preserve">
+    <value>Specification 4</value>
+  </data>
+  <data name="divSpecification_5.Text" xml:space="preserve">
+    <value>Specification 5</value>
+  </data>
+  <data name="divBasic.Text" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="plFieldEnable_Article.Help" xml:space="preserve">
+    <value>Module has some built-in fields for article information. Like "Quote / Author / Image / Source / Summary / Link Url / Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current department, then when posting articles which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Article.Text" xml:space="preserve">
+    <value>Enable "Detail" Field</value>
+  </data>
+  <data name="plFieldEnable_Author.Help" xml:space="preserve">
+    <value>Module has some built-in fields for article information. Like "Quote / Author / Image / Source / Summary / Link Url / Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current department, then when posting articles which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Author.Text" xml:space="preserve">
+    <value>Enable "Author" Field</value>
+  </data>
+  <data name="plFieldEnable_Image.Help" xml:space="preserve">
+    <value>Module has some built-in fields for article information. Like "Quote / Author / Image / Source / Summary / Link Url / Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current department, then when posting articles which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Image.Text" xml:space="preserve">
+    <value>Enable "Image" Field</value>
+  </data>
+  <data name="plFieldEnable_LinkUrl.Help" xml:space="preserve">
+    <value>Module has some built-in fields for article information. Like "Quote / Author / Image / Source / Summary / Link Url / Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current department, then when posting articles which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_LinkUrl.Text" xml:space="preserve">
+    <value>Enable "Link Url" Field</value>
+  </data>
+  <data name="plFieldEnable_Source.Help" xml:space="preserve">
+    <value>Module has some built-in fields for article information. Like "Quote / Author / Image / Source / Summary / Link Url / Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current department, then when posting articles which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Source.Text" xml:space="preserve">
+    <value>Enable "Source" Field</value>
+  </data>
+  <data name="plFieldEnable_Summary.Help" xml:space="preserve">
+    <value>Module has some built-in fields for article information. Like "Quote / Author / Image / Source / Summary / Link Url / Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current department, then when posting articles which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Summary.Text" xml:space="preserve">
+    <value>Enable "Summary" Field</value>
+  </data>
+  <data name="lblFieldDefault.Text" xml:space="preserve">
+    <value>Enter default value for this specification below</value>
+  </data>
+  <data name="Tip_DetailPage.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;Select which page to dispaly article detail which belong to this department. You should put a CrossArticle_Detail sub module instance on that page and select its "Department" property to current item.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp; Note, module will show a wizard to help you to configure this page when you create a new department. You can also click "Run detail page setting wizards" button to configure it at any time.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;This setting is also &lt;font color="Red"&gt;vital to integrate with DNN built-in search mechanism&lt;/font&gt;. If you can't search articles in DNN built-in search box, please check this setting.</value>
+  </data>
+  <data name="Tip_ExtendField.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Specifications are detail description (html based long content) of articles which belong to current department. Cross Article already has a built-in specification field - the "Detail" for all departments. This field is enough in most cases.&lt;br/&gt;&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;Besides that, Cross Article also supports up to 5 additional specification fields which you can customize. You can enable them and specify their title and default value.&lt;br/&gt;&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;For example, if you publish listings of notebook, besides "Detail", you may also want to add a "Technical Details" specification for it.&lt;br/&gt;&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;Note, use these specification fields for long content (html based ) only. If you want to customize short specific content, choose "CrossArticle_Admin sub module - Admin Control Panel - System Data - Attributes" feature instead.&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_FieldEnable.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;Module has some built-in fields for article information. Like "Quote / Author / Source / Summary / Link Url / Event Start / Event End / Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current department, then when posting articles which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;Use this feature to hide unwanted fields as your wish.</value>
+  </data>
+  <data name="Tip_ListPage.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;Select when user search in "CrossArticle_Search sub module" (or click category in "CrossArticle_Category sub module"), which page will dispaly related articles. You should put a CrossArticle_List sub module instance on that page and select its "Department" property to current department. Note, module will automatic fill this value when you put CrossArticle_List sub module instance on page at the first time.</value>
+  </data>
+  <data name="plAllowGoogleMap.Help" xml:space="preserve">
+    <value>Check this option to integrate with Google Maps. Articles belong to this department can provide its longitude and latitude and show position in Google Maps.</value>
+  </data>
+  <data name="plAllowGoogleMap.Text" xml:space="preserve">
+    <value>Integrate with Google Maps</value>
+  </data>
+  <data name="Tip_AllowGoogleMap.Text" xml:space="preserve">
+    <value>Check this option to integrate with Google Maps. Articles which belong to this department can provide its longitude / latitude and show position in Google Maps. This is useful when you publish map related listings (e.g. park, city, hotel...etc).</value>
+  </data>
+  <data name="divGoogleMap.Text" xml:space="preserve">
+    <value>Google Maps &amp; Location</value>
+  </data>
+  <data name="lblAllowGoogleMap.Text" xml:space="preserve">
+    <value>Allow Google Map</value>
+  </data>
+  <data name="lblAllowLocation.Text" xml:space="preserve">
+    <value>Allow Location</value>
+  </data>
+  <data name="lblAllowVote.Text" xml:space="preserve">
+    <value>Allow Vote</value>
+  </data>
+  <data name="plAllowLocation.Help" xml:space="preserve">
+    <value>Check to enable location</value>
+  </data>
+  <data name="plAllowLocation.Text" xml:space="preserve">
+    <value>Enable Location</value>
+  </data>
+  <data name="plAllowVote.Help" xml:space="preserve">
+    <value>Allow Vote</value>
+  </data>
+  <data name="plAllowVote.Text" xml:space="preserve">
+    <value>Allow Vote</value>
+  </data>
+  <data name="Tip_AllowLocation.Text" xml:space="preserve">
+    <value>If checked, articles (listings) which belong to this department can specify its location(country, province, city, and town). This is useful when you publish location related listings. For example, when publishing ads for restaurant, vendor can specify a restaurant location to country = USA, state/province = California, city = Los Angeles, town = Bell.</value>
+  </data>
+  <data name="Tip_AllowVote.Text" xml:space="preserve">
+    <value>If checked, articles which belong to this department can create vote (survey) with them.</value>
+  </data>
+  <data name="divFileUpload_Author.Text" xml:space="preserve">
+    <value>Author File Upload</value>
+  </data>
+  <data name="divFileUpload_Client.Text" xml:space="preserve">
+    <value>Reader File Upload</value>
+  </data>
+  <data name="lblUploadExtension.Text" xml:space="preserve">
+    <value>File Extension</value>
+  </data>
+  <data name="lblUploadRequire.Text" xml:space="preserve">
+    <value>Require</value>
+  </data>
+  <data name="lblUploadRuleTitle1.Text" xml:space="preserve">
+    <value>File Title 1</value>
+  </data>
+  <data name="lblUploadRuleTitle10.Text" xml:space="preserve">
+    <value>File Title 10</value>
+  </data>
+  <data name="lblUploadRuleTitle2.Text" xml:space="preserve">
+    <value>File Title 2</value>
+  </data>
+  <data name="lblUploadRuleTitle3.Text" xml:space="preserve">
+    <value>File Title 3</value>
+  </data>
+  <data name="lblUploadRuleTitle4.Text" xml:space="preserve">
+    <value>File Title 4</value>
+  </data>
+  <data name="lblUploadRuleTitle5.Text" xml:space="preserve">
+    <value>File Title 5</value>
+  </data>
+  <data name="lblUploadRuleTitle6.Text" xml:space="preserve">
+    <value>File Title 6</value>
+  </data>
+  <data name="lblUploadRuleTitle7.Text" xml:space="preserve">
+    <value>File Title 7</value>
+  </data>
+  <data name="lblUploadRuleTitle8.Text" xml:space="preserve">
+    <value>File Title 8</value>
+  </data>
+  <data name="lblUploadRuleTitle9.Text" xml:space="preserve">
+    <value>File Title 9</value>
+  </data>
+  <data name="lblUploadSize.Text" xml:space="preserve">
+    <value>Upload Limit</value>
+  </data>
+  <data name="li_UploadLimit_Unlimited.Text" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
+  <data name="plAllowUpload_Author.Help" xml:space="preserve">
+    <value>Allow author to upload files for a help ticket which belongs to this department.</value>
+  </data>
+  <data name="plAllowUpload_Author.Text" xml:space="preserve">
+    <value>Allow Uploading Files</value>
+  </data>
+  <data name="plAllowUpload_Client.Help" xml:space="preserve">
+    <value>Allow reader (registered users) to upload files while submitting help ticket to an article which belong to this department.</value>
+  </data>
+  <data name="plAllowUpload_Client.Text" xml:space="preserve">
+    <value>Allow Uploading Files</value>
+  </data>
+  <data name="plUploadExtension_Client.Help" xml:space="preserve">
+    <value>Enter the file extension which user can upload. For example, enter "zip,jpg,png", then user can only upload winzip files (.zip) and pictures (.jpg .png).</value>
+  </data>
+  <data name="plUploadExtension_Client.Text" xml:space="preserve">
+    <value>File Extension</value>
+  </data>
+  <data name="plUploadFileCount_Client.Help" xml:space="preserve">
+    <value>How many files reader can upload to a help ticket.</value>
+  </data>
+  <data name="plUploadFileCount_Client.Text" xml:space="preserve">
+    <value>Upload File Count</value>
+  </data>
+  <data name="plUploadSize_Author.Help" xml:space="preserve">
+    <value>Specify the total file size which author can upload for a help ticket.</value>
+  </data>
+  <data name="plUploadSize_Author.Text" xml:space="preserve">
+    <value>Upload Limit</value>
+  </data>
+  <data name="plUploadSize_Client.Help" xml:space="preserve">
+    <value>Specify the total file size which user can upload</value>
+  </data>
+  <data name="plUploadSize_Client.Text" xml:space="preserve">
+    <value>Upload Limit</value>
+  </data>
+  <data name="Tip_FileUpload_Author.Text" xml:space="preserve">
+    <value>Besides reader, you can also allow author to upload files for a help ticket which belongs to this department here. For example, you are publishing the software introduction, a reader can report a problem while use software, and upload related screen shots to you, then you show them the correct operation instructions (with pictures).&lt;br/&gt;&lt;br/&gt;
+
+You can limit the total file size which author can upload for a help ticket. But unlike the reader file upload, module allows author uploading unlimited files for a help ticket, and doesn't limit the file extension. Of course, the upload file extension must exist in DNN Persona Bar "Settings - Security - More - More Security Settings - Allowable File Extensions".</value>
+  </data>
+  <data name="Tip_FileUpload_Client.Text" xml:space="preserve">
+    <value>You can allow reader (registered users) to upload files while submitting help ticket to an article which belong to this department here. For example, you are publishing job listings, a registered user can submit a help ticket (a job request), and upload related files (resume, pictures, credentials）to you.&lt;br/&gt;&lt;br/&gt;
+
+By default, module allows user uploading unlimited files for a help ticket, you can limit the total file size and the file extension. For example, if you enter "Upload Limit" as 10, and "File Extension" as "zip,jpg,png", then user can upload up to 10mb files for a help ticket, and can only upload winzip files (.zip) and pictures (.jpg .png). Note, the "File Extension" must also exist in DNN Persona Bar "Settings - Security - More - More Security Settings - Allowable File Extensions". For example, if you enter ".psd" at "File Extennsion" to allow user uploading photoshop files (.psd) here, but if .psd doesn't exist in "Allowable File Extensions", then user still can't upload .psd files.&lt;br/&gt;&lt;br/&gt;
+
+You can also specify the upload file count and extension (size). For example, you can select "Upload File Count" as 2 to allow user uploading 2 files only. And for file 1, enter "File Title" as "Resume", "File Extension" as "doc,docx", "File Size" as "5", then user knows that he needs to upload a MS Word resume (doc, docx), and its size is less than 5mb. For file 2, enter "File Title" as "Personal Photo", "File Extension" as "jpg,png,bmp,jpe,jpeg", "File Size" as "3", then user knows that he needs to upload 1 personal picture.</value>
+  </data>
+  <data name="plFieldEnable_EventEnd.Help" xml:space="preserve">
+    <value>Check to enable the "Event End" data field</value>
+  </data>
+  <data name="plFieldEnable_EventEnd.Text" xml:space="preserve">
+    <value>Enable "Event End" Field</value>
+  </data>
+  <data name="plFieldEnable_EventStart.Help" xml:space="preserve">
+    <value>Check to enable the "Event Start" data field</value>
+  </data>
+  <data name="plFieldEnable_EventStart.Text" xml:space="preserve">
+    <value>Enable "Event Start" Field</value>
+  </data>
+</root>

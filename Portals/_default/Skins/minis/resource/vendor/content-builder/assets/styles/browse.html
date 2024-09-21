@@ -1,0 +1,213 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Styles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <style>
+        html {
+            height: 100%
+        }
+
+        .d-wrapper {
+            margin: 0;
+            height: 100%
+        }
+
+        #divStyles {
+            border-top: 50px solid;
+            padding: 20px 15px 0;
+            box-sizing: border-box;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #divStyles>div {
+            width: 100%;
+            margin: 0 0 15px;
+            background: #000;
+            display: inline-block;
+            border: #d5d5d5 1px solid;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #divStyles>div div {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.3);
+            top: 0;
+            right: 0;
+            width: auto;
+            padding: 20px;
+            border: none;
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #fff;
+            z-index: 1;
+            -webkit-transition: all 0.16s ease;
+            transition: all 0.16s ease;
+        }
+
+        #divStyles>div img {
+            width: 100%;
+            -webkit-transition: all 0.16s ease;
+            transition: all 0.16s ease;
+            float: left;
+        }
+
+        #divStyles>div:hover img {
+            opacity: 0.85
+        }
+
+        #divStyles div:hover div {
+            display: inline-block;
+        }
+
+        select {
+            width: 100%;
+            display: block;
+            padding: 15px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            line-height: 50px;
+            font-weight: bold;
+            height: 50px;
+            color: rgb(69, 69, 69);
+            border-radius: 0px;
+            border: none;
+            background: #f5f5f5;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px 0px 15px;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+        }
+    </style>
+    <script src="data.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div style="position:fixed;top:0;right:0;width:100%;z-index:2;">
+        <select id="selStyles">
+        </select>
+
+
+    </div>
+
+    <div id="divStyles">
+    </div>
+
+    <script src="../scripts/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            var categories = jsonStyles.data.categories;
+            for (var i = 0; i < categories.length; i++) {
+                $('#selStyles').append('<option value="' + categories[i].id + '">' + categories[i].desc + '</option>');
+            }
+            var image_path = window.parent.image_path;
+            var styles = jsonStyles.data.styles;
+            styles.forEach((element, index) => {
+                $('#divStyles').append(`<div data-classname="${element.classname}" data-index="${index}"><div>[${index + 1}] ${element.caption}</div><img src="${image_path}${element.img}" /></div>`);
+            });
+
+
+
+
+            $('#divStyles').append('<div data-css="" data-sectioncss="" data-classname=""><img src="' + image_path + '_clear.jpg" /></div>');
+            $('#selStyles').on('change', function () {
+                var catid = $(this).val();
+                if (catid == -1) {
+                    $('#divStyles > div').show();
+                } else {
+                    styles.forEach((element, index) => {
+                        if (element.category == catid) {
+                            $('#divStyles > div').eq(index).show();
+
+                        } else {
+                            $('#divStyles > div').eq(index).hide();
+                        }
+                    })
+                }
+            });
+
+            let parentHead = $(parent.document.querySelector("head"));
+
+            $("#divStyles").on("click", "div", function () {
+
+                if (styles[$(this).data("index")]) {
+                    let f = styles[$(this).data("index")].family;
+
+                    let familyArray = [];
+                    let cssHtml = '';
+
+                    f.forEach((element, index) => {
+                        let family = '';
+                        family += element.family.replace(/ /g, "+");
+                        if (element.variants) {
+                            family += ":" + element.variants.join(",");
+                        }
+                        familyArray.push(family);
+                    });
+
+
+                    if (f.length == 1) {
+                        cssHtml += `--family:"${f[0].family}";`;
+                        cssHtml += `--family2:"${f[0].family}";`;
+                        cssHtml = ":root{" + cssHtml + "}";
+                        cssHtml += `h1, h2, h3, h4, h5, h6{font-family:"${f[0].family}";}`;
+                        cssHtml += `#Body, body, .Head, .SubTitle, .SubSubTitle, .Normal{font-family:"${f[0].family}";}`;
+                    } else {
+                        cssHtml += `--family:"${f[1].family}";`;
+                        cssHtml += `--family2:"${f[0].family}";`;
+                        cssHtml = ":root{" + cssHtml + "}";
+                        cssHtml += `h1, h2, h3, h4, h5, h6{font-family:"${f[0].family}";}`;
+                        cssHtml += `#Body, body, .Head, .SubTitle, .SubSubTitle, .Normal{font-family:"${f[1].family}";}`;
+                    }
+
+
+
+                    if (parentHead.find(".global-google-family").length) {
+                        parentHead.find(".global-google-family").attr("href", 'https://fonts.googleapis.com/css?display=swap&family=' + familyArray.join("|"));
+                    } else {
+                        parentHead.append(`<link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=${familyArray.join("|")}" class="global-google-family">`);
+                    }
+
+
+                    if (parentHead.find(".globalcss-google-family").length) {
+                        parentHead.find(".globalcss-google-family").html(cssHtml);
+                    } else {
+                        parentHead.append(`<style class="globalcss-google-family">${cssHtml}</style>`);
+                    }
+                    $(parent.document.querySelector("#EditThemePluginFamilyOptionsTextarea")).val(JSON.stringify(f));
+                    $(parent.document.querySelector("#ContentBuilderSaveHTML")).removeAttr("disabled");
+
+                } else {
+                    parentHead.find(".globalcss-google-family,.global-google-family").remove();
+                    $(parent.document.querySelector("#EditThemePluginFamilyOptionsTextarea")).val("");
+
+                }
+
+
+            });
+
+
+
+
+
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>

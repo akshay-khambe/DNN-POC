@@ -1,0 +1,140 @@
+﻿ 
+			.has-menu-3d-popup.popup-animate-3 body {
+				background-color:#e7fffa;
+			}
+			#menu-3d-popup-box390055 .icon, 
+			#menu-3d-popup-main390055 .menu-3d-popup-close{
+				color:var(--accent-color) !important;
+			}
+			#menu-3d-popup-main390055 .menu-3d-popup-text::before,
+			#menu-3d-popup-main390055 .homepage08-header-text::before{
+				border-top-color:var(--accent-color);
+			}
+			#menu-3d-popup-main390055 .gomenu > ul >li.dir > a >span::after{
+				border-bottom-color:var(--accent-color);
+			}
+			#menu-3d-popup-main390055 .gomenu > ul li li ul{
+				background-color:var(--accent-color);
+			}
+			#menu-3d-popup-main390055 .gomenu > ul a span:not(.menu_arrow)::before{
+				background-color:var(--accent-color);
+			}
+			
+	#search-popup-box623472 a.search:hover,
+	#search-popup-box623472 .popup-close:hover{
+		color:var(--accent-color);
+	}
+	
+	#search-popup-box123587 a.search:hover,
+	#search-popup-box123587 .popup-close:hover{
+		color:var(--accent-color);
+	}
+	#logo712896 img{max-height:40px!important;}#mobilemenu11098 .mobileclose,
+		#mobilemenu11098 .gomenu > ul > li > a > span,
+		#mobilemenu11098 .gomenu li .arrows{color:#272727;font-size:20px;font-weight:600;}#mobilemenu11098 .sub-menu> li > a > span{color:#272727;font-size:20px;font-weight:600;}#mobilemenu11098 .sub-menu li ul li a{color:#484848;font-size:18px;font-weight:600;}#mobilemenu11098 .sub-menu li ul li li a{color:#787878;font-size:16px;font-weight:600;}#mobilemenu11098 .sub-menu li ul li li li a{color:#787878;font-size:16px;font-weight:600;}
+				#mobilemenu11098 .sub-menu .arrows{
+					background-color:  var(--accent-color);
+				}
+				#mobilemenu11098 .menutitle,
+				#mobilemenu11098 .sub-menu li ul .arrows,
+				#mobilemenu11098 a:hover span,
+				#mobilemenu11098 .current > a > span,
+				#mobilemenu11098 .arrows.active + a span,
+				#mobilemenu11098 .subcurrent > a > span{
+					color:  var(--accent-color)!important;
+				}
+				#headerrow-349356{background-color:rgba(255,255,255,0);}#headerrow-349356 .dngTextBox,
+		#headerrow-349356 .header-content-wrap >*:not(.nav-bar),
+		#headerrow-349356 .Normal,
+		#headerrow-349356 .Normal > a,
+		#headerrow-349356 .Normal > a:link,
+		#headerrow-349356 .Normal > a:active,
+		#headerrow-349356 .Normal > a:visited,
+		#headerrow-349356 .dngTextBox a,
+		#headerrow-349356 .dngTextBox a:link,
+		#headerrow-349356 .dngTextBox a:active,
+		#headerrow-349356 .dngTextBox a:visited{color:#ffffff;font-size:18px;line-height:18px;}#headerrow-349356,#headerrow-349356 .header-center,#headerrow-349356 .header-center .logo{height:100px}#headerrow-349356 .header-center .logo{line-height:100px!important}#headerrow-349356 > .container,#megamenuWidthBox {width: auto!important;}#megamenuWidthBox{margin:0 30px;}
+			#headerrow-349356 .area-left{
+				padding-right:8px;
+			}
+			#headerrow-349356 .area-center{
+				padding-left:8px;
+				padding-right:8px;
+			}
+			#headerrow-349356 .area-right{
+				padding-left:8px;
+			}
+			#headerrow-349356 .area-left .header-content-wrap > div{
+				margin-right:62px;
+			}
+			#headerrow-349356 .area-center .header-content-wrap > div,
+			#headerrow-349356 .area-right .header-content-wrap > div{
+				margin-left:62px;
+			}
+		
+			 .floating-active #headerrow-349356:after{
+			   content:"";
+			   position:absolute;
+			   top: 0;
+			   left: -20px;
+			   bottom: 0;
+			   right: 0;
+			   z-index: -1;
+			   pointer-events:none; 
+			   -webkit-box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			   box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			 }
+			 .floating-active #headerrow-349356{background-color:#ffffff!important;
+}#headerrow-349356 .Normal > a:hover,
+			#headerrow-349356 .dngTextBox a:hover,
+			#headerrow-349356 .hover-accent:hover,
+			#headerrow-349356 .Login a:hover,
+			#headerrow-349356 .Login a.active{
+				color:var(--accent-color)
+			}
+			#headerrow-349356 .Login .userProfile .userMessages,
+			#headerrow-349356 .Login .userProperties ul.userMenu a span{
+				background-color:var(--accent-color)
+			}
+				.floating-nav.floating-active #headerrow-349356 .header-container-box,
+				.floating-nav.floating-active #headerrow-349356 .header-bg-box,
+				.floating-nav.floating-active #headerrow-349356 {
+					height:70px;
+				}
+				.floating-nav.floating-active #headerrow-349356 .logo{
+					height:70px;
+					line-height:70px!important;
+				}
+			#mobileheader-639685{background-color:#ffffff;}
+			#mobileheader-639685,#mobileheader-639685 .header-area{height:66px}
+			#mobileheader-639685 .dng-mobilemenu.mobile_menu.mm-menu{
+				top:66px
+			}
+			#mobileheader-639685 .header-area .logo img{max-height:58px}
+			#mobileheader-639685 .dngTextBox,
+		#mobileheader-639685 .header-content-wrap >*:not(.nav-bar),
+		#mobileheader-639685 .Normal,
+		#mobileheader-639685 .Normal > a,
+		#mobileheader-639685 .Normal > a:link,
+		#mobileheader-639685 .Normal > a:active,
+		#mobileheader-639685 .Normal > a:visited,
+		#mobileheader-639685 .dngTextBox a,
+		#mobileheader-639685 .dngTextBox a:link,
+		#mobileheader-639685 .dngTextBox a:active,
+		#mobileheader-639685 .dngTextBox a:visited{color:#272727;}#mobileheader-639685 .header-content-wrap .Normal > a:hover,
+				#mobileheader-639685 .header-content-wrap .dngTextBox a:hover,
+				#mobileheader-639685 .Normal > a:hover,
+				#mobileheader-639685 .dngTextBox a:hover,
+				#mobileheader-639685 .hover-accent:hover,
+				#mobileheader-639685 .search-popup-box .icon.active,
+				#mobileheader-639685 .search-popup-box:hover .icon,
+				#mobileheader-639685 .mobile-menu-icon:hover .fa-bars:before,
+				#mobileheader-639685 .search-popup-box .submit:hover,
+				#mobileheader-639685 .search-popup-box .popup-close:hover,
+				#mobileheader-639685 .shop-cart-list .shop-list .remove:hover,
+				#mobileheader-639685 .shop-cart-list .shop-list .price-info span,
+				#mobileheader-639685 .shop-cart-list .shop-list .number-box .number-up:hover,
+				#mobileheader-639685 .mobile-header .shop-cart-list .shop-list .number-box .number-down:hover,
+				#mobileheader-639685 .search-popup-box .icon:hover{
+					color:var(--accent-color);
+				}

@@ -1,0 +1,406 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#SidePanelLayout" aria-controls="pane" role="tab" data-toggle="tab">Side
+      Panel Layout</a></li>
+  <li role="presentation"><a href="#NavIcon" aria-controls="pane" role="tab" data-toggle="tab">Nav Icon</a></li>
+  <li role="presentation"><a href="#SidePanelSpacing" aria-controls="pane" role="tab" data-toggle="tab">Side Panel
+      Spacing</a></li>
+</ul>
+
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="SidePanelLayout">
+
+
+
+    <div class="form-images-list">
+      <div class="form-group">
+        <label class="control-label">
+          Panel Layout:</label>
+        <div class="control-cont">
+          <div class="format-setting-inner">
+            <div class="radio-images">
+              <input type="radio" name="panellayout" value="menu" class="dnnOptions form-control" data-name="panellayout"
+                {{if panellayout == "menu"}} checked="checked" {{/if}}>
+              <img src="resource/thumbnails/header/side_panel_menu.jpg"
+                alt=" " title=" " class="option-tree-ui-radio-image ">
+            </div>
+            <div class="radio-images">
+              <input type="radio" name="panellayout" value="pane" class="dnnOptions form-control" data-name="panellayout"
+                {{if panellayout == "pane"}} checked="checked" {{/if}}>
+              <img src="resource/thumbnails/header/side_panel_content.jpg"
+                alt=" " title=" " class="option-tree-ui-radio-image ">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Side Panel Effect:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" id="searchstyle" data-name="paneleffect" data-value="${paneleffect}">
+          <option value="side-left">Slide from left</option>
+          <option value="side-right">Slide from right</option>
+          <option value="side-push-left">Push from left</option>
+          <option value="side-push-right">Push from right</option>
+          <option value="side-static-left">Static left</option>
+          <option value="side-static-right">Static right</option>
+        </select>
+      </div>
+    </div>
+
+   
+
+
+  <div class="background-group">
+    <div class="form-group">
+      <label class="control-label">Background:</label>
+      {{tmpl($data,options ={}) '#tmpl-background'}}
+    </div>
+</div>
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Side Panel Width (px):</label>
+      <div class="control-cont">
+        <input type="number" class="dnnOptions form-control" value="${width}" placeholder="px" data-name="width">
+      </div>
+    </div>
+    
+
+    <div class="form-typography-list">
+      <div class="form-group">
+        <label class="control-label">Typography:</label> 
+        {{tmpl($data,options ={}) '#tmpl-typography'}}
+      </div>
+    </div> 
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Display Shadow:</label>
+      <div class="control-cont">
+        <input type="checkbox" class="dnnOptions" data-name="shadow" ${shadow}>
+      </div>
+    </div>
+
+    <div class="conditional" data-condition="panellayout == 'menu'">
+
+      <div class="form-group">
+        <label for="firstname" class="control-label">Display Horizontal Split Line:</label>
+        <div class="control-cont">
+          <input type="checkbox" class="dnnOptions" data-name="splitline" ${splitline}>
+        </div>
+      </div>
+
+
+      <div class="form-typography-list">
+        <div class="form-group">
+          <label class="control-label">Bottom Border:</label>
+          <div class="control-cont">
+            <label class="sub-label">Border Width</label>
+            <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${borderwidth}"
+              placeholder="px" data-name="borderwidth" data-default="1" />
+          </div>
+          <div class="control-cont">
+            <label class="sub-label"> </label>
+            <select class="dnnOptions form-control" data-name="borderunit" data-value="${borderunit}" data-default="px">
+              <option value="">unit</option>
+              <option value="px" selected="selected">px</option>
+              <option value="%">%</option>
+              <option value="em">em</option>
+              <option value="pt">pt</option>
+            </select>
+
+          </div>
+          <div class="control-cont">
+            <label class="sub-label">Border Style</label>
+            <select class="dnnOptions form-control" data-name="borderstyle" data-value="${borderstyle}" data-default="Solid">
+              <option value="">style</option>
+              <option value="hidden">Hidden</option>
+              <option value="dashed" selected="selected">Dashed</option>
+              <option value="solid">Solid</option>
+              <option value="double">Double</option>
+              <option value="groove">Groove</option>
+              <option value="ridge">Ridge</option>
+              <option value="inset">Inset</option>
+              <option value="outset">Outset</option>
+            </select>
+          </div>
+          <div class="control-cont">
+            <label class="sub-label">Border Color</label>
+            <div class="control-cont">
+              <div class="colorpicker-group">
+                <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="bordercolor"
+                  value="${bordercolor}" data-default="rgba(184,184,184,1)">
+                <i style="background-color:${bordercolor}"></i></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="form-group colorpicker-box">
+        <label for="firstname" class="control-label">Accent Color:</label>
+        <select class="form-control" id="colorcustom2" data-default="">
+          <option value="">Theme Options</option>
+          <option value="custom" {{if acolor }} selected="selected" {{/if}}>Custom</option>
+        </select>
+        <div class="colorpicker-group conditional" data-condition="#colorcustom2 == 'custom'">
+
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="acolor"
+            value="${acolor}">
+          <i style="background-color:${acolor}"></i>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="firstname" class="control-label">Display Logo:</label>
+        <div class="control-cont">
+          <input type="checkbox" class="dnnOptions" id="displaylogo" data-name="displaylogo" ${displaylogo}>
+        </div>
+      </div>
+      <div class="form-group conditional" data-condition="#displaylogo">
+        <label for="firstname" class="control-label">Logo URL:</label>
+        <div class="control-cont">
+          <input type="text" class="dnnOptions form-control escape" value="${url}" data-name="url" data-default="">
+        </div>
+      </div>
+      <div class="form-group conditional" data-condition="#displaylogo">
+        <label for="firstname" class="control-label">High-DPI (retina) Logo URL:</label>
+        <div class="control-cont">
+          <input type="text" class="dnnOptions form-control escape" value="${hdurl}" data-name="hdurl" data-default="">
+        </div>
+      </div>
+ 
+
+      <div class="form-group">
+        <label for="firstname" class="control-label">Display Menu:</label>
+        <div class="control-cont">
+          <input type="checkbox" class="dnnOptions" id="displaymenu" data-name="displaymenu" ${displaymenu} data-default="checked">
+        </div>
+      </div>
+      <div class="conditional" data-condition="#displaymenu">
+     
+      <div class="form-typography-list">
+        <div class="form-group">
+          <label class="control-label">Menu Typography:</label> 
+          {{tmpl($data,options ={before:"menu",color:"#424242",size:"14px"}) '#tmpl-typography'}}
+        </div>
+      </div> 
+      <div class="form-typography-list">
+        <div class="form-group">
+          <label class="control-label">Sub Menu Typography:</label> 
+          {{tmpl($data,options ={before:"submenu",color:"#373737",size:"14px"}) '#tmpl-typography'}}
+        </div>
+      </div> 
+     
+    </div>
+
+
+  </div>
+
+
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="NavIcon">
+
+    <div class="form-images-list">
+      <div class="form-group">
+        <label class="control-label">Icon Style:</label>
+        <div class="control-cont">
+          <div class="format-setting-inner">
+            <div class="radio-images">
+              <input type="radio" name="iconstyle" value="default" class="dnnOptions form-control" data-name="iconstyle"
+                {{if iconstyle == "default"}} checked="checked" {{/if}}>
+              <img src="resource/thumbnails/header/icon-side-01.jpg"
+                alt=" " title=" " class="option-tree-ui-radio-image ">
+            </div>
+            <div class="radio-images">
+              <input type="radio" name="iconstyle" value="custom" class="dnnOptions form-control" data-name="iconstyle"
+                {{if iconstyle == "custom"}} checked="checked" {{/if}}>
+              <img src="resource/thumbnails/header/icon-side-02.jpg"
+                alt=" " title=" " class="option-tree-ui-radio-image ">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="form-group colorpicker-box conditional" data-condition="iconstyle == 'custom'">
+      <label for="firstname" class="control-label">Line Color:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="linecolor"
+            value="${linecolor}" data-default="rgba(255,255,255,1)">
+          <i style="background-color:${linecolor}"></i></div>
+      </div>
+    </div>
+    <div class="form-group colorpicker-box conditional" data-condition="iconstyle == 'custom'">
+      <label for="firstname" class="control-label">Button Background:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="btnbg"
+            value="${btnbg}" data-default="rgba(50,154,235,1)">
+          <i style="background-color:${btnbg}"></i></div>
+      </div>
+    </div>
+    <div class="form-group colorpicker-box conditional" data-condition="iconstyle == 'custom'">
+      <label for="firstname" class="control-label">Line Hover Color:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="linehovercolor"
+            value="${linehovercolor}" data-default="rgba(255,255,255,1)">
+          <i style="background-color:${linehovercolor}"></i></div>
+      </div>
+    </div>
+    <div class="form-group colorpicker-box conditional" data-condition="iconstyle == 'custom'">
+      <label for="firstname" class="control-label">Button Hover Background:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="btnhoverbg"
+            value="${btnhoverbg}" data-default="rgba(121,129,231,1)">
+          <i style="background-color:${btnhoverbg}"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="SidePanelSpacing">
+
+    <div class="form-typography-list conditional" data-condition="panellayout == 'pane'">
+      <div class="form-group">
+        <label class="control-label">Pane Spacing:</label>
+        <div class="control-cont">
+          <label class="sub-label">Top</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${panet}" placeholder="px"
+            data-name="panet" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Right</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${paner}" placeholder="px"
+            data-name="paner" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Bottom</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${paneb}" placeholder="px"
+            data-name="paneb" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Left</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${panel}" placeholder="px"
+            data-name="panel" />
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-typography-list conditional" data-condition="panellayout == 'menu'">
+      <div class="form-group">
+        <label class="control-label">Pane Top Spacing:</label>
+        <div class="control-cont">
+          <label class="sub-label">Top</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${ptt}" placeholder="px"
+            data-name="ptt" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Right</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${ptr}" placeholder="px"
+            data-name="ptr" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Bottom</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${ptb}" placeholder="px"
+            data-name="ptb" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Left</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${ptl}" placeholder="px"
+            data-name="ptl" />
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-typography-list conditional" data-condition="panellayout == 'menu'">
+      <div class="form-group">
+        <label class="control-label">Pane Middle Spacing:</label>
+        <div class="control-cont">
+          <label class="sub-label">Top</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${pmt}" placeholder="px"
+            data-name="pmt" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Right</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${pmr}" placeholder="px"
+            data-name="pmr" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Bottom</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${pmb}" placeholder="px"
+            data-name="pmb" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Left</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${pml}" placeholder="px"
+            data-name="pml" />
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="form-typography-list conditional" data-condition="panellayout == 'menu'">
+      <div class="form-group">
+        <label class="control-label">Pane Bottom Spacing:</label>
+        <div class="control-cont">
+          <label class="sub-label">Top</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${pbt}" placeholder="px"
+            data-name="pbt" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Right</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${pbr}" placeholder="px"
+            data-name="pbr" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Bottom</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${pbb}" placeholder="px"
+            data-name="pbb" />
+        </div>
+        <div class="control-cont">
+          <label class="sub-label">Left</label>
+
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${pbl}" placeholder="px"
+            data-name="pbl" />
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="form-group hide">
+  <label for="firstname" class="control-label">ID:</label>
+  <div class="control-cont">
+    <input type="text" class="dnnOptions form-control randomid" value="${id}" data-name="id">
+  </div>
+</div>

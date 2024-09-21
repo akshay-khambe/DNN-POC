@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plBiography.Help" xml:space="preserve">
+    <value>Enter your biography, this will be displayed as "About author" in article detail module.</value>
+  </data>
+  <data name="plEmail.Help" xml:space="preserve">
+    <value>Enter your email, this is mainly used to display your &lt;a href="http://www.gravatar.com"&gt;Gravatar&lt;/a&gt;</value>
+  </data>
+  <data name="lblBiography.Text" xml:space="preserve">
+    <value>Enter your biography below, this will be displayed as "About Creator" in CrossArticle_Detail sub module.</value>
+  </data>
+  <data name="Tip_AvatarEmail.Text" xml:space="preserve">
+    <value>If you have an avatar photo at &lt;a href="http://www.gravatar.com" target="_blank"&gt;Gravatar (http://www.gravatar.com)&lt;/a&gt;, you can enter its email address to get your avatar, and show it in article detail page.  Note, if you already specify an avatar photo in this site (you can specify it by editing your profile in DNN built-in user account page), module will use that prior, and ignore below Gravatar address.</value>
+  </data>
+  <data name="plEmail.Text" xml:space="preserve">
+    <value>Your Gravatar email</value>
+  </data>
+  <data name="ControlTitle_author_profile.Text" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="plProfileUrl.Help" xml:space="preserve">
+    <value>My profile url. For example, if you have your profile information on http://www.activesocial.com/users/will-m, you can enter this. When user click your name in CrossArticle_Detail sub module, it will navigate to your specified url.</value>
+  </data>
+  <data name="plProfileUrl.Text" xml:space="preserve">
+    <value>Profile Url</value>
+  </data>
+  <data name="plAddress.Help" xml:space="preserve">
+    <value>Detail Address</value>
+  </data>
+  <data name="plAddress.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="plBusinessScope.Help" xml:space="preserve">
+    <value>enter business scope</value>
+  </data>
+  <data name="plBusinessScope.Text" xml:space="preserve">
+    <value>Business Scope</value>
+  </data>
+  <data name="plCompany.Help" xml:space="preserve">
+    <value>Enter your company name, like IBM, Leveno</value>
+  </data>
+  <data name="plCompany.Text" xml:space="preserve">
+    <value>Your Company</value>
+  </data>
+  <data name="plFax.Help" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="plFax.Text" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="plIM.Help" xml:space="preserve">
+    <value>Your Instant Messager number, like QQ, Skype</value>
+  </data>
+  <data name="plIM.Text" xml:space="preserve">
+    <value>IM (Instant Messager)</value>
+  </data>
+  <data name="plLinkman.Help" xml:space="preserve">
+    <value>Linkman</value>
+  </data>
+  <data name="plLinkman.Text" xml:space="preserve">
+    <value>Linkman</value>
+  </data>
+  <data name="plLogoUrl.Help" xml:space="preserve">
+    <value>Logo Url</value>
+  </data>
+  <data name="plLogoUrl.Text" xml:space="preserve">
+    <value>Company logo url</value>
+  </data>
+  <data name="plPostalCode.Help" xml:space="preserve">
+    <value>postal code</value>
+  </data>
+  <data name="plPostalCode.Text" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="plSiteUrl.Help" xml:space="preserve">
+    <value>User support site url</value>
+  </data>
+  <data name="plSiteUrl.Text" xml:space="preserve">
+    <value>Site Url</value>
+  </data>
+  <data name="plSlogan.Help" xml:space="preserve">
+    <value>User slogan or phrase</value>
+  </data>
+  <data name="plSlogan.Text" xml:space="preserve">
+    <value>Slogan or Phrase</value>
+  </data>
+  <data name="plTel.Help" xml:space="preserve">
+    <value>Telephone/Mobile</value>
+  </data>
+  <data name="plTel.Text" xml:space="preserve">
+    <value>Telephone/Mobile</value>
+  </data>
+  <data name="plVendorCity.Help" xml:space="preserve">
+    <value>Company City</value>
+  </data>
+  <data name="plVendorCity.Text" xml:space="preserve">
+    <value>Company City</value>
+  </data>
+  <data name="plVendorCountry.Help" xml:space="preserve">
+    <value>Select Company Country</value>
+  </data>
+  <data name="plVendorCountry.Text" xml:space="preserve">
+    <value>Company Country</value>
+  </data>
+  <data name="plVendorState.Help" xml:space="preserve">
+    <value>Company State/Province</value>
+  </data>
+  <data name="plVendorState.Text" xml:space="preserve">
+    <value>Company State/Province</value>
+  </data>
+  <data name="plVendorTown.Help" xml:space="preserve">
+    <value>Company Town</value>
+  </data>
+  <data name="plVendorTown.Text" xml:space="preserve">
+    <value>Company Town</value>
+  </data>
+  <data name="plZipcode.Help" xml:space="preserve">
+    <value>Zipcode</value>
+  </data>
+  <data name="plZipcode.Text" xml:space="preserve">
+    <value>Zipcode</value>
+  </data>
+  <data name="Tip_Company.Text" xml:space="preserve">
+    <value>Enter your company information below (company name, country, state, city, tel, fax...etc). These information can be displayed to site visitors.</value>
+  </data>
+  <data name="Tip_NoCountry.Text" xml:space="preserve">
+    <value>Please specify at least 1 country in "Cp_Admin sub module - Admin Control Panel - Configurations - Location".</value>
+  </data>
+  <data name="plProtectPassword.Help" xml:space="preserve">
+    <value>Enter your default protect password.</value>
+  </data>
+  <data name="plProtectPassword.Text" xml:space="preserve">
+    <value>Protect Password</value>
+  </data>
+  <data name="secProfile.Text" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="Tip_ProtectPassword.Text" xml:space="preserve">
+    <value>Your articles can be published as protected, so user needs to input a correct password before view its detail. Here you can enter the default protect password.  Note, 1. Site administrators (and you) don't need to input password to view your article detail even it is marked as protected. 2. Each article can have its own protect password (different password).</value>
+  </data>
+</root>

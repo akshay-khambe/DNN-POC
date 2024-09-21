@@ -1,0 +1,75 @@
+﻿@import url('https://fonts.googleapis.com/css?display=swap&family=Josefin+Sans:300,600');
+@import url('https://fonts.googleapis.com/css?display=swap&family=Neuton:200,700');
+
+
+/**********************************
+    General
+***********************************/
+
+ 
+.d-wrapper {
+    margin: 0;
+    font-family: 'Neuton', serif;
+    font-size: 100%; 
+    line-height: 1.9;
+    font-weight: 200;
+}
+.d-wrapper p,.d-wrapper td,.d-wrapper li,.d-wrapper label {
+    font-size: 1.13rem; 
+    line-height: 1.9;
+    font-weight: 200;
+}
+.d-wrapper h1,.d-wrapper  h2,.d-wrapper  h3,.d-wrapper  h4,.d-wrapper  h5,.d-wrapper  .d-wrapper h6{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}        
+
+.d-wrapper h1{font-size: 3rem;margin: 0.17rem 0 0.1rem;}
+.d-wrapper h2{font-size: 2.4rem;margin: 0.3rem 0 0.1rem;}
+.d-wrapper h3{font-size: 1.9rem;margin: 0.46rem 0 0.1rem;}
+.d-wrapper h4{font-size: 1.7rem;margin: 0.5rem 0 0.1rem;line-height: 1.6;}
+.d-wrapper h5{font-size: 1.45rem;margin: 0.57rem 0 0.1rem;line-height: 1.7;}
+.d-wrapper h6{font-size: 1.32rem;margin: 0.64rem 0 0.1rem;font-weight: bold;text-transform: none;line-height: 1.9;}
+.d-wrapper p{margin:0.39rem 0 1rem;}
+
+.d-wrapper .display{ margin-bottom: 0.5rem; }
+.d-wrapper .display h1{
+    font-weight: 300;
+    font-size: 3.7rem;
+    letter-spacing: 7px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    margin: 0.4rem 0;
+}
+.d-wrapper .display p{
+    font-size: 1.7rem;
+    line-height: 1.8;
+    letter-spacing: 2px;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 640px) {
+    .d-wrapper .display h1{font-size: 2.5rem;}
+    .d-wrapper .display p{font-size: 1.4rem;}
+    .d-wrapper h1{font-size: 2.3rem;}
+    .d-wrapper h2{font-size: 2rem;}
+    .d-wrapper h3{font-size: 1.7rem;}
+    .d-wrapper h4{font-size: 1.4rem;}
+    .d-wrapper h5{font-size: 1.2rem;}
+    .d-wrapper h6{font-size: 1rem;} 
+}
+
+.is-btn {
+    padding: 10px 50px 12px;
+}
+.is-btn-small {
+    padding: 5px 25px 7px;
+}
+
+.d-wrapper .display-font1 {font-family: 'Josefin Sans', sans-serif;}
+.d-wrapper .display-font2 {font-family: 'Neuton', serif;}
+.d-wrapper .default-font1 {font-family: 'Josefin Sans', sans-serif;}
+.d-wrapper .default-font2 {font-family: 'Neuton', serif;}

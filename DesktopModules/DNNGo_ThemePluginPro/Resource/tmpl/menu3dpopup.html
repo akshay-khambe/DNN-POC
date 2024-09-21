@@ -1,0 +1,100 @@
+<div class="form-group colorpicker-box">
+  <label for="firstname" class="control-label">Accent Color:</label>
+  <select class="form-control" id="colorselect3">
+    <option value="">Theme Options</option>
+    <option value="custom" {{if acccolor }} selected="selected" {{/if}}>Custom</option>
+  </select>
+  <div class="colorpicker-group conditional" data-condition="#colorselect3 == 'custom'">
+    <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="acccolor" value="${acccolor}">
+    <i style="background-color:${acccolor}"></i>
+  </div>
+</div>
+
+<div class="form-group colorpicker-box">
+  <label for="firstname" class="control-label">Popup Background Color:</label>
+
+  <div class="colorpicker-group">
+    <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="bgcolor" value="{{if bgcolor}}${bgcolor}{{else}}#d3f8ff{{/if}}">
+    <i style="background-color:{{if bgcolor}}${bgcolor}{{else}}#d3f8ff{{/if}}"></i>
+  </div>
+</div>
+
+
+<div class="form-group colorpicker-box">
+  <label for="firstname" class="control-label">Brush Color:</label>
+  <select class="form-control" id="colorselect4">
+    <option value="">Theme Options</option>
+    <option value="custom" {{if brushcolor }} selected="selected" {{/if}}>Custom</option>
+  </select>
+  <div class="colorpicker-group conditional" data-condition="#colorselect4 == 'custom'">
+    <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="brushcolor" value="${brushcolor}">
+    <i style="background-color:${brushcolor}"></i>
+  </div>
+</div>
+ 
+<div class="form-group colorpicker-box">
+  <label for="firstname" class="control-label">Sub Menu Color:</label>
+  <select class="form-control" id="colorselect5">
+    <option value="">Theme Options</option>
+    <option value="custom" {{if subcolor }} selected="selected" {{/if}}>Custom</option>
+  </select>
+  <div class="colorpicker-group conditional" data-condition="#colorselect5 == 'custom'">
+    <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="subcolor" value="${subcolor}">
+    <i style="background-color:${subcolor}"></i>
+  </div>
+</div>
+ 
+ 
+<div class="form-group colorpicker-box">
+  <label for="firstname" class="control-label">Line Color:</label>
+  <select class="form-control" id="colorselect6">
+    <option value="">Theme Options</option>
+    <option value="custom" {{if subcolor }} selected="selected" {{/if}}>Custom</option>
+  </select>
+  <div class="colorpicker-group conditional" data-condition="#colorselect6 == 'custom'">
+    <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="linecolor" value="${linecolor}">
+    <i style="background-color:${linecolor}"></i>
+  </div>
+</div>
+ 
+
+
+
+<div class="form-group">
+  <label for="firstname" class="control-label">Logo Source:</label>
+  <div class="control-cont">
+    <select class="dnnOptions form-control" id="source" data-name="source" data-value="${source}">
+      <option value="">None</option>
+      <option value="dnn">DNN Logo</option>
+      <option value="url2">Custom Logo</option>
+    </select>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#source == 'url2'">
+  <label for="firstname" class="control-label">Logo URL:</label>
+  <div class="control-cont">
+    {{tmpl($data,options ={imgid:"url"}) '#tmpl-image'}}
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#source == 'url2'">
+  <label for="firstname" class="control-label">High-DPI (retina) Logo URL:</label>
+  <div class="control-cont">
+    {{tmpl($data,options ={imgid:"hdurl"}) '#tmpl-image'}}
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="firstname" class="control-label">Bottom Text:</label>
+  <div class="control-cont">
+    <textarea class="dnnOptions form-control base64" data-name="content" rows="5">${$data.content?Base64.decode(content):""}</textarea>
+  </div>
+</div>
+
+
+
+<div class="form-group hide">
+  <label for="firstname" class="control-label">ID:</label>
+  <div class="control-cont">
+    <input type="text" class="dnnOptions form-control randomid" value="${id}" data-name="id">
+  </div>
+</div>

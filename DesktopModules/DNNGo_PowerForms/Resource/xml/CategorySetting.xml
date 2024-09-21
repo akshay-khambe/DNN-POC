@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_PowerForms>
+	<EffectSettings>
+    <Setting>
+      <Name><![CDATA[ConditionalField]]></Name>
+      <Alias><![CDATA[Field]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[Fields]]></ControlType>
+      <Direction><![CDATA[1,3,5,7,8,9,111,112,130,131,132]]></Direction>
+      <ListContent><![CDATA[==Please select==:|]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Display Conditions]]></Group>
+      <Categories><![CDATA[Display Conditions]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[ConditionalRule]]></Name>
+      <Alias><![CDATA[Value]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description>
+        <![CDATA[If there are more than one condition, then you need to use comma to separate them, for instance: Value1, Value2
+Please check this page to know more info about how to use it.]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[optional]]></Verification>
+      <Group><![CDATA[Display Conditions]]></Group>
+      <Categories><![CDATA[Display Conditions]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+     
+  </EffectSettings>
+</DNNGo_PowerForms>
+
+
+

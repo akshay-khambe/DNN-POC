@@ -1,0 +1,84 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#MainLogo" aria-controls="layout" role="tab" data-toggle="tab">Main Logo</a></li>
+  <li role="presentation"><a href="#StickyLogo" aria-controls="pane" role="tab" data-toggle="tab">Sticky Header Logo</a></li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="MainLogo">
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Source:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" id="source" data-name="source" data-value="${source}">
+          <option value="">DNN Logo</option>
+          <option value="url">Custom Logo</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#source">
+      <label for="firstname" class="control-label">Logo URL:</label>
+      <div class="control-cont">
+        {{tmpl($data,options ={imgid:"url"}) '#tmpl-image'}}
+
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#source">
+      <label for="firstname" class="control-label">High-DPI (retina) Logo URL:</label>
+      <div class="control-cont">
+        {{tmpl($data,options ={imgid:"hdurl"}) '#tmpl-image'}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Max Width (px):</label>
+      <div class="control-cont">
+        <input type="number" class="dnnOptions form-control" value="${width}" placeholder="px" data-name="width">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Max Height (px):</label>
+      <div class="control-cont">
+        <input type="number" class="dnnOptions form-control" value="${height}" placeholder="px" data-name="height">
+      </div>
+    </div>
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="StickyLogo">
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Source:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" id="stysource" data-name="stysource" data-value="${stysource}">
+          <option value="main">Main Logo</option>
+          <option value="default">DNN Logo</option>
+          <option value="customurl">Custom Logo</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="(#stysource == 'customurl')">
+      <label for="firstname" class="control-label">Logo URL:</label>
+      <div class="control-cont">
+        {{tmpl($data,options ={imgid:"styurl"}) '#tmpl-image'}}
+
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="(#stysource == 'customurl')">
+      <label for="firstname" class="control-label">High-DPI (retina) Logo URL:</label>
+      <div class="control-cont">
+        {{tmpl($data,options ={imgid:"styhdurl"}) '#tmpl-image'}}
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+</div>
+
+<input type="text" class="dnnOptions form-control randomid hide" value="${id}" data-name="id">

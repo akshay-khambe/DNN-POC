@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_PowerForms>
+  <EffectSettings>
+        
+
+    <Setting>
+      <Name><![CDATA[type]]></Name>
+      <Alias><![CDATA[PopUp Type]]></Alias>
+      <DefaultValue><![CDATA[clickshow]]></DefaultValue>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[Click Display:clickshow,Default Display:defaultshow,Not Pop Up:nopopup]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+    </Setting> 
+    <Setting>
+      <Name><![CDATA[btnPosition]]></Name>
+      <Alias><![CDATA[PopUp Button Position]]></Alias>
+      <DefaultValue><![CDATA[default]]></DefaultValue>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[Default:default,Fixed Left:fixleft,Fixed Right:fixright,Hidden:hidden]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_type == 'clickshow']]></Condition>
+  </Setting> 
+    <Setting>
+      <Name><![CDATA[btnText]]></Name>
+      <Alias><![CDATA[PopUp Button Text]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[Open Form]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[(#Ctl_type == 'clickshow') && (#Ctl_btnPosition != 'hidden')]]></Condition>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+   </Setting>
+
+      <Setting>
+      <Name><![CDATA[btnClass]]></Name>
+      <Alias><![CDATA[PopUp Button Class]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[(#Ctl_type == 'clickshow') && (#Ctl_btnPosition != 'hidden')]]></Condition>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+   </Setting>
+
+    <Setting>
+      <Name><![CDATA[btnBgColor]]></Name>
+      <Alias><![CDATA[PopUp Button Background Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#007bff]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[rgba]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[(#Ctl_type == 'clickshow') && (#Ctl_btnPosition != 'hidden')]]></Condition>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+   </Setting>   
+
+    <Setting>
+      <Name><![CDATA[ExpandLink]]></Name>
+      <Alias><![CDATA[Expand Link Html]]></Alias>
+      <Width><![CDATA[100]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[<xmp><button type="button" class="popup-form-btn" data-module="[ModuleId]">Open Form</button></xmp>]]></DefaultValue>
+      <ControlType><![CDATA[Label]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[(#Ctl_type == 'clickshow') && (#Ctl_btnPosition == 'hidden')]]></Condition>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+    </Setting>
+
+
+
+     <Setting>
+      <Name><![CDATA[formdisplayday]]></Name>
+      <Alias><![CDATA[How many days show once]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[1]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[Day]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_type == 'defaultshow']]></Condition>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+    </Setting>
+
+
+
+<!-- 
+    <Setting>
+      <Name><![CDATA[formPosition]]></Name>
+      <Alias><![CDATA[PopUp Forms Position]]></Alias>
+      <DefaultValue><![CDATA[default]]></DefaultValue>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[Default:default,Right Bottom:rightbottom,Left Bottom:leftbottom]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_type == 'defaultshow']]></Condition>
+  </Setting>  -->
+
+
+     <Setting>
+      <Name><![CDATA[PopUpWidth]]></Name>
+      <Alias><![CDATA[PopUp Forms Width]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[600px]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+    </Setting>
+     <Setting>
+      <Name><![CDATA[PopUpBgColor]]></Name>
+      <Alias><![CDATA[PopUp Forms Background Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#FFFFFF]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[rgba]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[]]></Condition>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+   </Setting>   
+
+
+
+
+    <Setting>
+      <Name><![CDATA[style]]></Name>
+      <Alias><![CDATA[Forms Style]]></Alias>
+      <DefaultValue><![CDATA[form-line]]></DefaultValue>
+      <Width><![CDATA[320]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[Line:form-line|Border:form-border|Background:form-background]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+    </Setting> 
+    <Setting>
+      <Name><![CDATA[size]]></Name>
+      <Alias><![CDATA[Forms Size]]></Alias>
+      <DefaultValue><![CDATA[size-default]]></DefaultValue>
+      <Width><![CDATA[320]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[Large:size-large|Default:size-default|Small:size-small]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+    </Setting> 
+    <Setting>
+      <Name><![CDATA[color]]></Name>
+      <Alias><![CDATA[Forms Color]]></Alias>
+      <DefaultValue><![CDATA[black]]></DefaultValue>
+      <Width><![CDATA[320]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[Dark:dark|Light:light|Custom:custom]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting> 
+    
+    <Setting>
+      <Name><![CDATA[fontcolor]]></Name>
+      <Alias><![CDATA[Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#424242]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_color == 'custom']]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[titlecolor]]></Name>
+      <Alias><![CDATA[Label Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#424242]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[(#Ctl_style == 'form-background') && (#Ctl_color == 'custom')]]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+    <Setting>
+      <Name><![CDATA[bordercolor]]></Name>
+      <Alias><![CDATA[Border Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#c8c8c8]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[rgba]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_color == 'custom']]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[backgroundcolor]]></Name>
+      <Alias><![CDATA[Background Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#f5f5f5]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[rgba]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[(#Ctl_style == 'form-background') && (#Ctl_color == 'custom')]]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+
+    <Setting>
+      <Name><![CDATA[radius]]></Name>
+      <Alias><![CDATA[Forms Radius]]></Alias>
+      <DefaultValue><![CDATA[none-radius]]></DefaultValue>
+      <Width><![CDATA[320]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[None:none-radius|3px:radius-3px|6px:radius-6px|10px:radius-10px|Semi Circle:radius-semi-circle]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_style != 'form-line']]></Condition>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+
+    <Setting>
+      <Name><![CDATA[borderwidth]]></Name>
+      <Alias><![CDATA[Border Width]]></Alias>
+      <DefaultValue><![CDATA[1px]]></DefaultValue>
+      <Width><![CDATA[320]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[1px|2px|3px]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_style != 'form-line']]></Condition>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+ 
+
+     <Setting>
+      <Name><![CDATA[HorizontalSpacing]]></Name>
+      <Alias><![CDATA[Item Horizontal Spacing]]></Alias>
+      <Width><![CDATA[80]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[30]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[px]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[integer]]></Verification>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+    </Setting>
+     <Setting>
+      <Name><![CDATA[VerticalSpacing]]></Name>
+      <Alias><![CDATA[Item Vertical Spacing]]></Alias>
+      <Width><![CDATA[80]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[20]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[px]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[integer]]></Verification>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+	
+    <Setting>
+      <Name><![CDATA[promptPosition]]></Name>
+      <Alias><![CDATA[ Prompt Position]]></Alias>
+      <DefaultValue><![CDATA[ topRight ]]></DefaultValue>
+      <Width><![CDATA[120]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[topRight,topLeft,centerRight,centerLeft,bottomLeft,bottomRight]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting> 
+
+    <Setting>
+      <Name><![CDATA[Promptcolor]]></Name>
+      <Alias><![CDATA[Prompt Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#ffffff]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[rgba]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[]]></Condition>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+  </Setting>    
+     <Setting>
+      <Name><![CDATA[Promptbgcolor]]></Name>
+      <Alias><![CDATA[Prompt Background Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#ee0101]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[rgba]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[]]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>    
+       
+    <Setting>
+      <Name><![CDATA[DisplayTooltip]]></Name>
+      <Alias><![CDATA[Display Tooltip]]></Alias>
+      <Width><![CDATA[100]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[true]]></DefaultValue>
+      <ControlType><![CDATA[CheckBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+	
+	
+    <Setting>
+      <Name><![CDATA[ButtonPosition]]></Name>
+      <Alias><![CDATA[Button Position]]></Alias>
+      <DefaultValue><![CDATA[left]]></DefaultValue>
+      <Width><![CDATA[120]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[Left:left|Center:center|Right:right]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting> 
+
+    <Setting>
+      <Name><![CDATA[ButtonImage]]></Name>
+      <Alias><![CDATA[Button Type]]></Alias>
+      <DefaultValue><![CDATA[Button]]></DefaultValue>
+      <Width><![CDATA[320]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <ListContent><![CDATA[Button|Image Button]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+	  <Setting>
+		  <Name><![CDATA[ShowResetButton]]></Name>
+		  <Alias><![CDATA[Display Reset Button]]></Alias>
+		  <Width><![CDATA[100]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[false]]></DefaultValue>
+		  <ControlType><![CDATA[CheckBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[]]></Verification>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+		  <Layout><![CDATA[]]></Layout>
+	  </Setting>
+    <Setting>
+      <Name><![CDATA[SubmitButtonText]]></Name>
+      <Alias><![CDATA[Submit Button Text]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[Submit]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Button']]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+    <Setting>
+      <Name><![CDATA[SubmitButtonClass]]></Name>
+      <Alias><![CDATA[Submit Button Class]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Button']]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+    <Setting>
+      <Name><![CDATA[SubmitBgColor]]></Name>
+      <Alias><![CDATA[Submit Background Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#007bff]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[rgba]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Button']]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting> 
+       <Setting>
+      <Name><![CDATA[SubmitButtonScript]]></Name>
+      <Alias><![CDATA[Submit Button Attributes]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[3]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[]]></Group>
+      <Categories><![CDATA[]]></Categories>
+      <Layout><![CDATA[]]></Layout>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[ResetButtonText]]></Name>
+      <Alias><![CDATA[Reset Button Text]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[Reset]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Button' && #Ctl_ShowResetButton]]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[ResetButtonClass]]></Name>
+      <Alias><![CDATA[Reset Button Class]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Button' && #Ctl_ShowResetButton]]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[ResetBgColor]]></Name>
+      <Alias><![CDATA[Reset Background Color]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#6c757d]]></DefaultValue>
+      <ControlType><![CDATA[ColorPicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[rgba]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Button' && #Ctl_ShowResetButton]]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>  
+
+
+
+    <Setting>
+      <Name><![CDATA[SubmitButtonImage]]></Name>
+      <Alias><![CDATA[Submit Button Image]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[Urls]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[U,F]]></ListContent>
+      <Description><![CDATA[E.g. "http://www.dnngo.net/submit.png"]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[url]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Image Button']]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[ResetButtonImage]]></Name>
+      <Alias><![CDATA[Reset Button Image]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[Urls]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[U,F]]></ListContent>
+      <Description><![CDATA[E.g. "http://www.dnngo.net/reset.png"]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[url]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Image Button']]></Condition>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+    
+     <Setting>
+      <Name><![CDATA[buttonwidth]]></Name>
+      <Alias><![CDATA[Button Image Width]]></Alias>
+      <Width><![CDATA[80]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[78]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[px]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[integer]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Image Button']]></Condition>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[buttonheight]]></Name>
+      <Alias><![CDATA[Button Image Height]]></Alias>
+      <Width><![CDATA[80]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[32]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[px]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[integer]]></Verification>
+      <Condition><![CDATA[#Ctl_ButtonImage == 'Image Button']]></Condition>
+ 		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+   </Setting>
+
+
+ 
+
+	  <Setting>
+		  <Name><![CDATA[DisplayShadow]]></Name>
+		  <Alias><![CDATA[Display Shadow]]></Alias>
+		  <Width><![CDATA[100]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[false]]></DefaultValue>
+		  <ControlType><![CDATA[CheckBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[]]></Verification>
+		  <Group><![CDATA[Forms Style]]></Group>
+		  <Categories><![CDATA[Forms Style]]></Categories>
+		  <Layout><![CDATA[]]></Layout>
+	  </Setting>
+
+
+  
+
+       <Setting>
+           <Name><![CDATA[Title]]></Name>
+           <Alias><![CDATA[Title]]></Alias>
+           <Width><![CDATA[400]]></Width>
+           <Rows><![CDATA[1]]></Rows>
+           <DefaultValue><![CDATA[]]></DefaultValue>
+           <ControlType><![CDATA[TextBox]]></ControlType>
+           <Direction><![CDATA[Vertical]]></Direction>
+           <Group><![CDATA[Lable]]></Group>
+           <Categories><![CDATA[Lable]]></Categories>
+           <Layout><![CDATA[Left]]></Layout>
+       </Setting>
+       <Setting>
+           <Name><![CDATA[Decsription]]></Name>
+           <Alias><![CDATA[Decsription]]></Alias>
+           <Width><![CDATA[0]]></Width>
+           <Rows><![CDATA[8]]></Rows>
+           <DefaultValue><![CDATA[]]></DefaultValue>
+           <ControlType><![CDATA[TextBox]]></ControlType>
+           <Direction><![CDATA[Vertical]]></Direction>
+           <ListContent><![CDATA[]]></ListContent>
+           <Description><![CDATA[]]></Description>
+           <Required><![CDATA[False]]></Required>
+           <Verification><![CDATA[]]></Verification>
+           <Group><![CDATA[Lable]]></Group>
+           <Categories><![CDATA[Lable]]></Categories>
+           <Layout><![CDATA[Left]]></Layout>
+       </Setting>
+
+ 
+    <Setting>
+      <Name><![CDATA[SubmitOKDescription]]></Name>
+      <Alias><![CDATA[Submit Successfully Description]]></Alias>
+      <Width><![CDATA[500]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[The form is submitted successfully.]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[optional]]></Verification>
+      <Group><![CDATA[Message]]></Group>
+      <Categories><![CDATA[Message]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+ 
+
+  </EffectSettings>
+</DNNGo_PowerForms>
+
+
+

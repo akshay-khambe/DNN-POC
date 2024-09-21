@@ -1,0 +1,63 @@
+﻿@import url('https://fonts.googleapis.com/css?display=swap&family=Source+Sans+Pro:300,300i,700');
+@import url('https://fonts.googleapis.com/css?display=swap&family=Anonymous+Pro:400,400i,700');
+
+
+/**********************************
+    General
+***********************************/
+
+ 
+.d-wrapper {
+    margin: 0;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 100%; 
+    line-height: 1.8;
+    font-weight: 400;
+}
+.d-wrapper p,.d-wrapper td,.d-wrapper li,.d-wrapper label {
+    font-size: 1.14em; 
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.d-wrapper h1,.d-wrapper  h2,.d-wrapper  h3,.d-wrapper  h4,.d-wrapper  h5,.d-wrapper  .d-wrapper h6{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 4px;
+}        
+
+.d-wrapper h1{font-size: 3em;margin: 0.09em 0 0.3em;}
+.d-wrapper h2{font-size: 2.5em;margin: 0.16em 0 0.3em;}
+.d-wrapper h3{font-size: 2.1em;margin: 0.27em 0 0.3em;}
+.d-wrapper h4{font-size: 1.8em;margin: 0.41em 0 0.3em;}
+.d-wrapper h5{font-size: 1.5em;margin: 0.55em 0 0.3em;line-height: 1.5;}
+.d-wrapper h6{font-size: 1.2em;margin: 0.64em 0 0.3em;font-weight: bold;line-height: 1.7;}
+.d-wrapper p{margin:0.7em 0 1em;}
+
+.d-wrapper .display{ margin-bottom: 0.5em; }
+.d-wrapper .display h1{
+    font-size: 4em;
+    letter-spacing: 5px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 0.2em 0;
+}
+.d-wrapper .display p{
+    font-size: 1.4em;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 640px) {
+    .d-wrapper .display h1{font-size: 2.5em;}
+    .d-wrapper .display p{font-size: 1.4em;}
+    .d-wrapper h1{font-size: 2.3em;}
+    .d-wrapper h2{font-size: 2em;}
+    .d-wrapper h3{font-size: 1.7rem;}
+    .d-wrapper h4{font-size: 1.4em;}
+    .d-wrapper h5{font-size: 1.2rem;}
+    .d-wrapper h6{font-size: 1em;} 
+}

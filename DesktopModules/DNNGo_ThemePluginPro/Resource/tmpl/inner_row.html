@@ -1,0 +1,126 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#generalOptions" aria-controls="layout" role="tab" data-toggle="tab">General</a></li>
+  {{if ThemeOptions.BootstrapVersion =="v4"}}
+  <li role="presentation"><a href="#DesignOptions" aria-controls="pane" role="tab" data-toggle="tab">Background Settings</a></li>
+  {{else}}
+  <li role="presentation"><a href="#DesignOptions" aria-controls="pane" role="tab" data-toggle="tab">Design Options</a></li>
+  {{/if}}
+  <li role="presentation"><a href="#CustomCSS" aria-controls="pane" role="tab" data-toggle="tab">Custom CSS</a></li>
+  <li role="presentation"><a href="#HideElement" aria-controls="pane" role="tab" data-toggle="tab">Hide Element</a></li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="generalOptions">
+    <div class="form-group">
+      <label for="firstname" class="control-label">Layout:</label>
+      <div class="control-cont">
+        <ul class="layout-setting-list" data-value="${layout}">
+          <li data-value="12/12" title="12/12"></li>
+          <li data-value="3/12+9/12" title="3/12+9/12"></li>
+          <li data-value="4/12+8/12" title="4/12+8/12"></li>
+          <li data-value="5/12+7/12" title="5/12+7/12"></li>
+          <li data-value="6/12+6/12" title="6/12+6/12"></li>
+          <li data-value="4/12+4/12+4/12" title="4/12+4/12+4/12"></li>
+          <li data-value="9/12+3/12" title="9/12+3/12"></li>
+          <li data-value="8/12+4/12" title="8/12+4/12"></li>
+          <li data-value="7/12+5/12" title="7/12+5/12"></li>
+          <li data-value="3/12+3/12+3/12+3/12" title="3/12+3/12+3/12+3/12"></li>
+          <li data-value="3/12+6/12+3/12" title="3/12+6/12+3/12"></li>
+          <li data-value="1/5+1/5+1/5+1/5+1/5" title="1/5+1/5+1/5+1/5+1/5"></li>
+        </ul>
+        <a href="#">Custom</a>
+        <input type="text" class="dnnOptions form-control" value="${layout}" data-name="layout">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="control-label">Columns gap:</label>
+      <div class="control-cont">
+        <select name="gap" class="dnnOptions form-control" id="gap" data-name="gap" data-value="${gap}">
+          <option class="0" value="0">0px</option>
+          <option class="1" value="1">1px</option>
+          <option class="2" value="2">2px</option>
+          <option class="3" value="3">3px</option>
+          <option class="4" value="4" selected="selected">4px</option>
+          <option class="5" value="5">5px</option>
+          <option class="10" value="10">10px</option>
+          <option class="15" value="15">15px</option>
+          <option class="20" value="20">20px</option>
+          <option class="25" value="25">25px</option>
+          <option class="30" value="30">30px</option>
+          <option class="35" value="35">35px</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="control-label">Full height row:</label>
+      <div class="control-cont">
+        <input type="checkbox" class="dnnOptions" id="fullheight" data-name="fullheight" ${fullheight}>
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#fullheight">
+      <label for="firstname" class="control-label">Columns position:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" data-name="columns_placement" data-value="${columns_placement}">
+          <option value="top">Top</option>
+          <option value="middle" selected="selected">Middle</option>
+          <option value="bottom">Bottom</option>
+          <option value="stretch">Stretch</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="control-label">Equal height:</label>
+      <div class="control-cont">
+        <input type="checkbox" class="dnnOptions " data-name="equalheight" ${equalheight}>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="control-label">Content position:</label>
+      <div class="control-cont">
+        <select name="gap" class="dnnOptions form-control" data-name="content_placement" data-value="${content_placement}">
+          <option value="">Default</option>
+          <option value="top">Top</option>
+          <option value="middle">Middle</option>
+          <option value="bottom">Bottom</option>
+        </select>
+      </div>
+    </div>
+    {{if ThemeOptions.BootstrapVersion =="v4"}}
+    <div class="form-group">
+      <label for="firstname" class="control-label">Horizontal alignment:</label>
+      <div class="control-cont">
+        <select name="gap" class="dnnOptions form-control" data-name="alignment" data-value="${alignment}">
+          <option value="">Default</option>
+          <option value="justify-content-start">justify-content-start</option>
+          <option value="justify-content-center">justify-content-center</option>
+          <option value="justify-content-end">justify-content-end</option>
+          <option value="justify-content-around">justify-content-around</option>
+          <option value="justify-content-between">justify-content-between</option>
+        </select>
+      </div>
+    </div>
+    {{/if}}
+    <div class="form-group hide">
+      <label for="firstname" class="control-label">ID:</label>
+      <div class="control-cont">
+        <input type="text" class="dnnOptions form-control randomid" value="${id}" data-name="id">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="control-label">Extra class name:</label>
+      <div class="control-cont">
+        <input type="text" class="dnnOptions form-control" value="${classname}" data-name="classname">
+      </div>
+    </div>
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="DesignOptions">
+    {{tmpl($data,options ={}) '#tmpl-design-options'}}
+  </div>
+  <div role="tabpanel" class="tab-pane" id="CustomCSS">
+    {{tmpl($data,options ={}) '#tmpl-custom-css'}}
+  </div>
+  <div role="tabpanel" class="tab-pane" id="HideElement">
+      {{tmpl($data,options ={}) '#tmpl-hide-element'}}
+    </div>
+  
+</div>

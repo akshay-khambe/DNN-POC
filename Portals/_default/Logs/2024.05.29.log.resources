@@ -1,0 +1,43 @@
+2024-05-29 11:53:07.552+05:30 [NIT-LPT-R577][D:2][T:14][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): Validation of viewstate MAC failed. If this application is hosted by a Web Farm or cluster, ensure that <machineKey> configuration specifies the same validationKey and validation algorithm. AutoGenerate cannot be used in a cluster.
+
+See http://go.microsoft.com/fwlink/?LinkID=314055 for more information. ---> System.Web.UI.ViewStateException: Invalid viewstate. 
+	Client IP: 127.0.0.1
+	Port: 54545
+	Referer: http://127.0.0.1/Resources/-Blogs
+	Path: /Default.aspx
+	User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36
+	ViewState: uGLcaKZLr4d13JUZ3lfN8dO7iY6fYJF5F8S0I09purCPq8b6M5AbfShsn2jYTzhg6MJilklOX6y9CE/dSFSJQ53Ct56K7mNtP+ns1OmMm8+gOdVcpePswNNE4AVYIrLhnRzBQdgukWsdXxddh3xRufBUe/IY3EnEIYLmnpQxGxUW7H8aWoTyvmPHiKzXmpkaMrcNdCU7v1Hv5Ya5hjf+U+m9o67qtLguYMogN+kbErVBRX+NYDczGVHH8dMW04PJ05YuICg7NoIr4s1szoFO4NBT959SyN3+OJjx0L18MbCC5Y1wENF5/y48VlHJHq1V2EXDrHruMprgeov1DnpcEJbOAOR5eVKpRSdTxAic3ufAdF0dl8akK6Z5ygHasX85leX2jxxrgVHJLc3sYnNk2dLP01LC20NlfvRAs4JFAFIDgllPmh03NRUqdJKkAbXygKckRPn53OWOK+nR226GkgFr3CQzute7V0JfLeGAmFgnX6w0bu0apTe1qE7QsnwutlPEchyGActRTJjhE96OY6qnNVaSnklvXXxgAvHaIKXdGVGrMulNvBRDSCqYSTKOeQNntZBYnTxRCRb1B7S6yOF8eIrND8H+58boBKaWJtUxu3VmKinnbdNqPH+4Xb8V5BGHoTRDXsGadoGtlaIL0yHaqINMGoE7UhSUwgHrMK/ZWomHS7vL2Q/yNVWVgdoX7vJakTCNwztZstMVfwGGDmtUPRkd8GJ40edTSkD9EgXKcx5/dPz551u8f3UPDQa/DwwAfmZ2A...
+   at System.Web.UI.ViewStateException.ThrowError(Exception inner, String persistedState, String errorPageMessage, Boolean macValidationError)
+   at System.Web.UI.ObjectStateFormatter.Deserialize(String inputString, Purpose purpose)
+   at System.Web.UI.Util.DeserializeWithAssert(IStateFormatter2 formatter, String serializedState, Purpose purpose)
+   at System.Web.UI.HiddenFieldPageStatePersister.Load()
+   at System.Web.UI.Page.LoadPageStateFromPersistenceMedium()
+   at System.Web.UI.Page.LoadAllState()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+2024-05-29 11:53:07.633+05:30 [NIT-LPT-R577][D:2][T:14][ERROR] DotNetNuke.Services.Exceptions.Exceptions - ~/Default.aspx?tabid=41&error=An unexpected error has occurred&content=0
+System.Web.HttpException (0x80004005): Validation of viewstate MAC failed. If this application is hosted by a Web Farm or cluster, ensure that <machineKey> configuration specifies the same validationKey and validation algorithm. AutoGenerate cannot be used in a cluster.
+
+See http://go.microsoft.com/fwlink/?LinkID=314055 for more information. ---> System.Web.UI.ViewStateException: Invalid viewstate. 
+	Client IP: 127.0.0.1
+	Port: 54545
+	Referer: http://127.0.0.1/Resources/-Blogs
+	Path: /Default.aspx
+	User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36
+	ViewState: uGLcaKZLr4d13JUZ3lfN8dO7iY6fYJF5F8S0I09purCPq8b6M5AbfShsn2jYTzhg6MJilklOX6y9CE/dSFSJQ53Ct56K7mNtP+ns1OmMm8+gOdVcpePswNNE4AVYIrLhnRzBQdgukWsdXxddh3xRufBUe/IY3EnEIYLmnpQxGxUW7H8aWoTyvmPHiKzXmpkaMrcNdCU7v1Hv5Ya5hjf+U+m9o67qtLguYMogN+kbErVBRX+NYDczGVHH8dMW04PJ05YuICg7NoIr4s1szoFO4NBT959SyN3+OJjx0L18MbCC5Y1wENF5/y48VlHJHq1V2EXDrHruMprgeov1DnpcEJbOAOR5eVKpRSdTxAic3ufAdF0dl8akK6Z5ygHasX85leX2jxxrgVHJLc3sYnNk2dLP01LC20NlfvRAs4JFAFIDgllPmh03NRUqdJKkAbXygKckRPn53OWOK+nR226GkgFr3CQzute7V0JfLeGAmFgnX6w0bu0apTe1qE7QsnwutlPEchyGActRTJjhE96OY6qnNVaSnklvXXxgAvHaIKXdGVGrMulNvBRDSCqYSTKOeQNntZBYnTxRCRb1B7S6yOF8eIrND8H+58boBKaWJtUxu3VmKinnbdNqPH+4Xb8V5BGHoTRDXsGadoGtlaIL0yHaqINMGoE7UhSUwgHrMK/ZWomHS7vL2Q/yNVWVgdoX7vJakTCNwztZstMVfwGGDmtUPRkd8GJ40edTSkD9EgXKcx5/dPz551u8f3UPDQa/DwwAfmZ2A...
+   at System.Web.UI.ViewStateException.ThrowError(Exception inner, String persistedState, String errorPageMessage, Boolean macValidationError)
+   at System.Web.UI.ObjectStateFormatter.Deserialize(String inputString, Purpose purpose)
+   at System.Web.UI.Util.DeserializeWithAssert(IStateFormatter2 formatter, String serializedState, Purpose purpose)
+   at System.Web.UI.HiddenFieldPageStatePersister.Load()
+   at System.Web.UI.Page.LoadPageStateFromPersistenceMedium()
+   at System.Web.UI.Page.LoadAllState()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+2024-05-29 11:54:04.587+05:30 [NIT-LPT-R577][D:2][T:14][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Net.WebException: The remote name could not be resolved: 'dnnplatform.io'
+   at System.Net.HttpWebRequest.GetResponse()
+   at Dnn.PersonaBar.UI.Services.ServerSummaryController.GetJsonObject[T](String url)
+   at Dnn.PersonaBar.UI.Services.ServerSummaryController.RetrieveUpdateUrl(CacheItemArgs args)
+2024-05-29 11:58:53.442+05:30 [NIT-LPT-R577][D:2][T:37][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Exception: Track/Pingback Verification Request To '/blog-niche/' Failed ---> System.Net.WebException: The remote server returned an error: (403) Forbidden.
+   at System.Net.HttpWebRequest.GetResponse()
+   at DotNetNuke.Modules.Blog.Common.WebPage.GetWebResponse()
+   at DotNetNuke.Modules.Blog.Common.WebPage.GetFileAsString()
+   --- End of inner exception stack trace ---

@@ -1,0 +1,73 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Create Table **/
+
+ 
+/** DNNGo_ThemePluginPro_History  **/
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_History]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+BEGIN
+		CREATE TABLE {databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_History](
+			[ID] [int] IDENTITY(1,1) NOT NULL,
+			[Hash] [nvarchar](50) NOT NULL,
+			[Content] [ntext] NULL,
+			[Version] [int] NOT NULL,
+			[ModuleId] [int] NOT NULL,
+			[PortalId] [int] NOT NULL,
+			[Status] [tinyint] NOT NULL,
+			[CreateUser] [int] NOT NULL,
+			[CreateTime] [datetime] NOT NULL,
+		 CONSTRAINT [PK_{objectQualifier}DNNGo_ThemePluginPro_History] PRIMARY KEY CLUSTERED 
+		(
+			[ID] ASC
+		)
+			WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
+		)
+	  
+END
+GO
+
+
+
+
+/** DNNGo_ThemePluginPro_Section  **/
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_Section]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+BEGIN
+		CREATE TABLE {databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_Section](
+			[ID] [int] IDENTITY(1,1) NOT NULL,
+			[Hash] [nvarchar](50) NOT NULL,
+			[Title] [nvarchar](200) NOT NULL,
+			[Content] [ntext] NULL,
+			[Image] [ntext] NULL,
+			[Version] [int] NOT NULL,
+			[ModuleId] [int] NOT NULL,
+			[PortalId] [int] NOT NULL,
+			[Status] [tinyint] NOT NULL,
+			[CreateUser] [int] NOT NULL,
+			[CreateTime] [datetime] NOT NULL,
+		 CONSTRAINT [PK_{objectQualifier}DNNGo_ThemePluginPro_Section] PRIMARY KEY CLUSTERED 
+		(
+			[ID] ASC
+		)
+			WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
+		)
+	  
+END
+GO
+
+  
+ 
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/
+
+
+

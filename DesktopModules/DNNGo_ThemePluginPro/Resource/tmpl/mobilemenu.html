@@ -1,0 +1,151 @@
+<div class="form-group hide">
+  <label for="firstname" class="control-label">ID:</label>
+  <div class="control-cont">
+    <input type="text" class="dnnOptions form-control randomid" value="${id}" data-name="id">
+  </div>
+</div>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#Typography" aria-controls="pane" role="tab" data-toggle="tab">Typography</a></li>
+  {{if ThemeOptions.BootstrapVersion =="v4"}}
+  <li role="presentation"><a href="#DesignOptions" aria-controls="pane" role="tab" data-toggle="tab">Background Settings</a></li>
+  {{else}}
+  <li role="presentation"><a href="#DesignOptions" aria-controls="pane" role="tab" data-toggle="tab">Design Options</a></li>
+  {{/if}}
+</ul>
+<div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane active" id="Typography">
+    <div class="form-typography-list">
+      <div class="form-group">
+        <label class="control-label">Main Menu Typography:</label> 
+        {{tmpl($data,options ={before:"lv1"}) '#tmpl-typography'}}
+      </div>
+    </div>
+    <div class="form-typography-list">
+      <div class="form-group">
+        <label class="control-label">Sub Menu Typography:</label> 
+        {{tmpl($data,options ={}) '#tmpl-typography'}}
+      </div>
+    </div> 
+    <div class="form-typography-list">
+      <div class="form-group">
+        <label class="control-label">Menu Title Typography:</label> 
+        {{tmpl($data,options ={before:"ti"}) '#tmpl-typography'}}
+      </div>
+    </div>
+
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Line Color:</label>
+      <div class="colorpicker-group">
+        <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="linecolor" value="${linecolor}">
+        <i style="background-color:${linecolor}"></i>
+      </div>
+    </div>
+
+    {{if ThemeOptions.BootstrapVersion !="v4"}}
+
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Accent Color:</label>
+      <select class="form-control" id="acolorcustom">
+        <option value="">Theme Options</option>
+        <option value="custom" {{if accentcolor }} selected="selected" {{/if}}>Custom</option>
+      </select>
+      <div class="colorpicker-group conditional" data-condition="#acolorcustom == 'custom'">
+        <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="accentcolor" value="${accentcolor}">
+        <i style="background-color:${accentcolor}"></i>
+      </div>
+    </div>
+
+    <div class="form-group colorpicker-box">
+        <label for="firstname" class="control-label">Navbar Title:</label>
+        <div class="control-cont">
+            <input type="text" class="dnnOptions form-control" data-name="navbartitle" value="${navbartitle}">
+        </div>
+      </div>
+  
+      {{/if}}
+
+  </div>
+
+  <div role="tabpanel" class="tab-pane " id="DesignOptions">
+     
+    {{if ThemeOptions.BootstrapVersion =="v4"}}
+
+
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Level 1 Menu Background Color:</label>
+      <select class="form-control" id="colorselect1">
+        <option value="">Theme Options</option>
+        <option value="custom" {{if lv1 }} selected="selected" {{/if}}>Custom</option>
+      </select>
+      <div class="colorpicker-group conditional" data-condition="#colorselect1 == 'custom'">
+        <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="lv1" value="${lv1}">
+        <i style="background-color:${lv1}"></i>
+      </div>
+    </div>
+    
+
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Level 2 Menu Background Color:</label>
+      <select class="form-control" id="colorselect2">
+        <option value="">Theme Options</option>
+        <option value="custom" {{if lv2 }} selected="selected" {{/if}}>Custom</option>
+      </select>
+      <div class="colorpicker-group conditional" data-condition="#colorselect2 == 'custom'">
+        <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="lv2" value="${lv2}">
+        <i style="background-color:${lv2}"></i>
+      </div>
+    </div>
+    
+
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Level 3 Menu Background Color:</label>
+      <select class="form-control" id="colorselect3">
+        <option value="">Theme Options</option>
+        <option value="custom" {{if lv3 }} selected="selected" {{/if}}>Custom</option>
+      </select>
+      <div class="colorpicker-group conditional" data-condition="#colorselect3 == 'custom'">
+        <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="lv3" value="${lv3}">
+        <i style="background-color:${lv3}"></i>
+      </div>
+    </div>
+    
+
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Level 4 Menu Background Color:</label>
+      <select class="form-control" id="colorselect4">
+        <option value="">Theme Options</option>
+        <option value="custom" {{if lv4 }} selected="selected" {{/if}}>Custom</option>
+      </select>
+      <div class="colorpicker-group conditional" data-condition="#colorselect4 == 'custom'">
+        <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="lv4" value="${lv4}">
+        <i style="background-color:${lv4}"></i>
+      </div>
+    </div>
+    
+
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Current Color:</label>
+      <div class="colorpicker-group">
+        <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="currentcolor" value="${currentcolor}" data-default="#f8f363"><i style="background-color:${currentcolor}"></i>
+      </div>
+    </div>
+    
+                    
+
+    {{else}}
+
+  <div class="background-group">
+   <div class="form-group">
+      <label class="control-label">Background:</label>
+      {{tmpl($data,options ={before:""}) '#tmpl-background'}}
+  </div>
+  </div>
+    {{/if}}
+
+ 
+</div>
+
+
+</div>

@@ -1,0 +1,99 @@
+﻿
+
+
+<div class="$ThemeName ${ThemeName}_${ModuleID}" >
+        <div class="printlogo" style="display:none">
+                <img src="${xf.ViewLinkUrl(${xf.ViewResultSetting("printlogo","")})}" style="max-width:300px;" alt="print logo">
+        </div>
+    <div class="result_form">
+            #if(${xf.ViewResultSetting("resultitle","Email Sent Successfully.")}!="")
+			<${xf.ViewResultSetting("Titlelabel","h3")} style="color:${xf.ViewResultSetting("Titlecolor","#333333")}">${xf.ViewResultSetting("resultitle","Email Sent Successfully.")}</${xf.ViewResultSetting("Titlelabel","h1")}>
+		#end
+
+		#if(${xf.ViewResultSetting("resultcontent","Thank you, your message has been submitted to us.")}!="")
+			<div class="form_row" style="color:${xf.ViewResultSetting("contentcolor","#666666")}">${xf.ViewResultSetting("resultcontent","Thank you, your message has been submitted to us.")}</div>
+		#end
+		
+		
+		<div class="form_submit">
+			#if(${xf.ViewResultSetting("ReturnButtonclass","")}!="")
+                ${xf.ViewReturnButton(${xf.ViewResultSetting("ReturnButtonclass","")})}
+			#else
+                ${xf.ViewReturnButton("return-btn")}
+            #end
+            
+            #if(${xf.ViewResultSetting("print",false)})
+                #if(${xf.ViewResultSetting("ReturnButtonclass","")}!="")
+                <a title="Print" id="Print${ModuleID}" href="#" #if(${xf.ViewResultSetting("ButtonImage","Button")}=="Button") class="${xf.ViewResultSetting("printButtonclass","")}">${xf.ViewResultSetting("printButtonText","Print")}#else ><img src=" ${xf.ViewLinkUrl(${xf.ViewResultSetting("printButtonImage","")})}" style="width:${xf.ViewResultSetting("printbuttonwidth","78")}px; height:${xf.ViewResultSetting("printbuttonheight","32")}px;">#end</a>
+                #else
+                <a title="Print" id="Print${ModuleID}" href="#" #if(${xf.ViewResultSetting("ButtonImage","Button")}=="Button")class="return-btn">${xf.ViewResultSetting("printButtonText","Print")}#else ><img src=" ${xf.ViewLinkUrl(${xf.ViewResultSetting("printButtonImage","")})}" style="width:${xf.ViewResultSetting("printbuttonwidth","78")}px; height:${xf.ViewResultSetting("printbuttonheight","32")}px;">#end</a>
+                #end
+
+               
+               
+
+
+            #end
+
+		</div>
+        <div class="form_result">
+            <table class="table table-bordered table-striped" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+                <tbody>
+                    <tr>
+                        <th scope="col" style="width:80px;">Name</th>
+    
+                        <th scope="col">Content</th>
+                    </tr>
+                     #if($ContentList.Count > 0)
+                          #foreach($ContentItem in $ContentList)
+                            #if($velocityCount%2 == 0)
+                                <tr class="td_row">
+                                    <td>$ContentItem.FieldAlias</td>  
+                                    <td>${xf.ViewContentValue($ContentItem)}</td>
+                                </tr>
+                            #else
+                                <tr class="alternating_row">
+                                    <td>$ContentItem.FieldAlias</td>
+                                    <td>${xf.ViewContentValue($ContentItem)}</td>
+                                </tr>
+
+                            #end
+
+                          #end
+                     #end
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+ 
+
+
+<script> 
+	jQuery(document).ready(function() {
+		jQuery('html,body').stop().animate({scrollTop: jQuery(".${ThemeName}_${ModuleID}").offset().top - 100}, 10);
+
+        jQuery("#Print${ModuleID}").on("click",function(e){
+            e.preventDefault();
+            jQuery(".${ThemeName}_${ModuleID} .form_submit").hide();
+            jQuery(".${ThemeName}_${ModuleID} .printlogo").show();
+            jQuery(".${ThemeName}_${ModuleID}").printArea();
+            jQuery(".${ThemeName}_${ModuleID} .form_submit").show();
+            jQuery(".${ThemeName}_${ModuleID} .printlogo").hide();
+        })
+
+	})
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

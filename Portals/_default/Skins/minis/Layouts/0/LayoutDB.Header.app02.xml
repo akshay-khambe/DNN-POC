@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlDB DBName="LayoutDB.Header.app02" DBVersion="1">
+  <LayoutDB>
+    <PrimaryGuid>bdca2daa809b45a198863a93fd2f948a</PrimaryGuid>
+    <Name>app02</Name>
+    <Alias>app02</Alias>
+    <Description></Description>
+    <CSSData> 
+	/*popup menu*/
+	.popup-menu-wrap .menu-icon{
+		width: 100px;
+		height: 70px;
+		position: relative;
+		cursor: pointer; 
+		color: #fff;
+		margin-bottom: -7px;
+		-webkit-transition:all 300ms ease-in-out;
+		transition: all 300ms ease-in-out;
+	}
+	.popup-menu-wrap .menu-icon.active{
+		margin-bottom: -10px;
+	}
+	.popup-menu-wrap .menu-icon .l_1,
+	.popup-menu-wrap .menu-icon .l_2,
+	.popup-menu-wrap .menu-icon .l_3{
+		width: 22px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -14px;
+		border-bottom: 2px solid currentColor;
+		-webkit-transition:all 300ms ease-in-out;
+		transition: all 300ms ease-in-out;
+	}
+	.popup-menu-wrap .menu-icon:hover .l_1,
+	.popup-menu-wrap .menu-icon:hover .l_2,
+	.popup-menu-wrap .menu-icon:hover .l_3{
+		width: 28px;
+	}
+	.popup-menu-wrap .menu-icon .l_1{
+		margin-left: auto;
+		margin-right: -14px;
+		left:auto;
+		right:50%;
+		margin-top: -5px;
+	}
+	.popup-menu-wrap .menu-icon .l_2{
+		margin-top: -14px;
+	}
+	.popup-menu-wrap .menu-icon .l_3{
+		margin-top: 4px;
+	}
+	.popup-menu-wrap .menu-icon.active .l_1{
+		width: 0;
+		margin-right: 0;
+	}
+	.popup-menu-wrap .menu-icon.active .l_2{
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		margin-top: -5px;
+		width: 28px;
+	}
+	.popup-menu-wrap .menu-icon.active .l_3{
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		margin-top: -5px;
+		width: 28px;
+	}
+	
+	.popup-menu-wrap .menu-icon::after{
+		content: "";
+		position: absolute;
+		background: var(--accent-color2);
+		top: -200px;
+		left: -200px;
+		right: -15px;
+		bottom: -15px;
+		border-radius: 10%;
+		-webkit-transform: rotate(-10deg);
+		transform: rotate(-10deg);
+		z-index: 10;
+		transform-origin: 191px 262px;
+		-webkit-transition: all 500ms ease-in-out;
+		transition: all 500ms ease-in-out;
+		pointer-events: none;
+	}
+		
+	.floating-active .popup-menu-wrap .menu-icon::after{
+		bottom: 6px;
+		-webkit-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+	.popup-menu-wrap .menu-icon.active::after {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		transform-origin: 200px 200px;
+		right: -100vw;
+		bottom: -100vh;
+	}
+	.popup-menu-wrap .menu-icon::before{
+		content: "";
+		z-index: 20;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.popup-menu-wrap .menu-icon i{
+		z-index: 11;
+	}
+
+	.popup-menu-left-width{
+		width:200px!important;
+	}
+	@media (min-width:1660px) {
+		.popup-menu-left-width{
+			width: calc((100vw - 1410px)/2)!important;
+		}
+	}
+
+
+
+	
+			#popup-menu-wrap41931 .menu-icon::after{
+				background-color:var(--accent-color2);
+			}
+
+			#popup-menu-wrap41931 .menu-icon.active::after{
+				background-color:var(--accent-color2);
+			}
+
+			#popup-menu41931 .gomenu &gt; ul ul ul{
+				background-color:var(--accent-color2);
+			}
+
+			#popup-menu41931 .gomenu &gt; ul a:hover,
+			#popup-menu41931 .gomenu &gt; ul a.active,
+			#popup-menu41931 .gomenu &gt; ul li.current  &gt; a,
+			#popup-menu41931 .gomenu &gt; ul li:hover &gt; a, 
+			#popup-menu41931 .gomenu &gt; ul li:hover &gt; a:link{
+				color:var(--accent-color);
+			}
+			
+	#search-popup-box337483 a.search:hover,
+	#search-popup-box337483 .popup-close:hover{
+		color:var(--accent-color);
+	}
+	#logo47227 img{max-height:40px!important;}#mobilemenu98903 .mobileclose,
+		#mobilemenu98903 .gomenu &gt; ul &gt; li &gt; a &gt; span,
+		#mobilemenu98903 .gomenu li .arrows{color:#272727;font-size:20px;font-weight:600;}#mobilemenu98903 .sub-menu&gt; li &gt; a &gt; span{color:#272727;font-size:20px;font-weight:600;}#mobilemenu98903 .sub-menu li ul li a{color:#484848;font-size:18px;font-weight:600;}#mobilemenu98903 .sub-menu li ul li li a{color:#787878;font-size:16px;font-weight:600;}#mobilemenu98903 .sub-menu li ul li li li a{color:#787878;font-size:16px;font-weight:600;}
+				#mobilemenu98903 .sub-menu .arrows{
+					background-color:  var(--accent-color);
+				}
+				#mobilemenu98903 .menutitle,
+				#mobilemenu98903 .sub-menu li ul .arrows,
+				#mobilemenu98903 a:hover span,
+				#mobilemenu98903 .current &gt; a &gt; span,
+				#mobilemenu98903 .arrows.active + a span,
+				#mobilemenu98903 .subcurrent &gt; a &gt; span{
+					color:  var(--accent-color)!important;
+				}
+				#headerrow-996254{background-color:rgba(255,255,255,0);}#headerrow-996254 .dngTextBox,
+		#headerrow-996254 .header-content-wrap &gt;*:not(.nav-bar),
+		#headerrow-996254 .Normal,
+		#headerrow-996254 .Normal &gt; a,
+		#headerrow-996254 .Normal &gt; a:link,
+		#headerrow-996254 .Normal &gt; a:active,
+		#headerrow-996254 .Normal &gt; a:visited,
+		#headerrow-996254 .dngTextBox a,
+		#headerrow-996254 .dngTextBox a:link,
+		#headerrow-996254 .dngTextBox a:active,
+		#headerrow-996254 .dngTextBox a:visited{color:#ffffff;}#headerrow-996254,#headerrow-996254 .header-center,#headerrow-996254 .header-center .logo{height:100px}#headerrow-996254 .header-center .logo{line-height:100px!important}#headerrow-996254 &gt; .container,#megamenuWidthBox {width: auto!important;}#megamenuWidthBox{margin:0 30px;}
+			#headerrow-996254 .area-left{
+				padding-right:0px;
+			}
+			#headerrow-996254 .area-center{
+				padding-left:0px;
+				padding-right:0px;
+			}
+			#headerrow-996254 .area-right{
+				padding-left:0px;
+			}
+			#headerrow-996254 .area-left .header-content-wrap &gt; div{
+				margin-right:0px;
+			}
+			#headerrow-996254 .area-center .header-content-wrap &gt; div,
+			#headerrow-996254 .area-right .header-content-wrap &gt; div{
+				margin-left:0px;
+			}
+		
+			 .floating-active #headerrow-996254:after{
+			   content:"";
+			   position:absolute;
+			   top: 0;
+			   left: -20px;
+			   bottom: 0;
+			   right: 0;
+			   z-index: -1;
+			   pointer-events:none; 
+			   -webkit-box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			   box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			 }
+			 .floating-active #headerrow-996254{background-color:#ffffff!important;
+}#headerrow-996254 .Normal &gt; a:hover,
+			#headerrow-996254 .dngTextBox a:hover,
+			#headerrow-996254 .hover-accent:hover,
+			#headerrow-996254 .Login a:hover,
+			#headerrow-996254 .Login a.active{
+				color:var(--accent-color)
+			}
+			#headerrow-996254 .Login .userProfile .userMessages,
+			#headerrow-996254 .Login .userProperties ul.userMenu a span{
+				background-color:var(--accent-color)
+			}
+				.floating-nav.floating-active #headerrow-996254 .header-container-box,
+				.floating-nav.floating-active #headerrow-996254 .header-bg-box,
+				.floating-nav.floating-active #headerrow-996254 {
+					height:70px;
+				}
+				.floating-nav.floating-active #headerrow-996254 .logo{
+					height:70px;
+					line-height:70px!important;
+				}
+			#mobileheader-820367{background-color:#ffffff;}
+			#mobileheader-820367,#mobileheader-820367 .header-area{height:66px}
+			#mobileheader-820367 .dng-mobilemenu.mobile_menu.mm-menu{
+				top:66px
+			}
+			#mobileheader-820367 .header-area .logo img{max-height:58px}
+			#mobileheader-820367 .dngTextBox,
+		#mobileheader-820367 .header-content-wrap &gt;*:not(.nav-bar),
+		#mobileheader-820367 .Normal,
+		#mobileheader-820367 .Normal &gt; a,
+		#mobileheader-820367 .Normal &gt; a:link,
+		#mobileheader-820367 .Normal &gt; a:active,
+		#mobileheader-820367 .Normal &gt; a:visited,
+		#mobileheader-820367 .dngTextBox a,
+		#mobileheader-820367 .dngTextBox a:link,
+		#mobileheader-820367 .dngTextBox a:active,
+		#mobileheader-820367 .dngTextBox a:visited{color:#272727;}#mobileheader-820367 .header-content-wrap .Normal &gt; a:hover,
+				#mobileheader-820367 .header-content-wrap .dngTextBox a:hover,
+				#mobileheader-820367 .Normal &gt; a:hover,
+				#mobileheader-820367 .dngTextBox a:hover,
+				#mobileheader-820367 .hover-accent:hover,
+				#mobileheader-820367 .search-popup-box .icon.active,
+				#mobileheader-820367 .search-popup-box:hover .icon,
+				#mobileheader-820367 .mobile-menu-icon:hover .fa-bars:before,
+				#mobileheader-820367 .search-popup-box .submit:hover,
+				#mobileheader-820367 .search-popup-box .popup-close:hover,
+				#mobileheader-820367 .shop-cart-list .shop-list .remove:hover,
+				#mobileheader-820367 .shop-cart-list .shop-list .price-info span,
+				#mobileheader-820367 .shop-cart-list .shop-list .number-box .number-up:hover,
+				#mobileheader-820367 .mobile-header .shop-cart-list .shop-list .number-box .number-down:hover,
+				#mobileheader-820367 .search-popup-box .icon:hover{
+					color:var(--accent-color);
+				}</CSSData>
+    <HTMLData>&lt;div class="header-replace header-position"&gt;&lt;header class="header_bg header-wrap header-default floating-nav floating-nav-sticky"&gt;&lt;div id="megamenuWidthBox" class="container"&gt;&lt;/div&gt;  &lt;div class="header-center-bg floating-dark-color header-bg-box" data-height="70"  id="headerrow-996254"&gt;&lt;div class="container"&gt;&lt;div class="header-center header-container-box"&gt; &lt;div class="header-area area-left header-horizontal  popup-menu-left-width header-horizontal"   id="column-778751"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="popup-menu-wrap position-relative" id="popup-menu-wrap41931"&gt;
+	&lt;div class="menu-icon"&gt;&lt;i class="l_1"&gt;&lt;/i&gt;&lt;i class="l_2"&gt;&lt;/i&gt;&lt;i class="l_3"&gt;&lt;/i&gt;&lt;/div&gt;
+	&lt;div class="popup-menu" id="popup-menu41931"&gt;
+		&lt;div class="popup-menu-main"&gt;
+			&lt;div class="popup-menu-header"&gt;
+			&lt;div class="row align-items-center"&gt;
+					&lt;div class="col-auto"&gt;
+						&lt;div class="logo"&gt;&lt;dnn:LOGO runat="server" id="dnnLOGO41931" BorderWidth="0" /&gt;&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class="col text-right"&gt;
+					 &lt;span class="size-18"&gt;Contact: +1 845-359-0545&lt;/span&gt;
+&lt;a href="#" title="LEARN MORE" class="button-13 ml-30 color-white"&gt;FREE TRIAL &lt;i class="sico lnr-arrow-right mr-0 ml-10"&gt;&lt;svg&gt;&lt;use xlink:href="#lnr-arrow-right"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/i&gt;&lt;/a&gt;
+	&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="container popup-menu-container"&gt;
+				&lt;div class="row align-items-center"&gt;
+					&lt;div class="col-sm-8"&gt;
+						&lt;dnn:LEFTGOMENU runat="server" id="dnnGOMENU41931" Effect="HTML" /&gt;
+					&lt;/div&gt;
+					&lt;div class="col-sm-4"&gt;&lt;img src="/Portals/_default/ContentBuilder/minis-page/app02/app02-header-img.png" alt="" style="margin: 0 0 -73px -83px;"&gt;
+&lt;h3 class="color-accent"&gt;Have any issue?&lt;/h3&gt;
+&lt;p class="mb-45"&gt;Don't worry, we are always here for you.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Phone:&lt;/b&gt; (+86)12345678091&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Email:&lt;/b&gt; creative.design@gmail.com&lt;/p&gt;
+
+&lt;p class="mb-45"&gt;&lt;b&gt;Address:&lt;/b&gt; Yanta W Rd, Yanta District, Xian Shi, Shaanxi, China&lt;/p&gt;
+
+&lt;h6&gt;Work Time&lt;/h6&gt;
+&lt;p&gt;Monday-Friday: 8:00am-5:30pm&lt;/p&gt;
+
+&lt;p&gt;Saturday: 10:00am-2:00pm&lt;/p&gt;&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="pagetitle"&gt;
+				&lt;%= IIf(String.IsNullOrEmpty( PortalSettings.ActiveTab.Title), PortalSettings.ActiveTab.TabName, PortalSettings.ActiveTab.Title)%&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+	&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/popup-menu/popup-menu.css" PathNameAlias="SkinPath" Priority="321" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+	&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/popup-menu/popup-menu.js" ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="9" HtmlAttributesAsString="async:'async'"   /&gt;	
+
+	&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-center header-vertical text-left header-vertical text-left"   id="column-267462"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="logo" id="logo503464"&gt;&lt;dnn:LOGO runat="server" id="dnnLOGO503464" cssClass="header-logo floating-header-logo" BorderWidth="0" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-right header-horizontal  pr-lg-30 header-horizontal"   id="column-254407"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="dngTextBox"&gt;&lt;span class="size-18"&gt;Contact: +1 845-359-0545&lt;/span&gt;
+&lt;a href="#" title="LEARN MORE" class="button-13 ml-30 color-white"&gt;FREE TRIAL &lt;i class="sico lnr-arrow-right mr-0 ml-10"&gt;&lt;svg&gt;&lt;use xlink:href="#lnr-arrow-right"&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;  &lt;/header&gt;&lt;/div&gt;&lt;div class="mobile-header-replace"&gt;&lt;header class="mobile-header floating-nav"&gt; &lt;div class="header-mobile-bg mobile-header-shadow" id="mobileheader-820367"&gt;&lt;div class="header-mobile"&gt; &lt;div class="header-area area-left header-horizontal text-left header-horizontal text-left"   id="column-155780"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="search-popup-box" id="search-popup-box337483" placeholder="Enter any key words to search"&gt;&lt;div class="icon hover-accent"&gt;&lt;span class="magnifier"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-reveal color-dark "&gt;&lt;/div&gt;&lt;div class="popup-content color-dark bg-accent"&gt;&lt;div class="popup-close hover-accent"&gt;&lt;span class="icon-cross"&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-center"&gt;&lt;dnn:SEARCH runat="server" id="dnnSEARCH337483" CssClass="search"  ShowSite="False" ShowWeb="False"  submit=" " /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+		&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/search-popup/search-popup.css" PathNameAlias="SkinPath" Priority="318" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+		&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/search-popup/search-popup.js"  ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="9" HtmlAttributesAsString="async:'async'"   /&gt;	
+		&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-center header-horizontal  header-horizontal"   id="column-582314"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="logo" id="logo47227"&gt;&lt;dnn:LOGO runat="server" id="dnnLOGO47227" cssClass="header-logo floating-header-logo" BorderWidth="0" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-right header-horizontal text-right header-horizontal text-right"   id="column-787817"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="mobile-menu-icon"&gt;&lt;span class="dg-menu-anime"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;
+	&lt;div class="mobilemenu-main" id="mobilemenu98903" data-title="Menu"&gt;&lt;span class="mobileclose"&gt;&lt;/span&gt;
+	&lt;div class="m-menu"&gt;
+	&lt;dnn:LEFTGOMENU runat="server" id="MOBILEMENU98903" Effect="HTML"/&gt; 
+	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/mobilemenu/mobilemenu.css" PathNameAlias="SkinPath" Priority="317" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+	&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/mobilemenu/mobilemenu.js" ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="17" HtmlAttributesAsString="async:'async'"   /&gt;	
+	&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt; &lt;/header&gt;&lt;/div&gt;</HTMLData>
+    <LabelData>[header sticky='checked' stickytype='sticky' position='floating' id='707070' ] [headerrow layout='boxed' name='Header Top' areaname='header-top' space='8' space2='25' line='off' bottomline='off' height='42' bgcolor='#f4f4f4' color='#424242' bgposition='center center' id='262051' ] [headercolumn col='4' name='Left' areaname='area-left' id='780306' ] [/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='168160' ] [/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' id='688940' ] [/headercolumn] [/headerrow] [headerrow layout='wide' active='active' name='Header Middle' areaname='header-center' height='100' space='0' space2='0' line='off' bottomline='off' bgcolor='rgba(255,255,255,0)' hidesticky='checked' styheight='70' styshadow='checked' color='#ffffff' stybgcolor='#ffffff' modulepath='/DesktopModules/DNNGo_ThemePluginPro/' stycolor='dark' id='996254' ] [headercolumn col='4' name='Left' areaname='area-left' dir='horizontal' id='778751' classname='popup-menu-left-width' ] [popupmenu id='41931' content2='PHNwYW4gY2xhc3M9InNpemUtMTgiPkNvbnRhY3Q6ICsxIDg0NS0zNTktMDU0NTwvc3Bhbj4KPGEgaHJlZj0iIyIgdGl0bGU9IkxFQVJOIE1PUkUiIGNsYXNzPSJidXR0b24tMTMgbWwtMzAgY29sb3Itd2hpdGUiPkZSRUUgVFJJQUzCoDxpIGNsYXNzPSJzaWNvIGxuci1hcnJvdy1yaWdodCBtci0wIG1sLTEwIj48c3ZnPjx1c2UgeGxpbms6aHJlZj0iI2xuci1hcnJvdy1yaWdodCI+PC91c2U+PC9zdmc+PC9pPjwvYT4K' content='PGltZyBzcmM9Ii9Qb3J0YWxzL19kZWZhdWx0L0NvbnRlbnRCdWlsZGVyL21pbmlzLXBhZ2UvYXBwMDIvYXBwMDItaGVhZGVyLWltZy5wbmciIGFsdD0iIiBzdHlsZT0ibWFyZ2luOiAwIDAgLTczcHggLTgzcHg7Ij4KPGgzIGNsYXNzPSJjb2xvci1hY2NlbnQiPkhhdmUgYW55IGlzc3VlPzwvaDM+CjxwIGNsYXNzPSJtYi00NSI+RG9uJ3Qgd29ycnksIHdlIGFyZSBhbHdheXMgaGVyZSBmb3IgeW91LjwvcD4KCjxwPjxiPlBob25lOjwvYj4gKCs4NikxMjM0NTY3ODA5MTwvcD4KCjxwPjxiPkVtYWlsOjwvYj4gY3JlYXRpdmUuZGVzaWduQGdtYWlsLmNvbTwvcD4KCjxwIGNsYXNzPSJtYi00NSI+PGI+QWRkcmVzczo8L2I+IFlhbnRhIFcgUmQsIFlhbnRhIERpc3RyaWN0LCBYaWFuIFNoaSwgU2hhYW54aSwgQ2hpbmE8L3A+Cgo8aDY+V29yayBUaW1lPC9oNj4KPHA+TW9uZGF5LUZyaWRheTogODowMGFtLTU6MzBwbTwvcD4KCjxwPlNhdHVyZGF5OiAxMDowMGFtLTI6MDBwbTwvcD4=' /][/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' dir='vertical' align='left' id='267462' ] [logo stysource='main' id='503464' /][/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' dir='horizontal' id='254407' classname='pr-lg-30' ] [textarea content='PHNwYW4gY2xhc3M9InNpemUtMTgiPkNvbnRhY3Q6ICsxIDg0NS0zNTktMDU0NTwvc3Bhbj4KPGEgaHJlZj0iIyIgdGl0bGU9IkxFQVJOIE1PUkUiIGNsYXNzPSJidXR0b24tMTMgbWwtMzAgY29sb3Itd2hpdGUiPkZSRUUgVFJJQUzCoDxpIGNsYXNzPSJzaWNvIGxuci1hcnJvdy1yaWdodCBtci0wIG1sLTEwIj48c3ZnPjx1c2UgeGxpbms6aHJlZj0iI2xuci1hcnJvdy1yaWdodCI+PC91c2U+PC9zdmc+PC9pPjwvYT4K' id='802569' /][/headercolumn] [/headerrow] [headerrow layout='boxed' name='Header Bottom' areaname='header-bottom' space='8' space2='15' line='off' bottomline='off' height='42' bgcolor='#f4f4f4' color='#424242' id='644528' ] [headercolumn col='4' name='Left' areaname='area-left' id='790551' ] [/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='725734' ] [/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' id='560676' ] [/headercolumn] [/headerrow] [/header][mobileheader sticky='checked' id='186481' ] [mobileheaderrow layout='4+4+4' active='active' name='Mobile Header' areaname='header-mobile' line='off' bottomline='off' bgcolor='#ffffff' shadow='checked' color='#272727' hidesticky='checked' stybgcolor='#7a2727' height='66' id='820367' ] [headercolumn col='4' name='Left' areaname='area-left' dir='horizontal' align='left' id='155780' ] [search style='popup' placeholder='Enter any key words to search' color='dark' id='337483' /][/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' dir='horizontal' id='582314' ] [logo stysource='main' height='40' id='47227' /][/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' dir='horizontal' align='right' id='787817' ] [mobilemenu color='#ffffff' fontsize='18px' bgcolor='#2c5cda' lv1color='#272727' lv1fontsize='20px' ticolor='#ffffff' tifontsize='18px' linecolor='rgba(255,255,255,0.2)' navbartitle='Menu' tiweight='600' lv1weight='600' accentcolor='#ffffff' weight='400' current='#901dd6' currentcolor='#f8f363' lv2color='#272727' lv2weight='600' lv2fontsize='20px' lv3color='#484848' lv3weight='600' lv3fontsize='18px' lv4color='#787878' lv4weight='600' lv4fontsize='16px' lv5color='#787878' lv5weight='600' lv5fontsize='16px' id='98903' /][/headercolumn] [/mobileheaderrow] [/mobileheader]</LabelData>
+    <Type>Header</Type>
+    <Version>02.03.00</Version>
+    <ImageUrl>resource/thumbnails/header/app02.jpg</ImageUrl>
+    <Groups>custom</Groups>
+    <Sort>19</Sort>
+    <CreateTime>2024-05-22T18:37:18</CreateTime>
+    <UpdateTime>2024-05-22T18:37:18</UpdateTime>
+    <Enable>True</Enable>
+  </LayoutDB>
+</XmlDB>

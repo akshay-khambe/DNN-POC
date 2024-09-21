@@ -1,0 +1,51 @@
+<div class="$ThemeName external-forms validationEngineContainer" id="form_ext_${ModuleID}" data-action="${xf.GoExternalFormUrl()}">
+    #if($FieldList.Count > 0)
+    <ul class="form_list dg-form-content">
+        #foreach($FieldItem in $FieldList)
+        <li style="width:${xf.ViewItemSetting($FieldItem,"Itemwidth","100")}%">
+            <div class="form-control-wrap  row${velocityCount}">
+                #if(${xf.IsHtmlControl($FieldItem)})
+                ${xf.ViewControl($FieldItem)}
+                #else
+                #if(${xf.ViewItemSetting($FieldItem,"DisplayTitle","true")}=="true")
+
+                #if($FieldItem.Required == 1)
+                ${xf.ViewLable($FieldItem,"<span class='form_required'> *</span>")}
+                #else
+                ${xf.ViewLable($FieldItem,"")}
+                #end
+                #end
+                <div class="form_input">
+                    ${xf.ViewControl($FieldItem)}
+                    #if( ${xf.ViewXmlSetting("DisplayTooltip","true")} == "true")
+                    ${xf.ViewInputDefault($FieldItem)}
+                    #end
+                </div>
+
+                #end
+            </div>
+        </li>
+        #end
+        <li class="from-footer">
+            #if($AuthLicense == false)
+            <div class="message warning">${AuthLicenseMsg}</div>
+            #end
+            <div class="message" style="display:none;"></div>
+            <div class="form_submit">
+                #if(${xf.ViewXmlSetting("SubmitButtonClass","")}!="")
+                ${xf.ViewButton(${xf.ViewXmlSetting("SubmitButtonClass","")})}
+                #else
+                ${xf.ViewButton("submit_but")}
+                #end
+                #if(${xf.ViewXmlSetting("ShowResetButton","false")} == "true")
+                #if(${xf.ViewXmlSetting("ResetButtonClass","")}!="")
+                ${xf.ViewResetButton(${xf.ViewXmlSetting("ResetButtonClass","")})}
+                #else
+                ${xf.ViewResetButton("reset_but")}
+                #end
+                #end
+            </div>
+        </li>
+    </ul>
+    #end
+</div>

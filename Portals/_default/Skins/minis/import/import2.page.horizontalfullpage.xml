@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Config>
+    <Name><![CDATA[horizontalfullpage]]></Name>
+    <Alias><![CDATA[Horizontal Full Page]]></Alias>
+    <Icon><![CDATA[fa fa-wrench]]></Icon>
+    <Description><![CDATA[Horizontal Full Page Options]]></Description>
+    <Icon><![CDATA[]]></Icon>
+    <Image><![CDATA[Resource/images/thumbnail/FullPage.jpg]]></Image>
+    <Template><![CDATA[horizontalfullpage]]></Template>
+  </Config>
+  <Settings>
+
+  </Settings>
+</DNNGo_ThemePluginPro>
+
+
+

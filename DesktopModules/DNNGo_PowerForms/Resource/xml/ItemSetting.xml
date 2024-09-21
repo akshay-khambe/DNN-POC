@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_PowerForms>
+  <Groups>
+    <Group>
+      <Name><![CDATA[Display Conditions]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+  </Groups>
+	<EffectSettings>
+    <Setting>
+      <Name><![CDATA[ConditionalField]]></Name>
+      <Alias><![CDATA[Field]]></Alias>
+      <Width><![CDATA[200]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[Fields]]></ControlType>
+      <Direction><![CDATA[1,3,5,7,8,9,111,112,130,131,132]]></Direction>
+      <ListContent><![CDATA[==Please select==:|]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Display Conditions]]></Group>
+      <Categories><![CDATA[Display Conditions]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[ConditionalRule]]></Name>
+      <Alias><![CDATA[Value]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description>
+        <![CDATA[If there are more than one condition, then you need to use comma to separate them, for instance: Value1, Value2.<br />
+Please check this page to know more info about how to use it.]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[optional]]></Verification>
+      <Group><![CDATA[Display Conditions]]></Group>
+      <Categories><![CDATA[Display Conditions]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[SelectText]]></Name>
+      <Alias><![CDATA[Select Text]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description>
+        <![CDATA[]]>
+      </Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[optional]]></Verification>
+      <Condition><![CDATA[['3','130','131','132'].includes(#AddNewField_ddlControlType)]]></Condition>
+      <Group><![CDATA[Item Option]]></Group>
+      <Categories><![CDATA[Item Option]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+    
+    
+    <Setting>
+      <Name><![CDATA[MailTemplateDisplay]]></Name>
+      <Alias><![CDATA[Display in e-mail template ]]></Alias>
+      <Width><![CDATA[100]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[true]]></DefaultValue>
+      <ControlType><![CDATA[CheckBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[E-mail Template Options]]></Group>
+      <Categories><![CDATA[E-mail Template Options]]></Categories>
+      <Layout><![CDATA[Right]]></Layout>
+    </Setting>
+  </EffectSettings>
+</DNNGo_PowerForms>
+
+
+

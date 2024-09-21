@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configs>
+    <Config>
+         <Name><![CDATA[BuyLink]]></Name>
+        <Value><![CDATA[https://www.dnngo.net/DNNStore/tabid/58/ProductID/1653/Default.aspx]]></Value>
+    </Config>
+    <Config>
+         <Name><![CDATA[DocLink]]></Name>
+        <Value><![CDATA[https://doc.dnngo.com/minis/]]></Value>
+    </Config>
+</Configs>

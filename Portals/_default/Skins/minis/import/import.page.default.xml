@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Config>
+    <Name><![CDATA[default]]></Name>
+    <Alias><![CDATA[Default]]></Alias>
+    <Icon><![CDATA[fa fa-wrench]]></Icon>
+    <Description><![CDATA[Default Page Options]]></Description>
+    <Icon><![CDATA[]]></Icon>
+    <Image><![CDATA[Resource/images/thumbnail/Default.jpg]]></Image>
+    <Template><![CDATA[default]]></Template>
+  </Config>
+  <Settings>
+    <Setting>
+      <Key><![CDATA[test]]></Key>
+      <Value><![CDATA[business-03]]></Value>
+    </Setting>
+
+  </Settings>
+</DNNGo_ThemePluginPro>
+
+
+

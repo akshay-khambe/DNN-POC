@@ -1,0 +1,190 @@
+<div class="form-group">
+  <label for="firstname" class="control-label">Animation Type:</label>
+  <div class="control-cont">
+    <select class="dnnOptions form-control" data-name="ain_type" data-value="${ain_type}" id="ain_type">
+      <option value="" selected="selected">None</option>
+      <option value="clipping">Clipping</option>
+      <option value="pscroll">Parallax Scroll</option>
+      <option value="parallax">Parallax</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group conditional" data-condition="#ain_type == 'clipping'">
+  <label for="firstname" class="control-label">Clipping:</label>
+  <div class="control-cont">
+    <div class="dng-collect-data">
+      <div class="control-item">
+        <p>Effects</p>
+        <select id="clippingeffect" data-name="ain_clipping" data-value="${ain_clipping}" class="dnnOptions form-control">
+          <option value="" selected="selected">None</option>
+          <option value="dng-clip clip-top">Clipping From Top</option>
+          <option value="dng-clip clip-right">Clipping From Right</option>
+          <option value="dng-clip clip-bottom">Clipping From Bottom</option>
+          <option value="dng-clip clip-left">Clipping From Left</option>
+          <option value="dng-clip clip-top-out">Clipping From Top Out</option>
+          <option value="dng-clip clip-right-out">Clipping From Right Out</option>
+          <option value="dng-clip clip-bottom-out">Clipping From Bottom Out</option>
+          <option value="dng-clip clip-left-out">Clipping From Left Out</option>
+          <option value="dng-clip-text clip-top">Text Clipping From Top</option>
+          <option value="dng-clip-text clip-right">Text Clipping From Right</option>
+          <option value="dng-clip-text clip-bottom">Text Clipping From Bottom</option>
+          <option value="dng-clip-text clip-left">Text Clipping From Left</option>
+        </select>
+      </div>
+      <div class="control-item">
+        <p>Speed (ms)</p>
+        <input data-name="ain_clipping_speed" value="${ain_clipping_speed}" type="text" class="dnnOptions form-control">
+      </div>
+      <div class="control-item">
+        <p>Delay (ms)</p>
+        <input data-name="ain_clipping_delay" value="${ain_clipping_delay}" type="text" class="dnnOptions form-control">
+      </div>
+      <div class="control-item">
+        <p>Timing</p>
+        <select data-name="ain_clipping_timing" data-value="${ain_clipping_timing}" class="dnnOptions form-control">
+          <optgroup label="defaults">
+            <option value="" selected="selected">linear</option>
+            <option value="ease">ease</option>
+            <option value="ease-in">ease-in</option>
+            <option value="ease-out">ease-out</option>
+            <option value="ease-in-out">ease-in-out</option>
+          </optgroup>
+          <optgroup label="Penner Equations (approximated)">
+            <option value="easeInQuad">easeInQuad</option>
+            <option value="easeInCubic">easeInCubic</option>
+            <option value="easeInQuart">easeInQuart</option>
+            <option value="easeInQuint">easeInQuint</option>
+            <option value="easeInSine">easeInSine</option>
+            <option value="easeInExpo">easeInExpo</option>
+            <option value="easeInCirc">easeInCirc</option>
+            <option value="easeInBack">easeInBack</option>
+            <option value="easeOutQuad">easeOutQuad</option>
+            <option value="easeOutCubic">easeOutCubic</option>
+            <option value="easeOutQuart">easeOutQuart</option>
+            <option value="easeOutQuint">easeOutQuint</option>
+            <option value="easeOutSine">easeOutSine</option>
+            <option value="easeOutExpo">easeOutExpo</option>
+            <option value="easeOutCirc">easeOutCirc</option>
+            <option value="easeOutBack">easeOutBack</option>
+            <option value="easeInOutQuad">easeInOutQuad</option>
+            <option value="easeInOutCubic">easeInOutCubic</option>
+            <option value="easeInOutQuart">easeInOutQuart</option>
+            <option value="easeInOutQuint">easeInOutQuint</option>
+            <option value="easeInOutSine">easeInOutSine</option>
+            <option value="easeInOutExpo">easeInOutExpo</option>
+            <option value="easeInOutCirc">easeInOutCirc</option>
+            <option value="easeInOutBack">easeInOutBack</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="control-item conditional" data-condition="(#clippingeffect == 'dng-clip clip-top') || (#clippingeffect == 'dng-clip clip-right') || (#clippingeffect == 'dng-clip clip-bottom') || (#clippingeffect == 'dng-clip clip-left') || (#clippingeffect == 'dng-clip clip-top-out') || (#clippingeffect == 'dng-clip clip-right-out') || (#clippingeffect == 'dng-clip clip-bottom-out') || (#clippingeffect == 'dng-clip clip-left-out')">
+        <p>Color</p>
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="ain_clipping_color"
+            value="${ain_clipping_color}">
+          <i style="background-color:${ain_clipping_color}"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-group conditional" data-condition="#ain_type == 'pscroll'">
+  <label for="firstname" class="control-label">Parallax Scroll:</label>
+  <div class="control-cont">
+
+
+
+    <div class="dng-collect-data2">
+
+      <div class="control-item">
+        <p>Parallax Effect</p>
+        <select id="parallaxeffect" data-name="parallaxeffect" data-value="${parallaxeffect}" class="dnnOptions form-control">
+          <option value="toleft" selected="selected">Move To Left</option>
+          <option value="totop">Move To Top</option>
+          <option value="toright">Move To Right</option>
+          <option value="tobottom">Move To Bottom</option>
+          <option value="rotate">Rotate</option>
+          <!-- <option value="rotatex">Vertical Rotate</option>
+          <option value="rotatey">Horizontal Rotate</option>
+          <option value="rotate3d">3D Rotate</option> -->
+        </select>
+      </div>
+
+      <div class="control-item conditional" data-condition="(#parallaxeffect == 'toleft') || (#parallaxeffect == 'toright')">
+        <p>Translate X (px)</p>
+        <input data-name="ain_x" value="${ain_x}" type="text" class="dnnOptions form-control validate[custom[number]]">
+      </div>
+      <div class="control-item conditional" data-condition="(#parallaxeffect == 'totop') || (#parallaxeffect == 'tobottom') ">
+        <p>Translate Y (px)</p>
+        <input data-name="ain_y" value="${ain_y}" type="text" class="dnnOptions form-control validate[custom[number]]">
+      </div>
+
+      <div class="control-item conditional" data-condition="(#parallaxeffect == 'rotate3d') || (#parallaxeffect == 'rotatex')">
+        <p>Rotate X (deg)</p>
+        <input data-name="ain_rotatex" value="${ain_rotatex}" type="text" class="dnnOptions form-control validate[custom[number]]">
+      </div>
+      <div class="control-item conditional" data-condition="(#parallaxeffect == 'rotate3d') || (#parallaxeffect == 'rotatey')">
+        <p>Rotate Y (deg)</p>
+        <input data-name="ain_rotatey" value="${ain_rotatey}" type="text" class="dnnOptions form-control validate[custom[number]]">
+      </div>
+      <div class="control-item conditional" data-condition="(#parallaxeffect == 'rotate3d') || (#parallaxeffect == 'rotate')">
+        <p class="conditional" data-condition="#parallaxeffect != 'rotate'">Rotate Z (deg)</p>
+        <p class="conditional" data-condition="#parallaxeffect == 'rotate'">Rotate (deg)</p>
+        <input data-name="ain_rotatez" value="${ain_rotatez}" type="text" class="dnnOptions form-control validate[custom[number]]">
+      </div>
+      <div class="control-item line"></div>
+
+      <div class="control-item">
+        <p>Smoothness</p>
+        <select id="ain_smoothness" data-name="ain_smoothness" data-value="${ain_smoothness}" class="dnnOptions form-control">
+            <option value="">Fast</option>
+            <option value="30">Medium</option>
+            <option value="60">Slow</option>
+          </select>
+      </div>
+      <div class="control-item">
+        <div class="form-group">
+            <p>Scale Up:</p>
+          <div class="control-cont">
+            <select  data-name="parallaxscale" data-value="${parallaxscale}" class="dnnOptions form-control">
+              <option value="" selected="selected">OFF</option>
+              <option value="0">ON</option>
+              <!-- <option value="1.2">Scale Down</option> -->
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-item">
+        <div class="form-group">
+            <p>Fade In:</p>
+          <div class="control-cont">
+            <select  data-name="parallaxfade" data-value="${parallaxfade}" class="dnnOptions form-control">
+                <option value="" selected="selected">OFF</option>
+                <option value="on">ON</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="form-group conditional" data-condition="#ain_type == 'parallax'">
+  <label for="firstname" class="control-label">Parallax:</label>
+  <div class="control-cont">
+    <div class="dng-collect-data">
+      <div class="control-item">
+        <p>Depth X (-5~5)</p>
+        <input data-name="ain_depthx" value="${ain_depthx}" type="text" class="dnnOptions form-control">
+      </div>
+      <div class="control-item">
+        <p>Depth Y (-5~5)</p>
+        <input data-name="ain_depthy" value="${ain_depthy}" type="text" class="dnnOptions form-control">
+      </div>
+    </div>
+  </div>
+</div>

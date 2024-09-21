@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+    <Settings>
+        <Setting>
+            <Name>
+                <![CDATA[HomePage]]>
+            </Name>
+            <Alias>
+                <![CDATA[HomePage]]>
+            </Alias>
+        </Setting>
+        <Setting>
+            <Name>
+                <![CDATA[Pages]]>
+            </Name>
+            <Alias>
+                <![CDATA[Pages]]>
+            </Alias>
+        </Setting>
+  
+    </Settings>
+</DNNGo_ThemePluginPro>

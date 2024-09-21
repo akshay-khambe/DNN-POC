@@ -1,0 +1,35 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Drop Table **/
+
+
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_Multimedia]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_Relationships]
+GO
+
+
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_Menu]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_MenuOptions]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_History]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_Section]
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

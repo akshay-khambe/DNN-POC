@@ -1,0 +1,1085 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ideas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">    
+    
+
+
+    <style>
+        body {background:#fff;margin: 0;}
+        .is-design-list ,.is-design-list2 {
+            position:fixed; top:0px;left:0px;border-top:transparent 90px solid;width:100%;overflow-y:auto;padding:0px  0px 30px 30px;box-sizing: border-box;overflow:auto;
+            max-height:100%;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .is-design-list > div,.is-design-list2 > div:not(.design-console) { background: #f7f7f7;
+            margin: 35px 40px 0 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-height: 150px;
+            width: 400px;
+            transition:  box-shadow 0.2s ease-in-out;
+        }
+
+        .is-design-list > div img,.is-design-list2 > div img{
+           max-width: 100%;
+        }
+        .is-design-list > div:not(.design-console):hover,
+        .is-design-list2 > div:not(.design-console):hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .is-design-list2{
+            display: none;
+            padding-top: 50px;
+            
+        }
+        .is-design-list2 > div{
+            position: relative;
+        }
+        .is-design-list2 > div:not(.design-console) > span{
+            color: #FFF;
+            text-align: center;
+            width: 100%;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            z-index: 11;
+            background-color: rgba(0, 0, 0, 0.42);
+            padding: 2px 0;
+            font-size: 14px;
+        }
+        .is-design-list2 .delete{
+            position: absolute;
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path  style="fill: %23a41005; " d="M17.114,3.923h-4.589V2.427c0-0.252-0.207-0.459-0.46-0.459H7.935c-0.252,0-0.459,0.207-0.459,0.459v1.496h-4.59c-0.252,0-0.459,0.205-0.459,0.459c0,0.252,0.207,0.459,0.459,0.459h1.51v12.732c0,0.252,0.207,0.459,0.459,0.459h10.29c0.254,0,0.459-0.207,0.459-0.459V4.841h1.511c0.252,0,0.459-0.207,0.459-0.459C17.573,4.127,17.366,3.923,17.114,3.923M8.394,2.886h3.214v0.918H8.394V2.886z M14.686,17.114H5.314V4.841h9.372V17.114z M12.525,7.306v7.344c0,0.252-0.207,0.459-0.46,0.459s-0.458-0.207-0.458-0.459V7.306c0-0.254,0.205-0.459,0.458-0.459S12.525,7.051,12.525,7.306M8.394,7.306v7.344c0,0.252-0.207,0.459-0.459,0.459s-0.459-0.207-0.459-0.459V7.306c0-0.254,0.207-0.459,0.459-0.459S8.394,7.051,8.394,7.306"/></svg>');
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 0.85);
+            right: 0;
+            z-index: 10;
+            top: 0;
+        }
+
+        .is-more-categories {
+            display: none;
+            position:absolute;
+            width:235px;
+            box-sizing: border-box;
+            padding:0;
+            z-index: 1;
+            font-family: sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow:0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+       .is-category-list {
+            position:fixed;
+            top:0px;left:0px;
+            width:100%;
+            min-height:90px;
+            background: #f5f5f5;
+            /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+            box-sizing: border-box;
+            z-index: 1;
+        }
+        .is-category-list > div {
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 10px 10px 0 20px;
+            font-family: sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            min-height:83px;
+        }
+        .is-category-list > div > div {
+            margin-bottom:10px;
+            margin-left:5px;
+        }
+        .is-category-list > div > a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #fefefe;
+            color: #000;
+            border-radius: 50px;
+            
+            margin: 0 7px 8px 0;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+        .is-category-list > div > a:hover {
+            background: #fafafa;
+            color: #000;
+        }
+        .is-category-list > div > a.active {
+            background: #1abc9c;
+            color: #fff;
+            box-shadow: none;
+        }
+        .is-more-categories a {
+            display: block;
+            box-sizing:border-box;
+            padding: 8px 14px;
+            background:#fff;
+            text-decoration:none;
+            color:#000;
+            line-height:1.6;
+        }
+        .is-more-categories a:hover {
+            background:#eee;
+        }
+        .is-more-categories a.active {
+            background: #1abc9c;
+            color: #fff;
+        }
+        .is-more-categories.active {
+            display: block;
+        }
+        
+        .is-category-list {visibility:hidden}
+        .is-more-categories {visibility:hidden}
+        
+        .loading{ position: relative;}
+        
+        .loading::after{
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #e3e3e3;
+            border-left-color:#757575;
+            border-bottom-color:#757575;
+            border-radius: 50%;
+            margin: -6px 0px 0px -6px;
+            -webkit-animation: loading-rotate 0.7s infinite;
+            -moz-animation: loading-rotate 0.7s infinite;
+            animation: loading-rotate 0.7s infinite;
+        }
+
+
+        @-webkit-keyframes loading-rotate {
+   0% {
+       -webkit-transform: rotate(0);
+   }
+       100% {
+       -webkit-transform: rotate(360deg);
+   }
+}
+@-moz-keyframes loading-rotate{
+   0% {
+       -moz-transform: rotate(0);
+   }
+       100% {
+       -moz-transform: rotate(360deg);
+   }
+}
+@keyframes loading-rotate{
+   0% {
+       transform: rotate(0);
+   }
+       100% {
+       transform: rotate(360deg);
+   }
+}
+
+        /* Responsive */
+        .is-category-list > div > a.more-basic {display:none}
+        .is-category-list > div > .screen1 {display:inline-block}
+        .is-more-categories .screen1 {display:none}
+        .is-category-list > div > .screen2 {display:inline-block}
+        .is-more-categories .screen2 {display:none}        
+        @media all and (max-width: 1290px) {
+            .is-category-list > div > .screen1 {display:none}
+            .is-more-categories .screen1 {display:block}
+            .is-category-list > div > a.more-basic {display:inline-block}
+        }   
+        @media all and (max-width: 920px) {
+            .is-category-list > div > .screen2 {display:none}
+            .is-more-categories .screen2 {display:block}
+            .is-category-list > div > a.more-basic {display:inline-block}
+        }             
+        .is-more-categories a.cms-option {display:none}
+        
+        /* Enable Module/Placeholder 
+        .is-category-list > div > a.more-basic {display:inline-block}
+        .custom {display:none}        
+        .is-more-categories a.cms-option {display:block}
+        */
+        
+        
+        /* First Loading */
+        .is-category-list {display:none;} 
+        .is-design-list {display:none;} 
+        .pace {
+          -webkit-pointer-events: none;
+          pointer-events: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+        .pace-inactive {
+          display: none;
+        }
+        .pace .pace-progress {
+          background: #000000;
+          position: fixed;
+          z-index: 2000;
+          top: 50%;
+          right: 100%;
+          width: 100%;
+          height: 2px;
+        }
+
+        @media all and (max-width: 1180px) {
+
+        .is-category-list > div > a{
+            padding: 6px 13px;
+            margin: 0px 7px 8px 0;
+        }
+    }
+    .is-design-list2 .design-console{
+        position: fixed;
+    right: 30px;
+    top: 102px;
+    z-index: 1000;
+    }
+    .is-design-list2 .search {
+            margin: 0px 10px 8px 2px;
+            height: 44px;
+            background: #ffffff;
+            border: 1px solid #f5f5f5;
+            padding-right: 95px;
+            border-radius: 25px;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .search .text {
+            width: 100%;
+            height: 100%;
+            background: none;
+            border: none;
+            padding: 0px 8px;
+            box-sizing: content-box;
+            outline: none;
+        }
+
+        .search .button {
+            width: 95px;
+            position: absolute;
+            right: -1px;
+            top: -1px;
+            bottom: -1px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .search .close {
+            position: absolute;
+            right:95px;
+            top: 6px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill="%23333" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path></svg>');
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: .4;
+            display: none;
+        }
+        .is-design-list2 .import,
+        .is-design-list2 .export{
+            display: inline-block;
+            padding: 10px 25px;
+            background: #f5f5f5;
+            color: #000;
+            border-radius: 50px;
+            margin: 0 10px 8px 0;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        .is-design-list2 .import svg,
+        .is-design-list2 .export svg{
+            width: 20px;
+            height: 20px;
+        }
+
+      
+        .is-design-list2 .message{
+            position: absolute;
+            top:100%;
+            right: 10px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: none;
+            border:1px solid ;
+            white-space: nowrap;
+        }
+        .is-design-list2 .message{
+            border-color: #18c943;
+           background-color: rgb(239, 255, 244);
+        } 
+        .is-design-list2 .message.error{
+            border-color: #ea0000;
+            background-color: rgb(255, 224, 224);
+        }
+
+        body.loading{
+            pointer-events: none;
+        }
+        body.loading::before{
+            content: "";
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(255,255,255,.6);
+        }
+        body.loading::after{
+        opacity: 0.75;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:  rotate(45deg);
+            border: 2px solid transparent;
+            border-top-color: #333;
+            border-right-color: #333;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: rotate 0.35s linear infinite;  
+            transition:opacity 200ms ease-in ;
+            z-index: 100;
+            margin: -25px  0 0 -25px;
+        }
+
+    @keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+    </style>  
+    
+    <style id="searchStyle">
+
+        </style>      
+</head>
+<body>
+
+<div class="is-category-list">
+    <!--<a href="" data-cat="0">Default</a>-->
+    <div  id="SectionCat">
+        <div>Simple Start:</div>
+
+    </div>
+    <div>
+        <div> &nbsp; </div>
+        <a href="" class="more-examples">More</a>
+        <a href="" class="custom-examples">Custom</a>
+    </div>
+</div>
+
+<div id="morecat" class="is-more-categories">
+</div>
+
+
+<div class="is-design-list">
+</div>
+<div class="is-design-list2">
+    <div class="design-console">
+      
+        <div class="search">
+            <input type="text" class="text" />
+            <button class="button">SEARCH</button>
+            <span class="icon ion-android-close close lnr lnr-cross2"></span>
+        </div>
+        <label title="Import" class="import" for="importfile"><svg class="svg-icon" viewBox="0 0 20 20">
+                <path  d="M8.416,3.943l1.12-1.12v9.031c0,0.257,0.208,0.464,0.464,0.464c0.256,0,0.464-0.207,0.464-0.464V2.823l1.12,1.12c0.182,0.182,0.476,0.182,0.656,0c0.182-0.181,0.182-0.475,0-0.656l-1.744-1.745c-0.018-0.081-0.048-0.16-0.112-0.224C10.279,1.214,10.137,1.177,10,1.194c-0.137-0.017-0.279,0.02-0.384,0.125C9.551,1.384,9.518,1.465,9.499,1.548L7.76,3.288c-0.182,0.181-0.182,0.475,0,0.656C7.941,4.125,8.234,4.125,8.416,3.943z M15.569,6.286h-2.32v0.928h2.32c0.512,0,0.928,0.416,0.928,0.928v8.817c0,0.513-0.416,0.929-0.928,0.929H4.432c-0.513,0-0.928-0.416-0.928-0.929V8.142c0-0.513,0.416-0.928,0.928-0.928h2.32V6.286h-2.32c-1.025,0-1.856,0.831-1.856,1.856v8.817c0,1.025,0.832,1.856,1.856,1.856h11.138c1.024,0,1.855-0.831,1.855-1.856V8.142C17.425,7.117,16.594,6.286,15.569,6.286z"></path>
+            </svg>
+            <input type="file" style="display:none" accept=".json" id="importfile" name="importfile">
+        </label>
+
+        <a class="export" title="Export" href="#"><svg class="svg-icon" viewBox="0 0 20 20" >
+            <path d="M15.608,6.262h-2.338v0.935h2.338c0.516,0,0.934,0.418,0.934,0.935v8.879c0,0.517-0.418,0.935-0.934,0.935H4.392c-0.516,0-0.935-0.418-0.935-0.935V8.131c0-0.516,0.419-0.935,0.935-0.935h2.336V6.262H4.392c-1.032,0-1.869,0.837-1.869,1.869v8.879c0,1.031,0.837,1.869,1.869,1.869h11.216c1.031,0,1.869-0.838,1.869-1.869V8.131C17.478,7.099,16.64,6.262,15.608,6.262z M9.513,11.973c0.017,0.082,0.047,0.162,0.109,0.226c0.104,0.106,0.243,0.143,0.378,0.126c0.135,0.017,0.274-0.02,0.377-0.126c0.064-0.065,0.097-0.147,0.115-0.231l1.708-1.751c0.178-0.183,0.178-0.479,0-0.662c-0.178-0.182-0.467-0.182-0.645,0l-1.101,1.129V1.588c0-0.258-0.204-0.467-0.456-0.467c-0.252,0-0.456,0.209-0.456,0.467v9.094L8.443,9.553c-0.178-0.182-0.467-0.182-0.645,0c-0.178,0.184-0.178,0.479,0,0.662L9.513,11.973z"></path>
+        </svg></a>
+
+            <div class="message"></div>
+
+
+    </div>      
+</div>
+
+
+
+<script src="../scripts/jquery.min.js"></script>
+<script src="basic.min.js" type="text/javascript"></script>   
+    
+<script>
+    /* Utils */
+    function makeid() {//http://stackoverflow.com/questions/1349404/generate-a-string-of-5-random-characters-in-javascript
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        for (var i = 0; i < 2; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        var text2 = "";
+        var possible2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 5; i++)
+            text2 += possible2.charAt(Math.floor(Math.random() * possible2.length));
+
+        return text + text2;
+    }
+
+
+    var indexes ={};
+    if(parent.data_basic.snippets){
+        parent.data_basic.snippets.forEach((item,index,array)=>{
+            if(item["name"]){indexes[item["name"]] = index}
+        })
+    }
+
+    var getSnippetCode = function(name,id){
+        if(id){
+        return parent.data_basic.snippets[indexes[name]].html.replace(/{id}/g,id);
+        }else{
+            return parent.data_basic.snippets[indexes[name]].html;
+        }            
+    }
+    var csstemplate = parent.csstemplate;
+
+</script>
+
+<!-- 
+<script src="examples.min.js" type="text/javascript"></script>   -->
+<script src="../../template/section.js" type="text/javascript"></script>  
+<script>
+
+var selSectionCat = parent.selSectionCat ;
+var customSectionCode = parent.customSectionCode ;
+var GetSectionDetailServiceUrl = parent.GetSectionDetailServiceUrl;
+var DeleteSectionServiceUrl = parent.DeleteSectionServiceUrl;
+
+
+     
+
+var getcustomSectionCode =function(){ 
+     
+        if(parent.customSectionCodeIndex){
+            customSectionCode = parent.customSectionCode ;
+            customSectionCode.forEach(item =>{
+                    if (item) {
+                        jQuery('.is-design-list2').append('<div data-id="' + item["ID"] + '" data-name="' + item["Title"] + '" class="loading"><i class="delete"></i><img src="'+item["Image"] + '"><span class="name">'+item["Title"]+'</span></div>');
+                    }
+                }); 
+                $(".loading img").each(function(){$(this).on("load",function(){$(this).parents(".loading").removeClass("loading")})
+                })
+
+        }else{
+            setTimeout(function(){getcustomSectionCode()},1000)
+        }
+    }
+   
+
+var currParent = parent;
+if(selSectionCat){
+    var catindex= 0;
+    for( var key in selSectionCat ){
+        catindex++;
+        if(catindex>= (currParent.SectionCatNumber?currParent.SectionCatNumber+1:12)){
+            $('#morecat').append(`<a href="" data-cat="${selSectionCat[key]}">${key}</a>`);
+        }else{
+            $('#SectionCat').append(`<a href="" data-cat="${selSectionCat[key]}">${key}</a>`);
+        }
+    }
+}
+    var defaultCat = 1; //Show 'Header' category
+    var disableStaticSection = false;
+    try {
+        disableStaticSection = currParent.jQuery('.is-wrapper').data("contentbox").settings.disableStaticSection;
+    } catch (e) { }
+    if (disableStaticSection) jQuery('.static-section').css('display', 'none');
+
+    var image_path =window.parent.image_path;
+ 
+    jQuery(document).ready(function ($) {
+
+        jQuery('.is-category-list').find('[data-cat=' + defaultCat + ']').addClass('active');
+        jQuery('#morecat').find('[data-cat=' + defaultCat + ']').addClass('active');
+        jQuery('#morebasic').find('[data-cat=' + defaultCat + ']').addClass('active');
+        jQuery('.is-category-list').css('visibility', 'visible');
+        jQuery('.is-more-categories').css('visibility', 'visible');
+
+        var nIndex = 1;
+
+        jQuery.each(data_basic.designs, function () {
+
+            var isdefault = false;
+            var catSplit = this.category.split(',');
+            for (var j = 0; j < catSplit.length; j++) {
+                if (catSplit[j] == defaultCat) {
+                    isdefault = true;
+                }
+            }
+
+            this.id = nIndex; //Give id to each record
+
+            if (isdefault) {
+                jQuery('.is-design-list').append('<div data-id="' + this.id + '" data-cat="' + this.category + '" class="loading"><img src="'+image_path + this.thumbnail + '"></div>');
+            }
+
+            nIndex++;
+        });
+        $(".loading img").each(function(){$(this).on("load",function(){$(this).parents(".loading").removeClass("loading")})})
+        
+
+
+        jQuery('.more-examples').click(function () {
+            jQuery('.is-more-categories').removeClass('active');
+            jQuery(this).addClass('active');
+            jQuery('#morecat').addClass('active');
+            var top = jQuery(this).offset().top - jQuery(window).scrollTop();
+            var left = jQuery(this).offset().left;
+            top = top + 42;
+            jQuery('#morecat').css('top', top + 'px');
+            jQuery('#morecat').css('left', left + 'px');
+        });
+
+        jQuery('.more-basic').click(function () {
+            jQuery('.is-more-categories').removeClass('active');
+            jQuery(this).addClass('active');
+            jQuery('#morebasic').addClass('active');
+            var top = jQuery(this).offset().top - jQuery(window).scrollTop();
+            var left = jQuery(this).offset().left;
+            top = top + 42;
+            jQuery('#morebasic').css('top', top + 'px');
+            jQuery('#morebasic').css('left', left + 'px');
+        });
+
+        jQuery('.is-more-categories a').click(function () {
+            $(".is-design-list2").hide();
+            $(".is-design-list").css("display","flex").fadeIn(100);
+
+            var cat = jQuery(this).attr('data-cat');
+
+            if (jQuery('.is-design-list').children('[data-cat=' + cat + ']').length == 0) {
+
+                jQuery.each(data_basic.designs, function () {
+
+                    if (cat == this.category) {
+                        jQuery('.is-design-list').append('<div data-id="' + this.id + '" data-cat="' + this.category + '" class="loading"><img src="' +image_path+ this.thumbnail + '"></div>');
+                    }
+
+                });
+                $(".loading img").each(function(){$(this).on("load",function(){$(this).parents(".loading").removeClass("loading")})})
+       
+
+            }
+
+            jQuery('.is-category-list a').removeClass('active');
+            jQuery('.is-more-categories a').removeClass('active');
+            jQuery(this).addClass('active');
+
+            if (cat) {
+                jQuery('.is-design-list > div').fadeOut(0, function () {
+                });
+                jQuery('.is-design-list > div').each(function () {
+
+                    var catSplit = jQuery(this).attr('data-cat').split(',');
+                    for (var j = 0; j < catSplit.length; j++) {
+                        if (catSplit[j] == cat) {
+                            jQuery(this).fadeIn(300);
+                        }
+                    }
+
+                });
+
+            }
+
+            jQuery('.is-more-categories').removeClass('active');
+
+            jQuery('.is-design-list > div').off('click');
+            jQuery('.is-design-list > div').click(function () {
+
+                var designid = jQuery(this).attr('data-id');
+                addDesign(designid);
+
+            });
+
+
+
+
+            return false;
+
+        });
+
+        jQuery('html').click(function (e) {
+            if (jQuery(e.target).parents('.is-more-categories').length > 0) return false;
+            if (jQuery(e.target).hasClass('is-more-categories')) return false;
+
+            jQuery('.is-more-categories').removeClass('active');
+            jQuery('.more-basic').removeClass('active');
+            jQuery('.more-examples').removeClass('active');
+        });
+
+        parent.jQuery('html').click(function (e) {       
+            jQuery('.is-more-categories').removeClass('active');
+            jQuery('.more-basic').removeClass('active');
+            jQuery('.more-examples').removeClass('active');           
+        });
+
+        jQuery('.is-category-list a').click(function () {
+            $(".is-design-list2").hide();
+            $(".is-design-list").fadeIn(100);
+            var cat = jQuery(this).attr('data-cat');
+
+            if (jQuery('.is-design-list').children('[data-cat=' + cat + ']').length == 0) {
+
+                jQuery.each(data_basic.designs, function () {
+
+                    if (cat == this.category) {
+                        jQuery('.is-design-list').append('<div data-id="' + this.id + '" data-cat="' + this.category + '" class="loading"><img src="'+image_path + this.thumbnail + '"></div>');
+                    }
+
+                });
+                $(".loading img").each(function(){$(this).on("load",function(){$(this).parents(".loading").removeClass("loading")})})
+
+
+            }
+
+            if (cat) {
+                jQuery('.is-category-list a').removeClass('active');
+                jQuery('.is-more-categories').removeClass('active');
+                jQuery('.is-more-categories a').removeClass('active');
+                jQuery(this).addClass('active');
+
+                jQuery('.is-design-list > div').fadeOut(0, function () {
+                });
+                jQuery('.is-design-list > div').each(function () {
+
+                    var catSplit = jQuery(this).attr('data-cat').split(',');
+                    for (var j = 0; j < catSplit.length; j++) {
+                        if (catSplit[j] == cat) {
+                            jQuery(this).fadeIn(300);
+                        }
+                    }
+
+                });
+
+            }
+
+            jQuery('.is-design-list > div').off('click');
+            jQuery('.is-design-list > div').click(function () {
+
+                var designid = jQuery(this).attr('data-id');
+                addDesign(designid);
+
+            });
+
+            return false;
+
+        });
+
+
+        jQuery('.is-design-list > div').off('click');
+        jQuery('.is-design-list > div').click(function () {
+
+            var designid = jQuery(this).attr('data-id');
+            addDesign(designid);
+
+        });
+
+        jQuery(".custom-examples").on("click",function(){
+            $("#SectionCat a").removeClass("active");
+            $(this).addClass("active");
+
+            if(!$(".is-design-list2").hasClass("complete")){
+                 getcustomSectionCode();
+            }
+
+            $(".is-design-list").hide();
+            $(".is-design-list2").addClass("complete").css("display","flex").fadeIn(100);
+
+
+        })
+
+        jQuery('.is-design-list2').on("click",">div:not(.design-console)",function () {
+            if($(this).data("id")){
+                $.post(GetSectionDetailServiceUrl+currParent.jQuery(".is-wrapper").data("mid")+"&id="+$(this).data("id"),function (data) {
+                    if(data){
+                        data = jQuery.parseJSON(data);
+                        var html = data["Results"]["Content"].replace(/\[SkinPath\]/g,parent.SkinPath);
+                        if(html){
+                            addDesign(false,html);
+                        }
+                    } 
+                })
+            }
+        })
+
+
+        var search = function (v) {
+                if (v.length >= 1) {
+                    v = v.toLowerCase();
+
+                    v = v.split(" ");
+
+                    var name = '.is-design-list2 > div:not(.design-console)';
+                    v.forEach(function (v, i) {
+                        if (v) {
+                            name += `[data-name *= "${v}"]`;
+                        }
+                    })
+                    $("#searchStyle").html(`
+                            .is-design-list2 > div:not(.design-console){
+                                display:none;
+                              
+                            }
+                            ${name}{display:inline-block; }
+                           
+                        `);
+
+                    $("#divIcons h3").hide();
+                } else if (!v) {
+                    $("#searchStyle").html(" ");
+                    $("#divIcons h3").show();
+                }
+            }
+
+            $(".search .text").on("change input", function () {
+                search($(this).val());
+                if($(this).val()){
+                    $(".search .close").show();
+                }else{
+                    $(".search .close").hide();
+                }
+            })
+            $(".search .button").on("click", function () {
+                search($(".search .text").val());
+            })
+            $(".search .close").on("click", function () {
+                $(".search .text").val("");
+                search("");
+                $(this).hide();
+            })
+
+        jQuery('.is-design-list2').on("click",".delete",function (event) {
+            event.stopPropagation();
+            if(confirm("Are you sure you want to delete this item?")){
+                var curr =$(this).parent();
+                $.post(DeleteSectionServiceUrl+currParent.jQuery(".is-wrapper").data("mid")+"&id="+curr.data("id"),function (data) {
+                    curr.fadeOut(function(){
+                        var name = curr.data("name");
+                        parent.customSectionCode.forEach(function (v, i) { 
+                            if(v["Title"] == name){
+                                parent.customSectionCode.splice(i, 1);
+                            }
+                        })                        
+                        curr.remove();
+                    });
+                  
+
+                })
+            }
+        })
+
+
+
+        jQuery('.is-design-list2 .import input[type="file"]').on("change",function () {
+
+
+                jQuery("body").addClass("loading");
+                var formData = new FormData();
+                    var file = this.files[0];
+                    formData.append("importfile", file);
+
+                    $.ajax({
+                    url:currParent.SectionImportServiceUrl+currParent.jQuery(".is-wrapper").data("mid"),
+                    type:"POST",
+                    data:formData,
+                    processData : false,
+                    contentType : false,
+                    dataType : 'json',
+                    async : false,
+                    success : function (result) {
+                        jQuery("body").removeClass("loading");
+ 
+                        if(!result.Success){
+                             $(".is-design-list2 .message").html(result.Message).addClass("error").stop().fadeIn(200).delay(3000).fadeOut(200);
+                        }else{
+
+                          //  $(".is-design-list2 .message").html("OK!!!").removeClass("error").stop().fadeIn(200).delay(3000).fadeOut(200);
+
+                          if(result.Results){
+                              
+                            result.Results.forEach(item =>{
+                                if (item) {
+                                    jQuery('.is-design-list2').append('<div data-id="' + item["ID"] + '" data-name="' + item["Title"] + '" class="loading"><i class="delete"></i><img src="'+item["Image"] + '"><span class="name">'+item["Title"]+'</span></div>');
+                                }
+                            }); 
+                            $(".loading img").each(function(){$(this).on("load",function(){$(this).parents(".loading").removeClass("loading")})})   
+                            $(".is-design-list2 .message").html("Imported successfully.").removeClass("error").stop().fadeIn(200).delay(3000).fadeOut(200);
+                          }
+
+
+                        }  
+      
+                    }    
+                    })  
+
+
+        })
+        jQuery('.is-design-list2 .export').attr("href",currParent.SectionExportServiceUrl+currParent.jQuery(".is-wrapper").data("mid"))
+
+    });
+
+    function addDesign(designid,html) {
+
+        if(designid){
+        var framework = currParent.jQuery('.is-wrapper').data("contentbox").settings.framework;
+        var snippetPathReplace = currParent.jQuery('.is-wrapper').data("contentbox").settings.snippetPathReplace;
+        var contentStylePath = currParent.jQuery('.is-wrapper').data("contentbox").settings.contentStylePath;
+        var html = '';
+
+        var result = $.grep(data_basic.designs, function (element, index) {
+            return element.id == designid;
+        });
+      /*   if (result.length==0) {
+            result = $.grep(data_examples.designs, function (element, index) {
+                return element.id == designid;
+            });
+        } */
+        
+     
+
+        var html = result[0].html;
+        var googleFonts = result[0].googleFonts;
+        var contentCss = result[0].contentCss;
+        var contentClass = result[0].contentClass;
+        }
+
+        $('#codeview').val(html);
+        //To Bootstrap
+        if (framework == 'bootstrap') {
+           // html = html.replace(new RegExp(' container', 'g'), ' container-fluid');
+            html = html.replace(new RegExp('row clearfix', 'g'), 'row');
+            html = html.replace(new RegExp('column full', 'g'), 'col-md-12');
+            html = html.replace(new RegExp('column half', 'g'), 'col-md-6');
+            html = html.replace(new RegExp('column third', 'g'), 'col-md-4');
+            html = html.replace(new RegExp('column fourth', 'g'), 'col-md-3');
+            html = html.replace(new RegExp('column fifth', 'g'), 'col-md-2');
+            html = html.replace(new RegExp('column sixth', 'g'), 'col-md-2');
+            html = html.replace(new RegExp('column two-third', 'g'), 'col-md-8');
+            html = html.replace(new RegExp('column two-fourth', 'g'), 'col-md-9');
+            html = html.replace(new RegExp('column two-sixth', 'g'), 'col-md-10');
+            html = html.replace(new RegExp('btn btn-primary', 'g'), 'btn btn-primary btn-lg');
+            html = html.replace(new RegExp('btn btn-default', 'g'), 'btn btn-default btn-lg');
+        }
+
+        //To Foundation
+        if (framework == 'foundation') {
+            //html = html.replace(new RegExp(' container', 'g'), ' container');
+            html = html.replace(new RegExp('row clearfix', 'g'), 'row');
+            html = html.replace(new RegExp('column full', 'g'), 'large-12 columns');
+            html = html.replace(new RegExp('column half', 'g'), 'large-6 columns');
+            html = html.replace(new RegExp('column third', 'g'), 'large-4 columns');
+            html = html.replace(new RegExp('column fourth', 'g'), 'large-3 columns');
+            html = html.replace(new RegExp('column fifth', 'g'), 'large-2 columns');
+            html = html.replace(new RegExp('column sixth', 'g'), 'large-2 columns');
+            html = html.replace(new RegExp('column two-third', 'g'), 'large-8 columns');
+            html = html.replace(new RegExp('column two-fourth', 'g'), 'large-9 columns');
+            html = html.replace(new RegExp('column two-sixth', 'g'), 'large-10 columns');
+            html = html.replace(new RegExp('btn btn-primary', 'g'), 'button');
+            html = html.replace(new RegExp('btn btn-default', 'g'), 'secondary button');
+        }
+
+        //To UIKit
+        if (framework == 'uikit') {
+            html = html.replace(new RegExp(' container', 'g'), ' uk-container uk-container-center');
+            html = html.replace(new RegExp('row clearfix', 'g'), 'uk-grid');
+            html = html.replace(new RegExp('column full', 'g'), 'uk-width-1-1');
+            html = html.replace(new RegExp('column half', 'g'), 'uk-width-1-2');
+            html = html.replace(new RegExp('column third', 'g'), 'uk-width-1-3');
+            html = html.replace(new RegExp('column fourth', 'g'), 'uk-width-1-4');
+            html = html.replace(new RegExp('column fifth', 'g'), 'uk-width-1-5');
+            html = html.replace(new RegExp('column sixth', 'g'), 'uk-width-1-6');
+            html = html.replace(new RegExp('column two-third', 'g'), 'uk-width-2-3');
+            html = html.replace(new RegExp('column two-fourth', 'g'), 'uk-width-3-4');
+            html = html.replace(new RegExp('column two-sixth', 'g'), 'uk-width-5-6');
+            html = html.replace(new RegExp('btn btn-primary', 'g'), 'uk-button uk-button-primary uk-button-large');
+            html = html.replace(new RegExp('btn btn-default', 'g'), 'uk-button uk-button-large');
+        }
+
+        //To Material
+        if (framework == 'material') {
+            html = html.replace(new RegExp(' container', 'g'), '');
+            html = html.replace(new RegExp('row clearfix', 'g'), 'mdl-grid');
+            html = html.replace(new RegExp('column full', 'g'), 'mdl-cell mdl-cell--12-col');
+            html = html.replace(new RegExp('column half', 'g'), 'mdl-cell mdl-cell--6-col');
+            html = html.replace(new RegExp('column third', 'g'), 'mdl-cell mdl-cell--4-col');
+            html = html.replace(new RegExp('column fourth', 'g'), 'mdl-cell mdl-cell--3-col');
+            html = html.replace(new RegExp('column fifth', 'g'), 'mdl-cell mdl-cell--2-col');
+            html = html.replace(new RegExp('column sixth', 'g'), 'mdl-cell mdl-cell--2-col');
+            html = html.replace(new RegExp('column two-third', 'g'), 'mdl-cell mdl-cell--8-col');
+            html = html.replace(new RegExp('column two-fourth', 'g'), 'mdl-cell mdl-cell--9-col');
+            html = html.replace(new RegExp('column two-sixth', 'g'), 'mdl-cell mdl-cell--10-col');
+            html = html.replace(new RegExp('btn btn-primary', 'g'), 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent');
+            html = html.replace(new RegExp('btn btn-default', 'g'), 'mdl-button mdl-js-button mdl-button--raised');
+        }
+
+        html = html.replace(/{id}/g, makeid()).replace(/{id2}/g, makeid()).replace(/{id3}/g, makeid()).replace(/{id4}/g, makeid()).replace(/{id5}/g, makeid()).replace(/{id6}/g, makeid()).replace(/{id7}/g, makeid()).replace(/{id8}/g, makeid()).replace(/{id9}/g, makeid()).replace(/{id10}/g, makeid()).replace(/{id11}/g, makeid()).replace(/{id12}/g, makeid()).replace(/{id13}/g, makeid()).replace(/{id14}/g, makeid()).replace(/{id15}/g, makeid()).replace(/{id16}/g, makeid()).replace(/{id17}/g, makeid()).replace(/{id18}/g, makeid()).replace(/{id19}/g, makeid()).replace(/{id20}/g, makeid());
+        
+     //   html = html.replace(/{id(.*?)}/g, makeid()+"$1");
+
+        html = html.replace(/\[\%IMAGE_PATH\%\]/g, image_path);
+        html = html.replace(/\%5B\%25IMAGE_PATH\%25\%5D/g, image_path);
+        html = html.replace(/is-section /g, "is-section new-is-section ").replace(/is-section"/g, "is-section new-is-section\"");
+        try {
+            if (snippetPathReplace[0] != '') {
+                var regex = new RegExp(snippetPathReplace[0], 'g');
+                html = html.replace(regex, snippetPathReplace[1]);
+
+                var string1 = snippetPathReplace[0].replace(/\//g, '%2F');
+                var string2 = snippetPathReplace[1].replace(/\//g, '%2F');
+
+                var regex2 = new RegExp(string1, 'g');
+                html = html.replace(regex2, string2);
+            }
+        } catch (e) { }
+
+        //Add html
+        
+        //is-bg-grey
+        
+        var hasClassName = false;
+
+        if($(html).hasClass("is-bg-grey")){
+            hasClassName =true;
+        }
+
+
+        currParent.jQuery('.is-wrapper').data("contentbox").addIdea(html);
+
+
+       
+
+        //Add googleFonts
+        if(googleFonts){
+            $.each(googleFonts, function (index, line) {
+                //line => https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,600,700
+                //get fontname
+                line = line.replace(/\+/g, ' ').replace(/%20/g, ' ');
+                var fontname = line.substr(line.indexOf('family=') + 7);
+                if (fontname.indexOf(':') != -1) {
+                    fontname = fontname.split(':')[0];
+                }
+
+                //check if already included
+                var exist = false;
+                var links = parent.document.getElementsByTagName("link");
+                for (var i = 0; i < links.length; i++) {
+                    var src = links[i].href.toLowerCase();
+                    src = src.replace(/\+/g, ' ').replace(/%20/g, ' ');
+                    if (fontname && src.indexOf(fontname.toLowerCase()) != -1) exist = true;
+                }
+
+                if (!exist) currParent.jQuery('.is-wrapper').append(line);
+
+            });
+        }
+        //Add contentCss
+        var exist = false;
+        var links = parent.document.getElementsByTagName("link");
+        for (var i = 0; i < links.length; i++) {
+            var src = links[i].href.toLowerCase();
+            if (contentCss && src.indexOf(contentCss.toLowerCase()) != -1) exist = true;
+        }
+
+       // if (!exist) parent.jQuery('.is-wrapper').append('<link data-name="contentstyle" data-class="' + contentClass + '" href="' + contentStylePath + contentCss + '" rel="stylesheet">');
+
+        //Remove dummy DIV after last section
+        currParent.jQuery('.is-wrapper').children('div.is-dummy').remove();
+        currParent.jQuery('.is-wrapper').append('<div class="is-dummy" style="height:0px"></div>'); //always on the last
+
+
+        if(!hasClassName){
+         currParent.jQuery('.is-wrapper').children('.is-section').last().removeClass("is-bg-grey");
+        }
+
+
+       // addDesign
+
+    var newsection = parent.jQuery(".is-wrapper > .new-is-section").removeClass("new-is-section");
+
+    if(parent.$isSection && parent.$isSection.length && newsection.length){
+        parent.$isSection.after(newsection);
+        if(newsection.eq(0).offset().top){
+            parent.jQuery('body,html').stop().animate({
+                    scrollTop: newsection.eq(0).offset().top
+            }, 800);
+        }
+
+    }
+
+        //INFO: for cleanup unused, see ContentBox.js' cleanupUnused() method
+    }
+
+    setTimeout(function(){
+        $('.pace-inactive').remove();
+        $(".is-category-list").css("display","flex");
+        $(".is-design-list").css("display","flex").fadeIn();
+
+    },300);
+
+    parent.jQuery("#add-section-Update-list").on("change",function(){
+        var section = parent.customSectionCodeNew;
+        if($(".is-design-list2 > div[data-id=\""+section["ID"]+"\"]").length){
+            $(".is-design-list2 > div[data-id=\""+section["ID"]+"\"]").find("img").attr("src",section["Image"]);
+        }else{
+            jQuery('.is-design-list2').append('<div data-id="'+section["ID"]+'" data-name="' + section["Title"] + '"><i class="delete"></i><img src="'+section["Image"] + '"><span class="name">'+section["Title"]+'</span></div>');
+        }
+        
+
+
+    })
+
+ 
+
+
+</script>
+
+<textarea id="codeview" style="width:300px;height:100px;position:fixed;bottom:0;right:0;display:none;">
+
+</textarea>
+</body>
+</html>

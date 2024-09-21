@@ -1,0 +1,484 @@
+.ajaxform .dg-form-content{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ajaxform .dg-form-content {
+	list-style: none;
+	margin: 0 0 0 -30px;
+	padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: left;
+}
+.ajaxform .dg-form-content > li{
+	float: left;    
+	padding: 0 0 30px 30px;
+}
+.ajaxform .dg-form-content > li.from-footer{
+	float: none;
+	clear: both;
+}
+.ajaxform .dg-form-content:after ,
+.ajaxform .dg-form-content .form_input:after {
+	clear:both;
+	content:".";
+	height:0px;
+	font-size:0px;
+	visibility:hidden;
+	display:block;
+}
+.ajaxform .dg-form-content * {
+-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+		box-sizing: border-box;
+}
+.ajaxform .dg-form-content  *:before,
+.ajaxform .dg-form-content  *:after {
+-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+		box-sizing: border-box;
+}
+
+.ajaxform .dg-form-content .form-control-wrap {
+	display: block;
+	
+	list-style: none;
+	position: relative;
+}
+
+.ajaxform .dg-form-content .wpcf7-submit {
+	margin: 12px 0;
+}
+
+
+.ajaxform .dg-form-content .form-control-wrap select[multiple],
+.ajaxform .dg-form-content .form-control-wrap select[size]{
+	height: auto!important;
+	padding: 5px 0;
+}
+.ajaxform .dg-form-content .form-control-wrap select[multiple] option,
+.ajaxform .dg-form-content .form-control-wrap select[size] option{
+	padding: 4px 8px;
+}
+.ajaxform .dg-form-content .form-control-wrap textarea {
+	height: auto;
+	overflow-x: hidden;
+}
+
+.ajaxform .dg-form-content label {
+	color: #424242;
+	font-size: 15px;
+	font-weight: normal;
+	margin: 0;
+}
+.ajaxform .dg-form-content input[type="checkbox"] +label {
+	display: inline-block;
+}
+
+.ajaxform .dg-form-content input,
+.ajaxform .dg-form-content textarea {
+	vertical-align: middle;
+}
+
+.ajaxform .dg-form-content .form-control-wrap>input[type=checkbox] {
+	margin-top: 12px;
+}
+
+.ajaxform .dg-form-content .first {
+	margin: 0;
+}
+
+.ajaxform .dg-form-content .form-control-wrap input[type=file] {
+	margin-top: 13px;
+}
+
+
+.ajaxform .dg-form-content .wpcf7-submit:disabled,
+.ajaxform .dg-form-content .wpcf7-submit:disabled:hover {
+	cursor: not-allowed;
+}
+
+.ajaxform .dg-form-content+div.wpcf7-response-output {
+	padding-top: 0.7em;
+	padding-bottom: 0.7em;
+}
+
+
+
+.ajaxform .dg-form-content.form-background > label {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.ajaxform .dg-form-content .wpcf7-submit.size-lg {
+	height: 50px;
+}
+
+.ajaxform .dg-form-content input[type=checkbox], 
+.ajaxform .dg-form-content input[type=radio]{
+ margin: 0 0 2px ;
+}
+.ajaxform input[type=text], 
+.ajaxform input[type=email], 
+.ajaxform input[type=url], 
+.ajaxform input[type=tel], 
+.ajaxform input[type=number], 
+.ajaxform input[type=date], 
+.ajaxform select, 
+.ajaxform textarea{
+-webkit-appearance: none;
+}
+
+
+.dg-form-home05.ajaxform .dg-form-content .form-control-wrap {
+	display: block;
+	padding: 0 0 20px 0;
+}
+
+.dg-form-menu-content {
+	position: relative;
+	border: 1px solid #bbbbbb;
+	background: transparent;
+	height: 35px;
+	border-radius: 3px;
+	padding: 0 115px 0 40px;
+}
+
+.dg-form-menu-content .lnr {
+	display: block;
+	background-color: #bbbbbb;
+	text-align: center;
+	line-height: 35px;
+	width: 35px;
+	color: #FFFF;
+	position: absolute;
+	left: -1px;
+	top: -1px;
+	border-radius: 3px 0 0 3px;
+}
+
+.dg-form-menu-content .wpcf7-text {
+	border: none;
+	background: transparent;
+	line-height: 35px;
+	height: 35px;
+	width: 100%;
+	outline: none;
+}
+
+.dg-form-menu-content .wpcf7-submit {
+	background-color: #20a3f0;
+	border: none;
+	text-align: center;
+	height: 35px;
+	width: 110px;
+	color: #FFFF;
+	position: absolute;
+	right: -1px;
+	top: -1px;
+	font-size: 13px;
+	border-radius: 0 3px 3px 0;
+}
+
+.ajaxform.light .dg-form-content .form-control-wrap select[multiple="multiple"] option{
+	color:inherit;
+}
+
+@media only screen and (max-width: 767px) {
+	.ajaxform .dg-form-content{
+		margin-left: 0;
+	}
+	.ajaxform .dg-form-content > li{
+		width: 100%!important;
+		padding-left: 0
+	}
+
+}
+
+
+
+
+.formError { z-index: 999; }
+.formError .formErrorContent { z-index: 1101; }
+.formError .formErrorArrow { z-index: 1102; }
+
+.ui-dialog .formError { z-index: 5000; }
+.ui-dialog .formError .formErrorContent { z-index: 5001; }
+.ui-dialog .formError .formErrorArrow { z-index: 5006; }
+
+.inputContainer {
+	position: relative;
+	float: left;
+}
+
+
+.formError {
+	position: absolute;
+	top: 300px;
+	left: 300px;
+	display: block;
+	cursor: pointer;
+	text-align: left;
+}
+
+.formError.inline {
+	position: relative;
+	top: 0;
+	left: 0;
+	display: inline-block;
+}
+
+.ajaxSubmit {
+	padding: 20px;
+	background: #55ea55;
+	border: 1px solid #999;
+	display: none;
+}
+
+.formError .formErrorContent {
+	width: 100%;
+	background: #ee0101;
+	position:relative;
+	color: #fff;
+	min-width: 150px;
+	font-size: 11px;
+	border: 2px solid #ddd;
+	box-shadow: 0 0 6px #000;
+	-moz-box-shadow: 0 0 6px #000;
+	-webkit-box-shadow: 0 0 6px #000;
+	-o-box-shadow: 0 0 6px #000;
+	padding: 4px 10px 4px 10px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-o-border-radius: 6px;
+}
+
+.formError.inline .formErrorContent {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+	border: none;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-o-border-radius: 0;
+}
+
+.greenPopup .formErrorContent {
+	background: #33be40;
+}
+
+.blackPopup .formErrorContent {
+	background: #393939;
+	color: #FFF;
+}
+
+.formError .formErrorArrow {
+	width: 15px;
+	margin: -2px 0 0 13px;
+	position:relative;
+}
+body[dir='rtl'] .formError .formErrorArrow,
+body.rtl .formError .formErrorArrow {
+	margin: -2px 13px 0 0;
+}
+
+.formError .formErrorArrowBottom {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+	margin: 0px 0 0 12px;
+	top:2px;
+}
+
+.formError .formErrorArrow div {
+	border-left: 2px solid #ddd;
+	border-right: 2px solid #ddd;
+	box-shadow: 0 2px 3px #444;
+	-moz-box-shadow: 0 2px 3px #444;
+	-webkit-box-shadow: 0 2px 3px #444;
+	-o-box-shadow: 0 2px 3px #444;
+	font-size: 0px;
+	height: 1px;
+	background: #ee0101;
+	margin: 0 auto;
+	line-height: 0;
+	font-size: 0;
+	display: block;
+}
+
+.formError .formErrorArrowBottom div {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+}
+
+.greenPopup .formErrorArrow div {
+	background: #33be40;
+}
+
+.blackPopup .formErrorArrow div {
+	background: #393939!important;
+	color: #FFF;
+}
+
+.formError .formErrorArrow .line10 {
+	width: 15px;
+}
+
+.formError .formErrorArrow .line9 {
+	width: 13px;
+}
+
+.formError .formErrorArrow .line8 {
+	width: 11px;
+}
+
+.formError .formErrorArrow .line7 {
+	width: 9px;
+}
+
+.formError .formErrorArrow .line6 {
+	width: 7px;
+}
+
+.formError .formErrorArrow .line5 {
+	width: 5px;
+}
+
+.formError .formErrorArrow .line4 {
+	width: 3px;
+}
+
+.formError .formErrorArrow .line3 {
+	width: 1px;
+	border-left: 2px solid #ddd;
+	border-right: 2px solid #ddd;
+	border-bottom: 0 solid #ddd;
+}
+
+.formError .formErrorArrow .line2 {
+	width: 3px;
+	border: none;
+	background: #ddd!important;
+}
+
+.formError .formErrorArrow .line1 {
+	width: 1px;
+	border: none;
+	background: #ddd!important;
+}
+
+.form_input .mce-panel iframe{
+	width: 99.9999%!important;
+}
+@media only screen and (max-width: 767px) {
+	.formError{
+		left: 0!important;
+	}
+}
+
+
+.elm-active .ajaxform,
+.cell-active .ajaxform{
+	pointer-events: none;
+}
+
+
+.ajaxform .message{
+	top: 100%;
+	position: absolute;
+	padding: 5px 15px;
+	margin-top: 15px;
+	margin-left: 30px;
+	z-index: 100;
+}
+
+.ajaxform .message.error{
+    background-color: #f2dede;
+    color: #b94a48;
+    border-left: 5px solid #c73412;
+}
+
+.ajaxform .message.valid{
+    background-color: #efffe6;
+    border-left: 5px solid #51bc1a;
+	color: #000;
+}
+.ajaxform .message.warning{
+	background-color: #fff3e1;
+    border-left: 5px solid #FF9800;
+    color: #000;
+}
+
+.ajaxform .request{
+	pointer-events: none;
+	position: relative;
+}
+.ajaxform .validationEngineContainer::before,
+.ajaxform .validationEngineContainer::after{
+	transition: all ease-in-out 300ms;
+}
+
+
+.ajaxform .validationEngineContainer::before{
+	content: "";
+	background-color: rgba(255,255,255,.4);
+	z-index: 100;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	opacity: 0;	
+	pointer-events: none;
+	visibility: hidden;
+
+}
+.ajaxform .validationEngineContainer::after{
+    opacity: 0.75;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border: 2px solid transparent;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+	animation: spin 0.35s linear infinite;
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+
+}
+.ajaxform .validationEngineContainer.request::before,
+.ajaxform .validationEngineContainer.request::after{
+	opacity: 1;
+	visibility: visible;
+}
+
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+
+

@@ -1,0 +1,254 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Options</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <link href="../box/edit.css" rel="stylesheet" type="text/css" />
+    <script src="../assets/scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/modules/js/jquery.tmpl.min.js"></script>
+
+    <link href="../assets/colorpicker/bootstrap-colorpicker.css" rel="stylesheet" type="text/css" />
+    <script src="../assets/colorpicker/bootstrap-colorpicker.js"></script>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <form id="OptionsBox" class="loading">
+
+
+    </form>
+    <div class="OptionsFooter">
+        <button type="button" title="Reset" class="primary"> Reset </button>
+    </div>
+
+
+
+
+    <script id='ThemePluginOptionsTmpl' type='text/x-jquery-tmpl'>
+        <div class="panel" >
+            <div class="panel-heading">${label}</div>
+            <div class="panel-body">
+                {{each(index,item) Options}}
+                    <div class="form-group">
+                        <label class="control-label" for="ctl_${item.name}">${item.label}:</label>
+                        {{if item.type == "color"}}
+                        <div class="controls">
+                            <div class="input-group">
+                                <input type="text" name="${item.name}" id="ctl_${item.name}" class="form-control color-picker-auto input_text " data-cssVar="${cssVar}" value="${getThemeVal(item.name)}" />
+                                <i style="background-color:${getThemeVal(item.name)}"></i>
+                            </div>
+                        </div>
+                        {{/if}}
+                    </div>
+                {{/each}} 
+            </div>
+        </div>  
+    </script>
+
+
+
+    <script type="text/javascript">
+        let ThemePluginOptions = [{
+            label: "Content Color",
+            Options: [{
+                label: "Default Font Color",
+                name: "contentfontcolor",
+                type: "color",
+                cssVar: '--default-color'
+            }, {
+                label: "Accent Color",
+                name: "AccentColour",
+                type: "color",
+                cssVar: '--accent-color'
+            }, {
+                label: "Accent Color 2",
+                name: "AccentColour2",
+                type: "color",
+                cssVar: '--accent-color2'
+            }, {
+                label: "Accent Color 3",
+                name: "AccentColour3",
+                type: "color",
+                cssVar: '--accent-color3'
+            }, {
+                label: "Accent Color 4",
+                name: "AccentColour4",
+                type: "color",
+                cssVar: '--accent-color4'
+            }, {
+                label: "Link Color",
+                name: "linkcolor1",
+                type: "color",
+                cssVar: '--link-color'
+            }, {
+                label: "Visited Link Color",
+                name: "linkcolor2",
+                type: "color",
+                cssVar: '--link-visited-color'
+            }, {
+                label: "Hover Link Color",
+                name: "linkcolor3",
+                type: "color",
+                cssVar: '--link-hover-color'
+            }, {
+                label: "Active Link Color",
+                name: "linkcolor4",
+                type: "color",
+                cssVar: '--link-active-color'
+            }]
+        }, {
+            label: "Button Color",
+            Options: [{
+                label: "Color",
+                name: "buttoncolor",
+                type: "color",
+                cssVar: '--button-color'
+            }, {
+                label: "Hover Color",
+                name: "buttonhovercolor",
+                type: "color",
+                cssVar: '--button-hover-color'
+            }]
+        }, {
+            label: "H1 ~ H6 Color",
+            Options: [{
+                label: "H1 Color",
+                name: "h1color",
+                type: "color",
+                cssVar: '--h1-color'
+            }, {
+                label: "H2 Color",
+                name: "h2color",
+                type: "color",
+                cssVar: '--h2-color'
+            }, {
+                label: "H3 Color",
+                name: "h3color",
+                type: "color",
+                cssVar: '--h3-color'
+            }, {
+                label: "H4 Color",
+                name: "h4color",
+                type: "color",
+                cssVar: '--h4-color'
+            }, {
+                label: "H5 Color",
+                name: "h5color",
+                type: "color",
+                cssVar: '--h5-color'
+            }, {
+                label: "H6 Color",
+                name: "h6color",
+                type: "color",
+                cssVar: '--h6-color'
+            }, ]
+        }];
+
+
+
+        let ThemeVal = {};
+
+        function getThemeVal(a) {
+            return ThemeVal['THEME-' + a] || '';
+        }
+
+        function getThemeList() {
+            $.ajax({
+                type: "POST",
+                url: parent.ServiceSaveThemeSettingsUrl + $(".is-wrapper").data("mid"),
+                timeout: 30000,
+                success: function (data) {
+                    if (typeof data == "string") {
+                        data = JSON.parse(data);
+                    }
+                    ThemeVal = data.Results;
+                    $("#OptionsBox").empty();
+                    $('#ThemePluginOptionsTmpl').tmpl(ThemePluginOptions).appendTo('#OptionsBox');
+
+                    $('.color-picker-auto').colorpicker().on('changeColor', function (ev) {
+                        $(ev.currentTarget).siblings("i").css("backgroundColor", ev.color.toHex());
+                    });
+
+                    $(".panel-heading").on("click", function () {
+                        $(this).siblings(".panel-body").stop().slideToggle();
+                        $(this).parent().siblings().children(".panel-body").stop().slideUp();
+                    })
+
+                    let getValue = null;
+
+                    $(".form-control").on("change", function (ev) {
+                        clearTimeout(getValue);
+                        getValue = setTimeout(() => {
+
+                            let valList = {};
+
+                            let rootCSS = ":root{";
+                            $(".form-control").each(function () {
+                                rootCSS += $(this).attr("data-cssVar") + ":" + $(this).val() + ";";
+                                valList[$(this).attr("name")] = $(this).val();
+                            })
+                            rootCSS += "}";
+
+                            parentHead.find("#rootCss").html(rootCSS);
+
+                            $(parent.document.querySelector("#EditThemePluginOptionsTextarea")).val(JSON.stringify(valList));
+                            $(parent.document.querySelector("#ContentBuilderSaveHTML")).removeAttr("disabled");
+
+
+
+                        }, 50);
+
+                        let parentHead = $(parent.document.querySelector("head"));
+
+                        if (!parentHead.find("#rootCss").length) {
+                            parentHead.append('<style type="text/css" id="rootCss"></style>');
+                        }
+                        $(".OptionsFooter").show();
+
+                    });
+
+
+                    $(".OptionsFooter .primary").on("click", function () {
+                        $("#OptionsBox").addClass("loading");
+                        getThemeList();
+                        let parentHead = $(parent.document.querySelector("head"));
+                        if (parentHead.find("#rootCss").length) {
+                            parentHead.find("#rootCss").empty();
+                            $(parent.document.querySelector("#EditThemePluginOptionsTextarea")).val("");
+                        }
+
+                        $(".OptionsFooter").hide();
+
+                    })
+
+
+                    $("#OptionsBox").removeClass("loading");
+
+
+
+                }
+            })
+        }
+
+        getThemeList();
+
+
+    </script>
+
+</body>
+
+</html>

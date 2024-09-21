@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblCreatedDate.Text" xml:space="preserve">
+    <value>Create Date</value>
+  </data>
+  <data name="lblSource.Text" xml:space="preserve">
+    <value>Source:</value>
+  </data>
+  <data name="lblViews.Text" xml:space="preserve">
+    <value>Views:</value>
+  </data>
+  <data name="lblPublishDate.Text" xml:space="preserve">
+    <value>Publish Date</value>
+  </data>
+  <data name="lblRelated.Text" xml:space="preserve">
+    <value>Related Articles</value>
+  </data>
+  <data name="lblAuthor.Text" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="lblSummary.Text" xml:space="preserve">
+    <value>Summary:</value>
+  </data>
+  <data name="lblCreator.Text" xml:space="preserve">
+    <value>Creator:</value>
+  </data>
+  <data name="lblRating.Text" xml:space="preserve">
+    <value>Rating:</value>
+  </data>
+  <data name="lblRatingVotes.Text" xml:space="preserve">
+    <value>Rating People:</value>
+  </data>
+  <data name="lblAverage.Text" xml:space="preserve">
+    <value>Average Rating:</value>
+  </data>
+  <data name="bthPost.Text" xml:space="preserve">
+    <value>Submit Rating</value>
+  </data>
+  <data name="lblSay.Text" xml:space="preserve">
+    <value>Says:</value>
+  </data>
+  <data name="lblCommentHead.Text" xml:space="preserve">
+    <value>Comment List:</value>
+  </data>
+  <data name="lblCommentNeedAuth.Text" xml:space="preserve">
+    <value>Your comment information must be authorized first before display.</value>
+  </data>
+  <data name="lblEnter.Text" xml:space="preserve">
+    <value>Post your comment</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Your Name:</value>
+  </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>Your Mail:</value>
+  </data>
+  <data name="lblComment.Text" xml:space="preserve">
+    <value>Comment Info:</value>
+  </data>
+  <data name="chkPrivate.Text" xml:space="preserve">
+    <value>Private (viewable for article creator only)</value>
+  </data>
+  <data name="btnAddComment.Text" xml:space="preserve">
+    <value>Submit Comment</value>
+  </data>
+  <data name="Comment.ErrorMessage.Text" xml:space="preserve">
+    <value>Please enter your comment.</value>
+  </data>
+  <data name="lblCommentNeedLoggedIn.Text" xml:space="preserve">
+    <value>Login to comment.</value>
+  </data>
+  <data name="lblRatingNeedLoggedIn.Text" xml:space="preserve">
+    <value>Login to rating.</value>
+  </data>
+  <data name="Name.ErrorMessage.Text" xml:space="preserve">
+    <value>Please enter your name.</value>
+  </data>
+  <data name="lblUrl.Text" xml:space="preserve">
+    <value>Your Site:</value>
+  </data>
+  <data name="lblRecommendNeedLoggedIn.Text" xml:space="preserve">
+    <value>(Login to vote).</value>
+  </data>
+  <data name="ibtnDown.Text" xml:space="preserve">
+    <value>Rete It Down</value>
+  </data>
+  <data name="ibtnUp.Text" xml:space="preserve">
+    <value>Rate It Up</value>
+  </data>
+  <data name="lblAttacmentNeedLoggedIn.Text" xml:space="preserve">
+    <value>(Login to view attachments).</value>
+  </data>
+  <data name="lblTags.Text" xml:space="preserve">
+    <value>Tags:</value>
+  </data>
+  <data name="lblAttachments.Text" xml:space="preserve">
+    <value>Attachments:</value>
+  </data>
+  <data name="lblEmailExplanation.Text" xml:space="preserve">
+    <value>If you have an avatar photo at &lt;a href="http://www.gravatar.com" target="_blank"&gt;Gravatar (http://www.gravatar.com)&lt;/a&gt;, you can enter its email address below to show your avatar in comments.  Note, if you are a register user of this site and already specify an avatar photo in your profile, module will use that prior, and ignore below Gravatar address.</value>
+  </data>
+  <data name="lblAboutAuthor.Text" xml:space="preserve">
+    <value>About Creator</value>
+  </data>
+  <data name="lblAddFavorite.Text" xml:space="preserve">
+    <value>Add To Favorite</value>
+  </data>
+  <data name="lblPrint.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Return.Text" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="flashVars_ClickToPlay.Text" xml:space="preserve">
+    <value>Click To Play</value>
+  </data>
+  <data name="btnAddTicket.Text" xml:space="preserve">
+    <value>Contact Author</value>
+  </data>
+  <data name="btnAddWatch.Text" xml:space="preserve">
+    <value>Add To Watch List</value>
+  </data>
+  <data name="lblAddSuccess.Text" xml:space="preserve">
+    <value>Added successfully.</value>
+  </data>
+  <data name="tabAboutAuthor.Text" xml:space="preserve">
+    <value>About Creator</value>
+  </data>
+  <data name="tabAttachment.Text" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="tabComment.Text" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="tabDescription.Text" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="tabRating.Text" xml:space="preserve">
+    <value>Ratings</value>
+  </data>
+  <data name="tabRelatedAudio.Text" xml:space="preserve">
+    <value>Related Audio</value>
+  </data>
+  <data name="tabRelatedImage.Text" xml:space="preserve">
+    <value>Related Images</value>
+  </data>
+  <data name="tabRelatedArticle.Text" xml:space="preserve">
+    <value>Related Articles</value>
+  </data>
+  <data name="tabRelatedVideo.Text" xml:space="preserve">
+    <value>Related Videos</value>
+  </data>
+  <data name="WatchListAdded.Text" xml:space="preserve">
+    <value>Watch list was added successfully.</value>
+  </data>
+  <data name="hlProfileUrl.Text" xml:space="preserve">
+    <value>View Profile</value>
+  </data>
+  <data name="Mail_Comment_Description.Text" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="Mail_Comment_Subject.Text" xml:space="preserve">
+    <value>{0} comment submit notification</value>
+  </data>
+  <data name="Mail_Comment_Thanks.Text" xml:space="preserve">
+    <value>Please login in {0} for more detail. Thanks for your support.</value>
+  </data>
+  <data name="Mail_Comment_Tip.Text" xml:space="preserve">
+    <value>{0} has created a new comment for your article "{1}"</value>
+  </data>
+  <data name="tabGoogleMap.Text" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="lblAddress.Text" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="lblBusinessScope.Text" xml:space="preserve">
+    <value>Business Scope:</value>
+  </data>
+  <data name="lblCompany.Text" xml:space="preserve">
+    <value>Company:</value>
+  </data>
+  <data name="lblFax.Text" xml:space="preserve">
+    <value>Fax:</value>
+  </data>
+  <data name="lblIM.Text" xml:space="preserve">
+    <value>IM:</value>
+  </data>
+  <data name="lblLinkman.Text" xml:space="preserve">
+    <value>Linkman:</value>
+  </data>
+  <data name="lblLocationCity.Text" xml:space="preserve">
+    <value>City:</value>
+  </data>
+  <data name="lblLocationCountry.Text" xml:space="preserve">
+    <value>Country:</value>
+  </data>
+  <data name="lblLocationState.Text" xml:space="preserve">
+    <value>State/Province:</value>
+  </data>
+  <data name="lblLocationTown.Text" xml:space="preserve">
+    <value>Town:</value>
+  </data>
+  <data name="lblLogoUrl.Text" xml:space="preserve">
+    <value>Logo:</value>
+  </data>
+  <data name="lblSiteUrl.Text" xml:space="preserve">
+    <value>Web Site:</value>
+  </data>
+  <data name="lblSlogan.Text" xml:space="preserve">
+    <value>Slogan:</value>
+  </data>
+  <data name="lblTel.Text" xml:space="preserve">
+    <value>Tel:</value>
+  </data>
+  <data name="lblZipcode.Text" xml:space="preserve">
+    <value>Zipcode:</value>
+  </data>
+  <data name="tabVote.Text" xml:space="preserve">
+    <value>Vote</value>
+  </data>
+  <data name="btnVote.Text" xml:space="preserve">
+    <value>Vote</value>
+  </data>
+  <data name="lblVoteFailure.Text" xml:space="preserve">
+    <value>Vote failure, please select a answer first.</value>
+  </data>
+  <data name="lblVoteSuccess.Text" xml:space="preserve">
+    <value>Vote Success.</value>
+  </data>
+  <data name="lblVoteSummary.Text" xml:space="preserve">
+    <value>{0} Votes. ({1})</value>
+  </data>
+  <data name="Votes.Text" xml:space="preserve">
+    <value>{0} Votes({1}%)</value>
+  </data>
+  <data name="Vote_Expire.Text" xml:space="preserve">
+    <value>This vote is expired.</value>
+  </data>
+  <data name="Vote_Login.Text" xml:space="preserve">
+    <value>Please login to vote.</value>
+  </data>
+  <data name="Vote_NoPermission.Text" xml:space="preserve">
+    <value>You don't have permission to vote.</value>
+  </data>
+  <data name="Vote_PcVoteBefore.Text" xml:space="preserve">
+    <value>This computer has voted before.</value>
+  </data>
+  <data name="Vote_PeopleVoteBefore.Text" xml:space="preserve">
+    <value>You have voted before.</value>
+  </data>
+  <data name="Anonymous.Text" xml:space="preserve">
+    <value>Anonymous User</value>
+  </data>
+  <data name="VoteCount.Text" xml:space="preserve">
+    <value>people voted.</value>
+  </data>
+  <data name="btnConfirmPassword.Text" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="lblInvalidPassword.Text" xml:space="preserve">
+    <value>Invalid password, please try again.</value>
+  </data>
+  <data name="lblPassword.Text" xml:space="preserve">
+    <value>This article is protected, enter its password to view it</value>
+  </data>
+  <data name="lblEventEnd.Text" xml:space="preserve">
+    <value>Event End:</value>
+  </data>
+  <data name="lblEventStart.Text" xml:space="preserve">
+    <value>Event Start:</value>
+  </data>
+</root>

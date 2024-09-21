@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlDB DBName="LayoutDB.Header.saas2" DBVersion="1">
+  <LayoutDB>
+    <PrimaryGuid>a0dbb6bb4a8e4c3abb2519e2f31829a0</PrimaryGuid>
+    <Name>saas2</Name>
+    <Alias>saas02</Alias>
+    <Description></Description>
+    <CSSData> #dng-megamenu993511 .primary_structure&gt;li&gt;a, 
+	#dng-megamenu993511 .primary_structure&gt;li&gt;a:link, 
+	#dng-megamenu993511 .primary_structure&gt;li&gt;a:active,
+	#dng-megamenu993511 .primary_structure&gt;li&gt;a:visited{color:#ffffff;font-size:18px;font-weight:600;}#dng-megamenu993511 .dnngo_slide_menu li, 
+	#dng-megamenu993511 .dnngo_slide_menu li a{color:#666666;font-size:13px;line-height:39px;}#dng-megamenu993511 .dnngo_menu_list .pane_space, 
+	#dng-megamenu993511 .dnngo_menu_list a, 
+	#dng-megamenu993511 .dnngo_menu_list a:link,
+	#dng-megamenu993511 .dnngo_menu_list a:active, 
+	#dng-megamenu993511 .dnngo_menu_list a:visited,
+	#dng-megamenu993511 .dnngo_boxslide .pane_space, 
+	#dng-megamenu993511 .dnngo_boxslide a, 
+	#dng-megamenu993511 .dnngo_boxslide a:link,
+	#dng-megamenu993511 .dnngo_boxslide a:active, 
+	#dng-megamenu993511 .dnngo_boxslide a:visited{color:#666666;font-size:13px;line-height:35px;}#dng-megamenu993511 .dnngo_menu_list &gt; li &gt; a,
+	#dng-megamenu993511 .dnngo_menu_list &gt; li &gt; a:link,
+	#dng-megamenu993511 .dnngo_menu_list &gt; li &gt; a:active,
+	#dng-megamenu993511 .dnngo_menu_list &gt; li &gt; a:visited,
+	#dng-megamenu993511 .dnngo_menu_list .submenu_title a,
+	#dng-megamenu993511 .dnngo_menu_list .submenu_title a:link,
+	#dng-megamenu993511 .dnngo_menu_list .submenu_title a:active,
+	#dng-megamenu993511 .dnngo_menu_list .submenu_title a:visited,
+	#dng-megamenu993511 .dnngo_menu_list .submenu_title,
+	#dng-megamenu993511 .dnngo_boxslide .submenu_title a,
+	#dng-megamenu993511 .dnngo_boxslide .submenu_title a:link,
+	#dng-megamenu993511 .dnngo_boxslide .submenu_title a:active,
+	#dng-megamenu993511 .dnngo_boxslide .submenu_title a:visited,
+	#dng-megamenu993511 .dnngo_boxslide .submenu_title{color:#424242;font-size:15px;font-weight:600;line-height:35px;}
+	.dng-megamenu {
+		margin: 0px;
+		padding: 0px;
+		clear: both;
+	}
+	
+	.dng-megamenu .primary_structure {
+		position: relative;
+		clear: both;
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.dng-megamenu .header-split .primary_structure {
+		z-index: 6;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li {
+		float: left;
+		list-style: none;
+		position: relative;
+		margin: 0;
+		/* z-index: 6; */
+	}
+	
+	.dng-megamenu .primary_structure&gt;li&gt;a {
+		display: inline-block;
+		word-spacing: normal;
+		line-height: 33px;
+		-webkit-transition: color ease-in 200ms, border-color ease-in 200ms, background-color ease-in 200ms;
+		transition: color ease-in 200ms, border-color ease-in 200ms, background-color ease-in 200ms;
+		/* Safari and Chrome */
+	}
+	
+	.dng-megamenu&gt;ul&gt;li&gt;a&gt;span {
+		display: inline-block;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li&gt;a:hover,
+	.dng-megamenu .primary_structure&gt;li&gt;a:focus,
+	.dng-megamenu .primary_structure&gt;li.menu_hover&gt;a,
+	.dng-megamenu .primary_structure&gt;li.current&gt;a {
+		text-decoration: none;
+	}
+	
+	.dng-megamenu .primary_structure span img,
+	.dng-megamenu .primary_structure span i {
+		margin-right: 8px;
+		width: 1.1em;
+		text-align: center;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li&gt;a,
+	.dng-megamenu .primary_structure&gt;li&gt;a:link,
+	.dng-megamenu .primary_structure&gt;li&gt;a:active,
+	.dng-megamenu .primary_structure&gt;li&gt;a:visited {
+		color: inherit;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li.dir&gt;a&gt;span:after {
+		content: "";
+		height: 5px;
+		width: 5px;
+		overflow: hidden;
+		margin: 0 0px 3px 6px;
+		display: inline-block;
+		vertical-align: middle;
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		/* IE 9 */
+		-moz-transform: rotate(45deg);
+		/* Firefox */
+		-webkit-transform: rotate(45deg);
+		/* Safari and Chrome */
+		-o-transform: rotate(45deg);
+		/* Opera */
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		border-bottom: 1px solid;
+		border-right: 1px solid;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li&gt;a&gt;span&gt;i {
+		color: inherit;
+		font-size: 1.2em;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li:hover&gt;a,
+	.dng-megamenu .primary_structure&gt;li&gt;a:focus,
+	.dng-megamenu .primary_structure&gt;li.current&gt;a,
+	.dng-megamenu .primary_structure&gt;li.menu_hover&gt;a {
+		color: #2c5cda;
+	}
+	
+	.dng-megamenu .label,
+	.dng-megamenu .badge {
+		padding: .19em .4em .2em;
+		font-size: 70%;
+		line-height: 1;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0px 3px 2px;
+	}
+	
+	.dnngo_gomenu+.menu-logo {
+		display: none;
+	}
+	
+	.menu-logo {
+		list-style: none;
+	}
+		/*hoverstyle_3*/
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li {
+			margin-left: 2px;
+		}
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li&gt;a {
+			background-color: transparent;
+			border-radius: 0px 0px 0px 0px;
+			-moz-border-radius: 0px 0px 0px 0px;
+			-webkit-border-radius: 0px 0px 0px 0px;
+			position: relative;
+		}
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li:hover&gt;a,
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li&gt;a:focus,
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li.current&gt;a,
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li.menu_hover&gt;a,
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li&gt;a.current {
+			background-color: #2c5cda;
+		}
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li&gt;a::after{
+			content: "";
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+			box-shadow: 0 0px 20px rgba(0,0,0,.1);
+			border-radius: inherit;
+			z-index: 0;
+			pointer-events: none;
+			opacity: 0;
+			-webkit-transition: all ease-in 300ms;
+			transition: all ease-in 300ms;
+			pointer-events: none;
+		}
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li:hover&gt;a::after,
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li&gt;a:focus::after,
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li.current&gt;a::after,
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li.menu_hover&gt;a::after,
+		.dng-megamenu.hoverstyle_3 .primary_structure&gt;li&gt;a.current::after {
+			opacity: 1;
+		}
+	#dng-megamenu993511 .primary_structure&gt;li&gt;a{
+		padding-top:10px; 
+		padding-right:20px;
+		padding-bottom:10px;
+		padding-left:20px;
+	  }
+	
+		#dng-megamenu993511.hoverstyle_3 .primary_structure &gt; li &gt; a {
+			border-radius:26px;
+			-moz-border-radius:26px;
+			-webkit-border-radius:26px;
+		}
+		#dng-megamenu993511.hoverstyle_3 .primary_structure &gt; li:hover &gt; a,
+		#dng-megamenu993511.hoverstyle_3 .primary_structure &gt; li &gt; a:focus,
+		#dng-megamenu993511.hoverstyle_3 .primary_structure &gt; li.current &gt; a,
+		#dng-megamenu993511.hoverstyle_3 .primary_structure &gt; li.menu_hover &gt; a,
+		#dng-megamenu993511.hoverstyle_3 .primary_structure &gt; li &gt; a.current {
+			background-color:var(--accent-color);
+			color:#ffffff!important;
+		}
+		#dng-megamenu993511.hoverstyle_3 .primary_structure &gt; li &gt; a:after {
+			color:var(--accent-color)!important;
+		}
+		
+		#dng-megamenu993511 .dnngo_slide_menu,
+		#dng-megamenu993511 .dnngo_slide_menu .dnngo_submenu{background-color:#ffffff;}
+	#dng-megamenu993511 .dnngo_slide_menu li:hover&gt;a, 
+	#dng-megamenu993511 .dnngo_slide_menu li&gt;a:focus, 
+	#dng-megamenu993511 .dnngo_slide_menu li.subcurrent&gt;a{
+			background-color:var(--accent-color);
+			}
+		
+		#dng-megamenu993511 .dnngo_menu_list,
+		#dng-megamenu993511 .dnngo_boxslide{background-color:#ffffff;}
+	#dng-megamenu993511 .dnngo_menu_list li li.subcurrent &gt; a,
+	#dng-megamenu993511 .dnngo_menu_list li.subcurrent &gt; a,
+	#dng-megamenu993511 .dnngo_custommenu li.current &gt; a{
+		color:var(--accent-color);
+		background-color:transparent;
+	}
+	#dng-megamenu993511 .dnngo_menu_list li a:hover,
+	#dng-megamenu993511 .dnngo_menu_list li a:focus,
+	#dng-megamenu993511 .dnngo_boxslide .submenu_title a:hover {
+		color:var(--accent-color);
+	}
+	#dng-megamenu993511 .dnngo_menu_list li li a:hover,
+	#dng-megamenu993511 .dnngo_menu_list li li a:focus,
+	#dng-megamenu993511 .dnngo_custommenu .submenu li a:hover,
+	#dng-megamenu993511 .dnngo_custommenu .submenu li a:focus{
+		color:#FFF;
+		background-color:var(--accent-color);
+	}
+	
+		#dng-megamenu993511 .mega-menu .boxslide &gt; .line span,
+		#dng-megamenu993511 .dnngo_menuslide &gt; .line span{
+			border-color:#dcdcdc;
+		}
+		
+	#search-popup-box427525 a.search:hover,
+	#search-popup-box427525 .popup-close:hover{
+		color:var(--accent-color);
+	}
+	#mobilemenu928270 .mobileclose,
+		#mobilemenu928270 .gomenu &gt; ul &gt; li &gt; a &gt; span,
+		#mobilemenu928270 .gomenu li .arrows{color:#272727;font-size:20px;font-weight:600;}#mobilemenu928270 .sub-menu&gt; li &gt; a &gt; span{color:#272727;font-size:20px;font-weight:600;}#mobilemenu928270 .sub-menu li ul li a{color:#484848;font-size:18px;font-weight:600;}#mobilemenu928270 .sub-menu li ul li li a{color:#787878;font-size:16px;font-weight:600;}#mobilemenu928270 .sub-menu li ul li li li a{color:#787878;font-size:16px;font-weight:600;}
+				#mobilemenu928270 .sub-menu .arrows{
+					background-color:  var(--accent-color);
+				}
+				#mobilemenu928270 .menutitle,
+				#mobilemenu928270 .sub-menu li ul .arrows,
+				#mobilemenu928270 a:hover span,
+				#mobilemenu928270 .current &gt; a &gt; span,
+				#mobilemenu928270 .arrows.active + a span,
+				#mobilemenu928270 .subcurrent &gt; a &gt; span{
+					color:  var(--accent-color)!important;
+				}
+				#headerrow-950180{background-color:rgba(255,255,255,0);}#headerrow-950180 .dngTextBox,
+		#headerrow-950180 .header-content-wrap &gt;*:not(.nav-bar),
+		#headerrow-950180 .Normal,
+		#headerrow-950180 .Normal &gt; a,
+		#headerrow-950180 .Normal &gt; a:link,
+		#headerrow-950180 .Normal &gt; a:active,
+		#headerrow-950180 .Normal &gt; a:visited,
+		#headerrow-950180 .dngTextBox a,
+		#headerrow-950180 .dngTextBox a:link,
+		#headerrow-950180 .dngTextBox a:active,
+		#headerrow-950180 .dngTextBox a:visited{color:#ffffff;}#headerrow-950180,#headerrow-950180 .header-center,#headerrow-950180 .header-center .logo{height:100px}#headerrow-950180 .header-center .logo{line-height:100px!important}#headerrow-950180 &gt; .container,#megamenuWidthBox {width: auto!important;}#megamenuWidthBox{margin:0 30px;}
+			#headerrow-950180 .area-left{
+				padding-right:8px;
+			}
+			#headerrow-950180 .area-center{
+				padding-left:8px;
+				padding-right:8px;
+			}
+			#headerrow-950180 .area-right{
+				padding-left:8px;
+			}
+			#headerrow-950180 .area-left .header-content-wrap &gt; div{
+				margin-right:20px;
+			}
+			#headerrow-950180 .area-center .header-content-wrap &gt; div,
+			#headerrow-950180 .area-right .header-content-wrap &gt; div{
+				margin-left:20px;
+			}
+		
+			 .floating-active #headerrow-950180:after{
+			   content:"";
+			   position:absolute;
+			   top: 0;
+			   left: -20px;
+			   bottom: 0;
+			   right: 0;
+			   z-index: -1;
+			   pointer-events:none; 
+			   -webkit-box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			   box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			 }
+			 .floating-active #headerrow-950180{background-color:#ffffff!important;
+}#headerrow-950180 .Normal &gt; a:hover,
+			#headerrow-950180 .dngTextBox a:hover,
+			#headerrow-950180 .hover-accent:hover,
+			#headerrow-950180 .Login a:hover,
+			#headerrow-950180 .Login a.active{
+				color:var(--accent-color)
+			}
+			#headerrow-950180 .Login .userProfile .userMessages,
+			#headerrow-950180 .Login .userProperties ul.userMenu a span{
+				background-color:var(--accent-color)
+			}
+				.floating-nav.floating-active #headerrow-950180 .header-container-box,
+				.floating-nav.floating-active #headerrow-950180 .header-bg-box,
+				.floating-nav.floating-active #headerrow-950180 {
+					height:70px;
+				}
+				.floating-nav.floating-active #headerrow-950180 .logo{
+					height:70px;
+					line-height:70px!important;
+				}
+			#mobileheader-547853{background-color:#ffffff;}
+			#mobileheader-547853,#mobileheader-547853 .header-area{height:66px}
+			#mobileheader-547853 .dng-mobilemenu.mobile_menu.mm-menu{
+				top:66px
+			}
+			#mobileheader-547853 .header-area .logo img{max-height:58px}
+			#mobileheader-547853 .dngTextBox,
+		#mobileheader-547853 .header-content-wrap &gt;*:not(.nav-bar),
+		#mobileheader-547853 .Normal,
+		#mobileheader-547853 .Normal &gt; a,
+		#mobileheader-547853 .Normal &gt; a:link,
+		#mobileheader-547853 .Normal &gt; a:active,
+		#mobileheader-547853 .Normal &gt; a:visited,
+		#mobileheader-547853 .dngTextBox a,
+		#mobileheader-547853 .dngTextBox a:link,
+		#mobileheader-547853 .dngTextBox a:active,
+		#mobileheader-547853 .dngTextBox a:visited{color:#272727;}#mobileheader-547853 .header-content-wrap .Normal &gt; a:hover,
+				#mobileheader-547853 .header-content-wrap .dngTextBox a:hover,
+				#mobileheader-547853 .Normal &gt; a:hover,
+				#mobileheader-547853 .dngTextBox a:hover,
+				#mobileheader-547853 .hover-accent:hover,
+				#mobileheader-547853 .search-popup-box .icon.active,
+				#mobileheader-547853 .search-popup-box:hover .icon,
+				#mobileheader-547853 .mobile-menu-icon:hover .fa-bars:before,
+				#mobileheader-547853 .search-popup-box .submit:hover,
+				#mobileheader-547853 .search-popup-box .popup-close:hover,
+				#mobileheader-547853 .shop-cart-list .shop-list .remove:hover,
+				#mobileheader-547853 .shop-cart-list .shop-list .price-info span,
+				#mobileheader-547853 .shop-cart-list .shop-list .number-box .number-up:hover,
+				#mobileheader-547853 .mobile-header .shop-cart-list .shop-list .number-box .number-down:hover,
+				#mobileheader-547853 .search-popup-box .icon:hover{
+					color:var(--accent-color);
+				}</CSSData>
+    <HTMLData>&lt;div class="header-replace header-position"&gt;&lt;header class="header_bg header-wrap header-default floating-nav floating-nav-sticky"&gt;&lt;div id="megamenuWidthBox" class="container"&gt;&lt;/div&gt;  &lt;div class="header-center-bg floating-dark-color header-bg-box" data-height="70"  id="headerrow-950180"&gt;&lt;div class="container"&gt;&lt;div class="header-center header-container-box"&gt; &lt;div class="header-area area-left header-vertical  pl-35 header-vertical" style="width:155px"  id="column-16184"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="logo" id="logo164259"&gt;&lt;dnn:LOGO runat="server" id="dnnLOGO164259" cssClass="header-logo floating-header-logo" BorderWidth="0" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-center header-vertical text-center header-vertical text-center"   id="column-77633"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="nav-bar"&gt;&lt;div id="dng-megamenu993511" data-split="false" class="dng-megamenu hoverstyle_3 flyout-shadow mega-shadow"&gt;&lt;dnn:MEGAMENU runat="server" id="MEGAMENU993511" Effect="Hslide" ViewLevel="0" ShowUI="Extension" WidthBoxClassName="#megamenuWidthBox"/&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/megamenu/megamenu.css" PathNameAlias="SkinPath" Priority="9"  /&gt;&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/megamenu/megamenu.js" PathNameAlias="SkinPath" Priority="9" ForceProvider ="DnnFormBottomProvider" /&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-right header-horizontal  pr-35 header-horizontal" style="width:70px"  id="column-992062"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="dngTextBox"&gt;&lt;a href="https://www.dnngo.net/DNNStore/tabid/58/ProductID/1653/Default.aspx" target="_blank" class="homepage10-header-btn box-shadow bg-accent3" title="Buy It Now"&gt;BUY IT NOW&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;  &lt;/header&gt;&lt;/div&gt;&lt;div class="mobile-header-replace"&gt;&lt;header class="mobile-header floating-nav"&gt; &lt;div class="header-mobile-bg mobile-header-shadow" id="mobileheader-547853"&gt;&lt;div class="header-mobile"&gt; &lt;div class="header-area area-left header-horizontal text-left header-horizontal text-left"   id="column-83280"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="search-popup-box" id="search-popup-box427525" placeholder="Enter any key words to search"&gt;&lt;div class="icon hover-accent"&gt;&lt;span class="magnifier"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-reveal color-dark "&gt;&lt;/div&gt;&lt;div class="popup-content color-dark bg-accent"&gt;&lt;div class="popup-close hover-accent"&gt;&lt;span class="icon-cross"&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-center"&gt;&lt;dnn:SEARCH runat="server" id="dnnSEARCH427525" CssClass="search"  ShowSite="False" ShowWeb="False"  submit=" " /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+		&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/search-popup/search-popup.css" PathNameAlias="SkinPath" Priority="318" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+		&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/search-popup/search-popup.js"  ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="9" HtmlAttributesAsString="async:'async'"   /&gt;	
+		&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-center header-horizontal  header-horizontal"   id="column-460671"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="logo" id="logo889099"&gt;&lt;dnn:LOGO runat="server" id="dnnLOGO889099" cssClass="header-logo" BorderWidth="0" /&gt;&lt;dnn:LOGO runat="server" id="floatingLOGO889099" cssClass="floating-header-logo" BorderWidth="0" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-right header-horizontal text-right header-horizontal text-right"   id="column-682201"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="mobile-menu-icon"&gt;&lt;span class="dg-menu-anime"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;
+	&lt;div class="mobilemenu-main" id="mobilemenu928270" data-title="Menu"&gt;&lt;span class="mobileclose"&gt;&lt;/span&gt;
+	&lt;div class="m-menu"&gt;
+	&lt;dnn:LEFTGOMENU runat="server" id="MOBILEMENU928270" Effect="HTML"/&gt; 
+	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/mobilemenu/mobilemenu.css" PathNameAlias="SkinPath" Priority="317" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+	&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/mobilemenu/mobilemenu.js" ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="17" HtmlAttributesAsString="async:'async'"   /&gt;	
+	&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt; &lt;/header&gt;&lt;/div&gt;</HTMLData>
+    <LabelData>[header sticky='checked' stickytype='sticky' position='floating' id='919400' ] [headerrow layout='boxed' name='Header Top' areaname='header-top' space='8' space2='25' line='off' bottomline='off' height='42' bgcolor='#f4f4f4' color='#424242' bgposition='center center' id='284940' ] [headercolumn col='4' name='Left' areaname='area-left' id='400717' ] [/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='721910' ] [/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' id='909311' ] [/headercolumn] [/headerrow] [headerrow layout='wide' active='active' name='Header Middle' areaname='header-center' height='100' space='8' space2='20' line='off' bottomline='off' bgcolor='rgba(255,255,255,0)' hidesticky='checked' styheight='70' styshadow='checked' color='#ffffff' stybgcolor='#ffffff' modulepath='/DesktopModules/DNNGo_ThemePluginPro/' stycolor='dark' id='950180' ] [headercolumn col='4' name='Left' areaname='area-left' width='155px' dir='vertical' id='16184' classname='pl-35' ] [logo id='164259' stysource='main' /][/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' dir='vertical' align='center' id='77633' ] [megamenu menu_hover_style='hoverstyle_3' color='#ffffff' fontsize='18px' st='10' sr='20' sb='10' sl='20' menubw='2' fmcolor='#666666' fmfontsize='13px' fmlineheight='39px' fmshadow='checked' mmcolor='#666666' mmfontsize='13px' mmlineheight='35px' mmtcolor='#424242' mmtfontsize='15px' mmtlineheight='35px' mmshadow='checked' mmlinecolor='#dcdcdc' fmbgcolor='#ffffff' mmbgcolor='#ffffff' weight='600' mmtweight='600' id='993511' hovercolor='#ffffff' menubr='26' /][/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' dir='horizontal' width='70px' id='992062' classname='pr-35' ] [textarea content='PGEgaHJlZj0iaHR0cHM6Ly93d3cuZG5uZ28ubmV0L0ROTlN0b3JlL3RhYmlkLzU4L1Byb2R1Y3RJRC8xNjUzL0RlZmF1bHQuYXNweCIgdGFyZ2V0PSJfYmxhbmsiIGNsYXNzPSJob21lcGFnZTEwLWhlYWRlci1idG4gYm94LXNoYWRvdyBiZy1hY2NlbnQzIiB0aXRsZT0iQnV5IEl0IE5vdyI+QlVZIElUIE5PVzwvYT4=' id='577247' /][/headercolumn] [/headerrow] [headerrow layout='boxed' name='Header Bottom' areaname='header-bottom' space='8' space2='15' line='off' bottomline='off' height='42' bgcolor='#f4f4f4' color='#424242' id='397066' ] [headercolumn col='4' name='Left' areaname='area-left' id='409098' ] [/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='499556' ] [/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' id='339269' ] [/headercolumn] [/headerrow] [/header][mobileheader sticky='checked' id='592258' ] [mobileheaderrow layout='4+4+4' active='active' name='Mobile Header' areaname='header-mobile' line='off' bottomline='off' bgcolor='#ffffff' shadow='checked' color='#272727' hidesticky='checked' stybgcolor='#7a2727' height='66' id='547853' ] [headercolumn col='4' name='Left' areaname='area-left' dir='horizontal' align='left' id='83280' ] [search style='popup' placeholder='Enter any key words to search' color='dark' id='427525' /][/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' dir='horizontal' id='460671' ] [logo id='889099' /][/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' dir='horizontal' align='right' id='682201' ] [mobilemenu color='#ffffff' fontsize='18px' bgcolor='#2c5cda' lv1color='#272727' lv1fontsize='20px' ticolor='#ffffff' tifontsize='18px' linecolor='rgba(255,255,255,0.2)' navbartitle='Menu' tiweight='600' lv1weight='600' accentcolor='#ffffff' weight='400' current='#901dd6' currentcolor='#f8f363' lv2color='#272727' lv2weight='600' lv2fontsize='20px' lv3color='#484848' lv3weight='600' lv3fontsize='18px' lv4color='#787878' lv4weight='600' lv4fontsize='16px' lv5color='#787878' lv5weight='600' lv5fontsize='16px' id='928270' /][/headercolumn] [/mobileheaderrow] [/mobileheader]</LabelData>
+    <Type>Header</Type>
+    <Version>02.03.00</Version>
+    <ImageUrl>resource/thumbnails/header/saas2.jpg</ImageUrl>
+    <Groups>custom</Groups>
+    <Sort>19</Sort>
+    <CreateTime>2024-05-22T18:37:18</CreateTime>
+    <UpdateTime>2024-05-22T18:37:18</UpdateTime>
+    <Enable>True</Enable>
+  </LayoutDB>
+</XmlDB>

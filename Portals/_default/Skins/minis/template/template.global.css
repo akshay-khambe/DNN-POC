@@ -1,0 +1,1640 @@
+#set( $AccentColour = ${xf.ViewGlobalSetting("AccentColour","#20a3f0")} )
+#set( $AccentColour2 = ${xf.ViewGlobalSetting("AccentColour2","#2c5cda")} )
+#set( $AccentColour3 = ${xf.ViewGlobalSetting("AccentColour3","#fc7b35")} )
+#set( $AccentColour4 = ${xf.ViewGlobalSetting("AccentColour4","#fd4ea5")} )
+#set( $buttoncolor = ${xf.ViewGlobalSetting("buttoncolor","#1abc9c")} )
+#set( $buttonhovercolor = ${xf.ViewGlobalSetting("buttonhovercolor","#00aa89")} )
+
+#set( $width0 = ${xf.GetArrayByString("ContainerWidth",0,false)} )
+#set( $width1 = ${xf.GetArrayByString("ContainerWidth",1,false)} )
+#set( $width2 = ${xf.GetArrayByString("ContainerWidth",2,false)} )
+#set( $width3 = ${xf.GetArrayByString("ContainerWidth",3,false)} )
+#set( $width4 = ${xf.GetArrayByString("ContainerWidth",4,false)} )
+#set( $width5 = ${xf.GetArrayByString("ContainerWidth",5,false)} )
+
+/* CustomFonts */
+${xf.ViewCustomFontStyle()}
+
+:root{
+
+	--default-color: ${xf.ViewGlobalSetting("contentfontcolor","#494e5c")};
+    --accent-color:${AccentColour};
+    --accent-color2:${AccentColour2};
+    --accent-color3:${AccentColour3};
+    --accent-color4:${AccentColour4};
+
+    --family:"${xf.ViewGlobalSetting("contentfontfamily","")}";
+    --family1:"${xf.ViewGlobalSetting("CSfontfamily1","")}";
+    --family2:"${xf.ViewGlobalSetting("CSfontfamily2","")}";
+    --family3:"${xf.ViewGlobalSetting("CSfontfamily3","")}";
+
+    --button-color:${buttoncolor};
+    --button-hover-color:${buttonhovercolor};
+
+	--link-color:${xf.ViewGlobalSetting("linkcolor1","")};
+	--link-visited-color:${xf.ViewGlobalSetting("linkcolor2","")};
+	--link-hover-color:${xf.ViewGlobalSetting("linkcolor3","")};
+	--link-active-color:${xf.ViewGlobalSetting("linkcolor4","")};
+
+	--container-width: ${width5};
+
+	--h1-color: ${xf.ViewGlobalSetting("h1color","")};
+	--h2-color: ${xf.ViewGlobalSetting("h2color","")};
+	--h3-color: ${xf.ViewGlobalSetting("h3color","")};
+	--h4-color: ${xf.ViewGlobalSetting("h4color","")};
+	--h5-color: ${xf.ViewGlobalSetting("h5color","")};
+	--h6-color: ${xf.ViewGlobalSetting("h6color","")};
+
+}
+@media (min-width:576px) {
+	:root{
+		--container-width: ${width4};
+	}
+}
+@media (min-width:768px) {
+	:root{
+		--container-width: ${width3};
+	}
+}
+@media (min-width:992px) {
+	:root{
+		--container-width: ${width2};
+	}
+}
+@media (min-width:1200px) {
+	:root{
+		--container-width: ${width1};
+	}
+}
+@media (min-width:1600px) {
+	:root{
+		--container-width: ${width0};
+	}
+}
+
+
+${xf.ViewGlobalSetting("CustomCSS","")}
+
+#if(${xf.ViewGlobalSetting("ContainerLayout","Boxed")} == "Boxed") 
+	.dng-main.Boxed {
+		margin: auto;
+	 }
+	.dng-main.Boxed #dng-wrapper{
+		width: var(--container-width);
+		margin:auto;
+		position:relative;
+		#if(${xf.ViewGlobalSetting("Boxbgcolor","")}!="") background-color:${xf.ViewGlobalSetting("Boxbgcolor","")};  #end
+		#if(${xf.ViewGlobalSetting("Boxbgcolorimg","")}!="") 
+		background-image:url("${xf.ViewGlobalSetting("Boxbgcolorimg","")}");
+		background-attachment: ${xf.GetArrayByString("Boxbgcolorattr",0,false)};
+		background-position: ${xf.GetArrayByString("Boxbgcolorattr",1,false)} ${xf.GetArrayByString("Boxbgcolorattr",2,false)}; 
+		background-repeat: ${xf.GetArrayByString("Boxbgcolorattr",3,false)};
+		background-size: ${xf.GetArrayByString("Boxbgcolorattr",4,false)}; 	
+		#end	
+
+  	}
+	#if(${xf.ViewGlobalSetting("boxedshadow",true)})
+		.dng-main.Boxed #dng-wrapper{
+			-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+			box-shadow: 0px 0px 10px rgba(49, 40, 40, 0.2);
+		}
+	#end
+
+	@media (min-width:992px) {
+		.dng-main.Boxed {
+			padding: ${xf.ViewGlobalSetting("boxedSpacingTop","30")}px ${xf.ViewGlobalSetting("boxedSpacingRight","0")}px ${xf.ViewGlobalSetting("boxedSpacingBottom","30")}px ${xf.ViewGlobalSetting("boxedSpacingLeft","0")}px;	
+		}
+	}
+#end	
+	
+	
+.dng-main{
+	#if(${xf.ViewGlobalSetting("Backgroundcolor","")}!="") background-color:${xf.ViewGlobalSetting("Backgroundcolor","")};  #end
+	#if(${xf.ViewGlobalSetting("bgcolorimg","")}!="") 
+		background-image:url("${xf.ViewGlobalSetting("bgcolorimg","")}");
+		background-attachment: ${xf.GetArrayByString("bgcolorattr",0,false)};
+		background-position: ${xf.GetArrayByString("bgcolorattr",1,false)} ${xf.GetArrayByString("bgcolorattr",2,false)}; 
+		background-repeat: ${xf.GetArrayByString("bgcolorattr",3,false)};
+		background-size: ${xf.GetArrayByString("bgcolorattr",4,false)}; 	
+	#end	
+}
+.container{
+	#if(${xf.GetArrayByString("ContentMargin",4,false)}!="")
+	padding-left:${xf.GetArrayByString("ContentMargin",4,false)}px;
+	padding-right:${xf.GetArrayByString("ContentMargin",4,false)}px;
+	#end
+	width: var(--container-width);
+	max-width: 100%;
+}
+.is-container{
+	max-width: var(--container-width);
+}
+.container-fluid {
+	#if(${xf.GetArrayByString("ContentMargin",4,false)}!="")
+	padding-right:${xf.GetArrayByString("ContentMargin",4,false)}px;
+	padding-left:${xf.GetArrayByString("ContentMargin",4,false)}px;
+	#end
+	margin-right: auto;
+	margin-left: auto;
+}   
+#if(${xf.GetArrayByString("ContentMarginTop",4,false)}!="" || ${xf.GetArrayByString("ContentMarginBottom",4,false)}!="")
+#dnn_content{
+	#if(${xf.GetArrayByString("ContentMarginTop",4,false)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",4,false)}px;	#end
+	#if(${xf.GetArrayByString("ContentMarginBottom",4,false)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",4,false)}px;	#end
+}		
+#end	
+
+@media (min-width:576px) {
+	#if(${xf.GetArrayByString("ContentMargin",3,false)}!="")
+	.container{
+		padding-left:${xf.GetArrayByString("ContentMargin",3,false)}px;
+		padding-right:${xf.GetArrayByString("ContentMargin",3,false)}px;
+	}
+	.container-fluid {
+		padding-right:${xf.GetArrayByString("ContentMargin",3,false)}px;
+		padding-left:${xf.GetArrayByString("ContentMargin",3,false)}px;
+	}
+	#end
+	#if(${xf.GetArrayByString("ContentMarginTop",3,false)}!="" || ${xf.GetArrayByString("ContentMarginBottom",3,false)}!="")
+	#dnn_content{
+		#if(${xf.GetArrayByString("ContentMarginTop",3,false)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",3,false)}px;	#end
+		#if(${xf.GetArrayByString("ContentMarginBottom",3,false)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",3,false)}px;	#end
+	}		
+	#end	
+}
+@media (min-width:768px) {
+	#if(${xf.GetArrayByString("ContentMargin",2,false)}!="")
+	.container{
+		padding-left:${xf.GetArrayByString("ContentMargin",2,false)}px;
+		padding-right:${xf.GetArrayByString("ContentMargin",2,false)}px;
+	}
+	.container-fluid {
+		padding-right:${xf.GetArrayByString("ContentMargin",2,false)}px;
+		padding-left:${xf.GetArrayByString("ContentMargin",2,false)}px;
+	}
+	#end
+	#if(${xf.GetArrayByString("ContentMarginTop",2,false)}!="" || ${xf.GetArrayByString("ContentMarginBottom",2,false)}!="")
+	#dnn_content{
+		#if(${xf.GetArrayByString("ContentMarginTop",2,false)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",2,false)}px;	#end
+		#if(${xf.GetArrayByString("ContentMarginBottom",2,false)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",2,false)}px;	#end
+	}		
+	#end	
+}
+@media (min-width:992px) {
+	#if(${xf.GetArrayByString("ContentMargin",1,false)}!="")
+	.container{
+		padding-left:${xf.GetArrayByString("ContentMargin",1,false)}px;
+		padding-right:${xf.GetArrayByString("ContentMargin",1,false)}px;
+	}
+	.container-fluid {
+		padding-right:${xf.GetArrayByString("ContentMargin",1,false)}px;
+		padding-left:${xf.GetArrayByString("ContentMargin",1,false)}px;
+	}
+	#end
+	#if(${xf.GetArrayByString("ContentMarginTop",1,false)}!="" || ${xf.GetArrayByString("ContentMarginBottom",1,false)}!="")
+	#dnn_content{
+		#if(${xf.GetArrayByString("ContentMarginTop",1,false)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",1,false)}px;	#end
+		#if(${xf.GetArrayByString("ContentMarginBottom",1,false)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",1,false)}px;	#end
+	}		
+	#end	
+}
+@media (min-width:1200px) {
+	#if(${xf.GetArrayByString("ContentMargin",0,false)}!="")
+	.container{
+		padding-left:${xf.GetArrayByString("ContentMargin",0,false)}px;
+		padding-right:${xf.GetArrayByString("ContentMargin",0,false)}px;
+	}
+	.container-fluid {
+		padding-right:${xf.GetArrayByString("ContentMargin",0,false)}px;
+		padding-left:${xf.GetArrayByString("ContentMargin",0,false)}px;
+	}
+	#end
+	#if(${xf.GetArrayByString("ContentMarginTop",0,false)}!="" || ${xf.GetArrayByString("ContentMarginBottom",0,false)}!="")
+	#dnn_content{
+		#if(${xf.GetArrayByString("ContentMarginTop",0,false)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",0,false)}px;	#end
+		#if(${xf.GetArrayByString("ContentMarginBottom",0,false)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",0,false)}px;	#end
+	}		
+	#end	
+}
+
+
+#if(${xf.ViewGlobalSetting("ContainerLayout","Boxed")} != "Boxed") 
+	.dng-left-full .dng-column:first-of-type > .dng-column-inner,
+	.left-full-column > .full-column-inner{
+		margin-left:calc((var(--container-width) - 100vw)/2);
+		width:calc(100% + (100vw - var(--container-width))/2);
+	}
+	.dng-right-full .dng-column:last-of-type > .dng-column-inner,
+	.right-full-column > .full-column-inner{
+		margin-right:calc((var(--container-width) - 100vw)/2);
+		width:calc(100% + (100vw - var(--container-width))/2);
+	}
+	.full-column > .full-column-inner{
+		width:100vw;	
+		margin-left:calc((var(--container-width) - 100vw)/2 - 15px);
+	}
+	.layout-no-plr .full-column > .full-column-inner{
+		margin-left:calc((var(--container-width) - 100vw)/2);
+	}
+
+	#if(${width5}=="auto")
+	@media (max-width:575px) {
+		.dng-left-full .dng-column:first-of-type > .dng-column-inner,
+		.left-full-column > .full-column-inner{
+			margin-left:-15px;
+			width:calc(100% + 15px);
+		}
+		.dng-right-full .dng-column:last-of-type > .dng-column-inner,
+		.right-full-column > .full-column-inner{
+			margin-right:-15px;
+			width:calc(100% + 15px);
+		}
+		.full-column > .full-column-inner{
+			width:calc(100% + 30px);
+			margin-left:-15px;
+		}
+	}
+	#end
+
+
+#else
+	.dng-left-full .dng-column:first-of-type > .dng-column-inner,
+	.left-full-column > .full-column-inner{
+		margin-left:-15px;
+		width:calc(100% + 15px);
+	}
+	.dng-right-full .dng-column:last-of-type > .dng-column-inner,
+	.right-full-column > .full-column-inner{
+		margin-right:-15px;
+		width:calc(100% + 15px);
+	}
+	.full-column > .full-column-inner{
+		width:calc(100% + 30px);
+		margin-left:-15px;
+	}
+#end
+
+
+
+
+h1, h2, h3, h4, h5, h6{
+	font-family:inherit;
+}
+
+h1{
+	color:var(--h1-color);
+	#if(${xf.ViewGlobalSetting("h1fontfamily","")}!="")	font-family:"${xf.ViewGlobalSetting("h1fontfamily","")}"; #end
+	font-weight:${xf.ViewGlobalSetting("h1fontweight","")};
+	font-size:${xf.GetArrayByString("h1fontsize",4,false)};
+	line-height:${xf.GetArrayByString("h1lineheight",4,false)};
+	letter-spacing:${xf.ViewGlobalSetting("h1letterspacing","")};
+}		
+h2{
+	color:var(--h2-color);
+	#if(${xf.ViewGlobalSetting("h2fontfamily","")}!="")	font-family:"${xf.ViewGlobalSetting("h2fontfamily","")}"; #end
+	font-weight:${xf.ViewGlobalSetting("h2fontweight","")};
+	font-size:${xf.GetArrayByString("h2fontsize",4,false)};
+	line-height:${xf.GetArrayByString("h2lineheight",4,false)};
+	letter-spacing:${xf.ViewGlobalSetting("h2letterspacing","")};
+}		
+h3{
+	color:var(--h3-color);
+	#if(${xf.ViewGlobalSetting("h3fontfamily","")}!="")	font-family:"${xf.ViewGlobalSetting("h3fontfamily","")}"; #end
+	font-weight:${xf.ViewGlobalSetting("h3fontweight","")};
+	font-size:${xf.GetArrayByString("h3fontsize",4,false)};
+	line-height:${xf.GetArrayByString("h3lineheight",4,false)};
+	letter-spacing:${xf.ViewGlobalSetting("h3letterspacing","")};
+}		
+h4{
+	color:var(--h4-color);
+	#if(${xf.ViewGlobalSetting("h4fontfamily","")}!="")	font-family:"${xf.ViewGlobalSetting("h4fontfamily","")}"; #end
+	font-weight:${xf.ViewGlobalSetting("h4fontweight","")};
+	font-size:${xf.GetArrayByString("h4fontsize",4,false)};
+	line-height:${xf.GetArrayByString("h4lineheight",4,false)};
+	letter-spacing:${xf.ViewGlobalSetting("h4letterspacing","")};
+}		
+h5{
+	color:var(--h5-color);
+	#if(${xf.ViewGlobalSetting("h5fontfamily","")}!="")	font-family:"${xf.ViewGlobalSetting("h5fontfamily","")}"; #end
+	font-weight:${xf.ViewGlobalSetting("h5fontweight","")};
+	font-size:${xf.GetArrayByString("h5fontsize",4,false)};
+	line-height:${xf.GetArrayByString("h5lineheight",4,false)};
+	letter-spacing:${xf.ViewGlobalSetting("h5letterspacing","")};
+}		
+h6{
+	color:var(--h6-color);
+	#if(${xf.ViewGlobalSetting("h6fontfamily","")}!="")	font-family:"${xf.ViewGlobalSetting("h6fontfamily","")}"; #end
+	font-weight:${xf.ViewGlobalSetting("h6fontweight","")};
+	font-size:${xf.GetArrayByString("h6fontsize",4,false)};
+	line-height:${xf.GetArrayByString("h6lineheight",4,false)};
+	letter-spacing:${xf.ViewGlobalSetting("h6letterspacing","")};
+}	
+
+#Body .is-inherit-root-text,
+#Body .is-inherit-root-text p,
+#Body .is-inherit-root-text li,
+#Body .is-inherit-root-text div,
+#Body .is-inherit-root-text span{
+	color: var(--default-color);
+}
+#Body .is-inherit-root-text h1{
+	color:var(--h1-color);
+}
+#Body .is-inherit-root-text h2{
+	color:var(--h2-color);
+}
+#Body .is-inherit-root-text h3{
+	color:var(--h3-color);
+}
+#Body .is-inherit-root-text h4{
+	color:var(--h4-color);
+}
+#Body .is-inherit-root-text h5{
+	color:var(--h5-color);
+}
+#Body .is-inherit-root-text h6{
+	color:var(--h6-color);
+}
+
+
+
+@media only screen and (min-width: 576px)  {
+	#if(${xf.GetArrayByString("h1fontsize",3,false)}!="" || ${xf.GetArrayByString("h1lineheight",3,false)}!="")
+	h1{
+		#if(${xf.GetArrayByString("h1fontsize",3,false)}!="")font-size:${xf.GetArrayByString("h1fontsize",3,false)};#end
+		#if(${xf.GetArrayByString("h1lineheight",3,false)}!="")line-height:${xf.GetArrayByString("h1lineheight",3,false)};#end
+	}
+	#end
+	#if(${xf.GetArrayByString("h2fontsize",3,false)}!="" || ${xf.GetArrayByString("h2lineheight",3,false)}!="")
+	h2{
+		#if(${xf.GetArrayByString("h2fontsize",3,false)}!="")font-size:${xf.GetArrayByString("h2fontsize",3,false)};#end
+		#if(${xf.GetArrayByString("h2lineheight",3,false)}!="")line-height:${xf.GetArrayByString("h2lineheight",3,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h3fontsize",3,false)}!="" || ${xf.GetArrayByString("h3lineheight",3,false)}!="")
+	h3{
+		#if(${xf.GetArrayByString("h3fontsize",3,false)}!="")font-size:${xf.GetArrayByString("h3fontsize",3,false)};#end
+		#if(${xf.GetArrayByString("h3lineheight",3,false)}!="")line-height:${xf.GetArrayByString("h3lineheight",3,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h4fontsize",3,false)}!="" || ${xf.GetArrayByString("h4lineheight",3,false)}!="")
+	h4{
+		#if(${xf.GetArrayByString("h4fontsize",3,false)}!="")font-size:${xf.GetArrayByString("h4fontsize",3,false)};#end
+		#if(${xf.GetArrayByString("h4lineheight",3,false)}!="")line-height:${xf.GetArrayByString("h4lineheight",3,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h5fontsize",3,false)}!="" || ${xf.GetArrayByString("h5lineheight",3,false)}!="")
+	h5{
+		#if(${xf.GetArrayByString("h5fontsize",3,false)}!="")font-size:${xf.GetArrayByString("h5fontsize",3,false)};#end
+		#if(${xf.GetArrayByString("h5lineheight",3,false)}!="")line-height:${xf.GetArrayByString("h5lineheight",3,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h6fontsize",3,false)}!="" || ${xf.GetArrayByString("h6lineheight",3,false)}!="")
+	h6{
+		#if(${xf.GetArrayByString("h6fontsize",3,false)}!="")font-size:${xf.GetArrayByString("h6fontsize",3,false)};#end
+		#if(${xf.GetArrayByString("h6lineheight",3,false)}!="")line-height:${xf.GetArrayByString("h6lineheight",3,false)};#end
+	}					
+	#end
+}
+@media only screen and (min-width: 768px) {	
+	#if(${xf.GetArrayByString("h1fontsize",2,false)}!="" || ${xf.GetArrayByString("h1lineheight",2,false)}!="")
+	h1{
+		#if(${xf.GetArrayByString("h1fontsize",2,false)}!="")font-size:${xf.GetArrayByString("h1fontsize",2,false)};#end
+		#if(${xf.GetArrayByString("h1lineheight",2,false)}!="")line-height:${xf.GetArrayByString("h1lineheight",2,false)};#end
+	}
+	#end
+	#if(${xf.GetArrayByString("h2fontsize",2,false)}!="" || ${xf.GetArrayByString("h2lineheight",2,false)}!="")
+	h2{
+		#if(${xf.GetArrayByString("h2fontsize",2,false)}!="")font-size:${xf.GetArrayByString("h2fontsize",2,false)};#end
+		#if(${xf.GetArrayByString("h2lineheight",2,false)}!="")line-height:${xf.GetArrayByString("h2lineheight",2,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h3fontsize",2,false)}!="" || ${xf.GetArrayByString("h3lineheight",2,false)}!="")
+	h3{
+		#if(${xf.GetArrayByString("h3fontsize",2,false)}!="")font-size:${xf.GetArrayByString("h3fontsize",2,false)};#end
+		#if(${xf.GetArrayByString("h3lineheight",2,false)}!="")line-height:${xf.GetArrayByString("h3lineheight",2,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h4fontsize",2,false)}!="" || ${xf.GetArrayByString("h4lineheight",2,false)}!="")
+	h4{
+		#if(${xf.GetArrayByString("h4fontsize",2,false)}!="")font-size:${xf.GetArrayByString("h4fontsize",2,false)};#end
+		#if(${xf.GetArrayByString("h4lineheight",2,false)}!="")line-height:${xf.GetArrayByString("h4lineheight",2,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h5fontsize",2,false)}!="" || ${xf.GetArrayByString("h5lineheight",2,false)}!="")
+	h5{
+		#if(${xf.GetArrayByString("h5fontsize",2,false)}!="")font-size:${xf.GetArrayByString("h5fontsize",2,false)};#end
+		#if(${xf.GetArrayByString("h5lineheight",2,false)}!="")line-height:${xf.GetArrayByString("h5lineheight",2,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h6fontsize",2,false)}!="" || ${xf.GetArrayByString("h6lineheight",2,false)}!="")
+	h6{
+		#if(${xf.GetArrayByString("h6fontsize",2,false)}!="")font-size:${xf.GetArrayByString("h6fontsize",2,false)};#end
+		#if(${xf.GetArrayByString("h6lineheight",2,false)}!="")line-height:${xf.GetArrayByString("h6lineheight",2,false)};#end
+	}					
+	#end
+}
+@media only screen and (min-width: 992px) {	
+	#if(${xf.GetArrayByString("h1fontsize",1,false)}!="" || ${xf.GetArrayByString("h1lineheight",1,false)}!="")
+	h1{
+		#if(${xf.GetArrayByString("h1fontsize",1,false)}!="")font-size:${xf.GetArrayByString("h1fontsize",1,false)};#end
+		#if(${xf.GetArrayByString("h1lineheight",1,false)}!="")line-height:${xf.GetArrayByString("h1lineheight",1,false)};#end
+	}
+	#end
+	#if(${xf.GetArrayByString("h2fontsize",1,false)}!="" || ${xf.GetArrayByString("h2lineheight",1,false)}!="")
+	h2{
+		#if(${xf.GetArrayByString("h2fontsize",1,false)}!="")font-size:${xf.GetArrayByString("h2fontsize",1,false)};#end
+		#if(${xf.GetArrayByString("h2lineheight",1,false)}!="")line-height:${xf.GetArrayByString("h2lineheight",1,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h3fontsize",1,false)}!="" || ${xf.GetArrayByString("h3lineheight",1,false)}!="")
+	h3{
+		#if(${xf.GetArrayByString("h3fontsize",1,false)}!="")font-size:${xf.GetArrayByString("h3fontsize",1,false)};#end
+		#if(${xf.GetArrayByString("h3lineheight",1,false)}!="")line-height:${xf.GetArrayByString("h3lineheight",1,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h4fontsize",1,false)}!="" || ${xf.GetArrayByString("h4lineheight",1,false)}!="")
+	h4{
+		#if(${xf.GetArrayByString("h4fontsize",1,false)}!="")font-size:${xf.GetArrayByString("h4fontsize",1,false)};#end
+		#if(${xf.GetArrayByString("h4lineheight",1,false)}!="")line-height:${xf.GetArrayByString("h4lineheight",1,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h5fontsize",1,false)}!="" || ${xf.GetArrayByString("h5lineheight",1,false)}!="")
+	h5{
+		#if(${xf.GetArrayByString("h5fontsize",1,false)}!="")font-size:${xf.GetArrayByString("h5fontsize",1,false)};#end
+		#if(${xf.GetArrayByString("h5lineheight",1,false)}!="")line-height:${xf.GetArrayByString("h5lineheight",1,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h6fontsize",1,false)}!="" || ${xf.GetArrayByString("h6lineheight",1,false)}!="")
+	h6{
+		#if(${xf.GetArrayByString("h6fontsize",1,false)}!="")font-size:${xf.GetArrayByString("h6fontsize",1,false)};#end
+		#if(${xf.GetArrayByString("h6lineheight",1,false)}!="")line-height:${xf.GetArrayByString("h6lineheight",1,false)};#end
+	}					
+	#end
+}
+@media only screen and (min-width: 1200px) {	
+	#if(${xf.GetArrayByString("h1fontsize",0,false)}!="" || ${xf.GetArrayByString("h1lineheight",0,false)}!="")
+	h1{
+		#if(${xf.GetArrayByString("h1fontsize",0,false)}!="")font-size:${xf.GetArrayByString("h1fontsize",0,false)};#end
+		#if(${xf.GetArrayByString("h1lineheight",0,false)}!="")line-height:${xf.GetArrayByString("h1lineheight",0,false)};#end
+	}
+	#end
+	#if(${xf.GetArrayByString("h2fontsize",0,false)}!="" || ${xf.GetArrayByString("h2lineheight",0,false)}!="")
+	h2{
+		#if(${xf.GetArrayByString("h2fontsize",0,false)}!="")font-size:${xf.GetArrayByString("h2fontsize",0,false)};#end
+		#if(${xf.GetArrayByString("h2lineheight",0,false)}!="")line-height:${xf.GetArrayByString("h2lineheight",0,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h3fontsize",0,false)}!="" || ${xf.GetArrayByString("h3lineheight",0,false)}!="")
+	h3{
+		#if(${xf.GetArrayByString("h3fontsize",0,false)}!="")font-size:${xf.GetArrayByString("h3fontsize",0,false)};#end
+		#if(${xf.GetArrayByString("h3lineheight",0,false)}!="")line-height:${xf.GetArrayByString("h3lineheight",0,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h4fontsize",0,false)}!="" || ${xf.GetArrayByString("h4lineheight",0,false)}!="")
+	h4{
+		#if(${xf.GetArrayByString("h4fontsize",0,false)}!="")font-size:${xf.GetArrayByString("h4fontsize",0,false)};#end
+		#if(${xf.GetArrayByString("h4lineheight",0,false)}!="")line-height:${xf.GetArrayByString("h4lineheight",0,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h5fontsize",0,false)}!="" || ${xf.GetArrayByString("h5lineheight",0,false)}!="")
+	h5{
+		#if(${xf.GetArrayByString("h5fontsize",0,false)}!="")font-size:${xf.GetArrayByString("h5fontsize",0,false)};#end
+		#if(${xf.GetArrayByString("h5lineheight",0,false)}!="")line-height:${xf.GetArrayByString("h5lineheight",0,false)};#end
+	}		
+	#end
+	#if(${xf.GetArrayByString("h6fontsize",0,false)}!="" || ${xf.GetArrayByString("h6lineheight",0,false)}!="")
+	h6{
+		#if(${xf.GetArrayByString("h6fontsize",0,false)}!="")font-size:${xf.GetArrayByString("h6fontsize",0,false)};#end
+		#if(${xf.GetArrayByString("h6lineheight",0,false)}!="")line-height:${xf.GetArrayByString("h6lineheight",0,false)};#end
+	}					
+	#end
+}
+
+a, 
+a:link{
+	color: var(--link-color);
+}
+a:visited{
+	color: var(--link-visited-color);
+}
+a:hover{
+	color: var(--link-hover-color);
+}
+a:active{
+	color: var(--link-active-color);
+}
+
+
+.btn-accent,
+a.btn-accent{
+	color:var(--accent-color);
+	border-color:var(--accent-color);
+	background-color:var(--accent-color);
+}
+[class*="am-btn-"].btn-accent:before{
+	background-color:var(--accent-color);
+}
+
+div [class*="am-btn-"].hover-accent:hover{
+	color:var(--accent-color);
+	border-color:var(--accent-color);
+	background-color:var(--accent-color);
+}
+div [class*="am-btn-"].hover-accent:hover:before{
+	background-color:var(--accent-color); 
+}
+
+#Body .bg-accent{
+	background-color:var(--accent-color);
+}
+#Body .color-accent{
+	color:var(--accent-color);
+} 
+#Body .border-accent{
+	border-color:var(--accent-color);
+}
+#Body .bg-accent-hover:hover{
+	background-color:var(--accent-color);
+}
+#Body .color-accent-hover:hover{
+	color:var(--accent-color);
+} 
+#Body .border-accent-hover:hover{
+	border-color:var(--accent-color);
+}
+
+#Body .bg-accent2{
+	background-color:var(--accent-color2);
+}
+#Body .color-accent2{
+	color:var(--accent-color2);
+} 
+#Body .border-accent2{
+	border-color:var(--accent-color2);
+}
+
+#Body .bg-accent3{
+	background-color:var(--accent-color3);
+}
+#Body .color-accent3{
+	color:var(--accent-color3);
+} 
+#Body .border-accent3{
+	border-color:var(--accent-color3);
+}
+#Body .bg-accent4{
+	background-color:var(--accent-color4);
+}
+#Body .color-accent4{
+	color:var(--accent-color4);
+} 
+#Body .border-accent4{
+	border-color:var(--accent-color4);
+}
+
+b,
+strong{
+	font-weight:${xf.ViewGlobalSetting("StrongStyle","bold")};
+}
+.bold,
+.font-weight-bold,
+.strong-before:before,
+.strong-after:after,
+.strong-before :before,
+.strong-after :after{
+	font-weight:${xf.ViewGlobalSetting("StrongStyle","bold")}!important;
+}
+
+#Body, html, body, .Head, .SubTitle, .SubSubTitle, .Normal{
+	font-family: var(--family);  
+	font-size: ${xf.GetArrayByString("contentfontsize",4,false)}; 
+	line-height: ${xf.GetArrayByString("contentlineheight",4,false)};
+	letter-spacing: ${xf.ViewGlobalSetting("contentletterspacing","")};
+	color: var(--default-color);
+}
+.default-size{font-size:${xf.GetArrayByString("contentfontsize",4,false)};}
+.default-lineheight{line-height:${xf.GetArrayByString("contentlineheight",4,false)};}
+
+@media (min-width:576px) {
+	#if(${xf.GetArrayByString("contentfontsize",3,false)}!="")#Body, html, body, .Head, .SubTitle, .SubSubTitle, .Normal,.default-size{font-size:${xf.GetArrayByString("contentfontsize",3,false)};}#end
+	#if(${xf.GetArrayByString("contentlineheight",3,false)}!="")#Body, html, body, .Head, .SubTitle, .SubSubTitle, .Normal,.default-lineheight{line-height:${xf.GetArrayByString("contentlineheight",3,false)};}#end	
+}
+@media (min-width:768px) {
+	#if(${xf.GetArrayByString("contentfontsize",2,false)}!="")#Body, html, body, .Head, .SubTitle, .SubSubTitle, .Normal,.default-size{font-size:${xf.GetArrayByString("contentfontsize",2,false)};}#end
+	#if(${xf.GetArrayByString("contentlineheight",2,false)}!="")#Body, html, body, .Head, .SubTitle, .SubSubTitle, .Normal,.default-lineheight{line-height:${xf.GetArrayByString("contentlineheight",2,false)};}#end	
+}
+@media (min-width:992px) {
+	#if(${xf.GetArrayByString("contentfontsize",1,false)}!="")#Body, html, body, .Head, .SubTitle, .SubSubTitle, .Normal,.default-size{font-size:${xf.GetArrayByString("contentfontsize",1,false)};}#end
+	#if(${xf.GetArrayByString("contentlineheight",1,false)}!="")#Body, html, body, .Head, .SubTitle, .SubSubTitle, .Normal,.default-lineheight{line-height:${xf.GetArrayByString("contentlineheight",1,false)};}#end	
+}
+@media (min-width:1200px) {
+	#if(${xf.GetArrayByString("contentfontsize",0,false)}!="")#Body, html, body, .Head, .SubTitle, .SubSubTitle, .Normal,.default-size{font-size:${xf.GetArrayByString("contentfontsize",0,false)};}#end
+	#if(${xf.GetArrayByString("contentlineheight",0,false)}!="")#Body, html, body, .Head, .SubTitle, .SubSubTitle, .Normal,.default-lineheight{line-height:${xf.GetArrayByString("contentlineheight",0,false)};}#end	
+}
+
+
+
+button, 
+input, 
+select, 
+textarea,
+.btn{
+	font-family: var(--family);  
+}
+
+#if( ${xf.ViewGlobalSetting("contentfontcolor","")} !="")
+.default-color{
+	color: var(--default-color)!important;
+}
+.default-bg-color{
+	background-color: var(--default-color)!important;
+}
+.default-bg-color-hover:hover{
+	background-color: var(--default-color)!important;
+}
+.default-border-color{
+	border-color: var(--default-color)!important;
+}
+#end
+#if( ${xf.ViewGlobalSetting("AccentColour","")} !="")
+.accent-color{
+	color: $var(--accent-color);
+}
+#end
+#if( ${xf.ViewGlobalSetting("contentfontfamily","")} !="")
+.default-family{
+	font-family: var(--family)!important;
+}
+#end
+
+ 
+#if( ${xf.ViewGlobalSetting("CScolor1","")} !="")
+.color1{
+	color:${xf.ViewGlobalSetting("CScolor1","")}!important;
+}
+#end
+#if( ${xf.ViewGlobalSetting("CScolor2","")}!="")
+.color2{
+	color:${xf.ViewGlobalSetting("CScolor2","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor3","")} !="")
+.color3{
+	color:${xf.ViewGlobalSetting("CScolor3","")}!important;
+}
+#end
+#if( ${xf.ViewGlobalSetting("CScolor4","")} !="")
+.color4{
+	color:${xf.ViewGlobalSetting("CScolor4","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor5","")} !="")
+.color5{
+	color:${xf.ViewGlobalSetting("CScolor5","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor6","")} !="")
+.color6{
+	color:${xf.ViewGlobalSetting("CScolor6","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor7","")} !="")
+.color7{
+	color:${xf.ViewGlobalSetting("CScolor7","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor8","")} !="")
+.color8{
+	color:${xf.ViewGlobalSetting("CScolor8","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor9","")} !="")
+.color9{
+	color:${xf.ViewGlobalSetting("CScolor9","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor10","")} !="")
+.color10{
+	color:${xf.ViewGlobalSetting("CScolor10","")}!important;
+}
+#end
+
+
+#if(${xf.ViewGlobalSetting("CScolor1","")}!="")
+.bg-color1{
+	background-color:${xf.ViewGlobalSetting("CScolor1","")}!important;
+}
+.bg-color1-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor1","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor2","")}!="")
+.bg-color2{
+	background-color:${xf.ViewGlobalSetting("CScolor2","")}!important;
+}
+.bg-color2-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor2","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor3","")}!="")
+.bg-color3{
+	background-color:${xf.ViewGlobalSetting("CScolor3","")}!important;
+}
+.bg-color3-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor3","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor4","")}!="")
+.bg-color4{
+	background-color:${xf.ViewGlobalSetting("CScolor4","")}!important;
+}
+.bg-color4-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor4","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor5","")}!="")
+.bg-color5{
+	background-color:${xf.ViewGlobalSetting("CScolor5","")}!important;
+}
+.bg-color5-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor5","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor6","")} !="")
+.bg-color6{
+	background-color:${xf.ViewGlobalSetting("CScolor6","")}!important;
+}
+.bg-color6-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor6","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor7","")} !="")
+.bg-color7{
+	background-color:${xf.ViewGlobalSetting("CScolor7","")}!important;
+}
+.bg-color7-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor7","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor8","")} !="")
+.bg-color8{
+	background-color:${xf.ViewGlobalSetting("CScolor8","")}!important;
+}
+.bg-color8-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor8","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor9","")} !="")
+.bg-color9{
+	background-color:${xf.ViewGlobalSetting("CScolor9","")}!important;
+}
+.bg-color9-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor9","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor10","")} !="")
+.bg-color10{
+	background-color:${xf.ViewGlobalSetting("CScolor10","")}!important;
+}
+.bg-color10-hover:hover{
+	background-color:${xf.ViewGlobalSetting("CScolor10","")}!important;
+}
+#end
+
+#if(${xf.ViewGlobalSetting("CScolor1","")}!="")
+.border-color1{
+	border-color:${xf.ViewGlobalSetting("CScolor1","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor2","")}!="")
+.border-color2{
+	border-color:${xf.ViewGlobalSetting("CScolor2","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor3","")}!="")
+.border-color3{
+	border-color:${xf.ViewGlobalSetting("CScolor3","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor4","")}!="")
+.border-color4{
+	border-color:${xf.ViewGlobalSetting("CScolor4","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor5","")}!="")
+.border-color5{
+	border-color:${xf.ViewGlobalSetting("CScolor5","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor6","")} !="")
+.border-color6{
+	border-color:${xf.ViewGlobalSetting("CScolor6","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor7","")} !="")
+.border-color7{
+	border-color:${xf.ViewGlobalSetting("CScolor7","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor8","")} !="")
+.border-color8{
+	border-color:${xf.ViewGlobalSetting("CScolor8","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor9","")} !="")
+.border-color9{
+	border-color:${xf.ViewGlobalSetting("CScolor9","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CScolor10","")} !="")
+.border-color10{
+	border-color:${xf.ViewGlobalSetting("CScolor10","")}!important;
+}
+#end
+
+
+
+#if(${xf.ViewGlobalSetting("CSfontfamily1","")}!="")
+.font-family1{
+	font-family: var(--family1)!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CSfontfamily2","")}!="")
+.font-family2{
+	font-family: var(--family2)!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CSfontfamily3","")}!="")
+.font-family3{
+	font-family: var(--family3)!important;
+}
+#end
+
+#if(${xf.GetArrayByString("CSfontsize1",4,false)}!="").font-size-xs{font-size: ${xf.GetArrayByString("CSfontsize1",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSfontsize2",4,false)}!="").font-size-normal{font-size: ${xf.GetArrayByString("CSfontsize2",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSfontsize3",4,false)}!="").font-size-sm{font-size: ${xf.GetArrayByString("CSfontsize3",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSfontsize4",4,false)}!="").font-size-md{font-size: ${xf.GetArrayByString("CSfontsize4",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSfontsize5",4,false)}!="").font-size-lg{font-size: ${xf.GetArrayByString("CSfontsize5",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSfontsize6",4,false)}!="").font-size-xl{font-size: ${xf.GetArrayByString("CSfontsize6",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSfontsize7",4,false)}!="").font-size-xxl{font-size: ${xf.GetArrayByString("CSfontsize7",4,false)}!important;}#end
+
+#if(${xf.GetArrayByString("CSlineheight1",4,false)}!="").line-height-sm{line-height: ${xf.GetArrayByString("CSlineheight1",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSlineheight2",4,false)}!="").line-height-md{line-height: ${xf.GetArrayByString("CSlineheight2",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSlineheight3",4,false)}!="").line-height-lg{line-height: ${xf.GetArrayByString("CSlineheight3",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSlineheight4",4,false)}!="").line-height-xl{line-height: ${xf.GetArrayByString("CSlineheight4",4,false)}!important;}#end
+#if(${xf.GetArrayByString("CSlineheight5",4,false)}!="").line-height-xxl{line-height: ${xf.GetArrayByString("CSlineheight5",4,false)}!important;}#end	
+
+@media (min-width:576px) {
+	#if(${xf.GetArrayByString("CSfontsize1",3,false)}!="").font-size-xs{font-size: ${xf.GetArrayByString("CSfontsize1",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize2",3,false)}!="").font-size-normal{font-size: ${xf.GetArrayByString("CSfontsize2",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize3",3,false)}!="").font-size-sm{font-size: ${xf.GetArrayByString("CSfontsize3",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize4",3,false)}!="").font-size-md{font-size: ${xf.GetArrayByString("CSfontsize4",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize5",3,false)}!="").font-size-lg{font-size: ${xf.GetArrayByString("CSfontsize5",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize6",3,false)}!="").font-size-xl{font-size: ${xf.GetArrayByString("CSfontsize6",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize7",3,false)}!="").font-size-xxl{font-size: ${xf.GetArrayByString("CSfontsize7",3,false)}!important;}#end
+	
+	#if(${xf.GetArrayByString("CSlineheight1",3,false)}!="").line-height-sm{line-height: ${xf.GetArrayByString("CSlineheight1",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight2",3,false)}!="").line-height-md{line-height: ${xf.GetArrayByString("CSlineheight2",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight3",3,false)}!="").line-height-lg{line-height: ${xf.GetArrayByString("CSlineheight3",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight4",3,false)}!="").line-height-xl{line-height: ${xf.GetArrayByString("CSlineheight4",3,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight5",3,false)}!="").line-height-xxl{line-height: ${xf.GetArrayByString("CSlineheight5",3,false)}!important;}#end	
+}
+@media (min-width:768px) {	
+	#if(${xf.GetArrayByString("CSfontsize1",2,false)}!="").font-size-xs{font-size: ${xf.GetArrayByString("CSfontsize1",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize2",2,false)}!="").font-size-normal{font-size: ${xf.GetArrayByString("CSfontsize2",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize3",2,false)}!="").font-size-sm{font-size: ${xf.GetArrayByString("CSfontsize3",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize4",2,false)}!="").font-size-md{font-size: ${xf.GetArrayByString("CSfontsize4",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize5",2,false)}!="").font-size-lg{font-size: ${xf.GetArrayByString("CSfontsize5",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize6",2,false)}!="").font-size-xl{font-size: ${xf.GetArrayByString("CSfontsize6",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize7",2,false)}!="").font-size-xxl{font-size: ${xf.GetArrayByString("CSfontsize7",2,false)}!important;}#end
+	
+	#if(${xf.GetArrayByString("CSlineheight1",2,false)}!="").line-height-sm{line-height: ${xf.GetArrayByString("CSlineheight1",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight2",2,false)}!="").line-height-md{line-height: ${xf.GetArrayByString("CSlineheight2",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight3",2,false)}!="").line-height-lg{line-height: ${xf.GetArrayByString("CSlineheight3",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight4",2,false)}!="").line-height-xl{line-height: ${xf.GetArrayByString("CSlineheight4",2,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight5",2,false)}!="").line-height-xxl{line-height: ${xf.GetArrayByString("CSlineheight5",2,false)}!important;}#end	
+}
+@media (min-width:992px)  {	
+	#if(${xf.GetArrayByString("CSfontsize1",1,false)}!="").font-size-xs{font-size: ${xf.GetArrayByString("CSfontsize1",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize2",1,false)}!="").font-size-normal{font-size: ${xf.GetArrayByString("CSfontsize2",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize3",1,false)}!="").font-size-sm{font-size: ${xf.GetArrayByString("CSfontsize3",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize4",1,false)}!="").font-size-md{font-size: ${xf.GetArrayByString("CSfontsize4",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize5",1,false)}!="").font-size-lg{font-size: ${xf.GetArrayByString("CSfontsize5",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize6",1,false)}!="").font-size-xl{font-size: ${xf.GetArrayByString("CSfontsize6",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize7",1,false)}!="").font-size-xxl{font-size: ${xf.GetArrayByString("CSfontsize7",1,false)}!important;}#end
+
+	#if(${xf.GetArrayByString("CSlineheight1",1,false)}!="").line-height-sm{line-height: ${xf.GetArrayByString("CSlineheight1",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight2",1,false)}!="").line-height-md{line-height: ${xf.GetArrayByString("CSlineheight2",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight3",1,false)}!="").line-height-lg{line-height: ${xf.GetArrayByString("CSlineheight3",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight4",1,false)}!="").line-height-xl{line-height: ${xf.GetArrayByString("CSlineheight4",1,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight5",1,false)}!="").line-height-xxl{line-height: ${xf.GetArrayByString("CSlineheight5",1,false)}!important;}#end
+}
+@media (min-width:1200px){	
+	#if(${xf.GetArrayByString("CSfontsize1",0,false)}!="").font-size-xs{font-size: ${xf.GetArrayByString("CSfontsize1",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize2",0,false)}!="").font-size-normal{font-size: ${xf.GetArrayByString("CSfontsize2",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize3",0,false)}!="").font-size-sm{font-size: ${xf.GetArrayByString("CSfontsize3",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize4",0,false)}!="").font-size-md{font-size: ${xf.GetArrayByString("CSfontsize4",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize5",0,false)}!="").font-size-lg{font-size: ${xf.GetArrayByString("CSfontsize5",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize6",0,false)}!="").font-size-xl{font-size: ${xf.GetArrayByString("CSfontsize6",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSfontsize7",0,false)}!="").font-size-xxl{font-size: ${xf.GetArrayByString("CSfontsize7",0,false)}!important;}#end
+	
+	#if(${xf.GetArrayByString("CSlineheight1",0,false)}!="").line-height-sm{line-height: ${xf.GetArrayByString("CSlineheight1",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight2",0,false)}!="").line-height-md{line-height: ${xf.GetArrayByString("CSlineheight2",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight3",0,false)}!="").line-height-lg{line-height: ${xf.GetArrayByString("CSlineheight3",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight4",0,false)}!="").line-height-xl{line-height: ${xf.GetArrayByString("CSlineheight4",0,false)}!important;}#end
+	#if(${xf.GetArrayByString("CSlineheight5",0,false)}!="").line-height-xxl{line-height: ${xf.GetArrayByString("CSlineheight5",0,false)}!important;}#end	
+}
+
+
+#if(${xf.ViewGlobalSetting("CSletterspacing1","")}!="")
+.letter-spacing-sm{
+	letter-spacing: ${xf.ViewGlobalSetting("CSletterspacing1","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CSletterspacing2","")}!="")
+.letter-spacing-md{
+	letter-spacing: ${xf.ViewGlobalSetting("CSletterspacing2","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("CSletterspacing3","")}!="")
+.letter-spacing-lg{
+	letter-spacing: ${xf.ViewGlobalSetting("CSletterspacing3","")}!important;
+}
+#end
+#if(${xf.ViewGlobalSetting("shadowblurradius1","")}!="")
+.shadow-sm{
+	-webkit-box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx1","")}!="")${xf.ViewGlobalSetting("shadowoffsetx1","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety1","")}!="")${xf.ViewGlobalSetting("shadowoffsety1","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius1","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius1","")}!="")${xf.ViewGlobalSetting("shadowspreadradius1","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety1","")}!="")${xf.ViewGlobalSetting("shadowcolor1","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset1","")}=="true")inset #end !important;
+	box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx1","")}!="")${xf.ViewGlobalSetting("shadowoffsetx1","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety1","")}!="")${xf.ViewGlobalSetting("shadowoffsety1","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius1","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius1","")}!="")${xf.ViewGlobalSetting("shadowspreadradius1","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety1","")}!="")${xf.ViewGlobalSetting("shadowcolor1","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset1","")}=="true")inset #end !important;
+}
+#end
+#if(${xf.ViewGlobalSetting("shadowblurradius2","")}!="")
+.shadow-md{
+	-webkit-box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx2","")}!="")${xf.ViewGlobalSetting("shadowoffsetx2","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety2","")}!="")${xf.ViewGlobalSetting("shadowoffsety2","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius2","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius1","")}!="")${xf.ViewGlobalSetting("shadowspreadradius2","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety2","")}!="")${xf.ViewGlobalSetting("shadowcolor2","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset2","")}=="true")inset #end !important;
+	box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx2","")}!="")${xf.ViewGlobalSetting("shadowoffsetx2","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety2","")}!="")${xf.ViewGlobalSetting("shadowoffsety2","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius2","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius2","")}!="")${xf.ViewGlobalSetting("shadowspreadradius2","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety2","")}!="")${xf.ViewGlobalSetting("shadowcolor2","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset2","")}=="true")inset #end !important;
+}
+#end
+#if(${xf.ViewGlobalSetting("shadowblurradius3","")}!="")
+.shadow-lg{
+	-webkit-box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx3","")}!="")${xf.ViewGlobalSetting("shadowoffsetx3","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety3","")}!="")${xf.ViewGlobalSetting("shadowoffsety3","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius3","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius3","")}!="")${xf.ViewGlobalSetting("shadowspreadradius3","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety3","")}!="")${xf.ViewGlobalSetting("shadowcolor3","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset3","")}=="true")inset #end !important;
+	box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx3","")}!="")${xf.ViewGlobalSetting("shadowoffsetx3","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety3","")}!="")${xf.ViewGlobalSetting("shadowoffsety3","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius3","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius3","")}!="")${xf.ViewGlobalSetting("shadowspreadradius3","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety3","")}!="")${xf.ViewGlobalSetting("shadowcolor3","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset3","")}=="true")inset #end !important;
+}
+#end
+#if(${xf.ViewGlobalSetting("shadowblurradius4","")}!="")
+.shadow-xl{
+	-webkit-box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx4","")}!="")${xf.ViewGlobalSetting("shadowoffsetx4","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety4","")}!="")${xf.ViewGlobalSetting("shadowoffsety4","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius4","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius4","")}!="")${xf.ViewGlobalSetting("shadowspreadradius4","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety4","")}!="")${xf.ViewGlobalSetting("shadowcolor4","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset4","")}=="true")inset #end !important;
+	box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx4","")}!="")${xf.ViewGlobalSetting("shadowoffsetx4","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety4","")}!="")${xf.ViewGlobalSetting("shadowoffsety4","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius4","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius4","")}!="")${xf.ViewGlobalSetting("shadowspreadradius4","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety4","")}!="")${xf.ViewGlobalSetting("shadowcolor4","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset4","")}=="true")inset #end !important;
+}
+#end
+#if(${xf.ViewGlobalSetting("shadowblurradius5","")}!="")
+.shadow-xxl{
+	-webkit-box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx5","")}!="")${xf.ViewGlobalSetting("shadowoffsetx5","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety5","")}!="")${xf.ViewGlobalSetting("shadowoffsety5","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius5","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius5","")}!="")${xf.ViewGlobalSetting("shadowspreadradius5","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety5","")}!="")${xf.ViewGlobalSetting("shadowcolor5","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset5","")}=="true")inset #end !important;
+	box-shadow: #if(${xf.ViewGlobalSetting("shadowoffsetx5","")}!="")${xf.ViewGlobalSetting("shadowoffsetx5","")}px#else 0 #end #if(${xf.ViewGlobalSetting("shadowoffsety5","")}!="")${xf.ViewGlobalSetting("shadowoffsety5","")}px#else 0 #end ${xf.ViewGlobalSetting("shadowblurradius5","")}px #if(${xf.ViewGlobalSetting("shadowspreadradius5","")}!="")${xf.ViewGlobalSetting("shadowspreadradius5","")}px#end #if(${xf.ViewGlobalSetting("shadowoffsety5","")}!="")${xf.ViewGlobalSetting("shadowcolor5","")} #else #000000 #end #if(${xf.ViewGlobalSetting("shadowinset5","")}=="true")inset #end !important;
+}
+#end
+
+
+/*default color*/
+
+
+/*page title*/
+.page-title-bg{
+	#if( ${xf.ViewGlobalSetting("ptbgcolor","#ffffff")}!="")
+		background-color:${xf.ViewGlobalSetting("ptbgcolor","#ffffff")}; 
+	#end
+	#if(${xf.ViewGlobalSetting("ptbgtype","Image")}=="Image")
+	#if(${xf.ViewGlobalSetting("ptbgcolorimg","")}!="") 
+		background-image:url("${xf.ViewGlobalSetting("ptbgcolorimg","")}");
+		background-attachment: ${xf.GetArrayByString("ptbgcolorattr",0,false)};
+		background-position: ${xf.GetArrayByString("ptbgcolorattr",1,false)} ${xf.GetArrayByString("ptbgcolorattr",2,false)}; 
+		background-repeat: ${xf.GetArrayByString("ptbgcolorattr",3,false)};
+		background-size: ${xf.GetArrayByString("ptbgcolorattr",4,false)}; 	
+	#end	
+	#end
+}		
+
+
+.page-title-Video{
+	position: absolute;
+    left: 0;
+    top: 0;
+	height: 100%;
+	width: 100%;
+    overflow: hidden;
+}
+.page-title-Video video{
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	object-fit: cover;
+    object-position: center center;
+}
+
+
+
+#if(${xf.ViewGlobalSetting("TitleHeight","custom")} == "custom")
+
+	#set( $pagetitle_custom_height = ${xf.ViewGlobalSetting("TitleCustomHeight",40)})
+	#set( $pagetitle_custom_height_xs = "height: auto;padding-top:67px;padding-bottom:67px;")
+	#set( $pagetitle_custom_height_sm = (${pagetitle_custom_height}*8)/10 )
+
+#else
+	#set( $pagetitle_custom_height = '')
+	#set( $pagetitle_custom_height_xs = '')
+	#set( $pagetitle_custom_height_sm = '' )
+#end
+
+.page-title-bg.light-overlay::after{
+	background-color: rgba(255, 255, 255, 0.${xf.ViewGlobalSetting("ptOverlayOpacity","10")});
+}
+.page-title-bg.dark-overlay::after{
+	background-color: rgba(0, 0, 0, 0.${xf.ViewGlobalSetting("ptOverlayOpacity","10")});
+}
+
+#if($pagetitle_custom_height !="")
+.page-title-container{
+	 height: ${pagetitle_custom_height}px;
+}
+#end
+#if($pagetitle_custom_height_xs !="")
+@media only screen and (max-width: 767px) {
+	.page-title-container{
+		${pagetitle_custom_height_xs}
+	}
+}
+#end
+#if($pagetitle_custom_height_sm !="")
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.page-title-container{
+		height:${pagetitle_custom_height_sm}px
+	}
+}
+#end
+
+/*breadcrumbs*/
+.page-breadcrumbs{
+	background-color:${xf.ViewGlobalSetting("breContainerColor","10")};  
+	#if(${xf.ViewGlobalSetting("breBorderLine","false")}=="true")
+	#if(${xf.GetArrayByString("breTopBorder",0,false)}!="")border-top:${xf.GetArrayByString("breTopBorder",0,false)}${xf.GetArrayByString("breTopBorder",1,false)} ${xf.GetArrayByString("breTopBorder",2,false)} ${xf.GetArrayByString("breTopBorder",3,false)};#end
+	#if(${xf.GetArrayByString("breBottomBorder",0,false)}!="")border-bottom:${xf.GetArrayByString("breBottomBorder",0,false)}${xf.GetArrayByString("breBottomBorder",1,false)} ${xf.GetArrayByString("breBottomBorder",2,false)} ${xf.GetArrayByString("breBottomBorder",3,false)};#end
+	#end
+}
+.page-breadcrumbs > .container{
+	#if(${xf.GetArrayByString("breSpacing",0,false)}!="")
+	padding-top:${xf.GetArrayByString("breSpacing",0,false)}px;
+	#end
+	#if(${xf.GetArrayByString("breSpacing",1,false)}!="")
+	padding-right:${xf.GetArrayByString("breSpacing",1,false)}px;
+	#end
+	#if(${xf.GetArrayByString("breSpacing",2,false)}!="")
+	padding-bottom:${xf.GetArrayByString("breSpacing",2,false)}px;
+	#end
+	#if(${xf.GetArrayByString("breSpacing",3,false)}!="")
+	padding-left:${xf.GetArrayByString("breSpacing",3,false)}px;
+	#end
+}
+
+.page-breadcrumbs .breadcrumbs a:hover{
+	#if(${xf.ViewGlobalSetting("breAcc","custom")} == "custom")
+	color:${xf.ViewGlobalSetting("breAccColor","#20a3f0")}!important;
+	#else	
+	color:${AccentColour}!important;
+	#end	
+}
+
+.page-breadcrumbs .breadcrumbs{
+    color: ${xf.ViewGlobalSetting("breColor","")};
+    font-size: ${xf.ViewGlobalSetting("brefontsize","14px")};
+}
+.page-breadcrumbs .breadcrumbs-box > a,
+.page-breadcrumbs .breadcrumbs-box > span > span > span{
+    line-height:${xf.ViewGlobalSetting("brelineheight","20px")};
+}
+.page-breadcrumbs .breadcrumbs a,
+.page-breadcrumbs .breadcrumbs a:link,
+.page-breadcrumbs .breadcrumbs a:active,
+.page-breadcrumbs .breadcrumbs a:visited{
+    color: ${xf.ViewGlobalSetting("breColor","")};
+    font-size: ${xf.ViewGlobalSetting("brefontsize","14px")};
+}
+.page-breadcrumbs .breadcrumbs a:hover{
+	#if(${xf.ViewGlobalSetting("breAcc","custom")} == "custom")
+		color:${xf.ViewGlobalSetting("breAccColor","#20a3f0")}!important;
+	#else	
+		color:${AccentColour}!important;
+	#end
+}
+
+.breadcrumbs_sytle2 .breadcrumbs-box,
+.breadcrumbs_sytle3 .breadcrumbs-box > a:before, 
+.breadcrumbs_sytle3 .breadcrumbs-box > span > span > span:before{
+	background-color:${xf.ViewGlobalSetting("brebgColor","")};
+}
+
+/*sidebar dynamic*/
+
+.sidebar_dynamic.sidebar_dynamic_sytle01{
+	#if(${xf.GetArrayByString("SidebarSpacing",1,false)}!="")padding-right:${xf.GetArrayByString("SidebarSpacing",1,false)};#end
+	#if(${xf.GetArrayByString("SidebarSpacing",3,false)}!="")padding-left:${xf.GetArrayByString("SidebarSpacing",3,false)};#end
+}
+.sidebar_dynamic.sidebar_dynamic_sytle01 .sidebar_sticky{
+	#if(${xf.GetArrayByString("SidebarSpacing",0,false)}!="")padding-top:${xf.GetArrayByString("SidebarSpacing",0,false)};#end
+	#if(${xf.GetArrayByString("SidebarSpacing",2,false)}!="")padding-bottom:${xf.GetArrayByString("SidebarSpacing",2,false)};#end 
+}
+
+
+@media only screen and (max-width: 991px) {
+	.sidebar_dynamic.sidebar_dynamic_sytle01{
+		padding-top:0!important;
+		padding-right:15px!important;
+		padding-bottom:0!important;
+		padding-left:15px!important;
+		margin-top: 30px;
+	}
+	.sidebar_dynamic.sidebar_dynamic_sytle01 .sidebar_sticky{
+		padding-top:0!important;
+		padding-bottom:0!important;
+	}
+	
+}
+.sidebar_dynamic.sidebar_dynamic_sytle01,
+.sidebar_dynamic.sidebar_dynamic_sytle01 .Normal{
+}
+
+.sidebar_sticky{
+	z-index: 900;
+}
+.has-sidebar >.row{
+	position: relative;
+	flex-wrap: nowrap;
+}
+
+.sidebar_pos_fixleft .sidebar_dynamic ,
+.sidebar_pos_fixright .sidebar_dynamic {
+	opacity: 0;
+}
+.sidebar_pos_fixleft.show .sidebar_dynamic ,
+.sidebar_pos_fixright.show .sidebar_dynamic {
+	opacity: 1;
+}
+
+
+.container.sidebar_pos_fixleftfull,
+.container.sidebar_pos_fixrightfull{
+	width: 100% !important;
+}
+.sidebar_dynamic.col-lg-auto{
+	width: ${xf.ViewGlobalSetting("SidebarWidth2","300")}px;
+	flex: 0 0 ${xf.ViewGlobalSetting("SidebarWidth2","300")}px;
+    max-width: calc(100vw - 40px);
+}
+
+.sidebar_pos_fixleftfull .col-lg-container.sidebar-siblings-container,
+.sidebar_pos_fixrightfull .col-lg-container.sidebar-siblings-container{
+	flex-grow: 1;
+    max-width: calc(100% - ${xf.ViewGlobalSetting("SidebarWidth2","300")}px);
+}
+
+.sidebar_pos_fixleft,
+.sidebar_pos_fixright{
+	position: relative;
+}
+
+.sidebar_pos_fixleft .sidebar_dynamic {
+	position: absolute;
+	left: 0;
+}
+.sidebar_pos_fixright .sidebar_dynamic {
+	position: absolute;
+	right: 0;
+}
+
+html.show-sidebar{
+	overflow-x: auto ;
+	overflow-y: hidden ;
+}
+
+.sidebar-menu-icon,
+.sidebar-menu-close{
+	position: fixed;
+    top: 200px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    background-color: #1abc9c;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+	display: none;
+    align-items: center;
+    justify-content: center;
+	color: #FFF;
+	z-index: 800;
+	box-shadow: 2px 3px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-menu-close{
+	position: absolute;
+	top: 0;
+	left:100%;
+	background-color: #FFF;
+	#if(${xf.ViewGlobalSetting("Backgroundcolor","")}!="") background-color:${xf.ViewGlobalSetting("Backgroundcolor","")};  #end
+	color: #000;
+	border-radius: 0 0 4px 0;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}	
+.sidebar-menu-close::after,
+.sidebar-menu-close::before{
+	content: "";
+	width: 19px;
+	border-bottom: 2px solid currentColor;
+	position: absolute;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 50%;
+	left: 50%;
+	margin-left: -10px;
+}
+
+.sidebar-menu-close::before{
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+ 
+.sidebar-menu-icon.icon-right,
+.sidebar-menu-icon.icon-fixright,
+.sidebar-menu-icon.icon-fixrightfull{
+	left: auto;
+	right: 0;
+	border-radius: 4px 0 0 4px;
+	box-shadow: -2px 3px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar_pos_right .sidebar-menu-close,
+.sidebar_pos_fixright .sidebar-menu-close,
+.sidebar_pos_fixrightfull .sidebar-menu-close{
+	left: auto;
+	right: 100%;
+	border-radius: 0 0 0 4px;
+	box-shadow: -1px 1px 3px rgba(0,0,0,0.1);
+}
+
+
+.switch-sidebar .sidebar_pos_fixleft .sidebar_dynamic,
+.switch-sidebar .sidebar_pos_fixright .sidebar_dynamic{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 1000;
+	background-color: #FFF;
+	#if(${xf.ViewGlobalSetting("Backgroundcolor","")}!="") background-color:${xf.ViewGlobalSetting("Backgroundcolor","")};  #end
+	box-shadow: 0px 3px 7px rgba(0,0,0,0.1);
+	margin: 0;
+	padding: 0 !important;
+}
+.switch-sidebar .sidebar_pos_fixleft .sidebar_sticky,
+.switch-sidebar .sidebar_pos_fixright .sidebar_sticky{
+	width: 100% !important;
+	position: absolute !important;
+	top: 0 !important;
+	right: 0!important;
+	bottom: 0 !important;
+	left: 0 !important;
+	padding: 15px !important;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.switch-sidebar.show-sidebar .sidebar_pos_fixleft .sidebar_dynamic{
+	left: 0px;
+}
+.switch-sidebar.show-sidebar .sidebar_pos_fixright .sidebar_dynamic{
+	right: 0px;
+}
+
+.switch-sidebar .sidebar-menu-close,
+.switch-sidebar .sidebar-menu-icon{
+	display: flex;
+}
+
+.switch-sidebar .sidebar_pos_fixleft .sidebar_dynamic{
+	transition: all ease-in 300ms;
+	margin-left: -45px;
+	left: -${xf.ViewGlobalSetting("SidebarWidth2","300")}px;
+}
+.switch-sidebar .sidebar_pos_fixright .sidebar_dynamic{
+	transition: all ease-in 300ms;
+	margin-right: -45px;
+	right: -${xf.ViewGlobalSetting("SidebarWidth2","300")}px;
+}
+
+.switch-sidebar.show-sidebar .sidebar_pos_fixleft .sidebar_dynamic{
+	left: 0px;
+	margin-left: 0;
+}
+.switch-sidebar.show-sidebar .sidebar_pos_fixright .sidebar_dynamic{
+	right: 0px;
+	margin-right: 0;
+}
+.switch-sidebar.has-sidebar .sidebar-siblings-container{
+	max-width: none;
+}
+
+
+@media only screen and (max-width: 991px) {
+
+	.sidebar_pos_left.sidebar_dynamic,
+	.sidebar_pos_right.sidebar_dynamic{
+		width: ${xf.ViewGlobalSetting("SidebarWidth2","300")}px;
+		flex: 0 0 ${xf.ViewGlobalSetting("SidebarWidth2","300")}px;
+	}
+
+	 
+	.sidebar_pos_fixleftfull .sidebar_dynamic,
+	.sidebar_pos_fixrightfull .sidebar_dynamic,
+	.sidebar_pos_left.sidebar_dynamic,
+	.sidebar_pos_right.sidebar_dynamic{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		z-index: 1000;
+		background-color: #FFF;
+		#if(${xf.ViewGlobalSetting("Backgroundcolor","")}!="") background-color:${xf.ViewGlobalSetting("Backgroundcolor","")};  #end
+		box-shadow: 0px 3px 7px rgba(0,0,0,0.1);
+		margin: 0;
+		padding: 0 !important;
+	}
+	.sidebar_pos_fixleftfull .sidebar_sticky,
+	.sidebar_pos_fixrightfull .sidebar_sticky,
+	.sidebar_pos_left .sidebar_sticky,
+	.sidebar_pos_right .sidebar_sticky{
+		width: 100% !important;
+		position: absolute !important;
+		top: 0 !important;
+		right: 0!important;
+		bottom: 0 !important;
+		left: 0 !important;
+		padding: 15px !important;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	.has-sidebar .sidebar-siblings-container{
+		flex-grow: 1;
+		max-width: none;
+	}
+
+	.sidebar_pos_fixleftfull .col-lg-container.sidebar-siblings-container, 
+	.sidebar_pos_fixrightfull .col-lg-container.sidebar-siblings-container{
+		flex-grow: 1;
+		max-width: none;
+	}
+	
+	.sidebar-menu-close,
+	.sidebar-menu-icon{
+		display: flex;
+	}
+
+	.sidebar_pos_fixleftfull .sidebar_dynamic,
+	.sidebar_pos_left.sidebar_dynamic{
+		transition: all ease-in 300ms;
+		margin-left: -45px;
+		left: -${xf.ViewGlobalSetting("SidebarWidth2","300")}px;
+	}
+	.sidebar_pos_left.sidebar_dynamic{
+		left: -300px;
+	}	
+	.sidebar_pos_fixrightfull .sidebar_dynamic,
+	.sidebar_pos_right.sidebar_dynamic{
+		transition: all ease-in 300ms;
+		margin-right: -45px;
+		right: -${xf.ViewGlobalSetting("SidebarWidth2","300")}px;
+	}
+	.sidebar_pos_right.sidebar_dynamic{
+		right: -300px;
+	}
+	.show-sidebar .sidebar_pos_fixleftfull .sidebar_dynamic,
+	.show-sidebar .sidebar_pos_left.sidebar_dynamic{
+		left: 0px;
+		margin-left: 0;
+	}
+	.show-sidebar .sidebar_pos_fixrightfull .sidebar_dynamic,
+	.show-sidebar .sidebar_pos_right.sidebar_dynamic{
+		right: 0px;
+		margin-right: 0;
+	}
+
+}
+@media only screen and (max-width: 767px) {
+	.sidebar-menu-icon{
+		top:150px
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.has-sidebar-fixleftfull .page-title-row-left,
+	.has-sidebar-fixleftfull .page-breadcrumbs.text-left .container.Boxed{
+			width: 100%;
+			padding-left:calc(${xf.ViewGlobalSetting("SidebarWidth2","300")}px + 15px);
+	}
+	.has-sidebar-fixleftfull .page-title-row-right {
+			width: 100%;
+	}
+
+	.has-sidebar-fixrightfull .page-title-row-right,
+	.has-sidebar-fixrightfull .page-breadcrumbs.text-right .container.Boxed{
+		width: 100%;
+		padding-right:calc(${xf.ViewGlobalSetting("SidebarWidth2","300")}px + 15px);
+	}
+	.has-sidebar-fixrightfull .page-title-row-left{
+		width: 100%;
+		padding-right:calc(${xf.ViewGlobalSetting("SidebarWidth2","300")}px + 15px);
+	}
+}
+
+
+
+
+#if(${xf.ViewGlobalSetting("displaySidebarMenu",true)})
+
+.sidebar_dynamic{
+	min-height: 1px;
+}
+
+.sidebar-menu ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar-menu .gomenu  > ul > li > a, 
+.sidebar-menu .gomenu  > ul > li > a:link, 
+.sidebar-menu .gomenu  > ul > li > a:active, 
+.sidebar-menu .gomenu  > ul > li > a:visited{
+	#if(${xf.ViewGlobalSetting("SidebarMenucolor","")}!="")color:${xf.ViewGlobalSetting("SidebarMenucolor","#333333")};#end
+	#if(${xf.ViewGlobalSetting("SidebarMenufontfamily","")}!="")font-family:"${xf.ViewGlobalSetting("SidebarMenufontfamily","")}";#end
+	#if(${xf.ViewGlobalSetting("SidebarMenufontweight","")}!="")font-weight:${xf.ViewGlobalSetting("SidebarMenufontweight","")};#end 
+	#if(${xf.ViewGlobalSetting("SidebarMenufontsize","")}!="")font-size:${xf.ViewGlobalSetting("SidebarMenufontsize","")};#end 
+	#if(${xf.ViewGlobalSetting("SidebarMenulineheight","")}!="")line-height:${xf.ViewGlobalSetting("SidebarMenulineheight","")};#end 
+}
+
+.sidebar-menu .gomenu ul ul a, 
+.sidebar-menu .gomenu ul ul a:link, 
+.sidebar-menu .gomenu ul ul a:active, 
+.sidebar-menu .gomenu ul ul a:visited{
+	#if(${xf.ViewGlobalSetting("SidebarSubMenucolor","")}!="")color:${xf.ViewGlobalSetting("SidebarSubMenucolor","#666666")};#end  
+	#if(${xf.ViewGlobalSetting("SidebarSubfontfamily","")}!="")font-family:"${xf.ViewGlobalSetting("SidebarSubfontfamily","")}";#end 
+	#if(${xf.ViewGlobalSetting("SidebarSubfontweight","")}!="")font-weight:${xf.ViewGlobalSetting("SidebarSubfontweight","")};#end 
+	#if(${xf.ViewGlobalSetting("SidebarSubfontsize","")}!="")font-size:${xf.ViewGlobalSetting("SidebarSubfontsize","")};#end 
+	#if(${xf.ViewGlobalSetting("SidebarSublineheight","")}!="")line-height:${xf.ViewGlobalSetting("SidebarSublineheight","")};#end 
+}
+
+
+.sidebar-menu .gomenu > ul > li > a{
+	padding: 15px 20px;
+	display: block;
+	position: relative;
+	border-top: 1px dashed #d5d5d5;
+	transition: all ease 300ms;
+}
+.sidebar-menu .gomenu > ul > li:first-child > a{
+	border-top: none;
+}
+.sidebar-menu .gomenu > ul > li:last-child > a{
+	border-bottom: 1px dashed #d5d5d5;
+}
+
+
+.sidebar-menu .gomenu > ul > li > a::before{
+	content: "";
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border:2px solid var(--accent-color);
+	display: inline-block;
+	margin-right: 9px;
+}
+.sidebar-menu .gomenu > ul > li.dir > a::after{
+	content: "";
+	position: absolute;
+	border-top: 2px solid #818181;
+	border-right: 2px solid #818181;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	right: 0;
+	top: 50%;
+	margin-top: -6px;
+	margin-right:23px;
+}
+.sidebar-menu .gomenu ul ul{
+	position: relative;
+	z-index: 1;
+}
+.sidebar-menu .gomenu > ul > li > ul{
+	padding: 15px 40px;
+}
+.sidebar-menu .gomenu > ul > li > ul::before{
+	content: "";
+	position: absolute;
+	top: -3px;
+	bottom: 0px;
+	right: 0;
+	left: 0;
+	background: var(--accent-color);
+	opacity: .1;
+	z-index: -1;
+	border-radius: 0 0 5px 5px;
+}
+.sidebar-menu .gomenu ul ul li{
+	padding: 6px 0;
+}
+
+.sidebar-menu .gomenu > ul > li > a:hover{
+	color: var(--accent-color);
+}
+.sidebar-menu .gomenu > ul > li > a:hover::after{
+	border-color: var(--accent-color);
+}
+
+.sidebar-menu .gomenu > ul > li.current > a{
+	background-color: var(--accent-color);
+}
+.sidebar-menu .gomenu > ul > li.current > a::before,
+.sidebar-menu .gomenu > ul > li.dir.current > a::after{
+	border-color: #FFF;
+}
+.sidebar-menu .gomenu > ul > li.current > a{
+	color: #fff;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0,0,0,.15);
+
+}
+.sidebar-menu .gomenu > ul > li.current + li > a{
+	border-top-color: transparent;
+	
+}
+.sidebar-menu .gomenu ul ul{
+	display: none;
+}
+.sidebar-menu .gomenu ul li.current  ul{
+	display: block;
+}
+.sidebar-menu .gomenu ul ul {
+	padding-top: 10px;
+	padding-left: 20px;
+}
+.sidebar-menu .gomenu ul ul a:hover,
+.sidebar-menu .gomenu ul ul li.subcurrent > a{
+	color: var(--accent-color);
+}
+#end
+
+
+
+
+
+
+/**/
+.swiper-container .swiper-pagination-bullet-active{
+	background: var(--accent-color);	
+}
+.swiper-container .swiper-button-next:hover, 
+.swiper-container .swiper-button-prev:hover{
+	color: var(--accent-color);
+}
+.isotope-grid .isotope-group a::after{
+	background-color: var(--accent-color);
+}
+
+/**/
+.fixed-widget-list li.backtop{
+	background-color: var(--accent-color);
+}
+body .homepage10-header-btn,
+body .homepage10-header-btn:link,
+body .homepage10-header-btn:active,
+body .homepage10-header-btn:visited,
+body .homepage10-header-btn[type="button"],
+body .homepage10-header-btn[type="submit"] {
+	background-color: var(--button-color);
+}
+body .homepage10-header-btn:hover{
+	background-color: var(--button-hover-color);
+}
+.homepage10-header-btn.box-shadow2::after{
+	box-shadow: -4px 3px 16px var(--accent-color);
+}
+.homepage10-header-btn.box-shadow2.bg-accent2::after{
+	box-shadow: -4px 3px 16px var(--accent-color2);
+}
+.homepage10-header-btn.box-shadow2.bg-accent3::after{
+	box-shadow: -4px 3px 16px var(--accent-color3);
+}
+.homepage10-header-btn.box-shadow2.bg-accent4::after{
+	box-shadow: -4px 3px 16px var(--accent-color4);
+}

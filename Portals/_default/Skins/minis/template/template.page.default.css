@@ -1,0 +1,79 @@
+#parse( "component/template.page.global.css" )
+
+
+#if(${xf.ViewPageSetting("Custompagetitlebg","inherit")} =="custom" )
+.page-title-bg{
+	#if( ${xf.ViewPageSetting("ptbgcolor","#ffffff")}!="")
+		background:${xf.ViewPageSetting("ptbgcolor","#ffffff")}; 
+	#end
+	#if(${xf.ViewPageSetting("ptbgcolorimg","")}!="" && ${xf.ViewPageSetting("ptbgtype","Image")} =="Image")
+
+		#if(${xf.ViewPageSetting("ptbgcolorimg","")}!="")
+		background-image:url('${xf.ViewPageSetting("ptbgcolorimg","")}'); 
+        #end
+        background-attachment: ${xf.GetArrayByString("ptbgcolorattr",0,true)};
+        background-position: ${xf.GetArrayByString("ptbgcolorattr",1,true)} ${xf.GetArrayByString("ptbgcolorattr",2,true)}; 
+        background-repeat: ${xf.GetArrayByString("ptbgcolorattr",3,true)};
+        background-size: ${xf.GetArrayByString("ptbgcolorattr",4,true)}; 	
+	#end
+}		
+#end
+
+
+#if(${xf.ViewPageSetting("TitleHeight","inherit")} !="inherit" )
+
+    #if(${xf.ViewPageSetting("TitleHeight","inherit")} == "custom")
+
+        #set( $pagetitle_custom_height = ${xf.ViewPageSetting("TitleCustomHeight",40)})
+        #set( $pagetitle_custom_height_xs = "height: auto;padding-top:50px;padding-bottom:50px;")
+        #set( $pagetitle_custom_height_sm = (${pagetitle_custom_height}*8)/10 )
+
+    #else
+        #set( $pagetitle_custom_height = '')
+        #set( $pagetitle_custom_height_xs = '')
+        #set( $pagetitle_custom_height_sm = '' )
+    #end
+ 
+    #if($pagetitle_custom_height !="")
+    .page-title-container{
+        height: ${pagetitle_custom_height}px;
+    }
+    #end
+    #if($pagetitle_custom_height_xs !="")
+    @media only screen and (max-width: 767px) {
+        .page-title-container{
+            ${pagetitle_custom_height_xs}
+        }
+    }
+    #end
+    #if($pagetitle_custom_height_sm !="")
+    @media only screen and (min-width: 768px) and (max-width: 991px){
+        .page-title-container{
+            height:${pagetitle_custom_height_sm}px
+        }
+    }
+    #end
+
+#end
+
+#if(${xf.ViewPageSetting("ptColorOverlay","inherit")} !="inherit" )
+    .page-title-bg.light-overlay::after{
+        background-color: rgba(255, 255, 255, 0.${xf.ViewPageSetting("ptOverlayOpacity","10")});
+    }
+    .page-title-bg.dark-overlay::after{
+        background-color: rgba(0, 0, 0, 0.${xf.ViewPageSetting("ptOverlayOpacity","10")});
+    }
+#end
+
+
+
+#if(${xf.ViewPageSetting("customSpacing","inherit")} == "custom" )
+.sidebar_dynamic.sidebar_dynamic_sytle01{
+    padding:0 15px;
+	#if(${xf.GetArrayByString("SidebarSpacing",0,true)}!="")padding-top:${xf.GetArrayByString("SidebarSpacing",0,true)};#end
+	#if(${xf.GetArrayByString("SidebarSpacing",1,true)}!="")padding-right:${xf.GetArrayByString("SidebarSpacing",1,true)};#end
+	#if(${xf.GetArrayByString("SidebarSpacing",2,true)}!="")padding-bottom:${xf.GetArrayByString("SidebarSpacing",2,true)};#end 
+	#if(${xf.GetArrayByString("SidebarSpacing",3,true)}!="")padding-left:${xf.GetArrayByString("SidebarSpacing",3,true)};#end
+}
+#end		
+

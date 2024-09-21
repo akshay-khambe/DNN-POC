@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plRatingImage.Text" xml:space="preserve">
+    <value>Rating Image</value>
+  </data>
+  <data name="plRatingImage.Help" xml:space="preserve">
+    <value>Rating Image</value>
+  </data>
+  <data name="plRelatedArticleRows.Text" xml:space="preserve">
+    <value>Related article rows</value>
+  </data>
+  <data name="plRelatedArticleRows.Help" xml:space="preserve">
+    <value>Related article rows</value>
+  </data>
+  <data name="plShowRelatedArticles.Text" xml:space="preserve">
+    <value>Show Related Articles</value>
+  </data>
+  <data name="plShowRelatedArticles.Help" xml:space="preserve">
+    <value>Check to display related Articles</value>
+  </data>
+  <data name="plShowViews.Help" xml:space="preserve">
+    <value>Check to show article view numbers</value>
+  </data>
+  <data name="plShowViews.Text" xml:space="preserve">
+    <value>Show Views</value>
+  </data>
+  <data name="plShowTags.Help" xml:space="preserve">
+    <value>Check to show article tags</value>
+  </data>
+  <data name="plShowTags.Text" xml:space="preserve">
+    <value>Show Tags</value>
+  </data>
+  <data name="plShowAuthor.Help" xml:space="preserve">
+    <value>Show article author. Note,if current department disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowAuthor.Text" xml:space="preserve">
+    <value>Show Author</value>
+  </data>
+  <data name="plShowSource.Help" xml:space="preserve">
+    <value>Show article source. Note, if current department disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowSource.Text" xml:space="preserve">
+    <value>Show Source</value>
+  </data>
+  <data name="plShowTitle.Help" xml:space="preserve">
+    <value>Show article title</value>
+  </data>
+  <data name="plShowTitle.Text" xml:space="preserve">
+    <value>Show Title</value>
+  </data>
+  <data name="plShowSummary.Help" xml:space="preserve">
+    <value>Show article summary. Note, if current department disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowSummary.Text" xml:space="preserve">
+    <value>Show Summary</value>
+  </data>
+  <data name="MustBeInteger.Text" xml:space="preserve">
+    <value>Value must be integer</value>
+  </data>
+  <data name="plShowUserName.Help" xml:space="preserve">
+    <value>Show article created user</value>
+  </data>
+  <data name="plShowUserName.Text" xml:space="preserve">
+    <value>Show Creator</value>
+  </data>
+  <data name="ControlTitle_edit.Text" xml:space="preserve">
+    <value>Article detail settings</value>
+  </data>
+  <data name="plCommentRowCount.Help" xml:space="preserve">
+    <value>Enter comment rows which will be displayed after article detail.</value>
+  </data>
+  <data name="plCommentRowCount.Text" xml:space="preserve">
+    <value>Comment Rows</value>
+  </data>
+  <data name="plImageWidth.Help" xml:space="preserve">
+    <value>Specify the maximum width of article image when displaying in detail. If article image width is bigger than this value, module will use this value as image width.</value>
+  </data>
+  <data name="plImageWidth.Text" xml:space="preserve">
+    <value>Image Width</value>
+  </data>
+  <data name="plTemplate.Help" xml:space="preserve">
+    <value>Detail template locates under desktopmodules/crossarticle/template/detail, you can customize your own.</value>
+  </data>
+  <data name="plTemplate.Text" xml:space="preserve">
+    <value>Detail Template</value>
+  </data>
+  <data name="plShowArticle.Help" xml:space="preserve">
+    <value>Show article detail. Note, if current department disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowArticle.Text" xml:space="preserve">
+    <value>Show Article Detail</value>
+  </data>
+  <data name="plShowCreatedDate.Text" xml:space="preserve">
+    <value>Show Created Date</value>
+  </data>
+  <data name="plShowCreatedDate.Help" xml:space="preserve">
+    <value>Check to display article created date</value>
+  </data>
+  <data name="plShowSocialBookmarks.Help" xml:space="preserve">
+    <value>Check to display show social bookmarks</value>
+  </data>
+  <data name="plShowSocialBookmarks.Text" xml:space="preserve">
+    <value>Show Social Bookmarks</value>
+  </data>
+  <data name="plShowAuthorAvatar.Help" xml:space="preserve">
+    <value>Check to show creator avatar in author information</value>
+  </data>
+  <data name="plShowAuthorAvatar.Text" xml:space="preserve">
+    <value>Show Creator Avatar</value>
+  </data>
+  <data name="plShowAuthorBiography.Help" xml:space="preserve">
+    <value>Check to display creator biography as "About author"</value>
+  </data>
+  <data name="plShowCommentAvatar.Help" xml:space="preserve">
+    <value>Show comment avatar using user email.</value>
+  </data>
+  <data name="plShowCommentAvatar.Text" xml:space="preserve">
+    <value>Show Comment Avatar</value>
+  </data>
+  <data name="plShowImage.Help" xml:space="preserve">
+    <value>Check to show article image in detail.</value>
+  </data>
+  <data name="plShowImage.Text" xml:space="preserve">
+    <value>Show Image</value>
+  </data>
+  <data name="plTagsPerRow.Help" xml:space="preserve">
+    <value>Enter tags which will be displayed per row.</value>
+  </data>
+  <data name="plTagsPerRow.Text" xml:space="preserve">
+    <value>Tags Per Row</value>
+  </data>
+  <data name="plShowAuthorBiography.Text" xml:space="preserve">
+    <value>Show Creator Biography</value>
+  </data>
+  <data name="plShowAddFavorite.Help" xml:space="preserve">
+    <value>Check to display a "add to favorite" button to let user add this page as favorite.</value>
+  </data>
+  <data name="plShowAddFavorite.Text" xml:space="preserve">
+    <value>Show "Add To Favorite" button</value>
+  </data>
+  <data name="plShowPrint.Help" xml:space="preserve">
+    <value>Check to display a "print" button to let user print this page.</value>
+  </data>
+  <data name="plShowPrint.Text" xml:space="preserve">
+    <value>Show "Print" button</value>
+  </data>
+  <data name="plShowReturn.Help" xml:space="preserve">
+    <value>Check to display a "return" button to let user navigate back.</value>
+  </data>
+  <data name="plShowReturn.Text" xml:space="preserve">
+    <value>Show "Return" Button</value>
+  </data>
+  <data name="plEnableAnarchy.Help" xml:space="preserve">
+    <value>Anarchy Media Player  is a javascript plug-in that  will scan your article content, find all  hyperlinks to media files (mp3,flv,mov,mp4,m4v,m4a,m4b,3gp,wmv,avi,asf), and generate related  script to play it.&lt;br/&gt;&amp;nbsp;&amp;nbsp;Note, if "show related videos" option is checked and article has related videos with it, module will ignore Anarchy Media Player settings because module needs inject another script to play related videos.</value>
+  </data>
+  <data name="plEnableAnarchy.Text" xml:space="preserve">
+    <value>Enable anarchy media player plug-in</value>
+  </data>
+  <data name="plFlvFullScreen.Help" xml:space="preserve">
+    <value>Show fullscreen button</value>
+  </data>
+  <data name="plFlvFullScreen.Text" xml:space="preserve">
+    <value>Show Fullscreen Button</value>
+  </data>
+  <data name="plFlvHeight.Help" xml:space="preserve">
+    <value>Height of the flv player (allow 20px for controller)</value>
+  </data>
+  <data name="plFlvHeight.Text" xml:space="preserve">
+    <value>Flv player height</value>
+  </data>
+  <data name="plFlvWidth.Help" xml:space="preserve">
+    <value>Width of the flv player</value>
+  </data>
+  <data name="plFlvWidth.Text" xml:space="preserve">
+    <value>Flv player width</value>
+  </data>
+  <data name="plMp3DownloadLink.Help" xml:space="preserve">
+    <value>Show mp3 download link</value>
+  </data>
+  <data name="plMp3DownloadLink.Text" xml:space="preserve">
+    <value>Show mp3 download link</value>
+  </data>
+  <data name="plMp3ImgMargin.Help" xml:space="preserve">
+    <value>Mp3 button image css margins</value>
+  </data>
+  <data name="plMp3ImgMargin.Text" xml:space="preserve">
+    <value>Button image css margins</value>
+  </data>
+  <data name="plMp3PlayerBg.Help" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="plMp3PlayerBg.Text" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="plMp3PlayerBorder.Help" xml:space="preserve">
+    <value>Progress track border color</value>
+  </data>
+  <data name="plMp3PlayerBorder.Text" xml:space="preserve">
+    <value>Progress track border color</value>
+  </data>
+  <data name="plMp3PlayerLeftBg.Help" xml:space="preserve">
+    <value>Left background color</value>
+  </data>
+  <data name="plMp3PlayerLeftBg.Text" xml:space="preserve">
+    <value>Left Background Color</value>
+  </data>
+  <data name="plMp3PlayerLeftIcon.Help" xml:space="preserve">
+    <value>Left icon color</value>
+  </data>
+  <data name="plMp3PlayerLeftIcon.Text" xml:space="preserve">
+    <value>Left Icon Color</value>
+  </data>
+  <data name="plMp3PlayerLoader.Help" xml:space="preserve">
+    <value>Progress track color</value>
+  </data>
+  <data name="plMp3PlayerLoader.Text" xml:space="preserve">
+    <value>Progress track color</value>
+  </data>
+  <data name="plMp3PlayerLoop.Help" xml:space="preserve">
+    <value>Loop the mp3 music</value>
+  </data>
+  <data name="plMp3PlayerLoop.Text" xml:space="preserve">
+    <value>Loop the music</value>
+  </data>
+  <data name="plMp3PlayerRightBg.Help" xml:space="preserve">
+    <value>Right background color</value>
+  </data>
+  <data name="plMp3PlayerRightBg.Text" xml:space="preserve">
+    <value>Right Background Color</value>
+  </data>
+  <data name="plMp3PlayerRightBgHover.Help" xml:space="preserve">
+    <value>Right background color (hover)</value>
+  </data>
+  <data name="plMp3PlayerRightBgHover.Text" xml:space="preserve">
+    <value>Right background Color (hover)</value>
+  </data>
+  <data name="plMp3PlayerRightIcon.Help" xml:space="preserve">
+    <value>Right icon color</value>
+  </data>
+  <data name="plMp3PlayerRightIcon.Text" xml:space="preserve">
+    <value>Right Icon Color</value>
+  </data>
+  <data name="plMp3PlayerRightIconHover.Help" xml:space="preserve">
+    <value>Right icon color (hover)</value>
+  </data>
+  <data name="plMp3PlayerRightIconHover.Text" xml:space="preserve">
+    <value>Right Icon Color (hover)</value>
+  </data>
+  <data name="plMp3PlayerSlider.Help" xml:space="preserve">
+    <value>Slider Color</value>
+  </data>
+  <data name="plMp3PlayerSlider.Text" xml:space="preserve">
+    <value>Slider Color</value>
+  </data>
+  <data name="plMp3PlayerStyle.Help" xml:space="preserve">
+    <value>Player Css Style</value>
+  </data>
+  <data name="plMp3PlayerStyle.Text" xml:space="preserve">
+    <value>Player Css Style</value>
+  </data>
+  <data name="plMp3PlayerText.Help" xml:space="preserve">
+    <value>Text Color</value>
+  </data>
+  <data name="plMp3PlayerText.Text" xml:space="preserve">
+    <value>Text Color</value>
+  </data>
+  <data name="plMp3PlayerTrack.Help" xml:space="preserve">
+    <value>Loader bar color</value>
+  </data>
+  <data name="plMp3PlayerTrack.Text" xml:space="preserve">
+    <value>Loader bar color</value>
+  </data>
+  <data name="plQtHeight.Help" xml:space="preserve">
+    <value>Height of your Quicktime player (allow 16px for controller)</value>
+  </data>
+  <data name="plQtHeight.Text" xml:space="preserve">
+    <value>Quicktime player height</value>
+  </data>
+  <data name="plQtkiosk.Help" xml:space="preserve">
+    <value>Allow download movie</value>
+  </data>
+  <data name="plQtkiosk.Text" xml:space="preserve">
+    <value>Allow download movie </value>
+  </data>
+  <data name="plQtLoop.Help" xml:space="preserve">
+    <value>Loop Quicktime movies</value>
+  </data>
+  <data name="plQtLoop.Text" xml:space="preserve">
+    <value>Loop Quicktime Movies</value>
+  </data>
+  <data name="plQtWidth.Help" xml:space="preserve">
+    <value>Width of your Quicktime player</value>
+  </data>
+  <data name="plQtWidth.Text" xml:space="preserve">
+    <value>Quicktime player width</value>
+  </data>
+  <data name="plVidDownloadLink.Help" xml:space="preserve">
+    <value>Show download link for flv and wmv links</value>
+  </data>
+  <data name="plVidDownloadLink.Text" xml:space="preserve">
+    <value>Show video download link</value>
+  </data>
+  <data name="plVidImgMargin.Help" xml:space="preserve">
+    <value>Video image placeholder css margins</value>
+  </data>
+  <data name="plVidImgMargin.Text" xml:space="preserve">
+    <value>Video image placeholder css margins</value>
+  </data>
+  <data name="plWmvHeight.Help" xml:space="preserve">
+    <value>Height of your WMV player (allow 45px for WMV controller or 16px if QT player - ignored by WinIE)</value>
+  </data>
+  <data name="plWmvHeight.Text" xml:space="preserve">
+    <value>Windows media player height</value>
+  </data>
+  <data name="plWmvWidth.Help" xml:space="preserve">
+    <value>Windows media player width</value>
+  </data>
+  <data name="plWmvWidth.Text" xml:space="preserve">
+    <value>Windows media player width</value>
+  </data>
+  <data name="secAnarchy.Text" xml:space="preserve">
+    <value>Anarchy media player plug-in</value>
+  </data>
+  <data name="secAnarchyFlv.Text" xml:space="preserve">
+    <value>Flv player settings</value>
+  </data>
+  <data name="secAnarchyMp3.Text" xml:space="preserve">
+    <value>Mp3 player settings</value>
+  </data>
+  <data name="secAnarchyQt.Text" xml:space="preserve">
+    <value>QuickTime player settings</value>
+  </data>
+  <data name="secAnarchyVideoGeneral.Text" xml:space="preserve">
+    <value>Video general settings</value>
+  </data>
+  <data name="secAnarchyWmv.Text" xml:space="preserve">
+    <value>Window media player settings</value>
+  </data>
+  <data name="secGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="plCheckXhtmlDocType.Help" xml:space="preserve">
+    <value>Module needs a skin which doctype is  xhtml compitable (this is the recommend settings in DNN 5 skins). If your skin is not xhmtl compitable, check this option to let module fix it.</value>
+  </data>
+  <data name="plCheckXhtmlDocType.Text" xml:space="preserve">
+    <value>Check xhtml compitable</value>
+  </data>
+  <data name="plRelatedAudioPerRow.Help" xml:space="preserve">
+    <value>Column per row when displaying Audio list</value>
+  </data>
+  <data name="plRelatedAudioPerRow.Text" xml:space="preserve">
+    <value>Column per row</value>
+  </data>
+  <data name="plRelatedImagePerRow.Help" xml:space="preserve">
+    <value>Column per row when displaying Image list</value>
+  </data>
+  <data name="plRelatedImagePerRow.Text" xml:space="preserve">
+    <value>Column per row</value>
+  </data>
+  <data name="plRelatedImageWidth.Help" xml:space="preserve">
+    <value>Related image width while displaying in list. default value is 120.</value>
+  </data>
+  <data name="plRelatedImageWidth.Text" xml:space="preserve">
+    <value>Related image width</value>
+  </data>
+  <data name="plRelatedVideoPerRow.Help" xml:space="preserve">
+    <value>Column per row when displaying video list</value>
+  </data>
+  <data name="plRelatedVideoPerRow.Text" xml:space="preserve">
+    <value>Column per row</value>
+  </data>
+  <data name="plShowAddTicket.Help" xml:space="preserve">
+    <value>Check to show a "Contact Author" button to let user add help ticket</value>
+  </data>
+  <data name="plShowAddTicket.Text" xml:space="preserve">
+    <value>Show "Contact Author" button</value>
+  </data>
+  <data name="plShowAddWatch.Help" xml:space="preserve">
+    <value>Check to show "Add Watch" button</value>
+  </data>
+  <data name="plShowAddWatch.Text" xml:space="preserve">
+    <value>Show "Add To Watch List" button</value>
+  </data>
+  <data name="plShowAttachment.Help" xml:space="preserve">
+    <value>Check to show article related attachments in detail (if exist)</value>
+  </data>
+  <data name="plShowAttachment.Text" xml:space="preserve">
+    <value>Show Attachments</value>
+  </data>
+  <data name="plShowField.Help" xml:space="preserve">
+    <value>Check to show {0} in detail</value>
+  </data>
+  <data name="plShowField.Text" xml:space="preserve">
+    <value>Show {0}</value>
+  </data>
+  <data name="plShowRelatedAudio.Help" xml:space="preserve">
+    <value>Show related audio list (if exist)</value>
+  </data>
+  <data name="plShowRelatedAudio.Text" xml:space="preserve">
+    <value>Show Related Audio</value>
+  </data>
+  <data name="plShowRelatedImage.Help" xml:space="preserve">
+    <value>Show related Image list (if exist)</value>
+  </data>
+  <data name="plShowRelatedImage.Text" xml:space="preserve">
+    <value>Show Related Images</value>
+  </data>
+  <data name="plShowRelatedArticle.Help" xml:space="preserve">
+    <value>Show Related Articles</value>
+  </data>
+  <data name="plShowRelatedArticle.Text" xml:space="preserve">
+    <value>Show Related Articles</value>
+  </data>
+  <data name="plShowRelatedVideo.Help" xml:space="preserve">
+    <value>Show related video list (if exist)</value>
+  </data>
+  <data name="plShowRelatedVideo.Text" xml:space="preserve">
+    <value>Show Related Videos</value>
+  </data>
+  <data name="plTabStyle.Help" xml:space="preserve">
+    <value>Choose tab css style while displaying article information in detail. Css package locates under desktopmodules/CrossArticle/css/jquery folder, you can customize your own.</value>
+  </data>
+  <data name="plTabStyle.Text" xml:space="preserve">
+    <value>Tab Css</value>
+  </data>
+  <data name="plType.Help" xml:space="preserve">
+    <value>Select article department which will display their detail.</value>
+  </data>
+  <data name="plType.Text" xml:space="preserve">
+    <value>Select Department</value>
+  </data>
+  <data name="plUDFieldList.Help" xml:space="preserve">
+    <value>Choose user defined fields which will be displayed in built in template. Note, it works only when "Use built in template" option is checked.</value>
+  </data>
+  <data name="plUDFieldList.Text" xml:space="preserve">
+    <value>Show Fields</value>
+  </data>
+  <data name="plUDField_ImageHeight.Help" xml:space="preserve">
+    <value>Control the image height of user defined fields.</value>
+  </data>
+  <data name="plUDField_ImageHeight.Text" xml:space="preserve">
+    <value>"Image" Field Height</value>
+  </data>
+  <data name="plUDField_ImageWidth.Help" xml:space="preserve">
+    <value>Control the image width of user defined fields. </value>
+  </data>
+  <data name="plUDField_ImageWidth.Text" xml:space="preserve">
+    <value>"Image" Field Width</value>
+  </data>
+  <data name="plUseBuiltInTemplate.Help" xml:space="preserve">
+    <value>Use built in tempate to display user defined fields. Uncheck this option if you want to display user defined fields via your own tempaltes. For more detail about customize template, please see user guide document.</value>
+  </data>
+  <data name="plUseBuiltInTemplate.Text" xml:space="preserve">
+    <value>Use Built-In Template</value>
+  </data>
+  <data name="plVideoImageWidth.Help" xml:space="preserve">
+    <value>Enter video image width</value>
+  </data>
+  <data name="plVideoImageWidth.Text" xml:space="preserve">
+    <value>Video image width</value>
+  </data>
+  <data name="plVideoPlayerHeight.Help" xml:space="preserve">
+    <value>Enter video player width,default value is 380 (note, the video player control bar needs 20px)</value>
+  </data>
+  <data name="plVideoPlayerHeight.Text" xml:space="preserve">
+    <value>Video player height</value>
+  </data>
+  <data name="plVideoPlayerWidth.Help" xml:space="preserve">
+    <value>Enter video player width,default value is 480</value>
+  </data>
+  <data name="plVideoPlayerWidth.Text" xml:space="preserve">
+    <value>Video player width</value>
+  </data>
+  <data name="secRelatedAudio.Text" xml:space="preserve">
+    <value>Related Audio</value>
+  </data>
+  <data name="secRelatedImage.Text" xml:space="preserve">
+    <value>Related Images</value>
+  </data>
+  <data name="secRelatedArticle.Text" xml:space="preserve">
+    <value>Related Articles</value>
+  </data>
+  <data name="secUDField.Text" xml:space="preserve">
+    <value>Custom Attributes</value>
+  </data>
+  <data name="plShowComment.Help" xml:space="preserve">
+    <value>Check to show article comment in detail.</value>
+  </data>
+  <data name="plShowComment.Text" xml:space="preserve">
+    <value>Show Comment</value>
+  </data>
+  <data name="plShowRating.Help" xml:space="preserve">
+    <value>Check to show article rating in detail.</value>
+  </data>
+  <data name="plShowRating.Text" xml:space="preserve">
+    <value>Show Rating</value>
+  </data>
+  <data name="secRelatedVideo.Text" xml:space="preserve">
+    <value>Related Videos</value>
+  </data>
+  <data name="plShowAuthorProfileLink.Help" xml:space="preserve">
+    <value>Check to show a "view profile" link. Click that link will navigate to creator profile url. Note, author must specify his profile url in "CrossArticle_Admin sub module - My Articles - My Profile" section first.</value>
+  </data>
+  <data name="plShowAuthorProfileLink.Text" xml:space="preserve">
+    <value>Show Creator Profile Link</value>
+  </data>
+  <data name="Tip_Anarchy.Text" xml:space="preserve">
+    <value>Anarchy Media Player is a javascript plug-in that  will scan your article content, find all  hyperlinks to media files (mp3,flv,mov,mp4,m4v,m4a,m4b,3gp,wmv,avi,asf), and generate related  script to play them.&lt;br/&gt;&lt;br/&gt;Note, if "show related videos/audio" option is checked and article has related videos/audio with it, module will ignore Anarchy Media Player settings because module needs inject another script to play related videos/audio.</value>
+  </data>
+  <data name="Tip_TabStyle.Text" xml:space="preserve">
+    <value>Choose jquery tab css style while displaying article detail. Module provides &lt;font color="red"&gt;24&lt;/font&gt; css styles (locates under DesktopModules/CrossArticle/css/jquery-ui-themes-1.11.4/themes folder), you can customize your own.</value>
+  </data>
+  <data name="Tip_UdField.Text" xml:space="preserve">
+    <value>Custom attributes are created in "CrossArticle_Admin sub module - Admin Control Panel - Configurations - System Data - Attributes". You can use built-in template to display these fields. Uncheck this option if you want to display these fields via your own tempaltes. For more detail about customize template, please see user guide document.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_Enabled.Help" xml:space="preserve">
+    <value>If you use check box list to display your custom attributes, they will be displayed  as disabled by default to avoid visitor select. However, if they look too dim, you can check on this option to enable it.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_Enabled.Text" xml:space="preserve">
+    <value>Check Box List Enabled</value>
+  </data>
+  <data name="plUDField_CheckBoxList_RepeatColumns.Help" xml:space="preserve">
+    <value>If you use check box list to display your custom attributes, they will be displayed as 1 column per row by default. You can specify more columns per row to let it looks good.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_RepeatColumns.Text" xml:space="preserve">
+    <value>Check Box List repeat</value>
+  </data>
+  <data name="plShowCaptchaInComment.Help" xml:space="preserve">
+    <value>Check on this option to display captcha control to avoid spam comments.</value>
+  </data>
+  <data name="plShowCaptchaInComment.Text" xml:space="preserve">
+    <value>Show Captcha In Comment</value>
+  </data>
+  <data name="plShowLatestArticleAsDefault.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;CrossArticle_Detail sub module is mainly used with CrossArticle_List sub module, in most cases it will show article detail when you click a item on CrossArticle_List sub module. However, you can check below option to let CrossArticle_Detail sub module show latest article content when visitor directly access this page (without click article in CrossArticle_List sub module)&lt;/p&gt;</value>
+  </data>
+  <data name="plShowLatestArticleAsDefault.Text" xml:space="preserve">
+    <value>Show Latest Article As Default</value>
+  </data>
+  <data name="Tip_ShowLatestArticleAsDefault.Text" xml:space="preserve">
+    <value>CrossArticle_Detail sub module is mainly used with CrossArticle_List sub module, in most cases it will show article detail when you click a item on CrossArticle_List sub module. However, you can check below option to let CrossArticle_Detail sub module show latest article content when visitor directly access this page (without click article on CrossArticle_List sub module).</value>
+  </data>
+  <data name="plGoogleMapStyle.Help" xml:space="preserve">
+    <value>The container style for hosting Google Map. You can change its width/height to provide different space to show Google map.</value>
+  </data>
+  <data name="plGoogleMapStyle.Text" xml:space="preserve">
+    <value>Container Style</value>
+  </data>
+  <data name="plGoogleMapZoom.Help" xml:space="preserve">
+    <value>The initial resolution at which to display the map is set by the zoom property, where zoom 0 corresponds to a map of the Earth fully zoomed out, and higher zoom levels zoom in at a higher resolution.</value>
+  </data>
+  <data name="plGoogleMapZoom.Text" xml:space="preserve">
+    <value>Map Zoom</value>
+  </data>
+  <data name="plShowGoogleMap.Help" xml:space="preserve">
+    <value>Check to show Google Maps in article detail if related data available.</value>
+  </data>
+  <data name="plShowGoogleMap.Text" xml:space="preserve">
+    <value>Show Google Maps</value>
+  </data>
+  <data name="secGoogleMap.Text" xml:space="preserve">
+    <value>Google Maps</value>
+  </data>
+  <data name="Tip_GoogleMapStyle.Text" xml:space="preserve">
+    <value>The container style for hosting Google Map. You can change its width/height to provide different space to show Google map.</value>
+  </data>
+  <data name="Tip_GoogleMapZoom.Text" xml:space="preserve">
+    <value>The initial resolution at which to display the map is set by the zoom property, where zoom 0 corresponds to a map of the Earth fully zoomed out, and higher zoom levels zoom in at a higher resolution.</value>
+  </data>
+  <data name="MustBetween0To18.Text" xml:space="preserve">
+    <value>Value must between 0 - 18</value>
+  </data>
+  <data name="li_PublishDateType_All.Text" xml:space="preserve">
+    <value>Show All (ignore article publish date)</value>
+  </data>
+  <data name="li_PublishDateType_Future.Text" xml:space="preserve">
+    <value>Future Articles (publish date &gt; Today)</value>
+  </data>
+  <data name="li_PublishDateType_Past.Text" xml:space="preserve">
+    <value>Past Articles (publish date &lt; Today)</value>
+  </data>
+  <data name="plPublishDateType.Help" xml:space="preserve">
+    <value>Choose article publish date limitation</value>
+  </data>
+  <data name="plPublishDateType.Text" xml:space="preserve">
+    <value>Article Publish Date Limitation</value>
+  </data>
+  <data name="plShowSubTitle.Help" xml:space="preserve">
+    <value>Check to show sub title.</value>
+  </data>
+  <data name="plShowSubTitle.Text" xml:space="preserve">
+    <value>Show Sub Title</value>
+  </data>
+  <data name="plShowAuthorProfile.Help" xml:space="preserve">
+    <value>In this section, you can choose whether to show author profile (and its detail). Uncheck "Show author profile" option will hide author profile.</value>
+  </data>
+  <data name="plShowAuthorProfile.Text" xml:space="preserve">
+    <value>Show author profile</value>
+  </data>
+  <data name="plShowBiography.Help" xml:space="preserve">
+    <value>Show Biography</value>
+  </data>
+  <data name="plShowBiography.Text" xml:space="preserve">
+    <value>Show Biography</value>
+  </data>
+  <data name="plShowBusinessScope.Help" xml:space="preserve">
+    <value>Show business scope</value>
+  </data>
+  <data name="plShowBusinessScope.Text" xml:space="preserve">
+    <value>Show business scope</value>
+  </data>
+  <data name="plShowCity.Help" xml:space="preserve">
+    <value>Show City</value>
+  </data>
+  <data name="plShowCity.Text" xml:space="preserve">
+    <value>Show City</value>
+  </data>
+  <data name="plShowCompany.Help" xml:space="preserve">
+    <value>Show Company</value>
+  </data>
+  <data name="plShowCompany.Text" xml:space="preserve">
+    <value>Show Company</value>
+  </data>
+  <data name="plShowCountry.Help" xml:space="preserve">
+    <value>Show Country</value>
+  </data>
+  <data name="plShowCountry.Text" xml:space="preserve">
+    <value>Show Country</value>
+  </data>
+  <data name="plShowFax.Help" xml:space="preserve">
+    <value>Show Fax</value>
+  </data>
+  <data name="plShowFax.Text" xml:space="preserve">
+    <value>Show Fax</value>
+  </data>
+  <data name="plShowIM.Help" xml:space="preserve">
+    <value>Show IM</value>
+  </data>
+  <data name="plShowIM.Text" xml:space="preserve">
+    <value>Show IM</value>
+  </data>
+  <data name="plShowLinkman.Help" xml:space="preserve">
+    <value>Show Linkman</value>
+  </data>
+  <data name="plShowLinkman.Text" xml:space="preserve">
+    <value>Show Linkman</value>
+  </data>
+  <data name="plShowLocation_City.Help" xml:space="preserve">
+    <value>Show City</value>
+  </data>
+  <data name="plShowLocation_City.Text" xml:space="preserve">
+    <value>Show City</value>
+  </data>
+  <data name="plShowLocation_Country.Help" xml:space="preserve">
+    <value>Show Country</value>
+  </data>
+  <data name="plShowLocation_Country.Text" xml:space="preserve">
+    <value>Show Country</value>
+  </data>
+  <data name="plShowLocation_State.Help" xml:space="preserve">
+    <value>Show State/Province</value>
+  </data>
+  <data name="plShowLocation_State.Text" xml:space="preserve">
+    <value>Show State/Province</value>
+  </data>
+  <data name="plShowLocation_Town.Help" xml:space="preserve">
+    <value>Show Town</value>
+  </data>
+  <data name="plShowLocation_Town.Text" xml:space="preserve">
+    <value>Show Town</value>
+  </data>
+  <data name="plShowLogoUrl.Help" xml:space="preserve">
+    <value>Show logo image</value>
+  </data>
+  <data name="plShowLogoUrl.Text" xml:space="preserve">
+    <value>Show logo image</value>
+  </data>
+  <data name="plShowSiteUrl.Help" xml:space="preserve">
+    <value>Show site url</value>
+  </data>
+  <data name="plShowSiteUrl.Text" xml:space="preserve">
+    <value>Show site url</value>
+  </data>
+  <data name="plShowSlogan.Help" xml:space="preserve">
+    <value>Show Slogan</value>
+  </data>
+  <data name="plShowSlogan.Text" xml:space="preserve">
+    <value>Show Slogan</value>
+  </data>
+  <data name="plShowState.Help" xml:space="preserve">
+    <value>Show State</value>
+  </data>
+  <data name="plShowState.Text" xml:space="preserve">
+    <value>Show State</value>
+  </data>
+  <data name="plShowTel.Help" xml:space="preserve">
+    <value>Show Telephone</value>
+  </data>
+  <data name="plShowTel.Text" xml:space="preserve">
+    <value>Show Telephone</value>
+  </data>
+  <data name="plShowTown.Help" xml:space="preserve">
+    <value>Show Town</value>
+  </data>
+  <data name="plShowTown.Text" xml:space="preserve">
+    <value>Show Town</value>
+  </data>
+  <data name="plShowVote.Help" xml:space="preserve">
+    <value>Show Vote</value>
+  </data>
+  <data name="plShowVote.Text" xml:space="preserve">
+    <value>Show Vote</value>
+  </data>
+  <data name="plShowZipcode.Help" xml:space="preserve">
+    <value>Show Zipcode</value>
+  </data>
+  <data name="plShowZipcode.Text" xml:space="preserve">
+    <value>Show Zipcode</value>
+  </data>
+  <data name="secAuthorProfile.Text" xml:space="preserve">
+    <value>Author Profile</value>
+  </data>
+  <data name="secVote.Text" xml:space="preserve">
+    <value>Vote</value>
+  </data>
+  <data name="Tip_AuthorProfile.Text" xml:space="preserve">
+    <value>In this section, you can choose whether to show author(article creator) profile (and its detail), these information can be modified at "CrossArticle_Admin sub module - My Articles - My Profile" section. Uncheck "Show author profile" option will hide author profile.</value>
+  </data>
+  <data name="Tip_Vote.Text" xml:space="preserve">
+    <value>If there is a vote (survey) with this article, check on below option to show it.</value>
+  </data>
+  <data name="plShowAddress.Help" xml:space="preserve">
+    <value>Show author address</value>
+  </data>
+  <data name="plShowAddress.Text" xml:space="preserve">
+    <value>Show Address</value>
+  </data>
+  <data name="plHideWhenEmpty.Help" xml:space="preserve">
+    <value>If checked, module will not display custom attributes which have no value specified. For example, if you choose to show "Color" attribute above, but current article doesn't have any value for "Color" attribute, then module will not show it.  </value>
+  </data>
+  <data name="plHideWhenEmpty.Text" xml:space="preserve">
+    <value>Hide If Value Is Empty</value>
+  </data>
+  <data name="plShowEventEnd.Help" xml:space="preserve">
+    <value>Check to show "Event End" data field in article detail.</value>
+  </data>
+  <data name="plShowEventEnd.Text" xml:space="preserve">
+    <value>Show Event End</value>
+  </data>
+  <data name="plShowEventStart.Help" xml:space="preserve">
+    <value>Check to show "Event Start" data field in article detail.</value>
+  </data>
+  <data name="plShowEventStart.Text" xml:space="preserve">
+    <value>Show Event Start</value>
+  </data>
+</root>

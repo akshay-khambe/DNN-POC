@@ -1,0 +1,65 @@
+﻿@import url('https://fonts.googleapis.com/css?display=swap&family=Poppins:300,300i,600,600i,800');
+
+
+/**********************************
+    General
+***********************************/
+
+ 
+.d-wrapper {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 100%; 
+    line-height: 2;
+    font-weight: 300;
+}
+.d-wrapper p,.d-wrapper td,.d-wrapper li,.d-wrapper label {
+    font-size: 1.11rem; 
+    line-height: 2;
+    font-weight: 300;
+}
+.d-wrapper h1,.d-wrapper  h2,.d-wrapper  h3,.d-wrapper  h4,.d-wrapper  h5,.d-wrapper  .d-wrapper h6{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 1.5;
+}        
+
+.d-wrapper h1{font-size: 3.2rem;margin: 0.06rem 0 0.3rem;}
+.d-wrapper h2{font-size: 2.5rem;margin: 0.18rem 0 0.3rem;}
+.d-wrapper h3{font-size: 1.9rem;margin: 0.36rem 0 0.3rem;}
+.d-wrapper h4{font-size: 1.6rem;margin: 0.48rem 0 0.3rem;line-height: 1.6;}
+.d-wrapper h5{font-size: 1.3rem;margin: 0.55rem 0 0.3rem;line-height: 1.8;}
+.d-wrapper h6{font-size: 1.14rem;margin: 0.7rem 0 0.3rem;font-weight: 800;line-height: 2;}
+.d-wrapper p{margin: 0.7rem 0 1rem;}
+
+.d-wrapper .display{ margin-bottom: 0.5rem; }
+.d-wrapper .display h1{
+    font-weight: 600;
+    font-size: 4.3rem;
+    letter-spacing: -3px;
+    line-height: 1.5;
+    text-transform: capitalize;
+    margin: 0.4rem 0;
+}
+.d-wrapper .display p{
+    font-size: 1.4rem;
+    line-height: 2;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 640px) {
+    .d-wrapper .display h1{font-size: 2.5rem;}
+    .d-wrapper .display p{font-size: 1.4rem;}
+    .d-wrapper h1{font-size: 2.3rem;}
+    .d-wrapper h2{font-size: 2rem;}
+    .d-wrapper h3{font-size: 1.7rem;}
+    .d-wrapper h4{font-size: 1.4rem;}
+    .d-wrapper h5{font-size: 1.2rem;}
+    .d-wrapper h6{font-size: 1rem;} 
+}
+
+.d-wrapper .display-font1 {font-family: 'Poppins', sans-serif;}
+.d-wrapper .display-font2 {font-family: 'Poppins', sans-serif;}
+.d-wrapper .default-font1 {font-family: 'Poppins', sans-serif;}
+.d-wrapper .default-font2 {font-family: 'Poppins', sans-serif;}

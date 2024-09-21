@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlDB DBName="LayoutDB.Header.organicfood" DBVersion="1">
+  <LayoutDB>
+    <PrimaryGuid>da9ea56927694ac8857edf283d3f6260</PrimaryGuid>
+    <Name>organicfood</Name>
+    <Alias>organicfood</Alias>
+    <Description></Description>
+    <CSSData> #dng-megamenu615053 .primary_structure&gt;li&gt;a, 
+	#dng-megamenu615053 .primary_structure&gt;li&gt;a:link, 
+	#dng-megamenu615053 .primary_structure&gt;li&gt;a:active,
+	#dng-megamenu615053 .primary_structure&gt;li&gt;a:visited{color:#ffffff;font-size:18px;font-weight:600;}#dng-megamenu615053 .dnngo_slide_menu li, 
+	#dng-megamenu615053 .dnngo_slide_menu li a{color:#666666;font-size:13px;line-height:39px;}#dng-megamenu615053 .dnngo_menu_list .pane_space, 
+	#dng-megamenu615053 .dnngo_menu_list a, 
+	#dng-megamenu615053 .dnngo_menu_list a:link,
+	#dng-megamenu615053 .dnngo_menu_list a:active, 
+	#dng-megamenu615053 .dnngo_menu_list a:visited,
+	#dng-megamenu615053 .dnngo_boxslide .pane_space, 
+	#dng-megamenu615053 .dnngo_boxslide a, 
+	#dng-megamenu615053 .dnngo_boxslide a:link,
+	#dng-megamenu615053 .dnngo_boxslide a:active, 
+	#dng-megamenu615053 .dnngo_boxslide a:visited{color:#666666;font-size:13px;line-height:35px;}#dng-megamenu615053 .dnngo_menu_list &gt; li &gt; a,
+	#dng-megamenu615053 .dnngo_menu_list &gt; li &gt; a:link,
+	#dng-megamenu615053 .dnngo_menu_list &gt; li &gt; a:active,
+	#dng-megamenu615053 .dnngo_menu_list &gt; li &gt; a:visited,
+	#dng-megamenu615053 .dnngo_menu_list .submenu_title a,
+	#dng-megamenu615053 .dnngo_menu_list .submenu_title a:link,
+	#dng-megamenu615053 .dnngo_menu_list .submenu_title a:active,
+	#dng-megamenu615053 .dnngo_menu_list .submenu_title a:visited,
+	#dng-megamenu615053 .dnngo_menu_list .submenu_title,
+	#dng-megamenu615053 .dnngo_boxslide .submenu_title a,
+	#dng-megamenu615053 .dnngo_boxslide .submenu_title a:link,
+	#dng-megamenu615053 .dnngo_boxslide .submenu_title a:active,
+	#dng-megamenu615053 .dnngo_boxslide .submenu_title a:visited,
+	#dng-megamenu615053 .dnngo_boxslide .submenu_title{color:#424242;font-size:15px;font-weight:600;line-height:35px;}
+	.dng-megamenu {
+		margin: 0px;
+		padding: 0px;
+		clear: both;
+	}
+	
+	.dng-megamenu .primary_structure {
+		position: relative;
+		clear: both;
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.dng-megamenu .header-split .primary_structure {
+		z-index: 6;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li {
+		float: left;
+		list-style: none;
+		position: relative;
+		margin: 0;
+		/* z-index: 6; */
+	}
+	
+	.dng-megamenu .primary_structure&gt;li&gt;a {
+		display: inline-block;
+		word-spacing: normal;
+		line-height: 33px;
+		-webkit-transition: color ease-in 200ms, border-color ease-in 200ms, background-color ease-in 200ms;
+		transition: color ease-in 200ms, border-color ease-in 200ms, background-color ease-in 200ms;
+		/* Safari and Chrome */
+	}
+	
+	.dng-megamenu&gt;ul&gt;li&gt;a&gt;span {
+		display: inline-block;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li&gt;a:hover,
+	.dng-megamenu .primary_structure&gt;li&gt;a:focus,
+	.dng-megamenu .primary_structure&gt;li.menu_hover&gt;a,
+	.dng-megamenu .primary_structure&gt;li.current&gt;a {
+		text-decoration: none;
+	}
+	
+	.dng-megamenu .primary_structure span img,
+	.dng-megamenu .primary_structure span i {
+		margin-right: 8px;
+		width: 1.1em;
+		text-align: center;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li&gt;a,
+	.dng-megamenu .primary_structure&gt;li&gt;a:link,
+	.dng-megamenu .primary_structure&gt;li&gt;a:active,
+	.dng-megamenu .primary_structure&gt;li&gt;a:visited {
+		color: inherit;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li.dir&gt;a&gt;span:after {
+		content: "";
+		height: 5px;
+		width: 5px;
+		overflow: hidden;
+		margin: 0 0px 3px 6px;
+		display: inline-block;
+		vertical-align: middle;
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		/* IE 9 */
+		-moz-transform: rotate(45deg);
+		/* Firefox */
+		-webkit-transform: rotate(45deg);
+		/* Safari and Chrome */
+		-o-transform: rotate(45deg);
+		/* Opera */
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		border-bottom: 1px solid;
+		border-right: 1px solid;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li&gt;a&gt;span&gt;i {
+		color: inherit;
+		font-size: 1.2em;
+	}
+	
+	.dng-megamenu .primary_structure&gt;li:hover&gt;a,
+	.dng-megamenu .primary_structure&gt;li&gt;a:focus,
+	.dng-megamenu .primary_structure&gt;li.current&gt;a,
+	.dng-megamenu .primary_structure&gt;li.menu_hover&gt;a {
+		color: #2c5cda;
+	}
+	
+	.dng-megamenu .label,
+	.dng-megamenu .badge {
+		padding: .19em .4em .2em;
+		font-size: 70%;
+		line-height: 1;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0px 3px 2px;
+	}
+	
+	.dnngo_gomenu+.menu-logo {
+		display: none;
+	}
+	
+	.menu-logo {
+		list-style: none;
+	}
+		/*hoverstyle_5*/
+		
+	#dng-megamenu615053 .primary_structure&gt;li&gt;a{
+		padding-top:10px; 
+		padding-right:22px;
+		padding-bottom:10px;
+		padding-left:22px;
+	  }
+	
+		#dng-megamenu615053.hoverstyle_5 .primary_structure &gt; li:hover &gt; a,
+		#dng-megamenu615053.hoverstyle_5 .primary_structure &gt; li &gt; a:focus,
+		#dng-megamenu615053.hoverstyle_5 .primary_structure &gt; li.current &gt; a,
+		#dng-megamenu615053.hoverstyle_5 .primary_structure &gt; li.menu_hover &gt; a,
+		#dng-megamenu615053.hoverstyle_5 .primary_structure &gt; li &gt; a.current {
+			color:#80bb01!important;
+		}	
+		
+		#dng-megamenu615053 .dnngo_slide_menu,
+		#dng-megamenu615053 .dnngo_slide_menu .dnngo_submenu{background-color:#ffffff;}
+	#dng-megamenu615053 .dnngo_slide_menu li:hover&gt;a, 
+	#dng-megamenu615053 .dnngo_slide_menu li&gt;a:focus, 
+	#dng-megamenu615053 .dnngo_slide_menu li.subcurrent&gt;a{
+			background-color:#80bb01;
+			}
+		
+		#dng-megamenu615053 .dnngo_menu_list,
+		#dng-megamenu615053 .dnngo_boxslide{background-color:#ffffff;}
+	#dng-megamenu615053 .dnngo_menu_list li li.subcurrent &gt; a,
+	#dng-megamenu615053 .dnngo_menu_list li.subcurrent &gt; a,
+	#dng-megamenu615053 .dnngo_custommenu li.current &gt; a{
+		color:#80bb01;
+		background-color:transparent;
+	}
+	#dng-megamenu615053 .dnngo_menu_list li a:hover,
+	#dng-megamenu615053 .dnngo_menu_list li a:focus,
+	#dng-megamenu615053 .dnngo_boxslide .submenu_title a:hover {
+		color:#80bb01;
+	}
+	#dng-megamenu615053 .dnngo_menu_list li li a:hover,
+	#dng-megamenu615053 .dnngo_menu_list li li a:focus,
+	#dng-megamenu615053 .dnngo_custommenu .submenu li a:hover,
+	#dng-megamenu615053 .dnngo_custommenu .submenu li a:focus{
+		color:#FFF;
+		background-color:#80bb01;
+	}
+	
+		#dng-megamenu615053 .mega-menu .boxslide &gt; .line span,
+		#dng-megamenu615053 .dnngo_menuslide &gt; .line span{
+			border-color:#dcdcdc;
+		}
+		
+	#search-popup-box346748 a.search:hover,
+	#search-popup-box346748 .popup-close:hover{
+		color:#80bb01;
+	}
+	#logo299577 img{max-height:40px!important;}#mobilemenu693433 .mobileclose,
+		#mobilemenu693433 .gomenu &gt; ul &gt; li &gt; a &gt; span,
+		#mobilemenu693433 .gomenu li .arrows{color:#272727;font-size:20px;font-weight:600;}#mobilemenu693433 .sub-menu&gt; li &gt; a &gt; span{color:#272727;font-size:20px;font-weight:600;}#mobilemenu693433 .sub-menu li ul li a{color:#484848;font-size:18px;font-weight:600;}#mobilemenu693433 .sub-menu li ul li li a{color:#787878;font-size:16px;font-weight:600;}#mobilemenu693433 .sub-menu li ul li li li a{color:#787878;font-size:16px;font-weight:600;}
+				#mobilemenu693433 .sub-menu .arrows{
+					background-color:  #80bb01;
+				}
+				#mobilemenu693433 .menutitle,
+				#mobilemenu693433 .sub-menu li ul .arrows,
+				#mobilemenu693433 a:hover span,
+				#mobilemenu693433 .current &gt; a &gt; span,
+				#mobilemenu693433 .arrows.active + a span,
+				#mobilemenu693433 .subcurrent &gt; a &gt; span{
+					color:  #80bb01!important;
+				}
+				#headerrow-873518{background-color:rgba(0,0,0,0.5);}#headerrow-873518 .dngTextBox,
+		#headerrow-873518 .header-content-wrap &gt;*:not(.nav-bar),
+		#headerrow-873518 .Normal,
+		#headerrow-873518 .Normal &gt; a,
+		#headerrow-873518 .Normal &gt; a:link,
+		#headerrow-873518 .Normal &gt; a:active,
+		#headerrow-873518 .Normal &gt; a:visited,
+		#headerrow-873518 .dngTextBox a,
+		#headerrow-873518 .dngTextBox a:link,
+		#headerrow-873518 .dngTextBox a:active,
+		#headerrow-873518 .dngTextBox a:visited{color:#ffffff;font-size:18px;font-weight:600;}#headerrow-873518,#headerrow-873518 .header-center,#headerrow-873518 .header-center .logo{height:100px}#headerrow-873518 .header-center .logo{line-height:100px!important}#headerrow-873518 &gt; .container,#megamenuWidthBox {width: auto!important;}#megamenuWidthBox{margin:0 30px;}
+			#headerrow-873518 .area-left{
+				padding-right:8px;
+			}
+			#headerrow-873518 .area-center{
+				padding-left:8px;
+				padding-right:8px;
+			}
+			#headerrow-873518 .area-right{
+				padding-left:8px;
+			}
+			#headerrow-873518 .area-left .header-content-wrap &gt; div{
+				margin-right:20px;
+			}
+			#headerrow-873518 .area-center .header-content-wrap &gt; div,
+			#headerrow-873518 .area-right .header-content-wrap &gt; div{
+				margin-left:20px;
+			}
+		
+			 .floating-active #headerrow-873518:after{
+			   content:"";
+			   position:absolute;
+			   top: 0;
+			   left: -20px;
+			   bottom: 0;
+			   right: 0;
+			   z-index: -1;
+			   pointer-events:none; 
+			   -webkit-box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			   box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			 }
+			 .floating-active #headerrow-873518{background-color:#ffffff!important;
+}#headerrow-873518 .Normal &gt; a:hover,
+			#headerrow-873518 .dngTextBox a:hover,
+			#headerrow-873518 .hover-accent:hover,
+			#headerrow-873518 .Login a:hover,
+			#headerrow-873518 .Login a.active{
+				color:#80bb01
+			}
+			#headerrow-873518 .Login .userProfile .userMessages,
+			#headerrow-873518 .Login .userProperties ul.userMenu a span{
+				background-color:#80bb01
+			}
+				.floating-nav.floating-active #headerrow-873518 .header-container-box,
+				.floating-nav.floating-active #headerrow-873518 .header-bg-box,
+				.floating-nav.floating-active #headerrow-873518 {
+					height:70px;
+				}
+				.floating-nav.floating-active #headerrow-873518 .logo{
+					height:70px;
+					line-height:70px!important;
+				}
+			#mobileheader-230621{background-color:#ffffff;}
+			#mobileheader-230621,#mobileheader-230621 .header-area{height:66px}
+			#mobileheader-230621 .dng-mobilemenu.mobile_menu.mm-menu{
+				top:66px
+			}
+			#mobileheader-230621 .header-area .logo img{max-height:58px}
+			#mobileheader-230621 .dngTextBox,
+		#mobileheader-230621 .header-content-wrap &gt;*:not(.nav-bar),
+		#mobileheader-230621 .Normal,
+		#mobileheader-230621 .Normal &gt; a,
+		#mobileheader-230621 .Normal &gt; a:link,
+		#mobileheader-230621 .Normal &gt; a:active,
+		#mobileheader-230621 .Normal &gt; a:visited,
+		#mobileheader-230621 .dngTextBox a,
+		#mobileheader-230621 .dngTextBox a:link,
+		#mobileheader-230621 .dngTextBox a:active,
+		#mobileheader-230621 .dngTextBox a:visited{color:#272727;}#mobileheader-230621 .header-content-wrap .Normal &gt; a:hover,
+				#mobileheader-230621 .header-content-wrap .dngTextBox a:hover,
+				#mobileheader-230621 .Normal &gt; a:hover,
+				#mobileheader-230621 .dngTextBox a:hover,
+				#mobileheader-230621 .hover-accent:hover,
+				#mobileheader-230621 .search-popup-box .icon.active,
+				#mobileheader-230621 .search-popup-box:hover .icon,
+				#mobileheader-230621 .mobile-menu-icon:hover .fa-bars:before,
+				#mobileheader-230621 .search-popup-box .submit:hover,
+				#mobileheader-230621 .search-popup-box .popup-close:hover,
+				#mobileheader-230621 .shop-cart-list .shop-list .remove:hover,
+				#mobileheader-230621 .shop-cart-list .shop-list .price-info span,
+				#mobileheader-230621 .shop-cart-list .shop-list .number-box .number-up:hover,
+				#mobileheader-230621 .mobile-header .shop-cart-list .shop-list .number-box .number-down:hover,
+				#mobileheader-230621 .search-popup-box .icon:hover{
+					color:#80bb01;
+				}</CSSData>
+    <HTMLData>&lt;div class="header-replace header-position"&gt;&lt;header class="header_bg header-wrap header-default floating-nav floating-nav-sticky"&gt;&lt;div id="megamenuWidthBox" class="container"&gt;&lt;/div&gt;  &lt;div class="header-center-bg floating-dark-color header-bg-box" data-height="70"  id="headerrow-873518"&gt;&lt;div class="container"&gt;&lt;div class="header-center header-container-box"&gt; &lt;div class="header-area area-left header-vertical  pl-35 header-vertical" style="width:265px"  id="column-552682"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="logo" id="logo121406"&gt;&lt;dnn:LOGO runat="server" id="dnnLOGO121406" cssClass="header-logo floating-header-logo" BorderWidth="0" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-center header-vertical text-center header-vertical text-center"   id="column-925494"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="nav-bar"&gt;&lt;div id="dng-megamenu615053" data-split="false" class="dng-megamenu hoverstyle_5 flyout-shadow mega-shadow"&gt;&lt;dnn:MEGAMENU runat="server" id="MEGAMENU615053" Effect="Hslide" ViewLevel="0" ShowUI="Extension" WidthBoxClassName="#megamenuWidthBox"/&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/megamenu/megamenu.css" PathNameAlias="SkinPath" Priority="9"  /&gt;&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/megamenu/megamenu.js" PathNameAlias="SkinPath" Priority="9" ForceProvider ="DnnFormBottomProvider" /&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-right header-horizontal  pr-35 d-none d-xl-table-cell header-horizontal" style="width:265px"  id="column-944385"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="dngTextBox"&gt;&lt;span class="color-accent"&gt;+ Contact:&lt;/span&gt; (845) 359-7777&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;  &lt;/header&gt;&lt;/div&gt;&lt;div class="mobile-header-replace"&gt;&lt;header class="mobile-header floating-nav"&gt; &lt;div class="header-mobile-bg mobile-header-shadow" id="mobileheader-230621"&gt;&lt;div class="header-mobile"&gt; &lt;div class="header-area area-left header-horizontal text-left header-horizontal text-left"   id="column-212743"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="search-popup-box" id="search-popup-box346748" placeholder="Enter any key words to search"&gt;&lt;div class="icon hover-accent"&gt;&lt;span class="magnifier"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-reveal color-dark "&gt;&lt;/div&gt;&lt;div class="popup-content color-dark bg-accent"&gt;&lt;div class="popup-close hover-accent"&gt;&lt;span class="icon-cross"&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-center"&gt;&lt;dnn:SEARCH runat="server" id="dnnSEARCH346748" CssClass="search"  ShowSite="False" ShowWeb="False"  submit=" " /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+		&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/search-popup/search-popup.css" PathNameAlias="SkinPath" Priority="318" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+		&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/search-popup/search-popup.js"  ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="9" HtmlAttributesAsString="async:'async'"   /&gt;	
+		&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-center header-horizontal  header-horizontal"   id="column-815836"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="logo" id="logo299577"&gt;&lt;dnn:LOGO runat="server" id="dnnLOGO299577" cssClass="header-logo" BorderWidth="0" /&gt;&lt;dnn:LOGO runat="server" id="floatingLOGO299577" cssClass="floating-header-logo" BorderWidth="0" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-right header-horizontal text-right header-horizontal text-right"   id="column-901721"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="mobile-menu-icon"&gt;&lt;span class="dg-menu-anime"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;
+	&lt;div class="mobilemenu-main" id="mobilemenu693433" data-title="Menu"&gt;&lt;span class="mobileclose"&gt;&lt;/span&gt;
+	&lt;div class="m-menu"&gt;
+	&lt;dnn:LEFTGOMENU runat="server" id="MOBILEMENU693433" Effect="HTML"/&gt; 
+	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/mobilemenu/mobilemenu.css" PathNameAlias="SkinPath" Priority="317" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+	&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/mobilemenu/mobilemenu.js" ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="17" HtmlAttributesAsString="async:'async'"   /&gt;	
+	&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt; &lt;/header&gt;&lt;/div&gt;</HTMLData>
+    <LabelData>[header sticky='checked' stickytype='sticky' position='floating' id='877929' ] [headerrow layout='boxed' name='Header Top' areaname='header-top' space='8' space2='25' line='off' bottomline='off' height='42' bgcolor='#f4f4f4' color='#424242' bgposition='center center' id='451618' ] [headercolumn col='4' name='Left' areaname='area-left' id='959975' ] [/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='895596' ] [/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' id='553899' ] [/headercolumn] [/headerrow] [headerrow layout='wide' active='active' name='Header Middle' areaname='header-center' height='100' space='8' space2='20' line='off' bottomline='off' bgcolor='rgba(0,0,0,0.5)' hidesticky='checked' styheight='70' styshadow='checked' color='#ffffff' stybgcolor='#ffffff' modulepath='/DesktopModules/DNNGo_ThemePluginPro/' stycolor='dark' id='873518' weight='600' fontsize='18px' ] [headercolumn col='4' name='Left' areaname='area-left' width='265px' dir='vertical' id='552682' classname='pl-35' ] [logo stysource='main' id='121406' /][/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' dir='vertical' align='center' id='925494' ] [megamenu menu_hover_style='hoverstyle_5' color='#ffffff' fontsize='18px' st='10' sr='22' sb='10' sl='22' menubw='2' fmcolor='#666666' fmfontsize='13px' fmlineheight='39px' fmshadow='checked' mmcolor='#666666' mmfontsize='13px' mmlineheight='35px' mmtcolor='#424242' mmtfontsize='15px' mmtlineheight='35px' mmshadow='checked' mmlinecolor='#dcdcdc' fmbgcolor='#ffffff' mmbgcolor='#ffffff' weight='600' mmtweight='600' id='615053' /][/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' dir='horizontal' id='944385' width='265px' classname='pr-35 d-none d-xl-table-cell' ] [textarea content='PHNwYW4gY2xhc3M9ImNvbG9yLWFjY2VudCI+KyBDb250YWN0Ojwvc3Bhbj4gKDg0NSkgMzU5LTc3Nzc=' id='985844' /][/headercolumn] [/headerrow] [headerrow layout='boxed' name='Header Bottom' areaname='header-bottom' space='8' space2='15' line='off' bottomline='off' height='42' bgcolor='#f4f4f4' color='#424242' id='719498' ] [headercolumn col='4' name='Left' areaname='area-left' id='384849' ] [/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='197734' ] [/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' id='785303' ] [/headercolumn] [/headerrow] [/header][mobileheader sticky='checked' id='261833' ] [mobileheaderrow layout='4+4+4' active='active' name='Mobile Header' areaname='header-mobile' line='off' bottomline='off' bgcolor='#ffffff' shadow='checked' color='#272727' hidesticky='checked' stybgcolor='#7a2727' height='66' id='230621' ] [headercolumn col='4' name='Left' areaname='area-left' dir='horizontal' align='left' id='212743' ] [search style='popup' placeholder='Enter any key words to search' color='dark' id='346748' /][/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' dir='horizontal' id='815836' ] [logo stysource='customurl' height='40' id='299577' /][/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' dir='horizontal' align='right' id='901721' ] [mobilemenu color='#ffffff' fontsize='18px' bgcolor='#2c5cda' lv1color='#272727' lv1fontsize='20px' ticolor='#ffffff' tifontsize='18px' linecolor='rgba(255,255,255,0.2)' navbartitle='Menu' tiweight='600' lv1weight='600' accentcolor='#ffffff' weight='400' current='#901dd6' currentcolor='#f8f363' lv2color='#272727' lv2weight='600' lv2fontsize='20px' lv3color='#484848' lv3weight='600' lv3fontsize='18px' lv4color='#787878' lv4weight='600' lv4fontsize='16px' lv5color='#787878' lv5weight='600' lv5fontsize='16px' id='693433' /][/headercolumn] [/mobileheaderrow] [/mobileheader]</LabelData>
+    <Type>Header</Type>
+    <Version>02.03.00</Version>
+    <ImageUrl>resource/thumbnails/header/organicfood.jpg</ImageUrl>
+    <Groups>custom</Groups>
+    <Sort>5</Sort>
+    <CreateTime>2019-10-25T10:14:13</CreateTime>
+    <UpdateTime>2019-12-24T09:24:23</UpdateTime>
+    <Enable>True</Enable>
+  </LayoutDB>
+</XmlDB>

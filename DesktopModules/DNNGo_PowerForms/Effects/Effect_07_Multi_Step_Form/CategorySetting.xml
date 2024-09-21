@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_PowerForms>
+  <EffectSettings>
+  
+  
+  
+  <Setting>
+	  <Name><![CDATA[AnchorDes]]></Name>
+	  <Alias><![CDATA[Anchor Title]]></Alias>
+	  <Width><![CDATA[400]]></Width>
+	  <Rows><![CDATA[1]]></Rows>
+	  <DefaultValue><![CDATA[]]></DefaultValue>
+	  <ControlType><![CDATA[TextBox]]></ControlType>
+	  <Direction><![CDATA[Vertical]]></Direction>
+	  <ListContent><![CDATA[]]></ListContent>
+	  <Description><![CDATA[]]></Description>
+	  <Required><![CDATA[]]></Required>
+	  <Verification><![CDATA[]]></Verification>
+	  <Group><![CDATA[Options]]></Group>
+	  <Categories><![CDATA[Options]]></Categories>
+	  <Layout><![CDATA[]]></Layout>
+  </Setting>
+
+ 
+	  
+  </EffectSettings>
+</DNNGo_PowerForms>
+
+
+

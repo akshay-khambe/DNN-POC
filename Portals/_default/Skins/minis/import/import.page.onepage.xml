@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Config>
+    <Name><![CDATA[onepage]]></Name>
+    <Alias><![CDATA[One Page]]></Alias>
+    <Icon><![CDATA[fa fa-wrench]]></Icon>
+    <Description><![CDATA[One Page Options]]></Description>
+    <Icon><![CDATA[]]></Icon>
+    <Image><![CDATA[Resource/images/thumbnail/onepage.jpg]]></Image>
+    <Template><![CDATA[onepage]]></Template>
+  </Config>
+  <Settings>
+
+  </Settings>
+</DNNGo_ThemePluginPro>
+
+
+

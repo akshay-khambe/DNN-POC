@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Config>
+    <Name><![CDATA[<!--[Name]-->]]></Name>
+    <Alias><![CDATA[<!--[Alias]-->]]></Alias>
+    <Icon><![CDATA[<!--[Icon]-->]]></Icon>
+    <Description><![CDATA[<!--[Description]-->]]></Description>
+    <Image><![CDATA[<!--[Image]-->]]></Image>
+    <Template><![CDATA[<!--[Template]-->]]></Template>
+  </Config>
+  <Settings>
+    <!--[Settings]-->
+  </Settings>
+</DNNGo_ThemePluginPro>
+
+
+

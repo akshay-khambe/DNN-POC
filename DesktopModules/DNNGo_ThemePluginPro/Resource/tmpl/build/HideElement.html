@@ -1,0 +1,91 @@
+{{if ThemeOptions.BootstrapVersion =="v4"}}
+
+
+
+<table class="responsive-setting-table">
+  <tbody>
+    <tr>
+      <th width="20%"> Device </th>
+      <th> hide </th>
+    </tr>
+    <tr>
+      <td> <span title="Extra small"> <b>Extra small</b> </span> </td>
+      <td>
+        <div class="control-cont text-left">
+          <input type="checkbox" class="dnnOptions" data-name="hide_xs" ${hide_xs} />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td> <span title="Small"> <b>Small</b> </span> </td>
+      <td>
+        <div class="control-cont text-left">
+          <input type="checkbox" class="dnnOptions" data-name="hide_sm" ${hide_sm} />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td> <span title="Medium"> <b>Medium</b> </span> </td>
+      <td>
+        <div class="control-cont text-left">
+          <input type="checkbox" class="dnnOptions" data-name="hide_md" ${hide_md} /></div>
+      </td>
+      </div>
+    </tr>
+    <tr>
+      <td> <span title="Large"> <b>Large</b> </span> </td>
+      <td>
+        <div class="control-cont text-left">
+          <input type="checkbox" class="dnnOptions" data-name="hide_lg" ${hide_lg} />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td> <span title="Large"> <b>Extra large</b></span> </td>
+      <td>
+        <div class="control-cont text-left">
+          <input type="checkbox" class="dnnOptions" data-name="hide_xl" ${hide_xl} /></div>
+      </td>
+      </div>
+    </tr>
+  </tbody>
+</table>
+
+
+
+{{else}}
+<div class="form-group">
+  <label for="firstname" class="control-label">Large Screen:</label>
+  <div class="control-cont">
+    <input type="checkbox" class="dnnOptions" data-name="hide_xl" ${hide_xl} />
+  </div>
+</div>
+<div class="form-group">
+  <label for="firstname" class="control-label">Desktop:</label>
+  <div class="control-cont">
+    <input type="checkbox" class="dnnOptions" data-name="hide_l" ${hide_l} />
+  </div>
+</div>
+<div class="form-group">
+  <label for="firstname" class="control-label">Tablet:</label>
+  <div class="control-cont">
+    <input type="checkbox" class="dnnOptions" data-name="hide_m" ${hide_m} /></div>
+</div>
+<div class="form-group">
+  <label for="firstname" class="control-label">Tablet Portrait:</label>
+  <div class="control-cont">
+    <input type="checkbox" class="dnnOptions" data-name="hide_m_p" ${hide_m_p} />
+  </div>
+</div>
+<div class="form-group">
+  <label for="firstname" class="control-label">Mobile:</label>
+  <div class="control-cont">
+    <input type="checkbox" class="dnnOptions" data-name="hide_s" ${hide_s} /></div>
+</div>
+<div class="form-group">
+  <label for="firstname" class="control-label">Mobile Landscape:</label>
+  <div class="control-cont">
+    <input type="checkbox" class="dnnOptions" data-name="hide_s_l" ${hide_s_l} />
+  </div>
+</div>
+{{/if}}

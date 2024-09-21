@@ -1,0 +1,65 @@
+﻿@import url('https://fonts.googleapis.com/css?display=swap&family=Prata');
+@import url('https://fonts.googleapis.com/css?display=swap&family=Hind+Siliguri:300,700');
+@import url('https://fonts.googleapis.com/css?display=swap&family=Waiting+for+the+Sunrise');
+
+
+/**********************************
+    General
+***********************************/
+
+ 
+.d-wrapper {
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 100%; 
+    line-height: 2.2;
+    font-weight: 300;
+}
+.d-wrapper p,.d-wrapper td,.d-wrapper li,.d-wrapper label {
+    font-size: 1.18em;
+    line-height: 2.2;
+    font-weight: 300;
+}
+.d-wrapper h1,.d-wrapper  h2,.d-wrapper  h3,.d-wrapper  h4,.d-wrapper  h5,.d-wrapper  .d-wrapper h6{
+    font-family: 'Prata', serif;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 2px;
+}        
+
+.d-wrapper h1{font-size: 3em;margin: 0.1em 0 0.3em;}
+.d-wrapper h2{font-size: 2.5em;margin: 0.2em 0 0.3em;}
+.d-wrapper h3{font-size: 2em;margin: 0.37em 0;}
+.d-wrapper h4{font-size: 1.7em;margin: 0.51em 0;}
+.d-wrapper h5{font-size: 1.4em;margin: 0.64em 0;font-weight:bold;line-height:1.8;}
+.d-wrapper h6{font-size: 1.18em;margin: 0.72em 0;font-weight:bold;text-transform:none;line-height:2;}
+.d-wrapper p{margin:0.54em 0 1em;}
+
+.d-wrapper .display{ margin-bottom: 0.5em; }
+.d-wrapper .display h1{
+    font-size: 4em;
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    margin: 0.4em 0;
+}
+.d-wrapper .display p{
+    font-family: 'Waiting for the Sunrise', cursive;
+    font-size: 1.8em;
+    line-height: 1.7;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 640px) {
+    .d-wrapper .display h1{font-size: 2.5em;}
+    .d-wrapper .display p{font-size: 1.4em;}
+    .d-wrapper h1{font-size: 2.3em;}
+    .d-wrapper h2{font-size: 2em;}
+    .d-wrapper h3{font-size: 1.7rem;}
+    .d-wrapper h4{font-size: 1.4em;}
+    .d-wrapper h5{font-size: 1.2rem;}
+    .d-wrapper h6{font-size: 1em;} 
+}

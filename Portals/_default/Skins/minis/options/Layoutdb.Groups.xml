@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Settings>
+    <Setting>
+      <Name><![CDATA[custom]]></Name>
+      <Alias><![CDATA[Custom]]></Alias>
+      <Layout><![CDATA[Header,Content,Footer]]></Layout>
+    </Setting>
+
+  </Settings>
+</DNNGo_ThemePluginPro>
+
+
+

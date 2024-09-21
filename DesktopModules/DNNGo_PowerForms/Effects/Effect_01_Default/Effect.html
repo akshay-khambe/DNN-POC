@@ -1,0 +1,292 @@
+﻿<div class="$ThemeName form-align-${xf.ViewXmlSetting("align","left")} #if(${xf.ViewXmlSetting("LineMode",false)})form-line-mode#end  dg-form-content-box ${xf.ViewXmlSetting("style","form-line")}-load" id="form_div_${ModuleID}" style="width:${xf.ViewXmlSetting("width","100%")};"> 
+    #if($FieldList.Count > 0)
+    <ul class="form_list dg-form-content ${xf.ViewXmlSetting("style","form-line")} ${xf.ViewXmlSetting("size","size-default")} ${xf.ViewXmlSetting("color","black")} #if(${xf.ViewXmlSetting("style","form-line")}!="form-line" )${xf.ViewXmlSetting("radius","none-radius")}#end #if(${xf.ViewXmlSetting("DisplayShadow",false)})display-shadow#end">
+        #foreach($FieldItem in $FieldList)
+        <li style="width:${xf.ViewItemSetting($FieldItem,"Itemwidth","100")}%" class="${xf.ConditionalClass($FieldItem)}" ${xf.ConditionalRule($FieldItem)}>
+            <div class="form-control-wrap  row${velocityCount}">
+                #if(${xf.IsHtmlControl($FieldItem)})
+                ${xf.ViewControl($FieldItem)}
+                #else
+                #if(${xf.ViewItemSetting($FieldItem,"DisplayTitle","true")}=="true")
+
+                #if($FieldItem.Required == 1)
+                ${xf.ViewLable($FieldItem,"<span class='form_required'> *</span>")}
+                #else
+                ${xf.ViewLable($FieldItem,"")}
+                #end
+                #end
+                <div class="form_input">
+                    ${xf.ViewControl($FieldItem)}
+                    #if( ${xf.ViewXmlSetting("DisplayTooltip","true")} == "true")
+                    ${xf.ViewInputDefault($FieldItem)}
+                    #end
+                </div>
+
+                #end
+            </div>
+        </li>
+        #end
+        #if(${xf.ViewSetting("PowerForms_ImageCaptcha_Enable",false)})
+        <li style="width:100%;">
+            <div class="form-control-wrap">
+                <div class="form_row">
+                 
+                    <div class="image-recaptcha-box">
+                        <div class="recaptcha-image" id="image-captcha-${ModuleID}"><img src="${xf.GetImageCaptchaUrl(${xf.GetUtcTime().ToString("yy-MM-dd-HH-mm-ss")})}" data-src="${xf.GetImageCaptchaUrl("")}" /></div> 
+                        <div class="sign">=</div> 
+                        <input type="text" name="ImageCaptchaVal${ModuleID}" id="ImageCaptchaVal${ModuleID}" />
+                        <button type="button"><svg viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"><path d="M1.6,16.5a1.3,1.3,0,0,1-.2-.015,1.251,1.251,0,0,1-1.04-1.43,17.277,17.277,0,0,1,33-4.014,1.25,1.25,0,1,1-2.3.969A14.777,14.777,0,0,0,2.833,15.441,1.25,1.25,0,0,1,1.6,16.5Z"></path> <path d="M33.426,13.43h-.01L23.6,13.355a1.25,1.25,0,0,1,.01-2.5h.01l8.568.065.065-8.568A1.25,1.25,0,0,1,33.5,1.111h.009a1.251,1.251,0,0,1,1.241,1.26l-.074,9.818a1.251,1.251,0,0,1-1.25,1.241Z"></path> <path d="M17.569,34.557A17.315,17.315,0,0,1,1.64,23.963a1.25,1.25,0,1,1,2.3-.969,14.777,14.777,0,0,0,28.222-3.435,1.25,1.25,0,0,1,2.47.39A17.314,17.314,0,0,1,17.569,34.557Z"></path> <path d="M1.5,33.889H1.491A1.25,1.25,0,0,1,.25,32.629l.075-9.818A1.251,1.251,0,0,1,1.584,21.57l9.819.076a1.25,1.25,0,0,1-.01,2.5h-.01L2.815,24.08,2.75,32.648A1.251,1.251,0,0,1,1.5,33.889Z"></path></svg></button>
+                    </div>
+                  
+
+
+                </div>
+            </div>
+        </li>
+        #end
+
+        #if($Module.Settings_HoneypotField_Enable)
+        <li style="width:100%;" class="ContactEmail${ModuleID}">
+            <div class="form-control-wrap">
+                <div class="form_row">
+                    <label for="ContactEmail${ModuleID}">Contact Email</label>
+                    <div class="form_input">
+                        ${xf.ViewHoneypotFieldControl()}
+                    </div>
+                </div>
+            </div>
+        </li>
+        #end
+
+        #if($Module.Settings_Recaptcha_Enable)
+        <li style="width:100%;">
+            <div class="form-control-wrap">
+                <div class="form_row">
+                    <div class="form_captcha">${xf.ViewCaptcha()}</div>
+                </div>
+            </div>
+        </li>
+        #end
+        <li class="from-footer">
+            #if($ErrorMessage != '')
+            <div class="PowerForms_ErrorMessage">$ErrorMessage</div>
+            #end
+            <div class="form_submit text-${xf.ViewXmlSetting("ButtonPosition","left")}">
+
+                #if(${xf.ViewXmlSetting("SubmitButtonClass","")}!="")
+                ${xf.ViewButton(${xf.ViewXmlSetting("SubmitButtonClass","")})}
+                #else
+                ${xf.ViewButton("submit_but")}
+                #end
+                #if(${xf.ViewXmlSetting("ShowResetButton","false")} == "true")
+                #if(${xf.ViewXmlSetting("ResetButtonClass","")}!="")
+                ${xf.ViewResetButton(${xf.ViewXmlSetting("ResetButtonClass","")})}
+                #else
+                ${xf.ViewResetButton("reset_but")}
+                #end
+                #end
+
+            </div>
+        </li>
+    </ul>			
+    #end
+
+
+</div>
+<style type="text/css">
+
+#form_div_${ModuleID} .ContactEmail${ModuleID}{
+    position: absolute; 
+    inset-inline: -9999px;
+    width: 200px;
+}
+
+
+#form_div_${ModuleID} .actionMenu{ display:none;}
+#form_div_${ModuleID} .form_list > li {
+    padding: 0px 0px ${xf.ViewXmlSetting("VerticalSpacing","20")}px ${xf.ViewXmlSetting("HorizontalSpacing","30")}px;
+}
+#form_div_${ModuleID} .form_list{
+    margin:0 0 0 -${xf.ViewXmlSetting("HorizontalSpacing","30")}px
+}
+.form_captcha{
+    position:relative;
+}
+.g-recaptcha-dnn{
+    padding-bottom:20px;
+}
+.form_captcha .g-recaptcha-msg{
+    position:absolute;
+    left:0;
+    bottom:0;
+    font-size:13px;
+    font-family:Arial, Helvetica, sans-serif;
+    white-space:nowrap;
+    line-height:1;
+}
+#if(${xf.ViewXmlSetting("color","dark")} == "custom")
+
+
+#if(${xf.ViewXmlSetting("style","form-line")} == "form-background")
+#form_div_${ModuleID} .form-background .form-control-wrap input[type=text],
+#form_div_${ModuleID} .form-background .form-control-wrap input[type=email],
+#form_div_${ModuleID} .form-background .form-control-wrap input[type=url],
+#form_div_${ModuleID} .form-background .form-control-wrap input[type=tel],
+#form_div_${ModuleID} .form-background .form-control-wrap input[type=number],
+#form_div_${ModuleID} .form-background .form-control-wrap input[type=date],
+#form_div_${ModuleID} .form-background .form-control-wrap select,
+#form_div_${ModuleID} .form-background .form-control-wrap textarea,
+#form_div_${ModuleID} .form-background .fixline:before {
+	background-color: ${xf.ViewXmlSetting("backgroundcolor","")};
+    color: ${xf.ViewXmlSetting("fontcolor","")};
+	border-color:${xf.ViewXmlSetting("bordercolor","")};
+ 
+}
+#form_div_${ModuleID} .form-background .form-control-wrap,
+#form_div_${ModuleID} .form-background .form-control-wrap span,
+#form_div_${ModuleID} .form-background .form-control-wrap label.valid,
+#form_div_${ModuleID} .form-background .form-control-wrap input,
+#form_div_${ModuleID} .form-background .form-control-wrap select,
+#form_div_${ModuleID} .form-background .form-control-wrap textarea {
+	color: ${xf.ViewXmlSetting("fontcolor","")};
+    #if(${xf.ViewXmlSetting("borderwidth","1px")} != "1px")
+      border-width:${xf.ViewXmlSetting("borderwidth","1px")};
+    #end
+}
+#form_div_${ModuleID} .form-background .form-control-wrap label{
+    color: ${xf.ViewXmlSetting("titlecolor","")};
+}
+
+
+
+
+#elseif(${xf.ViewXmlSetting("style","form-line")} == "form-border")
+#form_div_${ModuleID} .form-border .form-control-wrap input[type=text],
+#form_div_${ModuleID} .form-border .form-control-wrap input[type=email],
+#form_div_${ModuleID} .form-border .form-control-wrap input[type=url],
+#form_div_${ModuleID} .form-border .form-control-wrap input[type=tel],
+#form_div_${ModuleID} .form-border .form-control-wrap input[type=number],
+#form_div_${ModuleID} .form-border .form-control-wrap input[type=date],
+#form_div_${ModuleID} .form-border .form-control-wrap select,
+#form_div_${ModuleID} .form-border .form-control-wrap textarea,
+#form_div_${ModuleID} .form-border .fixline:before {
+	border-color: ${xf.ViewXmlSetting("bordercolor","")};
+}
+
+#form_div_${ModuleID} .form-border .form-control-wrap,
+#form_div_${ModuleID} .form-border .form-control-wrap span,
+#form_div_${ModuleID} .form-border .form-control-wrap label,
+#form_div_${ModuleID} .form-border .form-control-wrap label.valid,
+#form_div_${ModuleID} .form-border .form-control-wrap input,
+#form_div_${ModuleID} .form-border .form-control-wrap select,
+#form_div_${ModuleID} .form-border .form-control-wrap textarea {
+	color:${xf.ViewXmlSetting("fontcolor","")};
+    #if(${xf.ViewXmlSetting("borderwidth","1px")} != "1px")
+    border-width:${xf.ViewXmlSetting("borderwidth","1px")};
+    #end
+
+}
+
+#elseif(${xf.ViewXmlSetting("style","form-line")} == "form-line")
+#form_div_${ModuleID} .form-line .form-control-wrap input[type=text],
+#form_div_${ModuleID} .form-line .form-control-wrap input[type=email],
+#form_div_${ModuleID} .form-line .form-control-wrap input[type=url],
+#form_div_${ModuleID} .form-line .form-control-wrap input[type=tel],
+#form_div_${ModuleID} .form-line .form-control-wrap input[type=number],
+#form_div_${ModuleID} .form-line .form-control-wrap input[type=date],
+#form_div_${ModuleID} .form-line .form-control-wrap select,
+#form_div_${ModuleID} .form-line .form-control-wrap textarea,
+#form_div_${ModuleID} .form-line .fixline:before {
+	border-bottom-color:${xf.ViewXmlSetting("bordercolor","")};
+}
+#form_div_${ModuleID} .form-line .form-control-wrap,
+#form_div_${ModuleID} .form-line .form-control-wrap span,
+#form_div_${ModuleID} .form-line .form-control-wrap label,
+#form_div_${ModuleID} .form-line .form-control-wrap label.valid,
+#form_div_${ModuleID} .form-line .form-control-wrap input,
+#form_div_${ModuleID} .form-line .form-control-wrap select,
+#form_div_${ModuleID} .form-line .form-control-wrap textarea {
+	color:${xf.ViewXmlSetting("fontcolor","")};
+}
+#end
+#end
+#form_div_${ModuleID} .formError .formErrorContent,
+#form_div_${ModuleID} .formError .formErrorArrow div{
+    color: ${xf.ViewXmlSetting("Promptcolor","#ffffff")};
+    background-color: ${xf.ViewXmlSetting("Promptbgcolor","#ee0101")};
+}
+
+
+
+</style> 
+#if(${xf.ViewXmlSetting("style","form-line")}=="form-line")
+<script>
+var form_div_${ModuleID} =$("#form_div_${ModuleID}");
+form_div_${ModuleID}.find(".dg-form-content.form-line").on("focus", 'input[type="text"],[type="email"],input[type="url"],input[type="tel"],input[type="number"],textarea', function() {
+    $(this).parent().addClass("valid focus");
+    $(this).parent().siblings().addClass("valid focus");
+});
+form_div_${ModuleID}.find(".dg-form-content.form-line").on("blur", 'input[type="text"],[type="email"],input[type="url"],input[type="tel"],input[type="number"],textarea', function() { 
+    if ($(this).val() === "") {
+        $(this).parent().removeClass("valid");
+        $(this).parent().siblings().removeClass("valid");
+    }
+    $(this).parent().removeClass("focus");
+    $(this).parent().siblings().removeClass("focus");
+});
+form_div_${ModuleID}.find(".dg-form-content.form-line").on("blur", 'input[title="DatePicker"]', function() {
+    var e=$(this);
+    setTimeout(function(){ 
+        if (e.val() === "") {
+           e.parent().removeClass("valid");
+           e.parent().siblings().removeClass("valid");
+        }else{
+           e.parent().addClass("valid focus");
+           e.parent().siblings().addClass("valid focus");
+        }
+    },100)
+
+});
+
+
+form_div_${ModuleID}.find('.dg-form-content.form-line input[type="text"],.dg-form-content.form-line input[type="email"],.dg-form-content.form-line input[type="url"],.dg-form-content.form-line input[type="tel"],.dg-form-content.form-line input[type="number"],.dg-form-content.form-line textarea').each(function() {
+    $(this).parent().addClass("fixline");
+    $(this).parent().siblings("label").addClass("fixlabel");
+    $(this).attr("placeholder","");
+
+    if ($(this).val() === "") {
+        $(this).parent().removeClass("valid");
+        $(this).parent().siblings().removeClass("valid");
+    }else{
+        $(this).parent().addClass("valid focus");
+         $(this).parent().siblings().addClass("valid focus");
+    }
+});
+setTimeout(function(){
+    form_div_${ModuleID}.css("opacity",1)
+},300)
+
+</script>
+#end
+
+#if(${xf.ViewSetting("PowerForms_ImageCaptcha_Enable",false)})
+<script>
+    $("#form_div_${ModuleID}").find(".recaptcha-image").each(function () {
+        let e = $(this);
+        e.data("src", e.children("img").attr("src")).on("click", function () {
+            e.children("img").attr("src", e.data("src") + "&v=" + (new Date()).getTime());
+            e.siblings("input").val("").trigger("focus");
+            $(this).addClass("active");
+        }).on("mouseout", function () {
+            $(this).removeClass("active");
+        });
+        e.siblings("button").on("click", function (event) {
+            event.preventDefault();
+            e.children("img").attr("src", e.data("src") + "&v=" + (new Date()).getTime());
+            e.siblings("input").val("").trigger("focus");
+        });
+
+    });
+</script>
+#end
+

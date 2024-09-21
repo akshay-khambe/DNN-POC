@@ -1,0 +1,264 @@
+<div class="panel-heading">
+  <h4 class="panel-title">Element ${id}</h4>
+  <div class="delete"><span class="fa fa-close"></span></div>
+</div>
+<div class="panel-collapse panel-body collapse panel-collapse${id}" data-id="${id}" data-id2="${id2}">
+
+  <div class="form-group">
+    <label for="firstname" class="control-label">Type:</label>
+    <div class="control-cont">
+      <select name="gap" class="dnnElement form-control" data-name="type" data-value="${type}" id="type${id}">
+        <option value="font">Font</option>
+        <option value="pic">Image</option>
+     <!--    <option value="shape">Shape</option> -->
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group conditional"  data-condition="#type${id} == 'font'">
+    <label for="firstname" class="control-label">Font Text:</label>
+    <div class="control-cont">
+      <input class="dnnElement form-control" data-name="text" type="text" value="${text}" />
+    </div>
+  </div>
+  <div class="form-group conditional" data-condition="#type${id} == 'font'">
+    <label for="firstname" class="control-label">Font Color:</label>
+    <div class="control-cont">
+      <div class="colorpicker-group">
+        <input type="text" class="dnnElement form-control colorpicker" data-color-format="rgba" data-name="fontcolor"
+          value="${fontcolor}">
+        <i style="background-color:${fontcolor}"></i></div>
+    </div>
+
+  </div>
+  <div class="form-group conditional" data-condition="#type${id} == 'font'">
+    <label for="firstname" class="control-label">Font Family:</label>
+    <div class="control-cont">
+      <select class="dnnElement form-control" data-value="${family}" data-name="family">
+        <option value="">font-family</option>
+        {{tmpl($data) '#tmpl-font-list'}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group conditional" data-condition="#type${id} == 'pic'">
+    <label for="firstname" class="control-label">Image:</label>
+    <div class="control-cont">
+        {{tmpl($data,options ={imgid:"image"+id }) '#tmpl-image'}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="firstname" class="control-label">Responsive:</label>
+    <div class="control-cont">
+      <table class="responsive-setting-table small-table">
+        <tbody>
+          <tr>
+            <th style="width:18%">   </th>
+            <th>Extra small</th>
+            <th>Small</th>
+            <th>Medium</th>
+            <th>Large</th>
+            <th>Extra large</th>
+          </tr>
+          <tr class="conditional" data-condition="#type${id} == 'font'">
+            <th>Font Size (px)</th>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="fontsize" value="${fontsize}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="fontsize_sm" value="${fontsize_sm}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="fontsize_md" value="${fontsize_md}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="fontsize_lg" value="${fontsize_lg}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="fontsize_xl" value="${fontsize_xl}"> </td>
+          </tr>
+
+          <tr class="conditional" data-condition="#type${id} == 'pic'">
+            <th>Max Width (px)</th>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="maxwidth" value="${maxwidth}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="maxwidth_sm" value="${maxwidth_sm}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="maxwidth_md" value="${maxwidth_md}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="maxwidth_lg" value="${maxwidth_lg}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="maxwidth_xl" value="${maxwidth_xl}"> </td>
+          </tr>
+          <tr class="conditional" data-condition="#type${id} == 'shape'">
+            <th>Width (px)</th>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="width" value="${width}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="width_sm" value="${width_sm}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="width_md" value="${width_md}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="width_lg" value="${width_lg}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="width_xl" value="${width_xl}"> </td>
+          </tr>
+          <tr class="conditional" data-condition="#type${id} == 'shape'">
+            <th>Height (px)</th>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="height" value="${height}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="height_sm" value="${height_sm}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="height_md" value="${height_md}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="height_lg" value="${height_lg}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="height_xl" value="${height_xl}"> </td>
+          </tr>
+
+          <tr>
+            <th>Position X (%)</th>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positionx" value="${positionx}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positionx_sm" value="${positionx_sm}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positionx_md" value="${positionx_md}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positionx_lg" value="${positionx_lg}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positionx_xl" value="${positionx_xl}"> </td>
+          </tr>
+          <tr>
+            <th>Position Y (%)</th>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positiony" value="${positiony}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positiony_sm" value="${positiony_sm}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positiony_md" value="${positiony_md}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positiony_lg" value="${positiony_lg}"> </td>
+            <td> <input type="text" class="dnnElement form-control validate[custom[number]]" data-name="positiony_xl" value="${positiony_xl}"> </td>
+          </tr>
+          <tr>
+            <th>Hide</th>
+            <td> <input type="checkbox" class="dnnElement" data-name="hide" ${hide}> </td>
+            <td> <input type="checkbox" class="dnnElement" data-name="hide_sm" ${hide_sm}> </td>
+            <td> <input type="checkbox" class="dnnElement" data-name="hide_md" ${hide_md}> </td>
+            <td> <input type="checkbox" class="dnnElement" data-name="hide_lg" ${hide_lg}> </td>
+            <td> <input type="checkbox" class="dnnElement" data-name="hide_xl" ${hide_xl}> </td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="firstname" class="control-label">Position X Direction:</label>
+    <div class="control-cont">
+      <select class="dnnElement form-control" data-name="xdirection" data-value="${xdirection}">
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="firstname" class="control-label">Position Y Direction:</label>
+    <div class="control-cont">
+      <select class="dnnElement form-control" data-name="ydirection" data-value="${ydirection}">
+        <option value="top">Top</option>
+        <option value="bottom">Bottom</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="firstname" class="control-label">Animation Type:</label>
+    <div class="control-cont">
+      <select class="dnnElement form-control" data-name="animationtype" data-value="${animationtype}" id="animationtype${id}">
+        <option value="" selected="selected">None</option>
+        <option value="pscroll">Parallax Scroll</option>
+        <option value="parallax">Parallax</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group conditional" data-condition="#animationtype${id} == 'pscroll'">
+    <label for="firstname" class="control-label">Parallax Scroll:</label>
+    <div class="control-cont">
+        <div class="dng-collect-data2">
+
+            <div class="control-item">
+              <p>Parallax Effect</p>
+              <select id="aeffect${id}" data-name="aeffect" data-value="${aeffect}" class="dnnElement form-control">
+                <option value="toleft" selected="selected">Move To Left</option>
+                <option value="totop">Move To Top</option>
+                <option value="toright">Move To Right</option>
+                <option value="tobottom">Move To Bottom</option>      
+                <option value="rotate">Rotate</option>
+                <!-- <option value="rotatex">Vertical Rotate</option>
+                <option value="rotatey">Horizontal Rotate</option>
+                <option value="rotate3d">3D Rotate</option> -->
+              </select>
+            </div>
+      
+            <div class="control-item conditional" data-condition="(#aeffect${id} == 'toleft') || (#aeffect${id} == 'toright')">
+              <p>Translate X (px)</p>
+              <input data-name="x" value="${x}" type="text" class="dnnElement form-control validate[custom[number]]">
+            </div>
+            <div class="control-item conditional" data-condition="(#aeffect${id} == 'totop') || (#aeffect${id} == 'tobottom')">
+              <p>Translate Y (px)</p>
+              <input data-name="y" value="${y}" type="text" class="dnnElement form-control validate[custom[number]]">
+            </div>
+      
+            <div class="control-item conditional" data-condition="(#aeffect${id} == 'rotate3d') || (#aeffect${id} == 'rotatex')">
+              <p>Rotate X (deg)</p>
+              <input data-name="rotatex" value="${rotatex}" type="text" class="dnnElement form-control validate[custom[number]]">
+            </div>
+            <div class="control-item conditional" data-condition="(#aeffect${id} == 'rotate3d') || (#aeffect${id} == 'rotatey')">
+              <p>Rotate Y (deg)</p>
+              <input data-name="rotatey" value="${rotatey}" type="text" class="dnnElement form-control validate[custom[number]]">
+            </div>
+            <div class="control-item conditional" data-condition="(#aeffect${id} == 'rotate3d') || (#aeffect${id} == 'rotate')">
+              <p class="conditional" data-condition="#aeffect${id} != 'rotate'">Rotate Z (deg)</p>
+              <p class="conditional" data-condition="#aeffect${id} == 'rotate'">Rotate (deg)</p>
+              <input data-name="rotatez" value="${rotatez}" type="text" class="dnnElement form-control validate[custom[number]]">
+            </div>
+            <div class="control-item line"></div>
+      
+            <div class="control-item">
+              <p>Smoothness</p>
+              <select id="smoothness" data-name="smoothness" data-value="${smoothness}" class="dnnElement form-control">
+                  <option value="">Fast</option>
+                  <option value="30">Medium</option>
+                  <option value="60">Slow</option>
+                </select>
+            </div>
+            <div class="control-item">
+              <div class="form-group">
+                  <p>Scale Up:</p>
+                <div class="control-cont">
+                  <select  data-name="scale" data-value="${scale}" class="dnnElement form-control">
+                    <option value="" selected="selected">OFF</option>
+                    <option value="0">ON</option>
+                    <!-- <option value="1.2">Scale Down</option> -->
+                  </select>
+                </div>
+              </div>
+            </div>
+      
+            <div class="control-item">
+              <div class="form-group">
+                  <p>Fade In:</p>
+                <div class="control-cont">
+                  <select  data-name="fade" data-value="${fade}" class="dnnElement form-control">
+                      <option value="" selected="selected">OFF</option>
+                      <option value="on">ON</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+      
+      
+          </div>
+      
+    </div>
+  </div>
+  <div class="form-group conditional" data-condition="#animationtype${id} == 'parallax'">
+    <label for="firstname" class="control-label">Parallax:</label>
+    <div class="control-cont">
+      <div class="dng-collect-data">
+        <div class="control-item">
+          <p>Depth X (-5~5)</p>
+          <input data-name="depthx" value="${depthx}" type="text" class="dnnElement form-control">
+        </div>
+        <div class="control-item">
+          <p>Depth Y (-5~5)</p>
+          <input data-name="depthy" value="${depthy}" type="text" class="dnnElement form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="firstname" class="control-label">Extra class name:</label>
+    <div class="control-cont">
+      <input type="text" class="dnnElement form-control" value="${classname}" data-name="classname">
+    </div>
+  </div>
+
+
+
+</div>

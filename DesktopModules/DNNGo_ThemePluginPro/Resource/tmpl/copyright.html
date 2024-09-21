@@ -1,0 +1,116 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#generalOptions" aria-controls="layout" role="tab" data-toggle="tab">General</a></li>
+  <li role="presentation"><a href="#generalOptionsCopyright" aria-controls="layout" role="tab" data-toggle="tab">Copyright</a></li>
+  <li role="presentation"><a href="#DesignOptionsPrivacy" aria-controls="pane" role="tab" data-toggle="tab">Privacy Statement</a></li>
+  <li role="presentation"><a href="#DesignOptionsTerms" aria-controls="pane" role="tab" data-toggle="tab">Terms Of Use</a></li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="generalOptions">
+      <div class="form-group">
+          <label for="firstname" class="control-label">Spacing:</label>
+          <div class="control-cont">
+              <input type="text" class="dnnOptions form-control validate[custom[number]]" value="${itemspacing}"
+                  data-name="itemspacing" />
+          </div>
+      </div>
+      <div class="form-typography-list">
+          <div class="form-group">
+              <label class="control-label">Typography:</label>
+              {{tmpl($data,options ={}) '#tmpl-typography'}}
+          </div>
+      </div>
+      <div class="form-group colorpicker-box">
+          <label for="firstname" class="control-label">Item Hover Font Color:</label>
+          <select class="form-control" id="colorcustom">
+              <option value="">Theme Options</option>
+              <option value="custom" {{if hovercolor }} selected="selected" {{/if}}>Custom</option>
+          </select>
+          <div class="colorpicker-group conditional" data-condition="#colorcustom == 'custom'">
+
+              <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="hovercolor"
+                  value="${hovercolor}">
+              <i style="background-color:${hovercolor}"></i>
+          </div>
+      </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="generalOptionsCopyright">
+    <div class="form-group">
+      <label class="control-label">Active Copyright:</label>
+      <div class="control-cont">
+        <input type="checkbox" class="dnnOptions" data-name="copyright" ${copyright}>
+      </div>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="DesignOptionsPrivacy">
+
+    <div class="form-group">
+      <label class="control-label">Active Privacy Statement:</label>
+      <div class="control-cont">
+        <input type="checkbox" class="dnnOptions" id="dngprivacy" data-name="privacy" ${privacy}>
+      </div>
+    </div>
+
+    <div class="form-group conditional" data-condition="#dngprivacy">
+      <label class="control-label">Text:</label>
+      <div class="control-cont">
+        <input type="text" class="dnnOptions  form-control" data-name="privacytext" value="${privacytext}">
+      </div>
+    </div>
+
+    <div class="form-group conditional" data-condition="#dngprivacy">
+      <label for="firstname" class="control-label">Custom URL:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" data-name="privacylink" data-value="${privacylink}" id="privacylink">
+          <option value="Default">Default</option>
+          <option value="Custom">Custom</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#dngprivacy && #privacylink=='Custom'">
+        <label for="firstname" class="control-label">Custom URL:</label>
+        <div class="control-cont">
+          <input type="text" class="dnnOptions form-control escape" value="${privacyurl}" data-name="privacyurl">
+        </div>
+      </div>
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="DesignOptionsTerms">
+
+    <div class="form-group">
+      <label class="control-label">Active Terms Of Use:</label>
+      <div class="control-cont">
+        <input type="checkbox" class="dnnOptions" id="dngterms"  data-name="terms" ${terms}>
+      </div>
+    </div>
+
+    <div class="form-group conditional" data-condition="#dngterms">
+        <label class="control-label">Custom Text:</label>
+        <div class="control-cont">
+          <input type="text" class="dnnOptions  form-control" data-name="termsytext" value="${termsytext}">
+        </div>
+      </div>
+      <div class="form-group conditional" data-condition="#dngprivacy">
+        <label for="firstname" class="control-label">Custom Url:</label>
+        <div class="control-cont">
+          <select class="dnnOptions form-control" data-name="termslink" data-value="${termslink}" id="termslink">
+            <option value="Default">Default</option>
+            <option value="Custom">Custom</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group conditional" data-condition="#dngterms && #termslink=='Custom'">
+          <label for="firstname" class="control-label">Custom Url:</label>
+          <div class="control-cont">
+            <input type="text" class="dnnOptions form-control escape" value="${termsurl}" data-name="termsurl">
+          </div>
+        </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<input type="text" class="dnnOptions form-control randomid hide" value="${id}" data-name="id">

@@ -1,0 +1,906 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblVideoConvertTips.Text" xml:space="preserve">
+    <value>Video convert options is only available for host account (super user). Please login with host account if you want to change them.</value>
+  </data>
+  <data name="plA3Bucket.Text" xml:space="preserve">
+    <value>Amazon S3 Bucket</value>
+  </data>
+  <data name="plA3Bucket.Help" xml:space="preserve">
+    <value>If you choose store file via Amazon S3, enter a bucket which will store files. </value>
+  </data>
+  <data name="lblPermissionCheckDeny.Text" xml:space="preserve">
+    <value>Video convert permission check failed, please contact your host provider.</value>
+  </data>
+  <data name="lblPermissionCheckOk.Text" xml:space="preserve">
+    <value>Video convert permission check ok, congratulation!</value>
+  </data>
+  <data name="li_VideoConvert_Type_H264.Text" xml:space="preserve">
+    <value>H.264 (.mp4)</value>
+  </data>
+  <data name="li_VideoConvert_Type_Flv.Text" xml:space="preserve">
+    <value>.Flv</value>
+  </data>
+  <data name="secVideoConvert_Online.Text" xml:space="preserve">
+    <value>Online Video Convert </value>
+  </data>
+  <data name="li_FileStorage_A3.Text" xml:space="preserve">
+    <value>Amazon Simple Storage Services (Amazon S3)</value>
+  </data>
+  <data name="li_FileStorage_Local.Text" xml:space="preserve">
+    <value>Under Portal Root</value>
+  </data>
+  <data name="plA3AccessKey.Text" xml:space="preserve">
+    <value>Amazon S3 Access Key</value>
+  </data>
+  <data name="plA3AccessKey.Help" xml:space="preserve">
+    <value>If you choose store file via Amazon S3, enter access key of your account.</value>
+  </data>
+  <data name="plVideoConvert_Type.Text" xml:space="preserve">
+    <value>Video Convert Format</value>
+  </data>
+  <data name="plVideoConvert_Type.Help" xml:space="preserve">
+    <value>Select video format which will be converted. Default is flash video (.flv). H.264 (.mp4) offers better quality but it also consumes more cpu resources while converting, its size is also bigger than .flv format.</value>
+  </data>
+  <data name="secGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="plA3SecretKey.Help" xml:space="preserve">
+    <value>If you choose store file via Amazon S3, enter secret key of your account.</value>
+  </data>
+  <data name="plA3SecretKey.Text" xml:space="preserve">
+    <value>Amazon S3 Secret Key</value>
+  </data>
+  <data name="plGenerateThumb.Help" xml:space="preserve">
+    <value>If this option is checked, module will automatic generate thubmnail image if necessary. For example, if article image is Cpu.jpg, then module will generate a thunbmail named thumb_Cpu.jpg. It will improve performance greatly while displaying images in list.</value>
+  </data>
+  <data name="plGenerateThumb.Text" xml:space="preserve">
+    <value>Generate Photo Thumbnail?</value>
+  </data>
+  <data name="plThumbnailSize.Help" xml:space="preserve">
+    <value>Enter thumbnail image size to be generated.</value>
+  </data>
+  <data name="plThumbnailSize.Text" xml:space="preserve">
+    <value>Photo Thumbnail Size</value>
+  </data>
+  <data name="ControlTitle_admingeneral_settings.Text" xml:space="preserve">
+    <value>Cross Article - Global Settings</value>
+  </data>
+  <data name="plFileStorage.Help" xml:space="preserve">
+    <value>Choose user file storage. For small and medium sites, store files under portal root is enough. However, if you have large amout files to handle, store them via Amazon Simple Storage Services (Amazon S3) will be a better solution. Check http://aws.amazon.com/s3/ for more detail.</value>
+  </data>
+  <data name="plFileStorage.Text" xml:space="preserve">
+    <value>File Storage</value>
+  </data>
+  <data name="plPermissionCheck.Help" xml:space="preserve">
+    <value>To convert videos, web server must give execute permission to DesktopModules\CrossArticle\Exe folder (or its parent folder). Contact your host provider if you can't pass video convert permission check. For more detail, please see "Help - video convert permission" section in CrossArticle_Admin module.</value>
+  </data>
+  <data name="plPermissionCheck.Text" xml:space="preserve">
+    <value>Permission Check</value>
+  </data>
+  <data name="plVideoConvert.Help" xml:space="preserve">
+    <value>Check this option to convert user upload videos to .flv or h264 (.mp4) format. Note, you must pass the "permission check" to convert videos successfully.</value>
+  </data>
+  <data name="plVideoConvert.Text" xml:space="preserve">
+    <value>Enable Video Convert</value>
+  </data>
+  <data name="plVideoConvert_Width.Help" xml:space="preserve">
+    <value>Choose video width which will be converted. If source video width is small than this value, video will keep its own width after convert. If source video width is bigger than this value, its width will changed after convert. Default value is 480, this is the H.264 video format width of YouTube.com. Choose "use existing video width" option will not change source video width.</value>
+  </data>
+  <data name="plVideoConvert_Width.Text" xml:space="preserve">
+    <value>Convert Width</value>
+  </data>
+  <data name="li_VideoConvert_Width_UseExisting.Text" xml:space="preserve">
+    <value>Use existing video width</value>
+  </data>
+  <data name="secFileStorage.Text" xml:space="preserve">
+    <value>File Storage</value>
+  </data>
+  <data name="plUseSeoFriendlyUrl.Help" xml:space="preserve">
+    <value>If this option is checked, module will generate item detail url using item name. For example, if an article name is Cross Article 5.5, then its detail url will be like http://www.youdomainname.com/tabid/453/articleid/232/Cross-Article-5-5.aspx. This will improve SEO friendly. We recommend customers to check this option if your information is written by English. However, for other language like Chinese, it is better to turn this option off.</value>
+  </data>
+  <data name="plUseSeoFriendlyUrl.Text" xml:space="preserve">
+    <value>Enable SEO Friendly Url</value>
+  </data>
+  <data name="secSeo.Text" xml:space="preserve">
+    <value>SEO Optimize</value>
+  </data>
+  <data name="A3AuthFailed.Text" xml:space="preserve">
+    <value>Please check your Amazon A3 access key, secrect key and bucket name, make sure they are correct.</value>
+  </data>
+  <data name="plProcessExitTime.Help" xml:space="preserve">
+    <value>Video convert process time limit (millisecond). If convert time exceed value, process will terminate and your video will not continue to convert. Default value is 1800000 (30 minutes), this value will let you convert a video which size bigger than 1G in normal computer. Increase this value if you want to handle very big videos (e.g. dvd files more than 10g). Decrease this value if you don't want allow user convert big videos.</value>
+  </data>
+  <data name="plProcessExitTime.Text" xml:space="preserve">
+    <value>Process Time Limit</value>
+  </data>
+  <data name="secVideoConvert_Offline.Text" xml:space="preserve">
+    <value>Offline Video Convert</value>
+  </data>
+  <data name="MustBetween1To10.Text" xml:space="preserve">
+    <value>Please input a value between 1 and 10.</value>
+  </data>
+  <data name="plAllowComment.Help" xml:space="preserve">
+    <value>Allow visitors to post comment. If this option is unchecked, user can't post comments to all articles.
+If this option is checked, visitors can post comments by default, but each article can disable its own comments if necessary.</value>
+  </data>
+  <data name="plAllowComment.Text" xml:space="preserve">
+    <value>Allow Comment</value>
+  </data>
+  <data name="plAllowRating.Help" xml:space="preserve">
+    <value>Allow visitors to rating article. If this option is unchecked, user can't rating to all articles.
+If this option is checked, visitors can rating by default, but each article can disable its own rating if necessary.</value>
+  </data>
+  <data name="plAllowRating.Text" xml:space="preserve">
+    <value>Allow Rating</value>
+  </data>
+  <data name="plAllowRecommend.Help" xml:space="preserve">
+    <value>Allow visitors to recommend article. If this option is unchecked, user can't recommend to all articles.
+If this option is checked, visitors can recommend by default, but each article can disable its own recommend if necessary.</value>
+  </data>
+  <data name="plAllowRecommend.Text" xml:space="preserve">
+    <value>Allow Recommend</value>
+  </data>
+  <data name="plArticleManageRoles.Help" xml:space="preserve">
+    <value>Choose roles which can access "CrossArticle_Admin sub module - Data Management (and System Data)" section to manage data. Note, site administrators can manage data by default.</value>
+  </data>
+  <data name="plArticleManageRoles.Text" xml:space="preserve">
+    <value>Data Manage Roles</value>
+  </data>
+  <data name="plAutoAuthComment.Help" xml:space="preserve">
+    <value>Auto authorize user comment. Unauthorized comments will not display to normal visitors.</value>
+  </data>
+  <data name="plAutoAuthComment.Text" xml:space="preserve">
+    <value>Auto Authorize Comment</value>
+  </data>
+  <data name="plCategorySelectCount.Help" xml:space="preserve">
+    <value>Enter how many categories an article can belong to. Value must between 1 and 10.</value>
+  </data>
+  <data name="plCategorySelectCount.Text" xml:space="preserve">
+    <value>Category Selection Counts</value>
+  </data>
+  <data name="plCommentRoles.Help" xml:space="preserve">
+    <value>Select roles which can post comments by default. Note, each article can has its own comment roles.</value>
+  </data>
+  <data name="plCommentRoles.Text" xml:space="preserve">
+    <value>Default Comment Roles</value>
+  </data>
+  <data name="plDownloadRoles.Help" xml:space="preserve">
+    <value>Select roles which can download article attachments by default. Note, each article can has its own attachments download roles.</value>
+  </data>
+  <data name="plDownloadRoles.Text" xml:space="preserve">
+    <value>Default Attachment Download Roles</value>
+  </data>
+  <data name="plRatingRoles.Help" xml:space="preserve">
+    <value>Select roles which can ratings by default. Note, each article can has its own rating roles.</value>
+  </data>
+  <data name="plRatingRoles.Text" xml:space="preserve">
+    <value>Default Rating Roles</value>
+  </data>
+  <data name="plRecommendRoles.Help" xml:space="preserve">
+    <value>Select roles which can post comments by default. Note,each article can has its own recommend roles.</value>
+  </data>
+  <data name="plRecommendRoles.Text" xml:space="preserve">
+    <value>Default Recommend Roles</value>
+  </data>
+  <data name="plRequireApproval.Help" xml:space="preserve">
+    <value>Check this to require articles to be approved before being displayed to users.</value>
+  </data>
+  <data name="plRequireApproval.Text" xml:space="preserve">
+    <value>Approval Articles Before Display</value>
+  </data>
+  <data name="plTagSelectCount.Help" xml:space="preserve">
+    <value>Enter how many tags an article can belong to. Value must between 1 and 10.</value>
+  </data>
+  <data name="plTagSelectCount.Text" xml:space="preserve">
+    <value>Tag Selection Counts</value>
+  </data>
+  <data name="plUserFolderRoot.Help" xml:space="preserve">
+    <value>Enter folder root which stores user upload files. Default value is "CrossArticle", means that user upload files will be stored under portals/[portalID]/CrossArticle folder. You can change them to meet you needs. For example, if you also use our Classified Pro module, you can change it as "CrossClassified" so Cross Article will use the same folder root as Classified Pro module.</value>
+  </data>
+  <data name="plUserFolderRoot.Text" xml:space="preserve">
+    <value>Local Folder Root</value>
+  </data>
+  <data name="plViewRoles.Help" xml:space="preserve">
+    <value>You can control which roles can view articles by default. Note, each article can has its own view roles.</value>
+  </data>
+  <data name="plViewRoles.Text" xml:space="preserve">
+    <value>Default Article View Roles</value>
+  </data>
+  <data name="secComment.Text" xml:space="preserve">
+    <value>Article Comment</value>
+  </data>
+  <data name="secDownload.Text" xml:space="preserve">
+    <value>Article Attachment Download</value>
+  </data>
+  <data name="secRating.Text" xml:space="preserve">
+    <value>Article Rating</value>
+  </data>
+  <data name="secRecommend.Text" xml:space="preserve">
+    <value>Article Recommend</value>
+  </data>
+  <data name="plRssItemCounts.Help" xml:space="preserve">
+    <value>Enter how many items are displayed to RSS feeds.</value>
+  </data>
+  <data name="plRssItemCounts.Text" xml:space="preserve">
+    <value>RSS Item Counts</value>
+  </data>
+  <data name="plModulePage_Help.Help" xml:space="preserve">
+    <value>If you provide help information to users (for example, term of use/faqs, etc), specify its page here. When user click the "help" button in "CrossArticle_AccountLink" module, or click the "help" button in skin object, module will navigate to this page.</value>
+  </data>
+  <data name="plModulePage_Help.Text" xml:space="preserve">
+    <value>Help Page</value>
+  </data>
+  <data name="secModulePage_Help.Text" xml:space="preserve">
+    <value>Help Page</value>
+  </data>
+  <data name="plEnableAudio.Help" xml:space="preserve">
+    <value>Check this option to enable user attach audio to his articles.</value>
+  </data>
+  <data name="plEnableAudio.Text" xml:space="preserve">
+    <value>Enable Attach Audio</value>
+  </data>
+  <data name="plEnableDocument.Help" xml:space="preserve">
+    <value>Check this option to enable user attach documents to his articles.</value>
+  </data>
+  <data name="plEnableDocument.Text" xml:space="preserve">
+    <value>Enable Attach Documents</value>
+  </data>
+  <data name="plEnableImage.Help" xml:space="preserve">
+    <value>Check this option to enable user attach images to his articles.</value>
+  </data>
+  <data name="plEnableImage.Text" xml:space="preserve">
+    <value>Enable Attach Images</value>
+  </data>
+  <data name="plEnableVideo.Help" xml:space="preserve">
+    <value>Check this option to enable user attach videos to his articles.</value>
+  </data>
+  <data name="plEnableVideo.Text" xml:space="preserve">
+    <value>Enable Attach Videos</value>
+  </data>
+  <data name="plRssTitle.Help" xml:space="preserve">
+    <value>Enter RSS title which will display when visitor subscribe. Default avlue is "Cross Article RSS Feed ", you can change it to meet your site. For example, if your site name is "DnnModule.com", you can change RSS title as "DnnModule.com RSS Feed" </value>
+  </data>
+  <data name="plRssTitle.Text" xml:space="preserve">
+    <value>RSS Title</value>
+  </data>
+  <data name="secRss.Text" xml:space="preserve">
+    <value>Article RSS Feeds</value>
+  </data>
+  <data name="li_SortByDate_Asc.Text" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="li_SortByDate_Desc.Text" xml:space="preserve">
+    <value>Descending</value>
+  </data>
+  <data name="plSendMail.Help" xml:space="preserve">
+    <value>Check this option to send mail notification to article owner when new comment is posted.</value>
+  </data>
+  <data name="plSendMail.Text" xml:space="preserve">
+    <value>Mail Notification</value>
+  </data>
+  <data name="plSortByDate.Help" xml:space="preserve">
+    <value>Select how to sort comments by their created date (ascending or descending)</value>
+  </data>
+  <data name="plSortByDate.Text" xml:space="preserve">
+    <value>Sort Comments By Date</value>
+  </data>
+  <data name="Tip_A3.Text" xml:space="preserve">
+    <value>To store files on Amazon S3, you must provide below information: Access key, Secret Key and S3 bucket.</value>
+  </data>
+  <data name="Tip_UserFolderRoot.Text" xml:space="preserve">
+    <value>Enter folder root which stores user upload files. Default value is "CrossArticle", means that user upload files will be stored under portals/[portalID]/CrossArticle/[UserID] folder. You can change it to meet you needs. For example, if you also use our Classified Pro module, you can change it as "CrossClassified" so Cross Article module will use the same folder root as Classified Pro module.</value>
+  </data>
+  <data name="Tip_EnableRelated.Text" xml:space="preserve">
+    <value>You can prevent author to add related videos / audio / images / attachments to an article by uncheck below options.</value>
+  </data>
+  <data name="Tip_ManageRoles.Text" xml:space="preserve">
+    <value>Choose roles which can access "CrossArticle_Admin module - Data Management (and System Data)" section to manage data (categories / articles / tags..etc). Note, site administrators can manage data by default.</value>
+  </data>
+  <data name="Tip_SeoUrl.Text" xml:space="preserve">
+    <value>If this option is checked, module will generate article detail url using its title. For example, if an article title is Cross Video 5.5, then its detail url will be like http://www.youdomainname.com/tabid/453/articleid/232/Cross-Video-5-5.aspx. This will improve SEO friendly. We recommend customers to check this option if your information is written by English. However, for other language like Chinese, it is better to turn this option off.</value>
+  </data>
+  <data name="Tip_ModulePage_Help.Text" xml:space="preserve">
+    <value>If you provide help information to users (for example, term of use / faqs, etc), specify its page here. When user click the "help" button in "CrossArticle_AccountLink" sub module, he will be navigated to this page.</value>
+  </data>
+  <data name="Tip_SendMail.Text" xml:space="preserve">
+    <value>Check this option to send mail notification to article author when new comment is posted.</value>
+  </data>
+  <data name="plEmailWhenNew.Help" xml:space="preserve">
+    <value>Check this option to send mail notification to manager email address when new article is posted.</value>
+  </data>
+  <data name="plEmailWhenNew.Text" xml:space="preserve">
+    <value>Notification New Article</value>
+  </data>
+  <data name="plManagerEmail.Help" xml:space="preserve">
+    <value>Enter an email address to receive mail notification when new article is posted.</value>
+  </data>
+  <data name="plManagerEmail.Text" xml:space="preserve">
+    <value>Manager Email</value>
+  </data>
+  <data name="plPublication_Language.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;The "Publication Language" is the language of your publication. It should be &lt;a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank"&gt;an ISO 639 Language Code (either 2 or 3 letters)&lt;/a&gt;. Exception: For Chinese, please use zh-cn for Simplified Chinese or zh-tw for Traditional Chinese. &lt;/p&gt;</value>
+  </data>
+  <data name="plPublication_Language.Text" xml:space="preserve">
+    <value>Publication Language</value>
+  </data>
+  <data name="plPublication_Name.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;The "Publication Name" is the name of the news publication. It must exactly match the name as it appears on your articles in news.google.com, omitting any trailing parentheticals. For example, if the name appears in Google News as "The Example Times (subscription)", you should use the name, "The Example Times". &lt;/p&gt;</value>
+  </data>
+  <data name="plPublication_Name.Text" xml:space="preserve">
+    <value>Publication Name</value>
+  </data>
+  <data name="plSiteMap.Help" xml:space="preserve">
+    <value>News sitemap url for your site, you can submit to Google webmaster tools to let Google index your articles more easily.</value>
+  </data>
+  <data name="plSiteMap.Text" xml:space="preserve">
+    <value>Site News Sitemap</value>
+  </data>
+  <data name="secNewsSiteMap.Text" xml:space="preserve">
+    <value>Google News SiteMap</value>
+  </data>
+  <data name="Tip_EmailWhenNew.Text" xml:space="preserve">
+    <value>Check this option to send mail notification to "Manager Email" address when new article is posted.</value>
+  </data>
+  <data name="Tip_Publication_Language.Text" xml:space="preserve">
+    <value>The "Publication Language" is the language of your publication. It should be &lt;a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank"&gt;an ISO 639 Language Code (either 2 or 3 letters)&lt;/a&gt;. Exception: For Chinese, please use zh-cn for Simplified Chinese or zh-tw for Traditional Chinese.</value>
+  </data>
+  <data name="Tip_Publication_Name.Text" xml:space="preserve">
+    <value>The "Publication Name" is the name of the news publication. It must exactly match the name as it appears on your articles in news.google.com, omitting any trailing parentheticals. For example, if the name appears in Google News as "The Example Times (subscription)", you should use the name, "The Example Times".</value>
+  </data>
+  <data name="plSpecifyDetailPageForArticle.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;By default, articles which display in same CrossArticle_List module instance will navigate to same page to show detail via CrossArticle_Detail sub module. Check on below option to enable specify different detail page for each article while editing it.&lt;/p&gt;</value>
+  </data>
+  <data name="plSpecifyDetailPageForArticle.Text" xml:space="preserve">
+    <value>Enable Specify Detail Page For Article</value>
+  </data>
+  <data name="plSpecifyListPageForCategory.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;By default, categories which display in same CrossArticle_Category sub module instance will navigate to same page to show articles via CrossArticle_List sub module. Check on below option to enable specify different list page for each category in "Admin Control Panel - System Data - Categories".&lt;/p&gt;</value>
+  </data>
+  <data name="plSpecifyListPageForCategory.Text" xml:space="preserve">
+    <value>Enable Specify List Page For Category</value>
+  </data>
+  <data name="Tip_SpecifyDetailPageForArticle.Text" xml:space="preserve">
+    <value>By default, articles which are displayed in same CrossArticle_List sub module instance will be navigate to same page to show detail via CrossArticle_Detail sub module. Check on below option to enable specify different detail page for each article while editing it.</value>
+  </data>
+  <data name="Tip_SpecifyListPageForCategory.Text" xml:space="preserve">
+    <value>By default, categories which are displayed in same CrossArticle_Category sub module instance will be navigated to same page to show articles via CrossArticle_List sub module. Check on below option to enable specify different list page for each category in "Admin Control Panel - System Data - Categories".</value>
+  </data>
+  <data name="plSpecifyArticleCreatedDate.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;By default, module will use current date time as article created date while adding articles. This works fine for new articles. However, if you want to migrate old articles to your site (for example, you have some articles which writted in 2000), you can check on below option to let you manually specify article created date while editing it.&lt;/p&gt;</value>
+  </data>
+  <data name="plSpecifyArticleCreatedDate.Text" xml:space="preserve">
+    <value>Enable Specify Article Created Date</value>
+  </data>
+  <data name="Tip_SpecifyArticleCreatedDate.Text" xml:space="preserve">
+    <value>By default, module will use current date time as article "created date" while adding it. This works fine for new articles. However, if you want to migrate old articles to your site (for example, you have some articles which are wrote in year 2000), you can check on below option to let you manually specify article "created date" while editing it.</value>
+  </data>
+  <data name="plArticleEditorRoles.Help" xml:space="preserve">
+    <value>Choose roles which can access "CrossArticle_Admin sub module - Data Management - Articles " feature to manage articles. Note, these roles can't use other features like "System Data - Categories".</value>
+  </data>
+  <data name="plArticleEditorRoles.Text" xml:space="preserve">
+    <value>Article Manage Roles</value>
+  </data>
+  <data name="plShowUnauthInManage.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;By default, module will show all articles when you click "Data Management - Articles" to manage articles. Check below option to show unauthorized articles first when you click "Data Management - Articles" to manage articles.&lt;/p&gt;</value>
+  </data>
+  <data name="plShowUnauthInManage.Text" xml:space="preserve">
+    <value>Show Unauthorized When Manage</value>
+  </data>
+  <data name="Tip_EditorRoles.Text" xml:space="preserve">
+    <value>Choose roles which can access "CrossArticle_Admin module - Data Management - Articles " feature to manage articles. Note, these roles can't access other features like "System Data - Categories".</value>
+  </data>
+  <data name="Tip_ShowUnauthInManage.Text" xml:space="preserve">
+    <value>By default, module will show all articles when you click "Data Management - Articles" to manage articles. Check below option to show unauthorized articles first when you click "Data Management - Articles" to manage articles.</value>
+  </data>
+  <data name="plDnnSitemap.Help" xml:space="preserve">
+    <value>Check on this option to integrate with DNN built-in web sitemap</value>
+  </data>
+  <data name="plDnnSitemap.Text" xml:space="preserve">
+    <value>Integrate With DNN Built-in Web Sitemap</value>
+  </data>
+  <data name="plYourSitemap.Help" xml:space="preserve">
+    <value>Site web sitemap url</value>
+  </data>
+  <data name="plYourSitemap.Text" xml:space="preserve">
+    <value>Your Web Sitemap</value>
+  </data>
+  <data name="secHelp_DnnSitemap.Text" xml:space="preserve">
+    <value>Integrate with Google web sitemap</value>
+  </data>
+  <data name="plGoogleMapApi.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;To integrate Google maps with your articles, you need to provide a api key. Cross Article module already creates a key for you. If you want to use your own, you can sign up a new key at &lt;a href="https://code.google.com/apis/console" target="_blank"&gt;&lt;font color="red"&gt;https://code.google.com/apis/console&lt;/font&gt;&lt;/a&gt; and enter it. Check &lt;a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank"&gt;&lt;font color="red"&gt;https://developers.google.com/maps/documentation/javascript/tutorial&lt;/font&gt;&lt;/a&gt; for more detail.
+&lt;/p&gt;</value>
+  </data>
+  <data name="plGoogleMapApi.Text" xml:space="preserve">
+    <value>Google Maps Api Key</value>
+  </data>
+  <data name="secGoogleMap.Text" xml:space="preserve">
+    <value>Integrate with Google Maps</value>
+  </data>
+  <data name="Tip_GoogleMapApi.Text" xml:space="preserve">
+    <value>To integrate Google maps with your articles, you need to provide a api key. You can sign up a key at &lt;a href="https://code.google.com/apis/console" target="_blank"&gt;&lt;font color="red"&gt;https://code.google.com/apis/console&lt;/font&gt;&lt;/a&gt; and enter it. Check &lt;a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank"&gt;&lt;font color="red"&gt;https://developers.google.com/maps/documentation/javascript/tutorial&lt;/font&gt;&lt;/a&gt; for more detail.</value>
+  </data>
+  <data name="Tip_DnnSitemapIntegration.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;As we know, DNN provides a web sitemap which can be submitted to &lt;a href="https://www.google.com/webmasters/tools/home" target="_blank"&gt;&lt;font color="red"&gt;Google webmaster tools&lt;/font&gt;&lt;/a&gt; to lets Google index your site more easily. You can configure your web sitemap url by click DNN standrd menu "Admin - Search engine sitemap". It is a great way to improve your site seo.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;By default, DNN only lists site web pages in sitemap urls. However, you can check on below option to let Cross Article module also include site article urls in web sitemap urls. It is a must do action if you want to site articles to be searched more easily.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;We &lt;font color="red"&gt;strongly reommend&lt;/font&gt; you check on "Integrate with DNN built-in web sitemap" option and submit your web sitemap to Google. Note, if you don't find your article url in your sitemap urls, you need to delete Portals/[Portal ID]/Sitemap/sitemap.xml file first to clear existing cache.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;You can follow below steps to submit your web sitemap.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;1. Before you begin, make sure you have the your site added and verified in your Webmaster Tools account.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;2. On the Webmaster Tools home page, click your site.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. Under Site configuration, click Sitemaps.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Click "Submit a Sitemap".&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;5. In the text box, copy your web sitemap url below and click "Submit Sitemap".&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;Note, there is no conflict between your web sitemap and your Google news sitemap. We strongly reommend you submit both of them to Google if possible.&lt;br/&gt;&lt;br/&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="plJournal_Enabled.Help" xml:space="preserve">
+    <value>Check to integrate with DNN built-in journal.</value>
+  </data>
+  <data name="plJournal_Enabled.Text" xml:space="preserve">
+    <value>Enable Integration</value>
+  </data>
+  <data name="secJournal.Text" xml:space="preserve">
+    <value>Integrate with DNN built-in journal </value>
+  </data>
+  <data name="Tip_JournalIntegration.Text" xml:space="preserve">
+    <value>Check on below options to integrate with DNN built-in journal. When user post an article / comment, module will automatic add a record to his journals.</value>
+  </data>
+  <data name="AuthFailed_WatermarkImage.Text" xml:space="preserve">
+    <value>Please provide a valid .gif image as watermark file, or uncheck the "Add Watermark" option.</value>
+  </data>
+  <data name="li_WatermarkPosition_BottomLeft.Text" xml:space="preserve">
+    <value>Bottom Left</value>
+  </data>
+  <data name="li_WatermarkPosition_BottomRight.Text" xml:space="preserve">
+    <value>Bottom Right</value>
+  </data>
+  <data name="li_WatermarkPosition_TopLeft.Text" xml:space="preserve">
+    <value>Top Left</value>
+  </data>
+  <data name="li_WatermarkPosition_TopRight.Text" xml:space="preserve">
+    <value>Top Right</value>
+  </data>
+  <data name="li_WatermarkType_Image.Text" xml:space="preserve">
+    <value>.gif image</value>
+  </data>
+  <data name="li_WatermarkType_Text.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="plAddWatermark.Help" xml:space="preserve">
+    <value>Control whether to add watermark to user uploaded photos. The watermark can be a text, or a small image (.gif file).</value>
+  </data>
+  <data name="plAddWatermark.Text" xml:space="preserve">
+    <value>Add Watermark</value>
+  </data>
+  <data name="plTextFontBgColor.Help" xml:space="preserve">
+    <value>Watermakr text background color, default is #000000</value>
+  </data>
+  <data name="plTextFontBgColor.Text" xml:space="preserve">
+    <value>Text Background Color</value>
+  </data>
+  <data name="plTextFontColor.Help" xml:space="preserve">
+    <value>Watermakr text color, default is #EBEBEB</value>
+  </data>
+  <data name="plTextFontColor.Text" xml:space="preserve">
+    <value>Text Color</value>
+  </data>
+  <data name="plTextFontFamily.Help" xml:space="preserve">
+    <value>Text font family, default is "Arial". You can change to other font family, but make sure it is a valid font.</value>
+  </data>
+  <data name="plTextFontFamily.Text" xml:space="preserve">
+    <value>Text Font Family</value>
+  </data>
+  <data name="plWatermark.Help" xml:space="preserve">
+    <value>Select a watermark file (.gif) which will be posted to videos.</value>
+  </data>
+  <data name="plWatermark.Text" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="plWatermarkImage.Help" xml:space="preserve">
+    <value>Choose a .gif file as watermark image.</value>
+  </data>
+  <data name="plWatermarkImage.Text" xml:space="preserve">
+    <value>Watermark Image</value>
+  </data>
+  <data name="plWatermarkPosition.Help" xml:space="preserve">
+    <value>Watermark Position, can be put on top left / top right / bottom left / bottom right.</value>
+  </data>
+  <data name="plWatermarkPosition.Text" xml:space="preserve">
+    <value>Watermark Position</value>
+  </data>
+  <data name="plWatermarkText.Help" xml:space="preserve">
+    <value>Watermark Text</value>
+  </data>
+  <data name="plWatermarkText.Text" xml:space="preserve">
+    <value>Watermark Text</value>
+  </data>
+  <data name="plWatermarkType.Help" xml:space="preserve">
+    <value>The watermark can be a text, or a small image (.gif file).</value>
+  </data>
+  <data name="plWatermarkType.Text" xml:space="preserve">
+    <value>Watermark Type</value>
+  </data>
+  <data name="secWatermark.Text" xml:space="preserve">
+    <value>Photo thumbnail and watermark</value>
+  </data>
+  <data name="Tip_GenerateThumb.Text" xml:space="preserve">
+    <value>If this option is checked, module will automatic generate thubmnail image if necessary. For example, if an article image is Cpu.jpg, then module will generate a thunbmail named thumb_Cpu.jpg. It will improve performance greatly while displaying images in list.</value>
+  </data>
+  <data name="Tip_Watermark.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Control whether to add watermark to user uploaded photos. The watermark can be a text, or a small image (.gif file). Please note:&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Module will try to optimize photo after add watermark. In most cases, this process will keep same photo quality but will reduce photo size.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. If you want to generate watermark based gif image, please make sure it is not a animation file. We also recommend you to choose a gif image which has transparent background.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. See below sample images as a reference.
+&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_Watermark_Sample_Gif.Text" xml:space="preserve">
+    <value>Sample image with gif watermark.</value>
+  </data>
+  <data name="Tip_Watermark_Sample_Text.Text" xml:space="preserve">
+    <value>Sample image with text watermark.</value>
+  </data>
+  <data name="plEmptyImage.Help" xml:space="preserve">
+    <value>Specify default empty image</value>
+  </data>
+  <data name="plEmptyImage.Text" xml:space="preserve">
+    <value>Default Empty Image</value>
+  </data>
+  <data name="plExcludeImportedArticle.Help" xml:space="preserve">
+    <value>When generated RSS feeds, exclude articles which are imported from external.</value>
+  </data>
+  <data name="plExcludeImportedArticle.Text" xml:space="preserve">
+    <value>Exclude Imported Articles</value>
+  </data>
+  <data name="plTwitterAccessToken.Help" xml:space="preserve">
+    <value>Please enter the "access token" of your twitter app</value>
+  </data>
+  <data name="plTwitterAccessToken.Text" xml:space="preserve">
+    <value>Access Token</value>
+  </data>
+  <data name="plTwitterAccessTokenSecret.Help" xml:space="preserve">
+    <value>Please enter the "access token secret" of your twitter app</value>
+  </data>
+  <data name="plTwitterAccessTokenSecret.Text" xml:space="preserve">
+    <value>Access Token Secret</value>
+  </data>
+  <data name="plTwitterConsumerKey.Help" xml:space="preserve">
+    <value>Please enter the "consumer key" of your twitter app</value>
+  </data>
+  <data name="plTwitterConsumerKey.Text" xml:space="preserve">
+    <value>Consumer Key</value>
+  </data>
+  <data name="plTwitterConsumerSecret.Help" xml:space="preserve">
+    <value>Please enter the "consumer secret" of your twitter app</value>
+  </data>
+  <data name="plTwitterConsumerSecret.Text" xml:space="preserve">
+    <value>Consumer Secret</value>
+  </data>
+  <data name="secTwitter.Text" xml:space="preserve">
+    <value>Twitter feeds credentials</value>
+  </data>
+  <data name="Tip_EmptyImage.Text" xml:space="preserve">
+    <value>If there is no image provide for an article, module will take DesktopModules\CrossArticle\Images\noimage.jpg as article default image, you can specify another image to replace it here.</value>
+  </data>
+  <data name="Tip_ExcludeImportedArticle.Text" xml:space="preserve">
+    <value>If checked, when generate RSS feeds to public, Cross Article will exclude articles which are imported from external sites (imported from RSS feeds), only keep articles which are written in this site.</value>
+  </data>
+  <data name="Tip_TwitterCredential.Text" xml:space="preserve">
+    <value>Cross Article allows you to create RSS feeds which based Twitter search (and Twitter timeline), and import articles from them. To support that, you need to create an application at the &lt;a href="https://dev.twitter.com/apps"&gt;Twitter developer area&lt;/a&gt; and get your consumer and access tokens and secrets.</value>
+  </data>
+  <data name="plEnableEmptyImage.Help" xml:space="preserve">
+    <value>Check on to enable default empty image</value>
+  </data>
+  <data name="plEnableEmptyImage.Text" xml:space="preserve">
+    <value>Enable Default Empty Image</value>
+  </data>
+  <data name="Tip_Comment.Text" xml:space="preserve">
+    <value>Specify the default comment permissions for article. Note, each article can have its own comment settings.</value>
+  </data>
+  <data name="Tip_Download.Text" xml:space="preserve">
+    <value>Specify the default attachment download permissions for article. Note, each article can have its own attachment download settings.</value>
+  </data>
+  <data name="Tip_Rating.Text" xml:space="preserve">
+    <value>Specify the default rating permissions for article. Note, each article can have its own rating settings.</value>
+  </data>
+  <data name="Tip_Recommend.Text" xml:space="preserve">
+    <value>Specify the default recommend permissions for article. Note, each article can have its own recommend settings.</value>
+  </data>
+  <data name="plAuthorProfile_Field10Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 10</value>
+  </data>
+  <data name="plAuthorProfile_Field10Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 10</value>
+  </data>
+  <data name="plAuthorProfile_Field10Title.Help" xml:space="preserve">
+    <value>Profile Field 10 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field10Title.Text" xml:space="preserve">
+    <value>Profile Field 10 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field1Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 1</value>
+  </data>
+  <data name="plAuthorProfile_Field1Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 1</value>
+  </data>
+  <data name="plAuthorProfile_Field1Title.Help" xml:space="preserve">
+    <value>Profile Field 1 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field1Title.Text" xml:space="preserve">
+    <value>Profile Field 1 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field2Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 2</value>
+  </data>
+  <data name="plAuthorProfile_Field2Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 2</value>
+  </data>
+  <data name="plAuthorProfile_Field2Title.Help" xml:space="preserve">
+    <value>Profile Field 2 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field2Title.Text" xml:space="preserve">
+    <value>Profile Field 2 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field3Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 3</value>
+  </data>
+  <data name="plAuthorProfile_Field3Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 3</value>
+  </data>
+  <data name="plAuthorProfile_Field3Title.Help" xml:space="preserve">
+    <value>Profile Field 3 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field3Title.Text" xml:space="preserve">
+    <value>Profile Field 3 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field4Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 4</value>
+  </data>
+  <data name="plAuthorProfile_Field4Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 4</value>
+  </data>
+  <data name="plAuthorProfile_Field4Title.Help" xml:space="preserve">
+    <value>Profile Field 4 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field4Title.Text" xml:space="preserve">
+    <value>Profile Field 4 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field5Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 5</value>
+  </data>
+  <data name="plAuthorProfile_Field5Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 5</value>
+  </data>
+  <data name="plAuthorProfile_Field5Title.Help" xml:space="preserve">
+    <value>Profile Field 5 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field5Title.Text" xml:space="preserve">
+    <value>Profile Field 5 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field6Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 6</value>
+  </data>
+  <data name="plAuthorProfile_Field6Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 6</value>
+  </data>
+  <data name="plAuthorProfile_Field6Title.Help" xml:space="preserve">
+    <value>Profile Field 6 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field6Title.Text" xml:space="preserve">
+    <value>Profile Field 6 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field7Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 7</value>
+  </data>
+  <data name="plAuthorProfile_Field7Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 7</value>
+  </data>
+  <data name="plAuthorProfile_Field7Title.Help" xml:space="preserve">
+    <value>Profile Field 7 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field7Title.Text" xml:space="preserve">
+    <value>Profile Field 7 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field8Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 8</value>
+  </data>
+  <data name="plAuthorProfile_Field8Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 8</value>
+  </data>
+  <data name="plAuthorProfile_Field8Title.Help" xml:space="preserve">
+    <value>Profile Field 8 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field8Title.Text" xml:space="preserve">
+    <value>Profile Field 8 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field9Enable.Help" xml:space="preserve">
+    <value>Enable Profile Field 9</value>
+  </data>
+  <data name="plAuthorProfile_Field9Enable.Text" xml:space="preserve">
+    <value>Enable Profile Field 9</value>
+  </data>
+  <data name="plAuthorProfile_Field9Title.Help" xml:space="preserve">
+    <value>Profile Field 9 Title</value>
+  </data>
+  <data name="plAuthorProfile_Field9Title.Text" xml:space="preserve">
+    <value>Profile Field 9 Title</value>
+  </data>
+  <data name="secAuthorProfile.Text" xml:space="preserve">
+    <value>Author Profile</value>
+  </data>
+  <data name="Tip_AuthorProfile.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;Cross Article already provides a lot of data field for author profile. For example, Company, Tel, Fax, IM(instant messenger), Linkman, Business Scope...etc. Author can specify his profile at "CrossArticle_Admin sub module - My Articles - My Profile". Besides that, Cross Article also provides extra 10 data fields which allow you to custom as your wish. For example, if you want to add a "Refund Policy" for author profile, you can do it as follows:&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;1. Check on "Enable Profile Field 1".&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;2. Enter "Refund Policy" as "Profile Field 1 Title".&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. Now when author edit his profile at "CrossArticle_Admin sub module - My Articles - My Profile", he will see a extra "Refund Policy" data field.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Author profile can be shown in CrossArticle_Author, CrossArticle_List, CrossArticle_Detail sub modules.&lt;br/&gt;</value>
+  </data>
+  <data name="plVoteRoles.Help" xml:space="preserve">
+    <value>Default vote roles</value>
+  </data>
+  <data name="plVoteRoles.Text" xml:space="preserve">
+    <value>Default Vote Roles</value>
+  </data>
+  <data name="secVote.Text" xml:space="preserve">
+    <value>Article Vote Roles</value>
+  </data>
+  <data name="Tip_Vote.Text" xml:space="preserve">
+    <value>Specify the default vote permissions for article. Note, each article can have its own vote settings.</value>
+  </data>
+  <data name="plReadTrack_Enable.Help" xml:space="preserve">
+    <value>Enable Read Tracking</value>
+  </data>
+  <data name="plReadTrack_Enable.Text" xml:space="preserve">
+    <value>Enable Read Tracking</value>
+  </data>
+  <data name="plReadTrack_TrackAnonymous.Help" xml:space="preserve">
+    <value>Tracking Anonymous</value>
+  </data>
+  <data name="plReadTrack_TrackAnonymous.Text" xml:space="preserve">
+    <value>Tracking Anonymous</value>
+  </data>
+  <data name="plShowSettingActionButton.Help" xml:space="preserve">
+    <value>Show setting button in other 13 sub modules, this is useful if you are not familiar with Cross Article module.</value>
+  </data>
+  <data name="plShowSettingActionButton.Text" xml:space="preserve">
+    <value>Show Setting Button In Sub Modules</value>
+  </data>
+  <data name="secReadTrack.Text" xml:space="preserve">
+    <value>Article Read Tracking</value>
+  </data>
+  <data name="Tip_ReadTrack.Text" xml:space="preserve">
+    <value>If "Enable Read Tracking" option is checked, module will record the article reading detail (like who read it, when, reader ip address...etc) into "CrossArticle_ReadTrack" data table. By default, module will only record registered users reading history. Check on "Tracking Anonymous" option to also record anonymous users (unregistered users) reading history.&lt;br/&gt;&lt;br/&gt;Import notice, enable "Enable Read Tracking" feature will make "CrossArticle_ReadTrack" data table increased quickly, especially when you also turn on "Tracking Anonymous" option. For example, if you have 1000 articles on the site, and each article has about 10,000 views, then "CrossArticle_ReadTrack" data table will have 10,000,000 recoreds. So, &lt;font color="red"&gt;be careful&lt;/font&gt; to use this feature.</value>
+  </data>
+  <data name="plEnableSocialShare.Help" xml:space="preserve">
+    <value>By default, author can share his articles between his friends/followers/groups, or can mark his articles as private (or protected). If you don't like this, uncheck this option.</value>
+  </data>
+  <data name="plEnableSocialShare.Text" xml:space="preserve">
+    <value>Enable Social Share</value>
+  </data>
+  <data name="plEnableSilverlightUpload.Help" xml:space="preserve">
+    <value>Cross Article provides two file upload controls - the normal javascript based upload control and the MS Silverlight plug-in based file upload control. If you don't like the MS Silverlight file upload control, uncheck this option to hide it.</value>
+  </data>
+  <data name="plEnableSilverlightUpload.Text" xml:space="preserve">
+    <value>Enable Silverlight File Upload</value>
+  </data>
+</root>

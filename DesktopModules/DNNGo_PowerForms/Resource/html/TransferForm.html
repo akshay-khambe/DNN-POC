@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>${xf.ViewSetting("PowerForms_Push_WaitText","Please Wait. You are being redirected…")}</title>
+</head>
+<body style="margin: 20px auto;width: 400px;">
+    <form name="hiddenForm" id="hiddenForm" action="${TransferUrl}" method="post" enctype="multipart/form-data">
+        <div class="wait" style="line-height: 200px; ">${xf.ViewSetting("PowerForms_Push_WaitText","Please Wait. You are being redirected…")}</div> 
+        #if($QueryStrings.Count > 0)
+            #foreach($QueryString in $QueryStrings)
+            <input type="hidden" name="${QueryString.Key}" id="${QueryString.Key}" value="${QueryString.Value}" />
+            #end
+        #end
+        <input type="submit" value="Submit" style="display:none;" />
+    </form>
+    <script type="text/javascript">
+        document.hiddenForm.submit()
+    </script>
+</body>
+</html>

@@ -1,0 +1,1292 @@
+
+
+/******   create new tables ******/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Country]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_Country](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PortalId] [int] NOT NULL,
+	[Name] [nvarchar](100) NULL,
+	[TwoIsoCode] [char](10) NULL,
+	[ThreeIsoCode] [nchar](10) NULL,
+	[NumIsoCode] [nchar](10) NULL,
+	[SubjectToVat] [bit] NULL,
+	[DisplayOrder] [int] NULL,
+	[IsDefault] [bit] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_Country] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_PADDING OFF
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_State]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_State](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[CountryId] [int] NOT NULL,
+	[Name] [nvarchar](100) NULL,
+	[Abbreviation] [nvarchar](50) NULL,
+	[DisplayOrder] [int] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_State] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_City]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_City](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[StateId] [int] NOT NULL,
+	[Name] [nvarchar](100) NULL,
+	[Abbreviation] [nvarchar](50) NULL,
+	[DisplayOrder] [int] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_City] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_VoteOption]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_VoteOption](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ArticleId] [int] NOT NULL,
+	[Title] [nvarchar](400) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_VoteOption] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_VoteResult]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_VoteResult](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ArticleId] [int] NOT NULL,
+	[OptionId] [int] NOT NULL,
+	[UserId] [int] NULL,
+	[UserName] [nvarchar](100) NULL,
+	[SubmitDate] [datetime] NULL,
+	[Guid] [nvarchar](200) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_VoteResult] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Town]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_Town](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[CityId] [int] NOT NULL,
+	[Name] [nvarchar](200) NULL,
+	[Abbreviation] [nvarchar](50) NULL,
+	[DisplayOrder] [int] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_Town] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_City_CrossArticle_State]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_City]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_City]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossArticle_City_CrossArticle_State] FOREIGN KEY([StateId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossArticle_State] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_City_CrossArticle_State]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_City]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_City] CHECK CONSTRAINT [FK_{objectQualifier}CrossArticle_City_CrossArticle_State]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_State_CrossArticle_Country]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_State]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_State]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossArticle_State_CrossArticle_Country] FOREIGN KEY([CountryId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossArticle_Country] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_State_CrossArticle_Country]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_State]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_State] CHECK CONSTRAINT [FK_{objectQualifier}CrossArticle_State_CrossArticle_Country]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_Town_CrossArticle_City]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Town]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Town]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossArticle_Town_CrossArticle_City] FOREIGN KEY([CityId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossArticle_City] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_Town_CrossArticle_City]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Town]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Town] CHECK CONSTRAINT [FK_{objectQualifier}CrossArticle_Town_CrossArticle_City]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_VoteResult_CrossArticle_VoteOption]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_VoteResult]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_VoteResult]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossArticle_VoteResult_CrossArticle_VoteOption] FOREIGN KEY([OptionId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossArticle_VoteOption] ([Id])
+ON DELETE CASCADE
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_VoteResult_CrossArticle_VoteOption]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_VoteResult]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_VoteResult] CHECK CONSTRAINT [FK_{objectQualifier}CrossArticle_VoteResult_CrossArticle_VoteOption]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_VoteOption_CrossArticle_Article]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_VoteOption]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_VoteOption]  WITH NOCHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossArticle_VoteOption_CrossArticle_Article] FOREIGN KEY([ArticleId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossArticle_Article] ([Id])
+ON DELETE CASCADE
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_VoteOption_CrossArticle_Article]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_VoteOption]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_VoteOption] CHECK CONSTRAINT [FK_{objectQualifier}CrossArticle_VoteOption_CrossArticle_Article]
+GO
+
+
+
+/******   alter table CrossArticle_Article ******/
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add CountryId int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add Country nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add StateId int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add State nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add CityId int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add City nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add TownId int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add Town nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add VoteTitle nvarchar(800) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add VoteRoles nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add MultipleChoice bit NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add VoteCookieDays int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add VoteExpireDate datetime NULL
+
+go
+
+/******   alter table CrossArticle_Type ******/
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Type add AllowLocation bit NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Type add AllowVote bit NULL
+
+go
+
+/******   alter table CrossArticle_Author ******/
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add SiteUrl nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add LogoUrl nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Slogan nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Company nvarchar(800) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Tel nvarchar(800) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Fax nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add IM nvarchar(800) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Linkman nvarchar(800) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add CountryId int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Country nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add StateId int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add State nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add CityId int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add City nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add TownId int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Town nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Address nvarchar(800) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add BusinessScope nvarchar(2000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Zipcode nvarchar(50) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field1 nvarchar(4000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field2 nvarchar(4000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field3 nvarchar(4000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field4 nvarchar(4000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field5 nvarchar(4000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field6 nvarchar(4000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field7 nvarchar(4000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field8 nvarchar(4000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field9 nvarchar(4000) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Author add Field10 nvarchar(4000) NULL
+
+go
+
+/****** create index to improve performance ******/
+
+if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_ArticleToCategory_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_ArticleToCategory_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_ArticleToCategory] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_ArticleToRole_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_ArticleToRole_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_ArticleToRole] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_ArticleToTag_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_ArticleToTag_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_ArticleToTag] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Attachment_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Attachment_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Attachment] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Audio_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Audio_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Audio] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Comment_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Comment_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Comment] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Image_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Image_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Image] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Rating_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Rating_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Rating] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Recommend_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Recommend_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Recommend] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Ticket_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Ticket_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Ticket] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_UDData_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_UDData_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_UDData] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Video_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Video_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Video] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+ if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Watch_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Watch_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Watch] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+   if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_VoteOption_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_VoteOption_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_VoteOption] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+   if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_VoteResult_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_VoteResult_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_VoteResult] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+
+/******   drop legacy procedures ******/
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Add]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Update]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Type_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Type_Add]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Type_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Type_Update]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Author_Get]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Author_Get]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Author_GetByType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Author_GetByType]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Author_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Author_Update]
+GO
+
+/******   create new procedures ******/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Type_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Type_Update]
+	@Id int, 
+	@PortalId int, 
+	@Name nvarchar(80), 
+	@Thumbnail nvarchar(200), 
+	@Image nvarchar(200), 
+	@ListPage int, 
+	@DetailPage int, 
+	@DisplayOrder int, 
+	@EnableField1 bit, 
+	@Field1Title nvarchar(50), 
+	@Field1Default ntext, 
+	@EnableField2 bit, 
+	@Field2Title nvarchar(50), 
+	@Field2Default ntext, 
+	@EnableField3 bit, 
+	@Field3Title nvarchar(50), 
+	@Field3Default ntext, 
+	@EnableField4 bit, 
+	@Field4Title nvarchar(50), 
+	@Field4Default ntext, 
+	@EnableField5 bit, 
+	@Field5Title nvarchar(50), 
+	@Field5Default ntext, 
+	@FieldEnable_Quote bit, 
+	@FieldEnable_Author bit, 
+	@FieldEnable_Source bit, 
+	@FieldEnable_Image bit, 
+	@FieldEnable_Summary bit, 
+	@FieldEnable_LinkUrl bit, 
+	@FieldEnable_Article bit,
+    @AllowGoogleMap bit,
+    @AllowLocation bit, 
+	@AllowVote bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossArticle_Type SET
+	[PortalId] = @PortalId,
+	[Name] = @Name,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[ListPage] = @ListPage,
+	[DetailPage] = @DetailPage,
+	[DisplayOrder] = @DisplayOrder,
+	[EnableField1] = @EnableField1,
+	[Field1Title] = @Field1Title,
+	[Field1Default] = @Field1Default,
+	[EnableField2] = @EnableField2,
+	[Field2Title] = @Field2Title,
+	[Field2Default] = @Field2Default,
+	[EnableField3] = @EnableField3,
+	[Field3Title] = @Field3Title,
+	[Field3Default] = @Field3Default,
+	[EnableField4] = @EnableField4,
+	[Field4Title] = @Field4Title,
+	[Field4Default] = @Field4Default,
+	[EnableField5] = @EnableField5,
+	[Field5Title] = @Field5Title,
+	[Field5Default] = @Field5Default,
+	[FieldEnable_Quote] = @FieldEnable_Quote,
+	[FieldEnable_Author] = @FieldEnable_Author,
+	[FieldEnable_Source] = @FieldEnable_Source,
+	[FieldEnable_Image] = @FieldEnable_Image,
+	[FieldEnable_Summary] = @FieldEnable_Summary,
+	[FieldEnable_LinkUrl] = @FieldEnable_LinkUrl,
+	[FieldEnable_Article] = @FieldEnable_Article,
+    [AllowGoogleMap] = @AllowGoogleMap,
+    [AllowLocation] = @AllowLocation,
+	[AllowVote] = @AllowVote
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Type_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Type_Add]
+	@PortalId int,
+	@Name nvarchar(80),
+	@Thumbnail nvarchar(200),
+	@Image nvarchar(200),
+	@ListPage int,
+	@DetailPage int,
+	@DisplayOrder int,
+	@EnableField1 bit,
+	@Field1Title nvarchar(50),
+	@Field1Default ntext,
+	@EnableField2 bit,
+	@Field2Title nvarchar(50),
+	@Field2Default ntext,
+	@EnableField3 bit,
+	@Field3Title nvarchar(50),
+	@Field3Default ntext,
+	@EnableField4 bit,
+	@Field4Title nvarchar(50),
+	@Field4Default ntext,
+	@EnableField5 bit,
+	@Field5Title nvarchar(50),
+	@Field5Default ntext,
+	@FieldEnable_Quote bit,
+	@FieldEnable_Author bit,
+	@FieldEnable_Source bit,
+	@FieldEnable_Image bit,
+	@FieldEnable_Summary bit,
+	@FieldEnable_LinkUrl bit,
+	@FieldEnable_Article bit,
+    @AllowGoogleMap bit,
+    @AllowLocation bit,
+	@AllowVote bit
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_Type (
+	[PortalId],
+	[Name],
+	[Thumbnail],
+	[Image],
+	[ListPage],
+	[DetailPage],
+	[DisplayOrder],
+	[EnableField1],
+	[Field1Title],
+	[Field1Default],
+	[EnableField2],
+	[Field2Title],
+	[Field2Default],
+	[EnableField3],
+	[Field3Title],
+	[Field3Default],
+	[EnableField4],
+	[Field4Title],
+	[Field4Default],
+	[EnableField5],
+	[Field5Title],
+	[Field5Default],
+	[FieldEnable_Quote],
+	[FieldEnable_Author],
+	[FieldEnable_Source],
+	[FieldEnable_Image],
+	[FieldEnable_Summary],
+	[FieldEnable_LinkUrl],
+	[FieldEnable_Article],
+    [AllowGoogleMap],
+    [AllowLocation],
+	[AllowVote]
+) VALUES (
+	@PortalId,
+	@Name,
+	@Thumbnail,
+	@Image,
+	@ListPage,
+	@DetailPage,
+	@DisplayOrder,
+	@EnableField1,
+	@Field1Title,
+	@Field1Default,
+	@EnableField2,
+	@Field2Title,
+	@Field2Default,
+	@EnableField3,
+	@Field3Title,
+	@Field3Default,
+	@EnableField4,
+	@Field4Title,
+	@Field4Default,
+	@EnableField5,
+	@Field5Title,
+	@Field5Default,
+	@FieldEnable_Quote,
+	@FieldEnable_Author,
+	@FieldEnable_Source,
+	@FieldEnable_Image,
+	@FieldEnable_Summary,
+	@FieldEnable_LinkUrl,
+	@FieldEnable_Article,
+    @AllowGoogleMap,
+    @AllowLocation,
+	@AllowVote
+)
+
+select SCOPE_IDENTITY()
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Author_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Author_Update]
+	@UserId int, 
+	@AvatarEmail nvarchar(80), 
+	@Biography text, 
+	@Authed bit,
+    @ProfileUrl nvarchar(400),
+    @SiteUrl nvarchar(200), 
+	@LogoUrl nvarchar(200), 
+	@Slogan nvarchar(200), 
+	@Company nvarchar(800),
+	@Tel nvarchar(800),
+	@Fax nvarchar(800),
+	@IM nvarchar(800),
+	@Linkman nvarchar(800),
+	@CountryId int,
+	@Country nvarchar(200),
+	@StateId int,
+	@State nvarchar(200),
+	@CityId int,
+	@City nvarchar(200),
+	@TownId int,
+	@Town nvarchar(200),
+	@Address nvarchar(800),
+	@BusinessScope nvarchar(2000),
+	@Zipcode nvarchar(50),
+	@Field1 nvarchar(4000),
+	@Field2 nvarchar(4000),
+	@Field3 nvarchar(4000),
+	@Field4 nvarchar(4000),
+	@Field5 nvarchar(4000),
+	@Field6 nvarchar(4000),
+	@Field7 nvarchar(4000),
+	@Field8 nvarchar(4000),
+	@Field9 nvarchar(4000),
+	@Field10 nvarchar(4000)
+AS
+Declare @RecordCount int
+Select @RecordCount=count(UserId) 
+from {databaseOwner}{objectQualifier}CrossArticle_Author
+where UserId=@UserId
+
+if (@RecordCount>0) 
+    begin
+     UPDATE {databaseOwner}{objectQualifier}CrossArticle_Author 
+     SET
+	    [AvatarEmail] = @AvatarEmail,
+	    [Biography] = @Biography,
+	    [Authed] = @Authed,
+        [ProfileUrl] = @ProfileUrl,
+        [SiteUrl] = @SiteUrl,
+	    [LogoUrl] = @LogoUrl,
+	    [Slogan] = @Slogan,
+	    [Company] = @Company,
+	    [Tel] = @Tel,
+	    [Fax] = @Fax,
+	    [IM] = @IM,
+	    [Linkman] = @Linkman,
+	    [CountryId] = @CountryId,
+	    [Country] = @Country,
+	    [StateId] = @StateId,
+	    [State] = @State,
+	    [CityId] = @CityId,
+	    [City] = @City,
+	    [TownId] = @TownId,
+	    [Town] = @Town,
+	    [Address] = @Address,
+	    [BusinessScope] = @BusinessScope,
+	    [Zipcode] = @Zipcode,
+	    [Field1] = @Field1,
+	    [Field2] = @Field2,
+	    [Field3] = @Field3,
+	    [Field4] = @Field4,
+	    [Field5] = @Field5,
+	    [Field6] = @Field6,
+	    [Field7] = @Field7,
+	    [Field8] = @Field8,
+	    [Field9] = @Field9,
+	    [Field10] = @Field10
+    WHERE
+	    [UserId] = @UserId
+end
+else
+   begin
+   INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_Author (
+    [UserId],
+	[AvatarEmail],
+	[Biography],
+	[Authed],
+    [ProfileUrl],
+    [SiteUrl],
+	[LogoUrl],
+	[Slogan],
+	[Company],
+	[Tel],
+	[Fax],
+	[IM],
+	[Linkman],
+	[CountryId],
+	[Country],
+	[StateId],
+	[State],
+	[CityId],
+	[City],
+	[TownId],
+	[Town],
+	[Address],
+	[BusinessScope],
+	[Zipcode],
+	[Field1],
+	[Field2],
+	[Field3],
+	[Field4],
+	[Field5],
+	[Field6],
+	[Field7],
+	[Field8],
+	[Field9],
+	[Field10]
+      ) 
+      VALUES 
+     (
+       @UserId,
+    	@AvatarEmail,
+    	@Biography,
+	    @Authed,
+        @ProfileUrl,
+        @SiteUrl,
+	    @LogoUrl,
+	    @Slogan,
+	    @Company,
+	    @Tel,
+	@Fax,
+	@IM,
+	@Linkman,
+	@CountryId,
+	@Country,
+	@StateId,
+	@State,
+	@CityId,
+	@City,
+	@TownId,
+	@Town,
+	@Address,
+	@BusinessScope,
+	@Zipcode,
+	@Field1,
+	@Field2,
+	@Field3,
+	@Field4,
+	@Field5,
+	@Field6,
+	@Field7,
+	@Field8,
+	@Field9,
+	@Field10
+       )
+end
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Author_GetByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Author_GetByType]
+   @TypeId   int
+AS
+select distinct
+	a.UserId,
+    a.Username,
+    a.FirstName,
+    a.LastName,
+    a.DisplayName, 
+    a.Email,
+    b.AvatarEmail,
+    b.Authed,
+    b.ProfileUrl,
+    b.SiteUrl,
+    b.LogoUrl,
+    b.Slogan,
+	b.Company,
+	b.Tel,
+	b.Fax,
+	b.IM,
+	b.Linkman,
+	b.CountryId,
+	b.Country,
+	b.StateId,
+	b.State,
+	b.CityId,
+	b.City,
+	b.TownId,
+	b.Town,
+	b.Address,
+	b.BusinessScope,
+	b.Zipcode,
+	b.Field1,
+	b.Field2,
+	b.Field3,
+	b.Field4,
+	b.Field5,
+	b.Field6,
+	b.Field7,
+	b.Field8,
+	b.Field9,
+	b.Field10,
+    ''Biography''='''',
+   ''ArticleCounts''=
+       (Select count(e.Id)   from 
+        {databaseOwner}{objectQualifier}CrossArticle_Article e
+        where (e.UserId=a.UserId) 
+        and (e.Authed=1) 
+        and (e.Active=1) 
+        and (e.draft=0)
+        and (e.TypeId=@TypeId))
+FROM {databaseOwner}{objectQualifier}Users a
+left join {databaseOwner}{objectQualifier}CrossArticle_Author b
+on a.UserId=b.UserId
+Inner join {databaseOwner}{objectQualifier}CrossArticle_Article c
+on a.UserId=c.UserId
+where (c.TypeId = @TypeId)
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Author_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Author_Get]
+	@UserId int
+AS
+   Select
+    a.UserId,
+    a.Username,
+    a.FirstName,
+    a.LastName,
+    a.DisplayName, 
+    a.Email,
+    b.AvatarEmail,
+    b.Authed,
+    b.Biography,
+    b.ProfileUrl,
+    b.SiteUrl,
+    b.LogoUrl,
+    b.Slogan,
+	b.Company,
+	b.Tel,
+	b.Fax,
+	b.IM,
+	b.Linkman,
+	b.CountryId,
+	b.Country,
+	b.StateId,
+	b.State,
+	b.CityId,
+	b.City,
+	b.TownId,
+	b.Town,
+	b.Address,
+	b.BusinessScope,
+	b.Zipcode,
+	b.Field1,
+	b.Field2,
+	b.Field3,
+	b.Field4,
+	b.Field5,
+	b.Field6,
+	b.Field7,
+	b.Field8,
+	b.Field9,
+	b.Field10,
+   ''ArticleCounts''=
+       (Select count(e.Id)   from 
+        {databaseOwner}{objectQualifier}CrossArticle_Article e
+        where (e.UserId=a.UserId) 
+        and (e.Authed=1) 
+        and (e.Active=1) 
+        and (e.draft=0))
+FROM {databaseOwner}{objectQualifier}Users a
+left join {databaseOwner}{objectQualifier}CrossArticle_Author b
+on a.UserId=b.UserId
+where (a.UserId = @UserId)
+	
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Update]
+	@Id int, 
+	@PortalId int, 
+	@UserId int, 
+	@TypeId int, 
+	@CreatedDate datetime, 
+	@Quote bit, 
+	@Title nvarchar(200), 
+	@Author nvarchar(200), 
+	@Source nvarchar(200), 
+	@Active bit, 
+	@Authed bit, 
+	@Featured bit, 
+	@Draft bit, 
+	@Thumbnail nvarchar(800), 
+	@Image nvarchar(800), 
+	@ImageDescription nvarchar(800), 
+	@Summary nvarchar(1000), 
+	@LinkUrl nvarchar(800), 
+	@Article ntext, 
+	@Views int, 
+	@PublishDate datetime, 
+	@ExpireDate datetime, 
+	@LastModifiedDate datetime, 
+	@SubmitDate datetime, 
+	@AuthedDate datetime, 
+	@AllowComment bit, 
+	@AllowRating bit, 
+	@AllowRecommend bit, 
+	@RatingRoles nvarchar(200), 
+	@CommentRoles nvarchar(200), 
+	@RecommendRoles nvarchar(200), 
+	@DownloadRoles nvarchar(200), 
+	@AutoAuthComment bit, 
+	@PinOrder int, 
+	@Field1 ntext, 
+	@Field2 ntext, 
+	@Field3 ntext, 
+	@Field4 ntext, 
+	@Field5 ntext,
+    @DetailPage int,
+    @Longitude nvarchar(40),
+    @Latitude nvarchar(40),
+    @FeedId int,
+    @GUID nvarchar(500),
+    @SubTitle nvarchar(500),
+    @ImportFromFeed bit,
+    @CountryId int,
+	@Country nvarchar(200),
+	@StateId int,
+	@State nvarchar(200),
+	@CityId int,
+	@City nvarchar(200),
+	@TownId int,
+	@Town nvarchar(200),
+	@VoteTitle nvarchar(800),
+	@VoteRoles nvarchar(200),
+	@MultipleChoice bit,
+	@VoteCookieDays int,
+	@VoteExpireDate datetime,
+    @ViewRoles nvarchar(200), 
+    @Categories nvarchar(200),
+	@Tags nvarchar(200),
+    @RefreshRelation bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossArticle_Article SET
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[TypeId] = @TypeId,
+	[CreatedDate] = @CreatedDate,
+	[Quote] = @Quote,
+	[Title] = @Title,
+	[Author] = @Author,
+	[Source] = @Source,
+	[Active] = @Active,
+	[Authed] = @Authed,
+	[Featured] = @Featured,
+	[Draft] = @Draft,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[ImageDescription] = @ImageDescription,
+	[Summary] = @Summary,
+	[LinkUrl] = @LinkUrl,
+	[Article] = @Article,
+	[Views] = @Views,
+	[PublishDate] = @PublishDate,
+	[ExpireDate] = @ExpireDate,
+	[LastModifiedDate] = GetDate(),
+	[SubmitDate] = @SubmitDate,
+	[AuthedDate] = @AuthedDate,
+	[AllowComment] = @AllowComment,
+	[AllowRating] = @AllowRating,
+	[AllowRecommend] = @AllowRecommend,
+	[RatingRoles] = @RatingRoles,
+	[CommentRoles] = @CommentRoles,
+	[RecommendRoles] = @RecommendRoles,
+	[DownloadRoles] = @DownloadRoles,
+	[AutoAuthComment] = @AutoAuthComment,
+	[PinOrder] = @PinOrder,
+	[Field1] = @Field1,
+	[Field2] = @Field2,
+	[Field3] = @Field3,
+	[Field4] = @Field4,
+	[Field5] = @Field5,
+    [DetailPage] = @DetailPage,
+    [Longitude] = @Longitude,
+    [Latitude] = @Latitude,
+    [FeedId] = @FeedId,
+    [GUID] = @GUID,
+    [SubTitle] = @SubTitle,
+    [ImportFromFeed] = @ImportFromFeed,
+    [CountryId] = @CountryId,
+	[Country] = @Country,
+	[StateId] = @StateId,
+	[State] = @State,
+	[CityId] = @CityId,
+	[City] = @City,
+	[TownId] = @TownId,
+	[Town] = @Town,
+	[VoteTitle] = @VoteTitle,
+	[VoteRoles] = @VoteRoles,
+	[MultipleChoice] = @MultipleChoice,
+	[VoteCookieDays] = @VoteCookieDays,
+	[VoteExpireDate] = @VoteExpireDate
+WHERE
+	[Id] = @Id
+
+If (@RefreshRelation=1)
+   Begin
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)
+
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Tags)
+
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@ViewRoles)
+end
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Add]
+	@PortalId int,
+	@UserId int,
+	@TypeId int,
+	@CreatedDate datetime,
+	@Quote bit,
+	@Title nvarchar(200),
+	@Author nvarchar(200),
+	@Source nvarchar(200),
+	@Active bit,
+	@Authed bit,
+	@Featured bit,
+	@Draft bit,
+	@Thumbnail nvarchar(800),
+	@Image nvarchar(800),
+	@ImageDescription nvarchar(800),
+	@Summary nvarchar(1000),
+	@LinkUrl nvarchar(800),
+	@Article ntext,
+	@Views int,
+	@PublishDate datetime,
+	@ExpireDate datetime,
+	@LastModifiedDate datetime,
+	@SubmitDate datetime,
+	@AuthedDate datetime,
+	@AllowComment bit,
+	@AllowRating bit,
+	@AllowRecommend bit,
+	@RatingRoles nvarchar(200),
+	@CommentRoles nvarchar(200),
+	@RecommendRoles nvarchar(200),
+	@DownloadRoles nvarchar(200),
+	@AutoAuthComment bit,
+	@PinOrder int,
+	@Field1 ntext,
+	@Field2 ntext,
+	@Field3 ntext,
+	@Field4 ntext,
+	@Field5 ntext,
+    @DetailPage int,
+    @Longitude nvarchar(40),
+    @Latitude nvarchar(40),
+    @FeedId int,
+    @GUID nvarchar(500),
+    @SubTitle nvarchar(500),
+    @ImportFromFeed bit,
+    @CountryId int,
+	@Country nvarchar(200),
+	@StateId int,
+	@State nvarchar(200),
+	@CityId int,
+	@City nvarchar(200),
+	@TownId int,
+	@Town nvarchar(200),
+	@VoteTitle nvarchar(800),
+	@VoteRoles nvarchar(200),
+	@MultipleChoice bit,
+	@VoteCookieDays int,
+	@VoteExpireDate datetime,
+    @ViewRoles nvarchar(200),
+    @Categories nvarchar(200),
+    @Tags nvarchar(200)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_Article (
+	[PortalId],
+	[UserId],
+	[TypeId],
+	[CreatedDate],
+	[Quote],
+	[Title],
+	[Author],
+	[Source],
+	[Active],
+	[Authed],
+	[Featured],
+	[Draft],
+	[Thumbnail],
+	[Image],
+	[ImageDescription],
+	[Summary],
+	[LinkUrl],
+	[Article],
+	[Views],
+	[PublishDate],
+	[ExpireDate],
+	[LastModifiedDate],
+	[SubmitDate],
+	[AuthedDate],
+	[AllowComment],
+	[AllowRating],
+	[AllowRecommend],
+	[RatingRoles],
+	[CommentRoles],
+	[RecommendRoles],
+	[DownloadRoles],
+	[AutoAuthComment],
+	[PinOrder],
+	[Field1],
+	[Field2],
+	[Field3],
+	[Field4],
+	[Field5],
+    [DetailPage],
+    [Longitude],
+    [Latitude],
+    [FeedId],
+    [GUID],
+    [SubTitle],
+    [ImportFromFeed],
+    [CountryId],
+	[Country],
+	[StateId],
+	[State],
+	[CityId],
+	[City],
+	[TownId],
+	[Town],
+	[VoteTitle],
+	[VoteRoles],
+	[MultipleChoice],
+	[VoteCookieDays],
+	[VoteExpireDate]
+) VALUES (
+	@PortalId,
+	@UserId,
+	@TypeId,
+	@CreatedDate,
+	@Quote,
+	@Title,
+	@Author,
+	@Source,
+	@Active,
+	@Authed,
+	@Featured,
+	@Draft,
+	@Thumbnail,
+	@Image,
+	@ImageDescription,
+	@Summary,
+	@LinkUrl,
+	@Article,
+	@Views,
+	@PublishDate,
+	@ExpireDate,
+	GetDate(),
+	GetDate(),
+	@AuthedDate,
+	@AllowComment,
+	@AllowRating,
+	@AllowRecommend,
+	@RatingRoles,
+	@CommentRoles,
+	@RecommendRoles,
+	@DownloadRoles,
+	@AutoAuthComment,
+	@PinOrder,
+	@Field1,
+	@Field2,
+	@Field3,
+	@Field4,
+	@Field5,
+    @DetailPage,
+    @Longitude,
+    @Latitude,
+    @FeedId,
+    @GUID,
+    @SubTitle,
+    @ImportFromFeed,
+    @CountryId,
+	@Country,
+	@StateId,
+	@State,
+	@CityId,
+	@City,
+	@TownId,
+	@Town,
+	@VoteTitle,
+	@VoteRoles,
+	@MultipleChoice,
+	@VoteCookieDays,
+	@VoteExpireDate
+)
+
+DECLARE @ArticleId INT	
+SET @ArticleId = @@IDENTITY
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Tags)
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@ViewRoles)
+
+select @ArticleId
+
+' 
+END
+GO
+

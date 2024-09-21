@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Analyzings>
+	<Analyzing>
+		<Name>DNNGo.xBlog</Name>
+		<Path>DNNGo_xBlog</Path>
+		<assemblyName>DNNGo.Modules.xBlog</assemblyName>
+		<typeName>DNNGo.Modules.xBlog.ServiceAnalyzing</typeName>
+	</Analyzing>
+	<Analyzing>
+		<Name>DNNGo.PowerForms</Name>
+		<Path>DNNGo_PowerForms</Path>
+		<assemblyName>DNNGo.Modules.PowerForms</assemblyName>
+		<typeName>DNNGo.Modules.PowerForms.ServiceAnalyzing</typeName>
+	</Analyzing>
+	<Analyzing>
+		<Name>DNNGo.FormBuilder</Name>
+		<Path>DNNGo_FormBuilder</Path>
+		<assemblyName>DNNGo.FormBuilder</assemblyName>
+		<typeName>DNNGo.FormBuilder.ServiceAnalyzing</typeName>
+	</Analyzing>
+	<Analyzing>
+		<Name>DNNGo.MyToken</Name>
+		<Path>DNNGo_MyToken</Path>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<typeName>DNNGo.Modules.ThemePluginPro.MyTokenServiceAnalyzing</typeName>
+	</Analyzing>
+	<Analyzing>
+		<Name>DNNGo.MyModule</Name>
+		<Path>DNNGo_MyModule</Path>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<typeName>DNNGo.Modules.ThemePluginPro.MyModuleServiceAnalyzing</typeName>
+	</Analyzing>
+	<Analyzing>
+		<Name>DNNGo.AddModule</Name>
+		<Path>DNNGo_AddModule</Path>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<typeName>DNNGo.Modules.ThemePluginPro.MyAddModuleServiceAnalyzing</typeName>
+	</Analyzing>
+</Analyzings>

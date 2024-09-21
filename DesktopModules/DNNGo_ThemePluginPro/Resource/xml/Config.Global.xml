@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Config>
+    <Name><![CDATA[Global]]></Name>
+    <Alias><![CDATA[Global Settings]]></Alias>
+    <Icon><![CDATA[fa fa-gears]]></Icon>
+    <Description><![CDATA[]]></Description>
+
+  </Config>
+
+  <Groups>
+    <Group>
+      <Name><![CDATA[Globals]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Globals]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+    <Group>
+      <Name><![CDATA[Media Library]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Media Library]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+
+    <Group>
+      <Name><![CDATA[Content Builder]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Content Builder]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+    
+    <Group>
+      <Name><![CDATA[Font Settings]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Font Settings]]></Categories>
+      <Layout><![CDATA[Right]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+     
+
+  </Groups>
+
+  <Settings>
+
+
+ 
+ 
+    
+    
+    <Setting>
+      <Name><![CDATA[GoogleFontAPI]]></Name>
+      <Alias><![CDATA[Google Font API]]></Alias>
+      <Width><![CDATA[250]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[AIzaSyBUILExVNkdGbRS_2xjdRErTaFcUFOSBzY]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Font Settings]]></Group>
+      <Categories><![CDATA[Font Settings]]></Categories>
+      <Layout><![CDATA[Right]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[ExtraFonts]]></Name>
+      <Alias><![CDATA[Extra Fonts]]></Alias>
+      <Width><![CDATA[250]]></Width>
+      <Rows><![CDATA[7]]></Rows>
+      <DefaultValue>
+        <![CDATA[Arial
+Georgia
+Helvetica
+Palatino
+Tahoma
+Times New Roman]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[true]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Font Settings]]></Group>
+      <Categories><![CDATA[Font Settings]]></Categories>
+      <Layout><![CDATA[Right]]></Layout>
+    </Setting>
+
+
+
+
+	
+    <Setting>
+      <Name><![CDATA[CompressionEnable]]></Name>
+      <Alias><![CDATA[Enable Compress image]]></Alias>
+      <Width><![CDATA[100]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[false]]></DefaultValue>
+      <ControlType><![CDATA[CheckBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Media Library]]></Group>
+      <Categories><![CDATA[Media Library]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[CompressionQuality]]></Name>
+      <Alias><![CDATA[Compression Quality]]></Alias>
+      <Width><![CDATA[100]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[80]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[1~100]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[integer]]></Verification>
+      <Group><![CDATA[Media Library]]></Group>
+      <Categories><![CDATA[Media Library]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[CtlCompressionEnable]]></Condition>
+    </Setting>
+
+	  <Setting>
+		  <Name><![CDATA[PixabayEnable]]></Name>
+		  <Alias><![CDATA[Enable Pixabay]]></Alias>
+		  <Width><![CDATA[100]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[true]]></DefaultValue>
+		  <ControlType><![CDATA[CheckBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[]]></Verification>
+		  <Group><![CDATA[Media Library]]></Group>
+		  <Categories><![CDATA[Media Library]]></Categories>
+		  <Layout><![CDATA[Left]]></Layout>
+	  </Setting>
+	<Setting>
+		<Name><![CDATA[PixabayKey]]></Name>
+		<Alias><![CDATA[Pixabay Key]]></Alias>
+		<Width><![CDATA[400]]></Width>
+		<Rows><![CDATA[1]]></Rows>
+		<DefaultValue><![CDATA[26852150-f10bfe08d860363da6feeb4a1]]></DefaultValue>
+		<ControlType><![CDATA[TextBox]]></ControlType>
+		<Direction><![CDATA[Vertical]]></Direction>
+		<ListContent><![CDATA[]]></ListContent>
+		<Description><![CDATA[Replace the API keys provided by DNNGo with your own. <a href="https://pixabay.com/service/about/api/" target="_blank">Get Key.</a>]]></Description>
+		<Required><![CDATA[False]]></Required>
+		<Verification><![CDATA[]]></Verification>
+		<Group><![CDATA[Media Library]]></Group>
+		<Categories><![CDATA[Media Library]]></Categories>
+		<Layout><![CDATA[Left]]></Layout>
+		<Condition><![CDATA[CtlPixabayEnable]]></Condition>
+	</Setting>
+	<Setting>
+		<Name><![CDATA[PixabayPerPage]]></Name>
+		<Alias><![CDATA[Per Page]]></Alias>
+		<Width><![CDATA[100]]></Width>
+		<Rows><![CDATA[1]]></Rows>
+		<DefaultValue><![CDATA[20]]></DefaultValue>
+		<ControlType><![CDATA[TextBox]]></ControlType>
+		<Direction><![CDATA[Vertical]]></Direction>
+		<ListContent><![CDATA[]]></ListContent>
+		<Description><![CDATA[]]></Description>
+		<Required><![CDATA[False]]></Required>
+		<Verification><![CDATA[integer]]></Verification>
+		<Group><![CDATA[Media Library]]></Group>
+		<Categories><![CDATA[Media Library]]></Categories>
+		<Layout><![CDATA[Left]]></Layout>
+		<Condition><![CDATA[CtlPixabayEnable]]></Condition>
+	</Setting>
+	  
+
+    <Setting>
+      <Name><![CDATA[HBCompression]]></Name>
+      <Alias><![CDATA[Enable Compression]]></Alias>
+      <Width><![CDATA[100]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[false]]></DefaultValue>
+      <ControlType><![CDATA[CheckBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[HTML & CSS & JS Compression]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Builder]]></Group>
+      <Categories><![CDATA[Content Builder]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[EnableHBControls]]></Name>
+      <Alias><![CDATA[Enable controls For Admin]]></Alias>
+      <Width><![CDATA[250]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[Section,Content,Typography,Code]]></DefaultValue>
+      <ControlType><![CDATA[CheckBoxList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent>
+        <![CDATA[Section:Section
+Content Blocks:Content
+Typography:Typography
+HTML & CSS:Code]]>
+      </ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Builder]]></Group>
+      <Categories><![CDATA[Content Builder]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+	  <Setting>
+		  <Name><![CDATA[EnableThirdPartyModules]]></Name>
+		  <Alias><![CDATA[Enable Third-party Modules]]></Alias>
+		  <Width><![CDATA[250]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[true]]></DefaultValue>
+		  <ControlType><![CDATA[CheckBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[ ]]></ListContent>
+		  <Description><![CDATA[Allows adding third-party modules to the content builder]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[]]></Verification>
+		  <Group><![CDATA[Content Builder]]></Group>
+		  <Categories><![CDATA[Content Builder]]></Categories>
+		  <Layout><![CDATA[Left]]></Layout>
+	  </Setting>
+    
+    
+  </Settings>
+</DNNGo_ThemePluginPro>
+
+
+

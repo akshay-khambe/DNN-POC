@@ -1,0 +1,161 @@
+.dng-main{
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+   align-items: center; 
+   text-align: center;
+}
+
+
+.dng-main .soon-center {
+   width: 100%;
+   padding: 25px;
+}
+
+
+#if(${xf.ViewPageSetting("CustomBackground","inherit")} =="custom" )
+.dng-main{
+	#if(${xf.ViewPageSetting("Backgroundcolor","#4c61fe")}!="") background:${xf.ViewPageSetting("Backgroundcolor","#4c61fe")};  #end
+	#if(${xf.ViewPageSetting("bgcolorimg","")}!="") 
+		background-image:url("${xf.ViewPageSetting("bgcolorimg","")}");
+        background-attachment: ${xf.GetArrayByString("bgcolorattr",0,true)};
+        background-position: ${xf.GetArrayByString("bgcolorattr",1,true)} ${xf.GetArrayByString("bgcolorattr",2,true)}; 
+        background-repeat: ${xf.GetArrayByString("bgcolorattr",3,true)};
+        background-size: ${xf.GetArrayByString("bgcolorattr",4,true)}; 	
+    #end	
+}
+#end
+
+.dng-main,
+.dng-main h1,
+.dng-main h2,
+.dng-main h3,
+.dng-main h4,
+.dng-main h5,
+.dng-main h6,
+.dng-main .Normal,
+.soon.dg-comingsoon .soon-label{
+    color:${xf.ViewPageSetting("FontColor","#FFFFFF")};
+}
+
+
+.dg-comingsoon.soon[data-layout*=group]{
+    padding:1.2em 0;
+}
+
+.dg-comingsoon .soon-slot-inner {
+	font-size: 100px;
+	font-weight:bold;
+	line-height: 1;
+	height: 1em;
+	color: ${xf.ViewPageSetting("TimeColor","#08f1fa")}; 
+	width: 0.8em!important;
+}
+.dg-comingsoon .soon-text.soon-label{
+	font-size: 18px;
+	font-weight:bold;
+}
+.dg-comingsoon .soon-group-inner > .soon-group:after{
+	content: "";
+	position: absolute;
+	top: 15px;
+	bottom: 15px;
+	left: 0;
+    border-right: 1px dashed ${xf.ViewPageSetting("FontColor","#FFFFFF")};
+    opacity: 0.8;
+}
+.dg-comingsoon .soon-group-inner > .soon-group{
+	padding: 0px 50px;
+}
+.dg-comingsoon .soon-group-inner > .soon-group:first-child::after{
+	content: none;
+}
+
+.coming-soon-button{
+	position: absolute;
+	right: -2px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 0px 64px 0 30px;
+    color: #FFF;
+    font-size: 15px;
+    top: 0;
+    transition: all 300ms ease-in;
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg width='30' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,6 T20,6' stroke-width='1' stroke='rgb(255,255,255)' style='transform: -webkit-translateY(-0.5px);transform: translateY(-0.5px);'%3E%3C/path%3E%3Cpath d='M15,0 20,5.5 15,12' full='none' stroke-width='1' fill='none' stroke='rgb(255,255,255)'%3E%3C/path%3E%3C/svg%3E") 106px center no-repeat #fc7b35;
+}
+
+.coming-soon-button:hover{
+    color: #FFF;
+    box-shadow: 0 0 10px #fc7b35;
+}
+
+
+.ComingSoonBottomPane{
+    width: 525px;
+    max-width: 100%;
+    margin: auto;
+}
+.form_list {
+    position: relative;
+}
+
+@media only screen and (max-width: 1599px) {
+    .dg-comingsoon .soon-slot-inner {
+        font-size: 80px;
+    }
+    .dg-comingsoon .soon-group-inner > .soon-group{
+        padding: 0px 40px;
+    }
+}
+@media only screen and (max-width: 991px) {
+
+    .dg-comingsoon .soon-slot-inner {
+        font-size: 60px;
+    }
+    .dg-comingsoon .soon-group-inner > .soon-group{
+        padding: 0px 30px;
+    }
+}
+@media only screen and (max-width: 787px) {
+
+    .dg-comingsoon .soon-slot-inner {
+        font-size: 28px;
+    }
+    .dg-comingsoon .soon-group-inner > .soon-group{
+        padding: 0px;
+    }
+
+    .dg-comingsoon .soon-text.soon-label{
+        font-size: 12px;
+        font-weight: normal;
+    }
+    .dg-comingsoon .soon-group-inner > .soon-group:after{
+        content: none;
+    }
+    .dg-comingsoon.soon[data-layout*=group]{
+        padding:0.5em 0;
+    }
+
+    .dg-comingsoon .soon-slot-inner {
+        width:1em!important;
+    }
+    .dg-comingsoon .soon-text.soon-label{
+        margin: 0;
+    }
+    .dg-comingsoon .soon-group-sub>.soon-group-inner{
+        margin: 0 !important;
+        min-width: 70px;
+        text-align: center;
+    }
+    .dg-comingsoon .soon-repeater{
+        line-height: 1;
+    }
+
+}

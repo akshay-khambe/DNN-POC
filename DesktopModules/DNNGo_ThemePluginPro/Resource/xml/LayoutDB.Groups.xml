@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Settings>
+    <Setting>
+      <Name><![CDATA[custom]]></Name>
+      <Alias><![CDATA[Custom]]></Alias>
+      <Layout><![CDATA[Header,Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[business01]]></Name>
+      <Alias><![CDATA[Business-01]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[business02]]></Name>
+      <Alias><![CDATA[Business-02]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[business03]]></Name>
+      <Alias><![CDATA[Business-03]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[business04]]></Name>
+      <Alias><![CDATA[Business-04]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[app01]]></Name>
+      <Alias><![CDATA[APP-01]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[app02]]></Name>
+      <Alias><![CDATA[APP-02]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[app03]]></Name>
+      <Alias><![CDATA[APP-03]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[app04]]></Name>
+      <Alias><![CDATA[APP-04]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[creative01]]></Name>
+      <Alias><![CDATA[Creative-01]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[creative02]]></Name>
+      <Alias><![CDATA[Creative-02]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[creative03]]></Name>
+      <Alias><![CDATA[Creative-03]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[parallax01]]></Name>
+      <Alias><![CDATA[Parallax-01]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[parallax02]]></Name>
+      <Alias><![CDATA[Parallax-02]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+
+
+    <Setting>
+      <Name><![CDATA[onepage]]></Name>
+      <Alias><![CDATA[Onepage]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[fullpage]]></Name>
+      <Alias><![CDATA[Fullpage]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+
+     <Setting>
+      <Name><![CDATA[splitfullpage]]></Name>
+      <Alias><![CDATA[Splitfullpage]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[construction01]]></Name>
+      <Alias><![CDATA[Construction-01]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[education01]]></Name>
+      <Alias><![CDATA[Education-01]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[comingsoon]]></Name>
+      <Alias><![CDATA[Comingsoon]]></Alias>
+      <Layout><![CDATA[Content,Footer]]></Layout>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[menu-in-middle]]></Name>
+      <Alias><![CDATA[Menu In Middle]]></Alias>
+      <Layout><![CDATA[Header]]></Layout>
+    </Setting>
+     <Setting>
+      <Name><![CDATA[logo-in-middle]]></Name>
+      <Alias><![CDATA[Logo In Middle]]></Alias>
+      <Layout><![CDATA[Header]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[overlay-menu]]></Name>
+      <Alias><![CDATA[Overlay Menu]]></Alias>
+      <Layout><![CDATA[Header]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[side-menu]]></Name>
+      <Alias><![CDATA[Side Menu]]></Alias>
+      <Layout><![CDATA[Header]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[top-bar]]></Name>
+      <Alias><![CDATA[Top Bar]]></Alias>
+      <Layout><![CDATA[Header]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[side-panel]]></Name>
+      <Alias><![CDATA[Side Panel]]></Alias>
+      <Layout><![CDATA[Header]]></Layout>
+    </Setting>  
+     <Setting>
+      <Name><![CDATA[overlaypanel]]></Name>
+      <Alias><![CDATA[Overlay Panel]]></Alias>
+      <Layout><![CDATA[Header]]></Layout>
+    </Setting>  
+     <Setting>
+      <Name><![CDATA[topmenu]]></Name>
+      <Alias><![CDATA[Top Menu]]></Alias>
+      <Layout><![CDATA[Header]]></Layout>
+    </Setting>  
+ 
+    
+  </Settings>
+</DNNGo_ThemePluginPro>
+
+
+

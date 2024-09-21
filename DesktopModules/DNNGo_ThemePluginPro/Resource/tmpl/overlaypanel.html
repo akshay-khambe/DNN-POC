@@ -1,0 +1,184 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#OverlayPanelSettings" aria-controls="pane" role="tab" data-toggle="tab">Overlay
+      Panel Settings
+    </a></li>
+  <li role="presentation"><a href="#RevealerSettings" aria-controls="pane" role="tab" data-toggle="tab">Revealer
+      Settings
+    </a></li>
+  <li role="presentation"><a href="#NavIcon" aria-controls="pane" role="tab" data-toggle="tab">Nav Icon</a></li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="OverlayPanelSettings">
+
+    
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Background Color Gradient Start:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="startcolor"
+            value="${startcolor}">
+          <i style="background-color:${startcolor}"></i></div>
+      </div>
+    </div>
+
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Background Color Gradient End:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="endcolor"
+            value="${endcolor}">
+          <i style="background-color:${endcolor}"></i></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="control-label">Background Opacity:</label>
+      <div class="control-cont">
+        <input type="number" class="dnnOptions form-control" value="${opacity}" placeholder="0~1" data-name="opacity">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="firstname" class="control-label">Close Button Color:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" data-name="buttoncolor" data-value="${buttoncolor}">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="RevealerSettings">
+    <div class="form-group">
+      <label for="firstname" class="control-label">Direction:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" data-name="direction" data-value="${direction}">
+          <option value="top" selected="selected">Top</option>
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+          <option value="bottom">Bottom</option>
+          <option value="cornertopleft">Top Left</option>
+          <option value="cornertopright">Top Right</option>
+          <option value="cornerbottomleft">Bottom Left</option>
+          <option value="cornerbottomright">Bottom Right</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="control-label">Effect:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" data-name="effect" data-value="${effect}">
+          <option value="effect-1">Simple</option>
+          <option value="effect-2">Duo Move</option>
+          <option value="effect-3" selected="selected">Triple Swoosh</option>
+          <option value="effect-4">Content Move</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Effect Background Color 1:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="effectcolor1"
+            value="${effectcolor1}">
+          <i style="background-color:${effectcolor1}"></i></div>
+      </div>
+    </div>
+
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Effect Background Color 2:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="effectcolor2"
+            value="${effectcolor2}">
+          <i style="background-color:${effectcolor2}"></i></div>
+      </div>
+    </div>
+    <div class="form-group colorpicker-box">
+      <label for="firstname" class="control-label">Effect Background Color 3:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="effectcolor3"
+            value="${effectcolor3}">
+          <i style="background-color:${effectcolor3}"></i></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="control-label">Display Logo:</label>
+      <div class="control-cont">
+        <input type="checkbox" class="dnnOptions" id="logo" data-name="logo" ${logo}>
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#logo">
+      <label for="firstname" class="control-label">Logo URL:</label>
+      <div class="control-cont">
+        {{tmpl($data,options ={imgid:"url"}) '#tmpl-image'}}
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#logo">
+      <label for="firstname" class="control-label">High-DPI (retina) Logo URL:</label>
+      <div class="control-cont">
+        {{tmpl($data,options ={imgid:"hdurl"}) '#tmpl-image'}}
+      </div>
+    </div>
+
+
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="NavIcon">
+
+    <div class="form-images-list">
+      <div class="form-group">
+        <label class="control-label">Icon Style:</label>
+        <div class="control-cont">
+          <div class="format-setting-inner">
+            <div class="radio-images">
+              <input type="radio" name="iconstyle" value="default" class="dnnOptions form-control" data-name="iconstyle"
+                {{if iconstyle && iconstyle == "default"}} checked="checked" {{/if}}>
+              <img src="resource/thumbnails/header/icon-nav-01.jpg"
+                alt=" " title=" " class="option-tree-ui-radio-image ">
+            </div>
+            <div class="radio-images">
+              <input type="radio" name="iconstyle" value="custom" class="dnnOptions form-control" data-name="iconstyle"
+                {{if iconstyle && iconstyle == "custom"}} checked="checked" {{/if}}>
+              <img src="resource/thumbnails/header/icon-nav-02.jpg"
+                alt=" " title=" " class="option-tree-ui-radio-image ">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="form-group colorpicker-box conditional" data-condition="iconstyle == 'custom'">
+      <label for="firstname" class="control-label">Button Background:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="btnbg"
+            value="${btnbg}" data-default="rgba(50,154,235,1)">
+          <i style="background-color:${btnbg}"></i></div>
+      </div>
+    </div>
+
+    <div class="form-group colorpicker-box conditional" data-condition="iconstyle == 'custom'">
+      <label for="firstname" class="control-label">Button Hover Background:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="btnhoverbg"
+            value="${btnhoverbg}" data-default="rgba(121,129,231,1)">
+          <i style="background-color:${btnhoverbg}"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="form-group hide">
+  <label for="firstname" class="control-label">ID:</label>
+  <div class="control-cont">
+    <input type="text" class="dnnOptions form-control randomid" value="${id}" data-name="id">
+  </div>
+</div>

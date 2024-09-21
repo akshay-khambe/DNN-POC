@@ -1,0 +1,406 @@
+
+#if(${xf.ViewPageSetting("CustomBackground","inherit")} =="custom" )
+.dng-main{
+	#if(${xf.ViewPageSetting("Backgroundcolor","")}!="") background:${xf.ViewPageSetting("Backgroundcolor","")};  #end
+	#if(${xf.ViewPageSetting("bgcolorimg","")}!="") 
+		background-image:url("${xf.ViewPageSetting("bgcolorimg","")}");
+        background-attachment: ${xf.GetArrayByString("bgcolorattr",0,true)};
+        background-position: ${xf.GetArrayByString("bgcolorattr",1,true)} ${xf.GetArrayByString("bgcolorattr",2,true)}; 
+        background-repeat: ${xf.GetArrayByString("bgcolorattr",3,true)};
+        background-size: ${xf.GetArrayByString("bgcolorattr",4,true)}; 	
+    #end	
+}
+#end
+
+#if(${xf.ViewPageSetting("CustomContWidth","inherit")} =="custom" )
+    #if(${xf.ViewGlobalSetting("ContainerLayout","Boxed")} == "Boxed") 
+
+    .dng-main.Boxed #dng-wrapper{
+        width: ${xf.GetArrayByString("ContainerWidth",5,true)};
+    }
+	@media (min-width:576px) {
+        .dng-main.Boxed #dng-wrapper {
+            width: ${xf.GetArrayByString("ContainerWidth",4,true)};
+        }
+    }
+	@media (min-width:768px) {
+        .dng-main.Boxed #dng-wrapper {
+            width: ${xf.GetArrayByString("ContainerWidth",3,true)};
+        }
+    }
+	@media (min-width:992px) {
+        .dng-main.Boxed #dng-wrapper {
+            width: ${xf.GetArrayByString("ContainerWidth",2,true)};
+        }	
+    }
+	@media (min-width:1200px) {
+        .dng-main.Boxed #dng-wrapper {
+            width: ${xf.GetArrayByString("ContainerWidth",1,true)};
+        }	
+    }
+	@media (min-width:1600px) {
+        .dng-main.Boxed #dng-wrapper {
+            width: ${xf.GetArrayByString("ContainerWidth",0,true)};
+        }	
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px){
+		.dng-main.Boxed .mobile-header{
+			width: ${xf.GetArrayByString("ContainerWidth",3,false)};	
+		}
+	} 
+    #end
+
+
+
+
+    .container{
+        width: ${xf.GetArrayByString("ContainerWidth",5,true)};
+    }
+    .col-left-full {
+        margin-right: calc( (100% - ${xf.GetArrayByString("ContainerWidth",5,true)}) /2 )!important;
+    }
+    .col-right-full {
+        margin-left: calc( (100% - ${xf.GetArrayByString("ContainerWidth",5,true)}) /2 )!important;
+    }
+	@media (min-width:576px) {
+        .container{
+            width: ${xf.GetArrayByString("ContainerWidth",4,true)};
+        }	
+        .col-left-full {
+            margin-right: calc( (100% - ${xf.GetArrayByString("ContainerWidth",4,true)}) /2 )!important;
+        }
+        .col-right-full {
+            margin-left: calc( (100% - ${xf.GetArrayByString("ContainerWidth",4,true)}) /2 )!important;
+        }
+    }
+	@media (min-width:768px) {
+        .container{
+            width: ${xf.GetArrayByString("ContainerWidth",3,true)};
+        }	
+        .col-left-full {
+            margin-right: calc( (100% - ${xf.GetArrayByString("ContainerWidth",3,true)}) /2 )!important;
+        }
+        .col-right-full {
+            margin-left: calc( (100% - ${xf.GetArrayByString("ContainerWidth",3,true)}) /2 )!important;
+        }
+   }	
+   @media (min-width:992px) {
+    .container{
+            width: ${xf.GetArrayByString("ContainerWidth",2,true)};
+        }
+        .col-left-full {
+            margin-right: calc( (100% - ${xf.GetArrayByString("ContainerWidth",2,true)}) /2 )!important;
+        }
+        .col-right-full {
+            margin-left: calc( (100% - ${xf.GetArrayByString("ContainerWidth",2,true)}) /2 )!important;
+        }
+   }
+   @media (min-width:1200px) {
+    .container{
+            width: ${xf.GetArrayByString("ContainerWidth",1,true)};
+        }
+        .col-left-full {
+            margin-right: calc( (100% - ${xf.GetArrayByString("ContainerWidth",1,true)}) /2 )!important;
+        }
+        .col-right-full {
+            margin-left: calc( (100% - ${xf.GetArrayByString("ContainerWidth",1,true)}) /2 )!important;
+        }
+         
+    }
+	@media (min-width:1600px) {
+        .container{
+            width: ${xf.GetArrayByString("ContainerWidth",0,true)};
+        }
+        .col-left-full {
+            margin-right: calc( (100% - ${xf.GetArrayByString("ContainerWidth",0,true)}) /2 )!important;
+        }
+        .col-right-full {
+            margin-left: calc( (100% - ${xf.GetArrayByString("ContainerWidth",0,true)}) /2 )!important;
+        }
+    }
+
+
+    #set( $width0 = ${xf.GetArrayByString("ContainerWidth",0,true)} )
+    #set( $width1 = ${xf.GetArrayByString("ContainerWidth",1,true)} )
+    #set( $width2 = ${xf.GetArrayByString("ContainerWidth",2,true)} )
+    #set( $width3 = ${xf.GetArrayByString("ContainerWidth",3,true)} )
+    #set( $width4 = ${xf.GetArrayByString("ContainerWidth",4,true)} )
+    #set( $width5 = ${xf.GetArrayByString("ContainerWidth",5,true)} )
+
+    #if(${width5}!="auto")
+        .dng-left-full .dng-column:first-child > .dng-column-inner{
+            margin-left:calc((${width5} - 100vw)/2);
+            width:calc(100% + (100vw - ${width5})/2);
+        }
+        .dng-right-full .dng-column:last-child > .dng-column-inner{
+            margin-right:calc((${width5} - 100vw)/2);
+            width:calc(100% + (100vw - ${width5})/2);
+        }
+    #else
+        .dng-left-full .dng-column:first-child > .dng-column-inner{
+            margin-left:-15px;
+            width:calc(100% + 15px);
+        }
+        .dng-right-full .dng-column:last-child > .dng-column-inner{
+            margin-right:-15px;
+            width:calc(100% + 15px);
+        }
+    #end
+
+
+    #if(${xf.ViewGlobalSetting("ContainerLayout","Boxed")} != "Boxed") 
+    @media (min-width:576px) {
+        #if(${width4}!="auto")
+        .dng-left-full .dng-column:first-child > .dng-column-inner{
+            margin-left:calc((${width4} - 100vw)/2);
+            width:calc(100% + (100vw - ${width4})/2);
+        }
+        .dng-right-full .dng-column:last-child > .dng-column-inner{
+            margin-right:calc((${width4} - 100vw)/2);
+            width:calc(100% + (100vw - ${width4})/2);
+        }
+        #end
+    }
+    @media (min-width:768px) {
+        #if(${width3}!="auto")
+        .dng-left-full .dng-column:first-child > .dng-column-inner{
+            margin-left:calc((${width3} - 100vw)/2);
+            width:calc(100% + (100vw - ${width3})/2);
+        }
+        .dng-right-full .dng-column:last-child > .dng-column-inner{
+            margin-right:calc((${width3} - 100vw)/2);
+            width:calc(100% + (100vw - ${width3})/2);
+        }
+        #end
+    }
+    @media (min-width:992px) {
+        #if(${width2}!="auto")
+        .dng-left-full .dng-column:first-child > .dng-column-inner{
+            margin-left:calc((${width2} - 100vw)/2);
+            width:calc(100% + (100vw - ${width2})/2);
+        }
+        .dng-right-full .dng-column:last-child > .dng-column-inner{
+            margin-right:calc((${width2} - 100vw)/2);
+            width:calc(100% + (100vw - ${width2})/2);
+        }
+        #end
+    }
+    @media (min-width:1200px) {
+        #if(${width1}!="auto")
+        .dng-left-full .dng-column:first-child > .dng-column-inner{
+            margin-left:calc((${width1} - 100vw)/2);
+            width:calc(100% + (100vw - ${width1})/2);
+        }
+        .dng-right-full .dng-column:last-child > .dng-column-inner{
+            margin-right:calc((${width1} - 100vw)/2);
+            width:calc(100% + (100vw - ${width1})/2);
+        }
+        #end
+    }
+    @media (min-width:1600px) {
+        #if(${width0}!="auto")
+        .dng-left-full .dng-column:first-child > .dng-column-inner{
+            margin-left:calc((${width0} - 100vw)/2);
+            width:calc(100% + (100vw - ${width0})/2);
+        }
+        .dng-right-full .dng-column:last-child > .dng-column-inner{
+            margin-right:calc((${width0} - 100vw)/2);
+            width:calc(100% + (100vw - ${width0})/2);
+        }
+        #end
+    }
+    #end
+
+
+    
+#end
+
+
+
+#if(${xf.ViewPageSetting("ContentMargin","inherit")} =="custom" )
+
+    #if(${xf.GetArrayByString("ContentMarginTop",4,true)}!="" || ${xf.GetArrayByString("ContentMarginBottom",4,true)}!="")
+    #dnn_content{
+        #if(${xf.GetArrayByString("ContentMarginTop",4,true)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",4,true)}px;	#end
+        #if(${xf.GetArrayByString("ContentMarginBottom",4,true)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",4,true)}px;	#end
+    }		
+    #end	
+
+	#if(${xf.GetArrayByString("ContentMarginTop",3,true)}!="" || ${xf.GetArrayByString("ContentMarginBottom",3,true)}!="")
+	@media (min-width:576px) {
+        #dnn_content{
+            #if(${xf.GetArrayByString("ContentMarginTop",3,true)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",3,true)}px;	#end
+            #if(${xf.GetArrayByString("ContentMarginBottom",3,true)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",3,true)}px;	#end
+        }		
+    }
+	#end	
+	#if(${xf.GetArrayByString("ContentMarginTop",2,true)}!="" || ${xf.GetArrayByString("ContentMarginBottom",2,true)}!="")
+	@media (min-width:768px) {
+        #dnn_content{
+            #if(${xf.GetArrayByString("ContentMarginTop",2,true)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",2,true)}px;	#end
+            #if(${xf.GetArrayByString("ContentMarginBottom",2,true)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",2,true)}px;	#end
+        }		
+    }	
+	#end	
+	#if(${xf.GetArrayByString("ContentMarginTop",1,true)}!="" || ${xf.GetArrayByString("ContentMarginBottom",1,true)}!="")
+	@media (min-width:992px) {
+        #dnn_content{
+            #if(${xf.GetArrayByString("ContentMarginTop",1,true)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",1,true)}px;	#end
+            #if(${xf.GetArrayByString("ContentMarginBottom",1,true)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",1,true)}px;	#end
+        }		
+    }
+	#end	
+	#if(${xf.GetArrayByString("ContentMarginTop",0,true)}!="" || ${xf.GetArrayByString("ContentMarginBottom",1,true)}!="")
+	@media (min-width:1200px) {
+        #dnn_content{
+            #if(${xf.GetArrayByString("ContentMarginTop",0,true)}!="") padding-top:${xf.GetArrayByString("ContentMarginTop",0,true)}px; #end
+            #if(${xf.GetArrayByString("ContentMarginBottom",0,true)}!="") padding-bottom:${xf.GetArrayByString("ContentMarginBottom",0,true)}px; #end
+        }		
+    }
+    #end	
+
+
+
+#end
+
+
+#if(!${xf.ViewGlobalSetting("displaySidebarMenu",true)} && ${xf.ViewPageSetting("displaySidebarMenu","inherit")} == "on" )
+
+.sidebar_dynamic{
+	min-height: 1px;
+}
+
+.sidebar-menu ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar-menu .gomenu  > ul > li > a, 
+.sidebar-menu .gomenu  > ul > li > a:link, 
+.sidebar-menu .gomenu  > ul > li > a:active, 
+.sidebar-menu .gomenu  > ul > li > a:visited{
+	#if(${xf.ViewGlobalSetting("SidebarMenucolor","")}!="")color:${xf.ViewGlobalSetting("SidebarMenucolor","#333333")};#end
+	#if(${xf.ViewGlobalSetting("SidebarMenufontfamily","")}!="")font-family:"${xf.ViewGlobalSetting("SidebarMenufontfamily","")}";#end
+	#if(${xf.ViewGlobalSetting("SidebarMenufontweight","")}!="")font-weight:${xf.ViewGlobalSetting("SidebarMenufontweight","")};#end 
+	#if(${xf.ViewGlobalSetting("SidebarMenufontsize","")}!="")font-size:${xf.ViewGlobalSetting("SidebarMenufontsize","")};#end 
+	#if(${xf.ViewGlobalSetting("SidebarMenulineheight","")}!="")line-height:${xf.ViewGlobalSetting("SidebarMenulineheight","")};#end 
+}
+
+.sidebar-menu .gomenu ul ul a, 
+.sidebar-menu .gomenu ul ul a:link, 
+.sidebar-menu .gomenu ul ul a:active, 
+.sidebar-menu .gomenu ul ul a:visited{
+	#if(${xf.ViewGlobalSetting("SidebarSubMenucolor","")}!="")color:${xf.ViewGlobalSetting("SidebarSubMenucolor","#666666")};#end  
+	#if(${xf.ViewGlobalSetting("SidebarSubfontfamily","")}!="")font-family:"${xf.ViewGlobalSetting("SidebarSubfontfamily","")}";#end 
+	#if(${xf.ViewGlobalSetting("SidebarSubfontweight","")}!="")font-weight:${xf.ViewGlobalSetting("SidebarSubfontweight","")};#end 
+	#if(${xf.ViewGlobalSetting("SidebarSubfontsize","")}!="")font-size:${xf.ViewGlobalSetting("SidebarSubfontsize","")};#end 
+	#if(${xf.ViewGlobalSetting("SidebarSublineheight","")}!="")line-height:${xf.ViewGlobalSetting("SidebarSublineheight","")};#end 
+}
+
+
+.sidebar-menu .gomenu > ul > li > a{
+	padding: 15px 20px;
+	display: block;
+	position: relative;
+	border-top: 1px dashed #d5d5d5;
+	transition: all ease 300ms;
+}
+.sidebar-menu .gomenu > ul > li:first-child > a{
+	border-top: none;
+}
+.sidebar-menu .gomenu > ul > li:last-child > a{
+	border-bottom: 1px dashed #d5d5d5;
+}
+
+
+.sidebar-menu .gomenu > ul > li > a::before{
+	content: "";
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border:2px solid ${AccentColour};
+	display: inline-block;
+	margin-right: 9px;
+}
+.sidebar-menu .gomenu > ul > li.dir > a::after{
+	content: "";
+	position: absolute;
+	border-top: 2px solid #818181;
+	border-right: 2px solid #818181;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	right: 0;
+	top: 50%;
+	margin-top: -6px;
+	margin-right:23px;
+}
+.sidebar-menu .gomenu ul ul{
+	position: relative;
+	z-index: 1;
+}
+.sidebar-menu .gomenu > ul > li > ul{
+	padding: 15px 40px;
+}
+.sidebar-menu .gomenu > ul > li > ul::before{
+	content: "";
+	position: absolute;
+	top: -3px;
+	bottom: 0px;
+	right: 0;
+	left: 0;
+	background: ${AccentColour};
+	opacity: .1;
+	z-index: -1;
+	border-radius: 0 0 5px 5px;
+}
+.sidebar-menu .gomenu ul ul li{
+	padding: 6px 0;
+}
+
+.sidebar-menu .gomenu > ul > li > a:hover{
+	color: ${AccentColour};
+}
+.sidebar-menu .gomenu > ul > li > a:hover::after{
+	border-color: ${AccentColour};
+}
+
+.sidebar-menu .gomenu > ul > li.current > a{
+	background-color: ${AccentColour};
+}
+.sidebar-menu .gomenu > ul > li.current > a::before,
+.sidebar-menu .gomenu > ul > li.dir.current > a::after{
+	border-color: #FFF;
+}
+.sidebar-menu .gomenu > ul > li.current > a{
+	color: #fff;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0,0,0,.15);
+
+}
+.sidebar-menu .gomenu > ul > li.current + li > a{
+	border-top-color: transparent;
+	
+}
+.sidebar-menu .gomenu ul ul{
+	display: none;
+}
+.sidebar-menu .gomenu ul li.current  ul{
+	display: block;
+}
+.sidebar-menu .gomenu ul ul {
+	padding-top: 10px;
+	padding-left: 20px;
+}
+.sidebar-menu .gomenu ul ul a:hover,
+.sidebar-menu .gomenu ul ul li.subcurrent > a{
+	color: ${AccentColour};
+}
+#end
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Configs>
+    <Config>
+      <Name><![CDATA[DisplaySvgIcon]]></Name>
+      <Value><![CDATA[true]]></Value>
+    </Config>
+        <Config>
+      <Name><![CDATA[GlobalBasicCSS]]></Name>
+      <Value><![CDATA[true]]></Value>
+    </Config>
+  </Configs>
+</DNNGo_ThemePluginPro>
+  
+  

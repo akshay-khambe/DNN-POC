@@ -1,0 +1,36 @@
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetBySiteMap]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetBySiteMap]
+   @PortalId   int
+AS
+    SELECT
+	a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.[UserId]=a.[UserId]),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.[ArticleId]=a.[Id]),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.[ArticleId]=a.[Id]),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.[ArticleId]=a.[Id] and {databaseOwner}{objectQualifier}CrossArticle_Comment.[IsPrivate]=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.[ArticleId]=a.[Id] and {databaseOwner}{objectQualifier}CrossArticle_Recommend.[Recommend]=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.[ArticleId]=a.[Id] and {databaseOwner}{objectQualifier}CrossArticle_Recommend.[Recommend]=-1) 
+
+FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+WHERE (a.[PortalId] = @PortalId)-- PortalId
+   and (a.[PublishDate] >= DateAdd(d, -3, GetDate()))
+   order by a.[CreatedDate] desc
+
+' 
+END

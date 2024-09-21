@@ -1,0 +1,77 @@
+<div class="control-cont">
+  <label class="sub-label">Color:</label>
+  <div class="colorpicker-group">
+    <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba"
+      data-name="${options.before?options.before:''}bgcolor" value="${$data[(options.before?options.before:'')+'bgcolor']}">
+    <i style="background-color:${$data[(options.before?options.before:'')+'bgcolor']}"></i></div>
+</div>
+<div class="form-group">
+  <div class="control-cont bg-position">
+    <label class="sub-label">Position:</label>
+    <select class="dnnOptions form-control " id="${options.before}bgposition" data-name="${options.before}bgposition"
+      data-value="${$data[(options.before?options.before:'')+'bgposition']}">
+      <option value="" selected="selected">Inherit</option>
+      <option value="center top">center top</option>
+      <option value="center right">center right</option>
+      <option value="center bottom">center bottom</option>
+      <option value="center center">center center</option>
+      <option value="left top">left top</option>
+      <option value="left center">left center</option>
+      <option value="left bottom">left bottom</option>
+      <option value="right top">right top</option>
+      <option value="right center">right center</option>
+      <option value="right bottom">right bottom</option>
+      <option value="percentage">(x%, y%)</option>
+    </select>
+    <div class="percentage conditional" data-condition="#${options.before}bgposition == 'percentage'">
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="${options.before}bgpositionx"
+          value="${$data[(options.before?options.before:'')+'bgpositionx']}" placeholder="X">
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="${options.before}bgpositiony"
+          value="${$data[(options.before?options.before:'')+'bgpositiony']}" placeholder="Y">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-cont">
+    <label class="sub-label">Attachment:</label>
+    <select class="dnnOptions form-control" id="${options.before}bgattachment" data-name="${options.before}bgattachment"
+      data-value="${$data[(options.before?options.before:'')+'bgattachment']}">
+      <option value="">background-attachment</option>
+      <option value="fixed">Fixed</option>
+      <option value="scroll">Scroll</option>
+      <option value="inherit">Inherit</option>
+    </select>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-cont">
+    <label class="sub-label">Size:</label>
+    <select class="dnnOptions form-control" data-name="${options.before}bgsize" data-value="${$data[(options.before?options.before:'')+'bgsize']}">
+      <option value="">Theme defaults</option>
+      <option value="cover">Cover</option>
+      <option value="contain">Contain</option>
+    </select>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-cont">
+    <label class="sub-label">Repeat:</label>
+    <select class="dnnOptions form-control" data-name="${options.before}bgrepeat" data-value="${$data[(options.before?options.before:'')+'bgrepeat']}">
+      <option value="">Repeat</option>
+      <option value="no-repeat">No Repeat</option>
+      <option value="repeat-x">Repeat X</option>
+      <option value="repeat-y">Repeat Y</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group" style="width:100%">
+  <div class="control-cont">
+    <label class="sub-label">Image:</label>
+
+    {{tmpl($data,options ={imgid:options.before+"bgimages"}) '#tmpl-image'}}
+
+
+  </div>
+</div>
+

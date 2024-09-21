@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ControlTitle_.Text" xml:space="preserve">
+    <value>Cross Article Admin</value>
+  </data>
+  <data name="lblAdminGeneral_Settings.Text" xml:space="preserve">
+    <value>Manage global settings here, like video convert, file storage (local or Amazon S3), SEO optimization, Google web sitemap / Google news sitemap / DNN built-in journal integration, article manage / comment / rating / recommend / vote roles, thumbnail / watermark generate, Twitter credentials, author profile, article read tracking, etc.</value>
+  </data>
+  <data name="lbtnAdminArticle_Category.Text" xml:space="preserve">
+    <value>Categoires</value>
+  </data>
+  <data name="lbtnAdminGeneral_Settings.Text" xml:space="preserve">
+    <value>Global Settings</value>
+  </data>
+  <data name="lblAdminArticle_Author.Text" xml:space="preserve">
+    <value>Cross Article is multi-author based, here you can edit users who have posted articles on your site.&lt;br/&gt;&lt;br/&gt;Note, you can use CrossArticle_Author sub module to show authors to public.</value>
+  </data>
+  <data name="lblAdminArticle_UDT.Text" xml:space="preserve">
+    <value>Different departments have different attributes. 
+ For example, when publishing real estate, you may want to specify its "Building Type" and "Area". When publishing software, you may want to specify its "Version" and "Platform".&lt;br/&gt;&lt;br/&gt;
+Attributes (e.g. "Color" or "Size") are used to create these extra independent variations. After create an attribute, author can then enter specific attribute values for an individual article/listing (e.g. "Red", "Green", "White"). These attribute values can also be shown in CrossArticle_List (and CrossArticle_Detail) sub modules.&lt;br/&gt;&lt;br/&gt;
+You can also search articles based these attributes via CrossArticle_Search (or CrossArtcile_List) sub module. For example, you can allow visitors to search "Color" attribute in CrossArticle_List sub module after create it.</value>
+  </data>
+  <data name="lblNoPermission.Text" xml:space="preserve">
+    <value>Please register or login first.</value>
+  </data>
+  <data name="lbtnAdminArticle_Article.Text" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="lbtnAdminArticle_Tag.Text" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="secReader.Text" xml:space="preserve">
+    <value>My Feedback</value>
+  </data>
+  <data name="lbtnAdminArticle_Type.Text" xml:space="preserve">
+    <value>Departments</value>
+  </data>
+  <data name="lblAdminArticle_Type.Text" xml:space="preserve">
+    <value>Departments are top-level unit to organize data. Each department has its own categories / attributes / tags / articles. You must create at least 1 department before post articles. You can also hide unwanted data fields or create extra data fields (attributes) for each department. Please note the "CrossArticle_Detail sub module page" property for the department, it is vital to integrate with DNN built-in search.&lt;br/&gt;&lt;br/&gt;
+Department offers the best solution to organize variety data. For example, if you want to publish news article, post job position, and also list house rent information on same site. It is hard to organize these data without department. But with department, things become easy. You can do it as follows:&lt;br/&gt;
+(1). Create 3 departments, like "Articles", "Job", "House Rent".&lt;br/&gt;
+(2). Create attributes for each department if necessary. For example, you can create a "Area" attribute for "House Rent" department; and create a "Salary" attribute for "Job" department.&lt;br/&gt;
+(3). Now you can publish listings for each department. And you can then specify attribute values while editing a listing. For example, you can enter "300 square meter" as "Area" when publishing a new house.&lt;br/&gt;&lt;br/&gt;
+The "File Uploading" property is useful if you want to gather information from reader (or upload files to reader). For example, you are publishing job listings, a registered user can submit a help ticket (a job request), and upload related files (resume, pictures, credentials）to you.&lt;br/&gt;&lt;br/&gt;Note, 1. When you run the "Cross Article Setup Wizard" (this wizard will display when there is no department specified), module will create some default departments. 2. After departments creation, you can use CrossArticle_Type sub module to display them to public.</value>
+  </data>
+  <data name="lblAdminArticle_Category.Text" xml:space="preserve">
+    <value>Categories allow you to group articles easier. Cross Article supports unlimited level of categoires. An article can belong to multiple categories.&lt;br/&gt;&lt;br/&gt;
+Note, you must create at least 1 category for each department before post articles. After categoires creation, you can use CrossArticle_Category sub module to show them to public. You can also use CrossArticle_ListTab sub module to display categories with JQuery UI tabs, and show articles/listings for each category as tab content.</value>
+  </data>
+  <data name="lblAdminArticle_Article.Text" xml:space="preserve">
+    <value>Cross Article is multi-author based, here you can manage (approval / delete / track reading history) articles which are created by all authors. If you want to post your own articles, click "My Articles - My Articles" instead.&lt;br/&gt;&lt;br/&gt;
+
+Note, you can use CrossArticle_List sub module to show articles (with data list or data grid) to public; use CrossArticle_ListTab sub module to show articles with JQuery UI tabs; use CrossArticle_Slideshow sub module to show articles with javascript slideshow; use CrossArticle_ListDashboard sub module to show articles with Adobe Flash slideshow. You can also add other sub modules (like CrossArticle_Search, CrossArticle_Archive...) to let visitors search articles easily.</value>
+  </data>
+  <data name="lblTrialTips.Text" xml:space="preserve">
+    <value>You currently have 60 days trial edition of Cross Article module, please buy official version at &lt;a href="http://DnnModule.com" target="_blank"&gt;http://DnnModule.com&lt;/a&gt;,thanks.&lt;br/&gt;</value>
+  </data>
+  <data name="lbtnAdminArticle_Author.Text" xml:space="preserve">
+    <value>Authors</value>
+  </data>
+  <data name="lbtnAdminArticle_UDT.Text" xml:space="preserve">
+    <value>Attributes</value>
+  </data>
+  <data name="lblAdminArticle_Tag.Text" xml:space="preserve">
+    <value>Manage tags which are created by all authors. Author can add multiple tags to an article while editing it.&lt;br/&gt;&lt;br/&gt;
+Note, you can use CrossArticle_TagList (show tags with data list) and CrossArticle_TagDashboard (show tags with Flash slideshow) sub modules to show tags to public.</value>
+  </data>
+  <data name="secAdmin.Text" xml:space="preserve">
+    <value>Admin Control Panel</value>
+  </data>
+  <data name="secAdminGeneral.Text" xml:space="preserve">
+    <value>Configurations</value>
+  </data>
+  <data name="secAdminArticle.Text" xml:space="preserve">
+    <value>Data Management</value>
+  </data>
+  <data name="lblAuthor_File.Text" xml:space="preserve">
+    <value>Your Files (videos / audio / images / documents...), upload them before attach with your articles. Module provides two upload methods, the "Silverlight" style allows you to upload big size files which beyond the configuration in web.config file (e.g, 100mb), but it requires MS Silverlight plug-in (for PC only). The "Normal" style supports both PC and mobile/tablet (iPhone/iPad/Android.., etc), but the upload file size is limited by the the configuration in web.config file.&lt;br/&gt;&lt;br/&gt;
+You can use the "Get Url" feature to show a file url, and reference it while editing article detail. Note, if site allows reader (or author) uploading files, module will automatic create two folders ("ReaderUpload" and "AuthorUpload") to store these files, please don't delete them.</value>
+  </data>
+  <data name="lblAuthor_Folder.Text" xml:space="preserve">
+    <value>Your folders, configure them before upload files.</value>
+  </data>
+  <data name="lblAuthor_Profile.Text" xml:space="preserve">
+    <value>Your biography, default protect password, avartar, company location and other personal information.</value>
+  </data>
+  <data name="lblAuthor_Comment.Text" xml:space="preserve">
+    <value>View visitors submitted comments to your articles.</value>
+  </data>
+  <data name="lblAuthor_Article.Text" xml:space="preserve">
+    <value>Add/edit your articles (listings) here. After create an article, you can attach multiple images / documents / audio / videos with it.&lt;br/&gt;&lt;br/&gt;Note, you can create classical banners (slideshow) by specifying "Link Url" property for articles. Expand "Help - How to create classical bannners (slideshows)" section for more detail.</value>
+  </data>
+  <data name="lblAuthor_Ticket.Text" xml:space="preserve">
+    <value>Help ticket is a one-to-one help mechanism between you and visitors. Click to view readers' help tickets to your articles. &lt;br/&gt;&lt;br/&gt;If site allows you to upload files with your help ticket, or allows register user uploading files, you can view / upload these files here. For example, you are publishing job listings, a user can submit a help ticket to request a job, and upload related files to you (resume, pictures, etc), and you can upload related files back to him.</value>
+  </data>
+  <data name="lbtnAuthor_File.Text" xml:space="preserve">
+    <value>My Files</value>
+  </data>
+  <data name="lbtnAuthor_Folder.Text" xml:space="preserve">
+    <value>My Folders</value>
+  </data>
+  <data name="lbtnAuthor_Profile.Text" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="lbtnAuthor_Comment.Text" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="lbtnAuthor_Article.Text" xml:space="preserve">
+    <value>My Articles</value>
+  </data>
+  <data name="lbtnAuthor_Ticket.Text" xml:space="preserve">
+    <value>Help Tickets</value>
+  </data>
+  <data name="secAuthor.Text" xml:space="preserve">
+    <value>My Articles</value>
+  </data>
+  <data name="lblReader_Ticket.Text" xml:space="preserve">
+    <value>Help ticket is a one-to-one help mechanism between you and authors. Click here to view your submitted help tickets.&lt;br/&gt;&lt;br/&gt;If site allows you to upload files with your help ticket (for example, you request a job position, and need to upload your resume and personal pictures to the author), you can upload here. If author uploads files with your ticket, you can also view them here.</value>
+  </data>
+  <data name="lblReader_Watch.Text" xml:space="preserve">
+    <value>View articles which are added to your watch list here, you can submit help ticket to them to communicate with authors.</value>
+  </data>
+  <data name="lbtnReader_Ticket.Text" xml:space="preserve">
+    <value>My Help Tickets</value>
+  </data>
+  <data name="lbtnReader_Watch.Text" xml:space="preserve">
+    <value>My Watch List</value>
+  </data>
+  <data name="lblAdminGeneral_Role.Text" xml:space="preserve">
+    <value>Cross Article is multi-author based, here you can specify roles which can post articles and upload files in your site. Note, site administrators can post articles and upload files by default. Please note:&lt;br/&gt;&lt;br/&gt;
+1. Module allows you to limit the "Departments" which author can post articles to. For example, you can allow a role to post articles to "News" department, but don't allow it to post under "House Rent" department. So it is better to create departments first (by click "System Data - Departments"), then configure author roles.&lt;br/&gt;&lt;br/&gt;2. You can use a store module (like our "Classified Pro 8.1 - store, auction, classified ads") to sell these author roles, so user needs to buy (subscribe) a role first before post articles to your site. You can also charge author roles based different conditions (departments, article count, disk quota, etc).</value>
+  </data>
+  <data name="lbtnAdminGeneral_Role.Text" xml:space="preserve">
+    <value>Author Roles</value>
+  </data>
+  <data name="lblHelp_MimeType.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Module needs a few mime type support to work. You can add them as follows if not available. Take flash video (.flv) as example.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. On the Windows 2003 server, open the Internet Information Services Manager.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Expand the Local Computer Server.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Right-click the local computer server and select Properties.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. Select the MIME Types tab.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5. Click the New... button and enter the following information:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;6. Associated Extension box: .FLV.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7. MIME Type box: flv-application/octet-stream&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;8. Click Ok.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;9. Restart the World Wide Web Publishing service.&lt;/p&gt;
+&lt;p&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You need to also add below mime types using the same steps.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .xap                            mime -type: application/x-silverlight-app, for upload files&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .mp4                           mime -type: video/mp4, for playing mp4 videos&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .mp3                            mime -type: audio/mpeg, for playing mp3 music&lt;/p&gt;
+&lt;p&gt;Here is a list of the related file extension and its mime type, they are not necessary, just for reference.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;   .rbs                             mime type: application/octet-stream. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;   .3gp                            mime -type: video/3gpp&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .m4v                            mime -type: video/x-m4v &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .m4a                            mime -type: audio/x-m4a&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .m4b                            mime -type: audio/m4b&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .wmv                            mime -type: video/x-ms-wmv&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .avi                            mime -type: video/x-msvideo&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .asf                            mime -type: video/x-ms-asf&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;   .mov                            mime -type: video/quicktime&lt;/p&gt;</value>
+  </data>
+  <data name="secHelp.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="secHelp_MimeType.Text" xml:space="preserve">
+    <value>Flash video (.flv) / H.264 (.mp4) and Silverlight upload control mime type</value>
+  </data>
+  <data name="secHelp_VideoConvert_Online.Text" xml:space="preserve">
+    <value>Online Video Convert</value>
+  </data>
+  <data name="ConfigTip_A3Auth.Text" xml:space="preserve">
+    <value>Please configure Amazon A3 account information in "Admin Control Panel - Configurations - Global Settings" first.</value>
+  </data>
+  <data name="ConfigTip_ArticleType.Text" xml:space="preserve">
+    <value>Please create at least 1 department in "Admin Control Panel - System Data - Departments" first.</value>
+  </data>
+  <data name="ConfigTip_ArticleCategory.Text" xml:space="preserve">
+    <value>There are some departments (for example, the "{0}" department) which have no categories associated. Please create at least 1 category for each department in "Admin Control Panel - System Data - Categories" first.</value>
+  </data>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="plDescription.Help" xml:space="preserve">
+    <value>Enter description of your site (600 character limit)</value>
+  </data>
+  <data name="plDescription.Text" xml:space="preserve">
+    <value>Your Site Description</value>
+  </data>
+  <data name="plLogo.Help" xml:space="preserve">
+    <value>Enter your site logo url (gif/jpg/png files)</value>
+  </data>
+  <data name="plLogo.Text" xml:space="preserve">
+    <value>Your Site Logo</value>
+  </data>
+  <data name="plName.Help" xml:space="preserve">
+    <value>Enter your site name, can't be null</value>
+  </data>
+  <data name="plName.Text" xml:space="preserve">
+    <value>Your Site Name</value>
+  </data>
+  <data name="plUrl.Help" xml:space="preserve">
+    <value>Enter your site url, it is better to enter full url which contains the CrossArticle_List sub module instance.</value>
+  </data>
+  <data name="plUrl.Text" xml:space="preserve">
+    <value>Your Site Url</value>
+  </data>
+  <data name="Register_Status_NotRegister.Text" xml:space="preserve">
+    <value>Not Registered</value>
+  </data>
+  <data name="Register_Status_Ok.Text" xml:space="preserve">
+    <value>Register Success</value>
+  </data>
+  <data name="lblSuccess.Text" xml:space="preserve">
+    <value>Submit success, thanks for your support</value>
+  </data>
+  <data name="btnAddShowcase.Text" xml:space="preserve">
+    <value>Add Showcase</value>
+  </data>
+  <data name="plInvoiceId.Help" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You currently have Cross Article standard edition, please enter your invoice id while buying this module and click "Register". Note, don't click "Register" button if you just want to test this module on your site!!&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Normally author will send invoice id to your mail address when you buy module. You can also login to site where you bought this module to find invoice id. If you bought it from DNN official store, click "My Account" after login to DNN official store. If you bought it from http://DnnModule.com, visit http://DnnModule.com/store.aspx and click "My orders" to find invoice id.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Contact xiaoqi98@msn.com if you have any problem while registering this module.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Thanks for your support.</value>
+  </data>
+  <data name="plInvoiceId.Text" xml:space="preserve">
+    <value>Invoice Id</value>
+  </data>
+  <data name="lblHelp_Online.Text" xml:space="preserve">
+    <value>Visit &lt;a href="http://DnnModule.com" target="_blank"&gt;http://DnnModule.com&lt;/a&gt; to get online help</value>
+  </data>
+  <data name="secHelp_Online.Text" xml:space="preserve">
+    <value>Online Help</value>
+  </data>
+  <data name="secHelp_Faqs.Text" xml:space="preserve">
+    <value>Faqs</value>
+  </data>
+  <data name="secHelp_VideoConvert_Offline.Text" xml:space="preserve">
+    <value>Offline Video Convert</value>
+  </data>
+  <data name="lblAdminArticle_Import.Text" xml:space="preserve">
+    <value>If you create some items in DNN official Annoucements module, you can click here to import articles from it.</value>
+  </data>
+  <data name="lbtnAdminArticle_Import.Text" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="lblAdminArticle_Newsletter.Text" xml:space="preserve">
+    <value>You can use "Newsletters" to easily send bulk emails to users that are registered on your site.  This is a great way of informing your users of new information and keep them coming back to your site.&lt;br/&gt;&lt;br/&gt;Note, this is a simple email feature which can't handle too much emails. In most cases, you should not use it to send more than 500 emails. Check our "Cross Bulk Mailer" module at &lt;a href="http://DnnModule.com" target="_blank"&gt;http://DnnModule.com&lt;/a&gt; if you want to send massive emails (e.g, 1,000,000 emails).</value>
+  </data>
+  <data name="lbtnAdminArticle_Newsletter.Text" xml:space="preserve">
+    <value>Newsletters</value>
+  </data>
+  <data name="secRegister.Text" xml:space="preserve">
+    <value>Register Cross Article Module</value>
+  </data>
+  <data name="secShowcase.Text" xml:space="preserve">
+    <value>Showcase of Cross Article module</value>
+  </data>
+  <data name="secHelp_NewsSiteMap.Text" xml:space="preserve">
+    <value>How to submit your news sitemap to Google</value>
+  </data>
+  <data name="plSiteMap.Help" xml:space="preserve">
+    <value>News sitemap url for your site, you can submit to Google webmaster tools to let Google index your articles more easily.</value>
+  </data>
+  <data name="plSiteMap.Text" xml:space="preserve">
+    <value>Your news sitemap</value>
+  </data>
+  <data name="lblTrialExpired.Text" xml:space="preserve">
+    <value>Your trial edition of Cross Article module is expired, please upgrade to official version at &lt;a href="http://DnnModule.com" target="_blank"&gt;http://DnnModule.com&lt;/a&gt;,thanks. Note, your data will be kept after re-install using the official version.&lt;br/&gt;</value>
+  </data>
+  <data name="Tip_ForAdministratorAndManageRole.Text" xml:space="preserve">
+    <value>This section is available for site administrators or roles which are specified in "CrossArticle_Admin module - Admin Control Panel - Configurations - Global Settings - General - Data Manage Roles".</value>
+  </data>
+  <data name="Tip_ForAdministratorOnly.Text" xml:space="preserve">
+    <value>This section is available for site administrators only.</value>
+  </data>
+  <data name="Tip_ForAuthor.Text" xml:space="preserve">
+    <value>This section is available for site administrators or roles which are specified in "CrossArticle_Admin module - Admin Control Panel - Configurations - Author Roles".</value>
+  </data>
+  <data name="Tip_ForRegisterUser.Text" xml:space="preserve">
+    <value>This section is available for all registered users</value>
+  </data>
+  <data name="secAdminPromotion.Text" xml:space="preserve">
+    <value>Promotion Emails</value>
+  </data>
+  <data name="secAdminSystem.Text" xml:space="preserve">
+    <value>System Data</value>
+  </data>
+  <data name="lblAdminArticle_RSS.Text" xml:space="preserve">
+    <value>Manage RSS feeds which are created by all authors. RSS stands for Really Simple Syndication, author can create RSS feeds and import articles from them. Click "My Articles - My RSS Feeds" instead if you want to create your own RSS feeds.&lt;br/&gt;&lt;br/&gt;
+Note, Cross Article will retrieve articles from RSS feeds every 10 minutes by default. You can click DNN built-in menu "Host - Schedule" to modify the retrieve interval.</value>
+  </data>
+  <data name="lblAuthor_RSS.Text" xml:space="preserve">
+    <value>RSS stands for Really Simple Syndication, you can create RSS feeds and import articles from them. Cross Article supports 3 types of RSS feeds (RSS / Atom Feed, Twitter Search, Twitter User Timeline), it will automatic import your feeds using DNN schedule job. You can also click "Import articles now" button to import articles immediately.&lt;br/&gt;&lt;br/&gt;
+There are a variety of RSS feeds available on the web, you can easily import articles from them. Since Cross Article can also generate RSS feeds, you can use this feature to import articles which are created by Cross Article module from other DNN sites (e.g, http://DnnModule.com).</value>
+  </data>
+  <data name="lbtnAdminArticle_RSS.Text" xml:space="preserve">
+    <value>RSS Feeds</value>
+  </data>
+  <data name="lbtnAuthor_RSS.Text" xml:space="preserve">
+    <value>My RSS Feeds</value>
+  </data>
+  <data name="lblAdminGeneral_Location.Text" xml:space="preserve">
+    <value>Location is used everywhere in module. For example, 1. Author company location (specify in "My Articles - My Profile"); 2. The article (listing) can also have a location propety, for example, when publishing a house, you can specify its location, and visitors can search listings based these location (e.g, search State = California).&lt;br/&gt;&lt;br/&gt;Module supports 4 level of regionalism (country, state/province, city, town). For example, country = USA, state/province = California, city = Los Angeles, town = Bell, or country = China, state/province = YunNan, city = KunMing, town = WuHua.&lt;br/&gt;&lt;br/&gt;By default, module will automatic create countries/states data for US and Canada when running at the first time. You can delete/edit them if necessary.</value>
+  </data>
+  <data name="lbtnAdminGeneral_Location.Text" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="secHelp_ContentLocalization.Text" xml:space="preserve">
+    <value>Content Localization (Multiple Languages Content) Support</value>
+  </data>
+  <data name="lblContentLocalization_Author.Text" xml:space="preserve">
+    <value>This section is available for site administrators or roles which are specified in "CrossArticle_Admin module - Admin Control Panel - Configurations - Author Roles". Note, the data (articles / listings) you entered below is corresponding to the default language ({0}). To fully support content localization, you need to click &lt;img src="{1}"/&gt; link, to translate all contents to other languages.</value>
+  </data>
+  <data name="lblContentLocalization_Location.Text" xml:space="preserve">
+    <value>&lt;br/&gt;&lt;br/&gt;Note, the location you entered here is corresponding to the default language ({0}). To fully support content localization, you need to click &lt;img src="{1}"/&gt; link, to translate location content to other languages.</value>
+  </data>
+  <data name="lblContentLocalization_Manage.Text" xml:space="preserve">
+    <value>This section is available for site administrators or roles which are specified in "CrossArticle_Admin module - Admin Control Panel - Configurations - Global Settings - General - Data Manage Roles". Note, the data (articles / listings) below is corresponding to the default language ({0}). Click &lt;img src="{1}"/&gt; link, you can view contents of other languages.</value>
+  </data>
+  <data name="lblContentLocalization_SystemData.Text" xml:space="preserve">
+    <value>This section is available for site administrators or roles which are specified in "CrossArticle_Admin module - Admin Control Panel - Configurations - Global Settings - General - Data Manage Roles". Note, the system data (Departments / Categories / Attributes) you entered below is corresponding to the default language ({0}). To fully support content localization, you need to click &lt;img src="{1}"/&gt; link, to translate all contents to other languages.</value>
+  </data>
+  <data name="secHelp_SubModulesIntroduction.Text" xml:space="preserve">
+    <value>14 sub modules in Cross Article</value>
+  </data>
+  <data name="RegModuleTip.Text" xml:space="preserve">
+    <value>You are using a unregistered copy of Cross Article module (standard edition) which only allows up to 50 article items. Please register at "CrossArticle_Admin sub module - Help - Register" to remove this limitation. Any problem, please contact xiaoqi98@msn.com. Thanks for your help.</value>
+  </data>
+</root>

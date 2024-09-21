@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PageCountInfo.Text" xml:space="preserve">
+    <value>Sum:[RecordCount] Size:[PageSize] Page:[PageNumber] of [PageCount]</value>
+  </data>
+  <data name="NoRecord.Text" xml:space="preserve">
+    <value>No Record</value>
+  </data>
+  <data name="Browse.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="Message.NotConfigured" xml:space="preserve">
+    <value>Not Configured Yet</value>
+  </data>
+  <data name="InvalidCaptcha.Text" xml:space="preserve">
+    <value>Invalid Verification Code</value>
+  </data>
+  <data name="CaptchaText.Text" xml:space="preserve">
+    <value>Verification  Code</value>
+  </data>
+  <data name="MustBeInteger.Text" xml:space="preserve">
+    <value>Value must be integer</value>
+  </data>
+  <data name="Required.Text" xml:space="preserve">
+    <value>Value can't be null</value>
+  </data>
+  <data name="Search.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchResult.Text" xml:space="preserve">
+    <value>Search Result</value>
+  </data>
+  <data name="DeleteConfirm_Related.Text" xml:space="preserve">
+    <value>Delete item will also delete all related information with it, are you sure to do it?</value>
+  </data>
+  <data name="imgDel.Text" xml:space="preserve">
+    <value>Delete this item</value>
+  </data>
+  <data name="imgEdit.Text" xml:space="preserve">
+    <value>Edit this item</value>
+  </data>
+  <data name="NoRecords.Text" xml:space="preserve">
+    <value>No Record</value>
+  </data>
+  <data name="Multi_DeleteConfirm_Related.Text" xml:space="preserve">
+    <value>Delete these items will also delete all related information with them, are you sure to do it?</value>
+  </data>
+  <data name="btnAdminHome.Text" xml:space="preserve">
+    <value>Return To Control Panel</value>
+  </data>
+  <data name="btnDeleteSelected.Text" xml:space="preserve">
+    <value>Delete Selected</value>
+  </data>
+  <data name="Finish.Text" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="StepNextButton.Text" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="StepPreviousButton.Text" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="DeleteItem.Text" xml:space="preserve">
+    <value>Are you sure to delete this item?</value>
+  </data>
+  <data name="DeleteItems.Text" xml:space="preserve">
+    <value>Are you sure to delete these items?</value>
+  </data>
+  <data name="imgDown.Text" xml:space="preserve">
+    <value>Move item down</value>
+  </data>
+  <data name="imgUp.Text" xml:space="preserve">
+    <value>Move item up</value>
+  </data>
+  <data name="li_LinkTarget_Blank.Text" xml:space="preserve">
+    <value>New Window</value>
+  </data>
+  <data name="li_LinkTarget_Self.Text" xml:space="preserve">
+    <value>Self Window</value>
+  </data>
+  <data name="btnMyAccount.Text" xml:space="preserve">
+    <value>Return To Control Panel</value>
+  </data>
+  <data name="btnSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="MustBeDecimal.Text" xml:space="preserve">
+    <value>Value must be decimal</value>
+  </data>
+  <data name="lblPageSize.Text" xml:space="preserve">
+    <value>Page Size:</value>
+  </data>
+  <data name="lblHelp_UploadFileExtension.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Control file types which allow user to upload as follows:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Login in as host account, click "Host - Host Settings".&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Expand to "Advanced Settings - Other Settings - Allowable File Extensions", add file extension which allow user to upload. For example, if you enable user to upload real player video (.rm), then add "rm" to it. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Click "Update" to save settings.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. If you enable video convert, make sure "flv" and "mp4" file extension are in allowable file extensions. Otherwise, you can't see them in "File Manage" page even they are converted successfully.&lt;/p&gt;</value>
+  </data>
+  <data name="secHelp_UploadFileExtension.Text" xml:space="preserve">
+    <value>How to config allowable upload file extensions</value>
+  </data>
+  <data name="Help_Faqs.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Q. How to upgrade from trial version to official version?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A. Simply re-install official version to overwrite existing trial version, then module will work and keep your existing data.
+&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q. How to register my module?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: If you bought standard edition of Cross Article package, you need to register your copy by provide your invoice id. As follows:&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;1. In "CrossArticle_Admin" sub module, click "Help – Register Module", enter your invoice id while buying this module, click "Register".&lt;br/&gt;
+ &amp;nbsp;&amp;nbsp;2. If you install Cross Article in a test site, don’t need to register it. &lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. Unregistered copy of standard edition only allows you to create up to 50 articles. &lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Enterprise edition and enterprise + source edition don't need to register.&lt;br/&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: Why I can't search articles under DNN built-in search box?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click "CrossArticle_Admin sub module - Admin Control Panel - System Data - Departments", check if you provide a valid "CrossArticle_Detail sub module page" for each department. That page must have a CrossArticle_Detail sub module instance on it and its "Department" property must be same as selected department. You can click "Run detail page setting wizards" to configure it.
+&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: I don't want to see some fields (e.g. the "source" field) while adding articles, how can I hide it?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click "CrossArticle_Admin sub module - Admin Control Panel - System Data - Departments", edit a department, uncheck "Enable Source Field:" option for that department, then the "source" fields will not dispear in article edit interface. &lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: How can I create additional fields for articles?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: To create short content fields, click "CrossArticle_Admin sub module - Admin Control Panel - System Data - Attributes". If you want to create long content (text/html based) for articles, click "Admin Control Panel - System Data - Departments", enable "Specification 1...5" and specify their title and default value as your wish.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: How can I use "Admin Control Panel - Promotion Emails - Newsletter" to send promotion emails?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: 1. Login in as host (super user) account, click "Host - Host Settings - Advanced Settings - SMTP Server Settings" to see if your Smtp server is configured correctly.&lt;br/&gt;
+     &amp;nbsp;&amp;nbsp;&amp;nbsp; 2. Because sending bulk mails is a time consumed operation, module will try to send a test mail to your host email account first, so you also need to check if your host email account (locates under "Host - Host Settings - Basic Settings - Host Details - Host Email" ) is valid.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 3. Sometimes module doesn't send bulk mails while running on localhost domain names, don't worry about it. It will work on official domain names.&lt;br/&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: When I click an article in CrossArticle_List sub module, it doesn't show its detail, why?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click "CrossArticle_Admin sub module - Admin Control Panel - System Data - Departments", check if you provide a valid "CrossArticle_Detail sub module page" for current department. That page must have a CrossArticle_Detail sub module instance on it and its "Department" must be same as CrossArticle_List sub module instance. You can click "Run detail page setting wizards" to configure it.
+&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: When I click category item in CrossArticle_Category sub module, it doesn't show related articles, why?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click "CrossArticle_Admin sub module - Admin Control Panel - System Data - Departments", check if you provide a valid "CrossArticle_List sub module page" for current department. That page must have a CrossArticle_List sub module instance on it and its "Department" must be same as CrossArticle_Category sub module.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: I want to allow other roles (not site administrator) to manage all articles, how can I do that?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click  "CrossArticle_Admin sub module - Admin Control Panel - Configurations - Global Settings", check roles for "General - Data manager roles". For example, if you have a role which named as "Article Manager" and it is checked, then if a user belongs to that role, he can access features which under "CrossArticle_Admin sub module - Admin Control Panel - Data Management " to manage all data. &lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q.The captcha image doesn’t show in article detail, how to solve it?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: It occurs in some DNN version with asp.net 4.0, check DNN forum at http://www.dotnetnuke.com/Resources/Forums/tabid/795/forumid/190/postid/394250/scope/posts/Default.aspx#394250. to see how to fix it.
+&lt;/p&gt;</value>
+  </data>
+  <data name="Help_VideoConvert_Offline.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;We also provide a windows appliation which allows you to convert videos in your own computer. You can get it as follows:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Visit &lt;a href="http://DnnModule.com/FreeDownload.aspx" target="_blank"&gt;http://DnnModule.com/FreeDownload.aspx&lt;/a&gt;, download "Video convert windows application" file.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Unzip your download files to your cumputer.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Click "VideoConvert.exe" to run it.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Note, you must have .net framework installed on your computer to run it. You can install .net framework via windows update or other ways. Search Google for more information.&lt;/p&gt;</value>
+  </data>
+  <data name="Help_VideoConvert_Online.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;To convert videos online, first you need to download execute packages:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Visit &lt;a href="http://DnnModule.com/FreeDownload.aspx" target="_blank"&gt;http://DnnModule.com/FreeDownload.aspx&lt;/a&gt;, download "Video convert binary package" file.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Unzip your download files to your cumputer.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Copy "ffmpeg" and "mencoder" folder and all files under them to DesktopModules\CrossArticle\Exe directory of your site.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Second, web server must give execute permission to DesktopModules\CrossArticle\Exe folder, see sample image below. If you can access web server,config it as follows:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. On the Windows 2003 server, open the Internet Information Services Manager.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Expand your site directory to DesktopModules\CrossArticle\exe folder, right-click it, select "Properties",change its execute permission as "Scripts and Execute".&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Contact your hosting provider if you can't access web server.&lt;/p&gt;</value>
+  </data>
+  <data name="lblAction.Text" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Help_SilverlightUploadControl.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You need to add mime type support on your web server before use Silverlight upload control, as follows.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. On the Windows 2003 server, open the Internet Information Services Manager.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Expand the Local Computer Server.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Right-click the local computer server and select Properties.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. Select the MIME Types tab.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5. Click the New... button and enter the following information:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;6. Associated Extension box: .xap.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7. MIME Type box: application/x-silverlight-app&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;8. Click Ok.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;9. Restart the World Wide Web Publishing service.&lt;/p&gt;</value>
+  </data>
+  <data name="secHelp_UploadControl.Text" xml:space="preserve">
+    <value>Silverlight file upload control doesn't display? Expand here to see how to enable it</value>
+  </data>
+  <data name="Tip_Tag.Text" xml:space="preserve">
+    <value>Enter tag below (one tag per line) or click "Add Tag" button to add existing popular tag.</value>
+  </data>
+  <data name="StepFinishButton.Text" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Tip_Template.Text" xml:space="preserve">
+    <value>All sub modules in Cross Article package are template based, you can customize your desired display effect by create different templates. Check "Cross Article user guide.pdf" for more detail.</value>
+  </data>
+  <data name="Help_Register.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You currently have Cross Article standard edition, please enter your invoice id while buying this module and click "Register". Note, don't click "Register" button if you just want to test this module on your site!!&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Normally vendor will send invoice id to your mail address when you buy module. You can also login to site where you bought this module to find invoice id. If you bought it from DNN official store, click "My Account" after login to DNN official store. If you bought it from http://DnnModule.com, visit http://DnnModule.com/store.aspx and click "My orders" to find invoice id.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Unregisted version only allows you to create up to 50 articles. Contact xiaoqi98@msn.com if you have any problem while registering this module.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Thanks for your support.&lt;/p&gt;</value>
+  </data>
+  <data name="Help_Showcase.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;If you want to be a showcase of our Cross Article module, please fill your site information and click "Add Showcase", we will include your site in our showcase list (http://DnnModule.com/Showcase.aspx) and add a link to your site. This will also improve your site SEO performance because external site link is vital to your Google page rank.&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Thanks for your support.&lt;/p&gt;</value>
+  </data>
+  <data name="Help_HowToStart.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cross Article contains 14 sub modules. When you put any sub module to a page for the first time, Cross Article will show a &lt;font color="red"&gt;"Cross Article Setup Wizard"&lt;/font&gt; to help you to setup it. We &lt;font color="red"&gt;strongly recommend&lt;/font&gt; you to follow this wizard to configurate Cross Article, it will save you a lot of time. However, if you want to setup it by yourself, please follow below steps:&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Add "CrossArticle_Admin" sub module to a page to manage data. "CrossArticle_Admin" sub module is used to manage all data in Cross Article package, in most cases, you only need 1 instance of it per portal (If you want to support content localization, you can put multiple instances of it per portal). &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Create at least 1 department in "CrossArticle_Admin sub module - Admin Control Panel  - System Data - Departments", a detail page wizard will show after you update department information. We recommend you to choose "Yes, create a new page and add CrossArticle_Detail sub module instance for me." option to let Cross Article configure it for you. &lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Now you can add articles in "CrossArticle_Admin sub module - My Articles - My Articles". &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. Put "CrossArticle_List" sub module in a separate page, to show articles to public. &lt;/p&gt;
+ 
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5. There are 14 sub modules in Cross Article package. Besides the "CrossArticle_Admin" sub module, other 13 sub modules are all used to display related data. For example, you can put "CrossArticle_Tag" sub module on a separate page to show article tags, put "CrossArticle_Category" module to show categories, etc. Unlike "CrossArticle_Admin" sub module, you can add multiple instances of other 13 sub modules to different pages (or on same page if you like). These 13 sub modules are all template based, you can create your own templates to show related data if you don't like the default layout.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;The frequently-used sub modules are CrossArticle_List (show articles with data list or data grid), CrossArticle_ListTab (show articles with Jquery UI tabs, supports 24 tab style), CrossArticle_Slideshow (show featured articles with javascript slideshow, supports 11 slideshow effects), CrossArticle_Detail (show article/listing detail), CrossArticle_Search (provide search function), and CrossArticle_Category (show categories), CrossArticle_TagList (show tags). Other sub modules are also useful in some situations. For more detail, please check "CrossArticle_Admin sub module - Help - 14 sub modules in Cross Article" section.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;6. Cross Article supports &lt;font color="red"&gt;content localization&lt;/font&gt; well (e.g. publish article with both English and Simple Chinese). For more detail, please check "CrossArticle_Admin sub module - Content Localization (Multiple Languges Content) Support" section.&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7. If you upgrade from trial version to official version, simply re-install official package to overwrite trial version, your existing data will be kept after upgrade.&lt;br/&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tips: why do we need to create departments? Well, department offers the best solution to organize variety data. For example, if you want to publish news article, post job position, and also list house rent information on your site. It is hard to organize these data without departments. But with department, things become easy. You can do it as follows:&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(1). Create 3 departments, like "Articles", "Job", "House Rent".&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(2). Create attributes for each department if necessary. For example, you can create a "Area" attribute for "House Rent" department; and create a "Salary" attribute for "Job" department.&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(3). Now you can publish listings for each department. And you can then specify attribute values while editing a listing. For example, you can enter "300 square meter" as "Area" when publish a new house.
+&lt;/p&gt;</value>
+  </data>
+  <data name="Help_NewsSiteMap.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Besides web sitemap, Google also allows you to submit news sitemap. A Google News Sitemap is a file that allows you to control which content you submit to Google News. By creating and submitting a Google News Sitemap, you're able to help Google News discover and crawl your site's articles. For more information, please check &lt;a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=75717" target="_blank"&gt;http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=75717&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;Please follow below steps to submit your news sitemap. Note, Google requires news sitemap only contains articles which have been published on your site within the past two days.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;1. Before you begin, ensure that your site is included in Google News. You can check this at &lt;a href="http://support.google.com/news/publisher/bin/answer.py?hl=en&amp;answer=68294" target="_blank"&gt;http://support.google.com/news/publisher/bin/answer.py?hl=en&amp;answer=68294&lt;/a&gt;.If it's not, you can contact Google at &lt;a href="http://support.google.com/news/publisher/bin/answer.py?hl=en&amp;answer=40787&amp;rd=1" target="_blank"&gt;http://support.google.com/news/publisher/bin/answer.py?hl=en&amp;answer=40787&amp;rd=1&lt;/a&gt;to request inclusion.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;2. Make sure you have the your site added and verified in &lt;a href="https://www.google.com/webmasters/tools/home" target="_blank"&gt;your Google Webmaster Tools account&lt;/a&gt;. And you also have some articles added in Cross Article module.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. On the Webmaster Tools home page, click your site.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Under Site configuration, click Sitemaps.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;5. Click "Submit a Sitemap".&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;6. In the text box, copy your news sitemap url below and click "Submit Sitemap".&lt;br/&gt;&lt;br/&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="lblLegend.Text" xml:space="preserve">
+    <value>Legend</value>
+  </data>
+  <data name="Tip_UpdateSuccess.Text" xml:space="preserve">
+    <value>Update Successfully.</value>
+  </data>
+  <data name="Help_ReadUserGuide.Text" xml:space="preserve">
+    <value>Click &lt;a href="{0}" target="_blank"&gt;&lt;font color="red"&gt;here to read Cross_Article_User_Guide.pdf&lt;/font&gt;&lt;/a&gt; for more details.</value>
+  </data>
+  <data name="Tip_DeleteSuccess.Text" xml:space="preserve">
+    <value>Delete Successfully.</value>
+  </data>
+  <data name="Tip_InvalidEmail.Text" xml:space="preserve">
+    <value>Invalid email address.</value>
+  </data>
+  <data name="secHowtostart.Text" xml:space="preserve">
+    <value>New to Cross Article? Expand here to see how to start</value>
+  </data>
+  <data name="Unlimited.Text" xml:space="preserve">
+    <value>[Unlimited]</value>
+  </data>
+  <data name="li_All.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="li_SortField_CreationDateAsc.Text" xml:space="preserve">
+    <value>Creation Date Ascending</value>
+  </data>
+  <data name="li_SortField_CreationDateDesc.Text" xml:space="preserve">
+    <value>Creation Date Descending</value>
+  </data>
+  <data name="li_SortField_LastModifiedDateAsc.Text" xml:space="preserve">
+    <value>Last Modified Date Ascending</value>
+  </data>
+  <data name="li_SortField_LastModifiedDateDesc.Text" xml:space="preserve">
+    <value>Last Modified Date Descending</value>
+  </data>
+  <data name="li_SortField_PublishDateAsc.Text" xml:space="preserve">
+    <value>Publish Date Ascending</value>
+  </data>
+  <data name="li_SortField_PublishDateDesc.Text" xml:space="preserve">
+    <value>Publish Date Descending</value>
+  </data>
+  <data name="li_SortField_TitleAsc.Text" xml:space="preserve">
+    <value>Title Ascending (A - Z)</value>
+  </data>
+  <data name="li_SortField_TitleDesc.Text" xml:space="preserve">
+    <value>Title Descending (Z - A)</value>
+  </data>
+  <data name="li_SortField_ViewsAsc.Text" xml:space="preserve">
+    <value>Views Ascending</value>
+  </data>
+  <data name="li_SortField_ViewsDesc.Text" xml:space="preserve">
+    <value>Views Descending</value>
+  </data>
+  <data name="li_None.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="lbtnSetupWizard.Text" xml:space="preserve">
+    <value>Run Cross Article Setup Wizard (Recommend for new users)</value>
+  </data>
+  <data name="btnUpLevel.Text" xml:space="preserve">
+    <value>Up Level</value>
+  </data>
+  <data name="plLocationCity.Help" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="plLocationCity.Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="plLocationCountry.Help" xml:space="preserve">
+    <value>Select Country</value>
+  </data>
+  <data name="plLocationCountry.Text" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="plLocationState.Help" xml:space="preserve">
+    <value>State/Province</value>
+  </data>
+  <data name="plLocationState.Text" xml:space="preserve">
+    <value>State/Province</value>
+  </data>
+  <data name="plLocationTown.Help" xml:space="preserve">
+    <value>Town</value>
+  </data>
+  <data name="plLocationTown.Text" xml:space="preserve">
+    <value>Town</value>
+  </data>
+  <data name="Tip_GoogleMap_Hide.Text" xml:space="preserve">
+    <value>Note, if you don't need "Google Map" property for current department, you can click "CrossArticle_Admin sub module -  Admin Control Panel - System Data - Departments", edit current department, uncheck its "Allow Google Map" property, then this "Google Map" tab will be hidden.</value>
+  </data>
+  <data name="Tip_Location.Text" xml:space="preserve">
+    <value>Specify the location property for this article (listing), this is useful if you want to allow visitor to search listings based location. Location initial data is managed at "CrossArticle_Admin sub module -  Admin Control Panel - Configurations - Location". Module support 4 level of regionalism (country, state/province, city, town). For example, country = USA, state/province = California, city = Los Angeles, town = Bell, or country = China, state/province = YunNan, city = KunMing, town = WuHua.</value>
+  </data>
+  <data name="Tip_Location_Hide.Text" xml:space="preserve">
+    <value>Note, if you don't need location property for current department, you can click "CrossArticle_Admin sub module -  Admin Control Panel - System Data - Departments", edit current department, uncheck its "Allow Location" property, then this location tab will be hidden.</value>
+  </data>
+  <data name="Tip_Vote.Text" xml:space="preserve">
+    <value>Here you can enter a title and provide a few vote options to create a vote (survey) with current article. Note the "Cookie Days" is mainly applied to unregistered users. For example, if enter 3, when a unregistered user vote today, he needs to wait 3 days to vote again using same computer.</value>
+  </data>
+  <data name="Tip_Vote_Hide.Text" xml:space="preserve">
+    <value>If you don't need vote feature for current department, you can click "CrossArticle_Admin sub module -  Admin Control Panel - System Data - Departments", edit current department, uncheck its "Allow Vote" property, then this vote tab will be hidden.</value>
+  </data>
+  <data name="Anonymous.Text" xml:space="preserve">
+    <value>Anonymous</value>
+  </data>
+  <data name="hlAdminControlPanel.Text" xml:space="preserve">
+    <value>Admin Control Panel</value>
+  </data>
+  <data name="Help_CreateBanner.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;As you can see, Cross Article allows you to show articles/listings with JavaScript slideshow (also with Adobe Flash slideshow). When clicking a slideshow item, module will navigate to CrossArticle_Detail sub module to show article/listing detail. This process works fine in most cases. &lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;However, you can also use Cross Article module to create classical banners (slideshow) if necessary. For example, when clicking a slideshow item, redirect to "Product" page, not to CrossArticle_Detail sub module page. You can do it as follows:&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;1. Create a specific category in "CrossArticle_Admin sub module - Admin Control Panel -  System Data - Categories", name it like "Banner Slideshow".&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;2. Prepare a few photos (it is better that they have same width and height), and create articles with them. Select these articles category to "Banner Slideshow", and specify "Link Url" property for each article. For example, for "article a", you can link to "Product" page, for "article b", you can link to "Services" page.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. Put CrossArticle_Slideshow sub module instance to a page, select its "Article Source" to "Banner Slideshow" category only, and choose a slideshow mode to show them.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Now when user click a slideshow item, he will be navigated to related pages.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;5. View &lt;a href="http://dnnmodule.com/Modules/CrossPhotoGallery/DNNPhotoSlideshow-BootstrapCarousel.aspx" target="_blank"&gt;http://dnnmodule.com/Modules/CrossPhotoGallery/DNNPhotoSlideshow-BootstrapCarousel.aspx&lt;/a&gt; for live demo.
+&lt;/p&gt;</value>
+  </data>
+  <data name="secHelp_CreateBanner.Text" xml:space="preserve">
+    <value>How to create classical bannners (slideshows)</value>
+  </data>
+  <data name="Help_ContentLocalization.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Localization in DNN can be done in two different ways, Cross Article supports both of them well. Which way to choose depends on the content of your site, and how you 
+
+want to localize this content for different languages and countries.&lt;br/&gt;&lt;br/&gt;
+   
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;The simplest way to start offering your site in multiple languages is to &lt;font color="red"&gt;add a portal per language&lt;/font&gt;. This will create a completely separate 
+
+environment for the new language, which is great if content is not really related, and you have independent editors taking care of the content for the site. Cross Article supports this situation 
+
+easily using its setup wizard. For example, if you want to post articles to both English and Chinese readers, you can do it as follows:&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Create two portals in same DNN instance, one for Chinese (e.g. cn.DnnModule.com), the other for English (e.g. en.DnnModule.com).&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Put any sub module of Cross Article to cn.DnnModule.com, it will show a setup wizard to help you to configure it. For more detail, please check "CrossArticle_Admin sub module - New to Cross Article? Expand here to see how to start" section. After that, do same work to another portal (en.DnnModule.com).&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Now you can publish Chinese articles on cn.DnnModule.com, and publish English articles on en.DnnModule.com.&lt;/p&gt;
+
+
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;The second way is to offer multiple languages content in same portal. For example, publish pages/articles with both Chinese and English, when Chinese people visit your 
+
+site, show Chinese content of pages/articles; when English people visit your site, show English content of pages/articles. For this situation, DNN has a built-in feature called "Content 
+
+Localization". This feature allows a site owner to duplicate a site for each desired language, give translators access to the language content they need, and permit a seamless switch between the 
+
+different languages. This is today's popular trend and we &lt;font color="red"&gt;strongly recommend&lt;/font&gt; you to choose this way to support multiple languages.&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cross Article works seamless with this localization way, please follow below steps:&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Click DNN Persona Bar "Settings - Site Settings - Languages" to install language packages if they are not available. For example, if you need to publish Chinese content, you need to install "Chinese (Simplified, PRC)" language package first.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Click DNN Persona Bar "Settings - Site Settings - Languages", check on "Allow Content Localization" option.&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. DNN team has a detail blog about the "Content Localization" feature (&lt;a href="http://www.dnnsoftware.com/community-blog/cid/155042/content-localization-walkthrough" 
+
+target="_blank"&gt;http://www.dnnsoftware.com/community-blog/cid/155042/content-localization-walkthrough&lt;/a&gt;), we strongly recommend you to take a look at it.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. Now your site is ready for the "Content Localization" feature, and Cross Article is also aware of that. When you put any sub module of Cross Article to a page, it 
+
+will also show a setup wizard to help you to configure it. The setup wizard looks the same as the first localization way, but it will do more works (create more pages / put more sub modules, etc). Of course, if you want to setup it by yourself, please follow below steps (suppose you need to publish articles with both English and Chinese):
+
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(a) For each language, create a separate page and put "CrossArticle_Admin" sub module on it. For example, create two pages, one called "Article Admin" and its page culture is "en-US (English)", the other called "新闻管理" and its page culture is "zh-CN (Chinese)". You can create them by click "DNN built-in control panel - Pages - Add New Page", select "Localization" tab, choose "Culture Type" as "Create Localized Versions of Page".&lt;/p&gt;
+
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(b) Now you should have 2 instances of "CrossArticle_Admin sub module". The data you entered in CrossArticle_Admin sub module is &lt;font color="red"&gt;shared across the whole portal&lt;/font&gt;. That's to say, even you put 10 instances of "CrossArticle_Admin sub module", they are all used to manage the same data. That's why in first localization way (add a portal per language), we only need 1 instance of CrossArticle_Admin sub module per portal. But in second localization way, we need 1 instance of CrossArticle_Admin sub module for each language, so an English author can access English interface of CrossArticle_Admin sub module, and a Chinese author can access Chinese interface.&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(c) Access your desired language of "CrossArticle_Admin" page, and continue to add data (departments / categories / attributes / articles / tags...etc). Note, the data you entered in the main edit interface is &lt;font color="red"&gt;corresponding to the site default language (e.g. English)&lt;/font&gt;. After update a item, you will see a &lt;img src="http://dnnmodule.com/DesktopModules/CrossClassified/Images/ml_content_16.gif"/&gt; link button, click it you can enter item multiple language content. For example, you can enter an article at "CrossArticle_Admin sub module - My Articles", name it as "Dell Computer t5200", then click the &lt;img src="http://dnnmodule.com/DesktopModules/CrossClassified/Images/ml_content_16.gif"/&gt; link button, enter "戴尔电脑 t5200" as its Chinese name.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(d) Nearly all data (departments / categories / attributes / articles / tags / location, etc) in Cross Article supports content localization, you need to &lt;font color="red"&gt;localize all of them&lt;/font&gt;, focus on article information only is not enough.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(e) For each language, create a separate page and put "CrossArticle_List" sub module on it to show articles (listings). For example, create two pages, one called "Article List" and its page culture is "en-US (English)", the other called "新闻列表" and its page culture is "zh-CN (Chinese)".&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(f) There are 14 sub modules in Cross Article package. Except the CrossArticle_Admin sub module, the other 13 sub modules are all used to display related data. And these 13 sub modules will display content based their parent page culture. For example, if current page culture is "en-US (English)", they will display English content; if current page culture is "zh-CN (Simple Chinese)", they will display Simple Chinese content; if page culture is &lt;font color="red"&gt;neutral&lt;/font&gt;, they will display content &lt;font color="red"&gt;according to current context culture&lt;/font&gt;. As you can see, if you want to show categories to public, you can put 2 instances of CrossArticle_Category to 2 different culture pages.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(g) Now everything is ok. An English visitor can view the English content of articles. And a Chinese visitor will take the Chinese content. If your site skin contains the "language selection" skin object, visitors can switch English/Chinese easily to view different content.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(f) Cross Article also works seamless with DNN built-in search mechanism, it will submit multi-language content of all articles to DNN built-in search engine. However, the DNN built-in search control &lt;font color="red"&gt;only displays results which belong to current language&lt;/font&gt;. So, if you want to search Chinese content of articles with DNN built-in search control, you need to switch to Chinese language site first, DNN doesn't display Chinese search results when you are in English languge mode.&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Above method requires you to &lt;font color="red"&gt;create multiple pages (and also put related sub modules) for each language&lt;/font&gt;. It is user friendly and straightforward, but a little complex. If you don't like this way, you can try to create &lt;font color="red"&gt;neutral pages&lt;/font&gt; and put sub modules on them. As follows:&lt;br/&gt;
+         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(1) Create a neutral page, select its "Localization - Culture Type" as "Create Single Neutral Culture Page", put "CrossArticle_Admin" sub module on it to manage data.&lt;br/&gt;
+         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(2) Create a neutral page, put "CrossArticle_List" sub module on it to show articles (listings).&lt;br/&gt;
+         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(3) Follow same method to handle other sub modules.&lt;p/&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;This method requires less pages and steps, but it also works. As we mentioned above, if page culture is neutral, Cross Article will display content according to current context culture (show English content to English visitors, show Chinese content to Chinese visitors). The only problem is that the neutral page properties (page name, page title, description, keywords, etc.) &lt;font color="red"&gt;can't vary with languages&lt;/font&gt;. So it is not user friendly (and SEO friendly) like the previous method, and it also can't submit multi-language content of all articles to DNN built-in search engine.&lt;/p&gt;</value>
+  </data>
+  <data name="lblClosePage.Text" xml:space="preserve">
+    <value>Close Page</value>
+  </data>
+  <data name="Tip_ValueCanBeModify.Text" xml:space="preserve">
+    <value>Indicates field which value can be modified.</value>
+  </data>
+  <data name="imgContentLocalization.Text" xml:space="preserve">
+    <value>Content Localization</value>
+  </data>
+  <data name="Help_SubModulesIntroduction.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cross Article is an enterprise-class DNN module which enables multi-user to publish news, articles, blogs and everything else, like real estate, cars, job listing, product catalogs, survey, directory listings, documents, etc. It contains &lt;font color="red"&gt;14&lt;/font&gt; sub modules, as follow:&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. CrossArticle_Admin&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;It is the most important sub module which is used to &lt;font color="red"&gt;manage all data&lt;/font&gt; in Cross Article package. In most cases, you should put only 1 instance of it 
+
+per portal (if you want to support content localization, you can put multiple instances per portal). Please note, the data you entered in CrossArticle_Admin sub module is 
+
+&lt;font color="red"&gt;shared across the whole portal&lt;/font&gt;. That's is to say, even you put 10 instances of "CrossArticle_Admin sub module", they are all used to manage the same data.&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Besides "CrossArticle_Admin" sub module, the other 13 sub modules are all &lt;font color="red"&gt;used to display&lt;/font&gt; related data. Unlike "CrossArticle_Admin" sub module, you can add &lt;font color="red"&gt;multiple instances&lt;/font&gt; of other 13 sub modules to different pages (or on same page if you like). These 13 sub modules are all template based, you can build your own templates to show related data if you don't like the default layout. Each module has its own control options, you can control the features and data in these sub modules by specify different options.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;If you enable the DNN built-in "Content Localization" feature (check "CrossArticle_Admin sub module - Content Localization (Multiple Languges Content) Support" section). These 13 sub modules will display content &lt;font color="red"&gt;based their parent page culture&lt;/font&gt;. For example, if current page culture is "en-US (English)", they will display English content; if current page culture is "zh-CN (Simple Chinese)", they will display Simple Chinese content; if page culture is &lt;font color="red"&gt;neutral&lt;/font&gt;, they will display content &lt;font color="red"&gt;according to current context culture&lt;/font&gt;. As you can see, if you want to show categories to public, you can put 2 instances of CrossArticle_Category sub module to 2 different culture pages.&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. CrossArticle_List&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;It is used to show articles (listings) with data list or data grid, and is always used combined with other sub modules. For example, when clicking an article (listing) in 
+
+CrossArticle_List sub module, module will show article (listing) detail in CrossArticle_Detail sub module; when clicking a category in CrossArticle_Category sub module, articles (listings) which  
+
+belong to that category should be shown via CrossArticle_List sub module; when searching in CrossArticle_Search sub module, the result will also be shown in CrossArticle_List sub module... For this 
+
+reason, it is the most frequently-used sub module in Cross Article package.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. CrossArticle_Detail&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;It is used to display article (listing) detail to public. For each department you created in "CrossArticle_Admin sub module - Admin Control Panel - System Data - Departments", you need to provide at least 1 CrossArticle_Detail sub module instance for it. This sub module is also vital to integrate with DNN built-in search mechanism. If you can't search your articles with DNN built-in search, please check the "CrossArticle_Detail sub module page" property for each department.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;It is also one of the frequently-used sub modules in Cross Article package. And it is always used combined with other sub modules. For example, when clicking an article 
+
+(listing) in CrossArticle_List (or CrossArticle_Slideshow/CrossArticle_ListDashboard) sub module, module will show article (listing) detail in CrossArticle_Detail sub module.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. CrossArticle_ListTab&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Show articles (listings) with JQuery UI Tabs. Each tab is corresponding to a category, module will display articles which belong to each category as tab content. For example, if you create 3 categories ("Man Clothes", "Woman Clothes", "Kid Clothes") at "CrossArticle_Admin sub module - Admin Control Panel - System Data - Categories", you can select "Tab Category 1" as "Man Clothes", "Tab Category 2" as "Woman Clothes", then module will show two tabs. For tab 1, module will show articles which belong to "Man Clothes" category, for tab 2, module will show articles which belong to "Woman Clothes" category.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5. CrossArticle_Slideshow&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Show articles (listings) with JavaScript slideshow. When clicking a slide, module will navigate to CrossArticle_Detail sub module page to show article (listing) detail. Since it is JavaScript based, it can also be run under mobile and tablet pc.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;6. CrossArticle_Category&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Show categories to public. When clicking a category, module will navigate to CrossArticle_List sub module page and show articles (listings) which belong to this category. 
+
+Cross Article supports unlimited level of categories, you can manage them at "CrossArticle_Admin sub module - Admin control panel - System Data - Categories".&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7. CrossArticle_Search&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Provide a stand alone search interface to public. It is always used combined with CrossArticle_List sub module. After user specify the search condition and click "Search" 
+
+button, the result will be shown in CrossArticle_List sub module. Note, CrossArticle_List sub module also includes a search feature which works similiar to CrossArticle_Search sub module.&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;8. CrossArticle_TagList&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Show article (listing) tags with data list. When clicking a tag, module will navigate to CrossArticle_List sub module page to show articles (listings) which belong to this 
+
+tag.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;9. CrossArticle_AccountLink&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Show common links for the user (e.g. My Articles). These links are mainly link to CrossArticle_Admin sub module. For example, click "My Articles" link is equal to click "CrossArticle_Admin sub module - My Articles - My Articles".&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;10. CrossArticle_Archive&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Show month/date archive links. When clicking a month/date link, module will navigate to CrossArticle_List sub module page and show articles (listings) which are created in this 
+
+period (e.g. May 2015).&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;11. CrossArticle_ListDashboard&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Show articles (listings) with Adobe Flash slideshow. When clicking a slide, module will navigate to CrossArticle_Detail sub module page to show article (listing) detail. Since it is Flash based, it can't run under mobile. We recommend you to choose CrossArticle_Slideshow sub module instead.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;12. CrossArticle_TagDashboard&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Show article (listing) tags with Adobe Flash slideshow. When clicking a tag, module will navigate to CrossArticle_List sub module page to show articles (listings) which belong to this tag. Again, it doesn't support mobile.&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;13. CrossArticle_Author&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cross Article is multi-author based, you can allow other users to post articles on your site at "CrossArticle_Admin sub module - Admin control panel - Configurations - Author Roles". CrossArticle_Author is used to show these authors (users who have posted articles on your site) links. When clicking an author link, module will navigate to CrossArticle_List sub module page and show articles (listings) which are created by this user. This sub module is useful if you have multiple users posting articles on your site.&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;14. CrossArticle_Type&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Show article (listing) departments with data list. When clicking a department, module will navigate to CrossArticle_List sub module page to show articles (listings) which belong to this department. In old version of Cross Article, we called department as "type", later some customer suggested that "department" is a better word, and we accepted it. But we have to keep CrossArticle_Type sub module name for legacy support.&lt;/p&gt;</value>
+  </data>
+  <data name="hlHelp.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="li_SortField_EventEndAsc.Text" xml:space="preserve">
+    <value>Event End Ascending</value>
+  </data>
+  <data name="li_SortField_EventEndDesc.Text" xml:space="preserve">
+    <value>Event End Descending</value>
+  </data>
+  <data name="li_SortField_EventStartAsc.Text" xml:space="preserve">
+    <value>Event Start Ascending</value>
+  </data>
+  <data name="li_SortField_EventStartDesc.Text" xml:space="preserve">
+    <value>Event Start Descending</value>
+  </data>
+</root>

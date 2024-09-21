@@ -1,0 +1,909 @@
+
+
+/******   alter table CrossArticle_Type ******/
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Type add FieldEnable_EventStart bit NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Type add FieldEnable_EventEnd bit NULL
+
+/******   alter table CrossArticle_Article ******/
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add EventStart datetime NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add EventEnd datetime NULL
+
+
+go
+
+
+/******   drop legacy procedures ******/
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Add]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Update]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Type_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Type_Add]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Type_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Type_Update]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]
+GO
+
+
+
+/******   create new procedures ******/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Add]
+	@PortalId int,
+	@UserId int,
+	@TypeId int,
+	@CreatedDate datetime,
+	@Quote bit,
+	@Title nvarchar(200),
+	@Author nvarchar(200),
+	@Source nvarchar(200),
+	@Active bit,
+	@Authed bit,
+	@Featured bit,
+	@Draft bit,
+	@Thumbnail nvarchar(800),
+	@Image nvarchar(800),
+	@ImageDescription nvarchar(800),
+	@Summary nvarchar(1000),
+	@LinkUrl nvarchar(800),
+	@Article ntext,
+	@Views int,
+	@PublishDate datetime,
+	@ExpireDate datetime,
+	@LastModifiedDate datetime,
+	@SubmitDate datetime,
+	@AuthedDate datetime,
+	@AllowComment bit,
+	@AllowRating bit,
+	@AllowRecommend bit,
+	@RatingRoles nvarchar(200),
+	@CommentRoles nvarchar(200),
+	@RecommendRoles nvarchar(200),
+	@DownloadRoles nvarchar(200),
+	@AutoAuthComment bit,
+	@PinOrder int,
+	@Field1 ntext,
+	@Field2 ntext,
+	@Field3 ntext,
+	@Field4 ntext,
+	@Field5 ntext,
+    @DetailPage int,
+    @Longitude nvarchar(40),
+    @Latitude nvarchar(40),
+    @FeedId int,
+    @GUID nvarchar(500),
+    @SubTitle nvarchar(500),
+    @ImportFromFeed bit,
+    @CountryId int,
+	@Country nvarchar(200),
+	@StateId int,
+	@State nvarchar(200),
+	@CityId int,
+	@City nvarchar(200),
+	@TownId int,
+	@Town nvarchar(200),
+	@VoteTitle nvarchar(800),
+	@VoteRoles nvarchar(200),
+	@MultipleChoice bit,
+	@VoteCookieDays int,
+	@VoteExpireDate datetime,
+	@ReadTrack bit,
+	@ShareType smallint,
+	@Friends bit,
+	@Followers bit,
+	@Groups nvarchar(200),
+	@Private bit,
+	@Protected bit,
+	@ProtectPassword nvarchar(50),
+	@EventStart datetime,
+	@EventEnd datetime,
+    @ViewRoles nvarchar(200),
+    @Categories nvarchar(200),
+    @Tags nvarchar(200)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_Article (
+	[PortalId],
+	[UserId],
+	[TypeId],
+	[CreatedDate],
+	[Quote],
+	[Title],
+	[Author],
+	[Source],
+	[Active],
+	[Authed],
+	[Featured],
+	[Draft],
+	[Thumbnail],
+	[Image],
+	[ImageDescription],
+	[Summary],
+	[LinkUrl],
+	[Article],
+	[Views],
+	[PublishDate],
+	[ExpireDate],
+	[LastModifiedDate],
+	[SubmitDate],
+	[AuthedDate],
+	[AllowComment],
+	[AllowRating],
+	[AllowRecommend],
+	[RatingRoles],
+	[CommentRoles],
+	[RecommendRoles],
+	[DownloadRoles],
+	[AutoAuthComment],
+	[PinOrder],
+	[Field1],
+	[Field2],
+	[Field3],
+	[Field4],
+	[Field5],
+    [DetailPage],
+    [Longitude],
+    [Latitude],
+    [FeedId],
+    [GUID],
+    [SubTitle],
+    [ImportFromFeed],
+    [CountryId],
+	[Country],
+	[StateId],
+	[State],
+	[CityId],
+	[City],
+	[TownId],
+	[Town],
+	[VoteTitle],
+	[VoteRoles],
+	[MultipleChoice],
+	[VoteCookieDays],
+	[VoteExpireDate],
+	[ReadTrack],
+	[ShareType],
+	[Friends],
+	[Followers],
+	[Groups],
+	[Private],
+	[Protected],
+	[ProtectPassword],
+	[EventStart],
+	[EventEnd]
+) VALUES (
+	@PortalId,
+	@UserId,
+	@TypeId,
+	@CreatedDate,
+	@Quote,
+	@Title,
+	@Author,
+	@Source,
+	@Active,
+	@Authed,
+	@Featured,
+	@Draft,
+	@Thumbnail,
+	@Image,
+	@ImageDescription,
+	@Summary,
+	@LinkUrl,
+	@Article,
+	@Views,
+	@PublishDate,
+	@ExpireDate,
+	GetDate(),
+	GetDate(),
+	@AuthedDate,
+	@AllowComment,
+	@AllowRating,
+	@AllowRecommend,
+	@RatingRoles,
+	@CommentRoles,
+	@RecommendRoles,
+	@DownloadRoles,
+	@AutoAuthComment,
+	@PinOrder,
+	@Field1,
+	@Field2,
+	@Field3,
+	@Field4,
+	@Field5,
+    @DetailPage,
+    @Longitude,
+    @Latitude,
+    @FeedId,
+    @GUID,
+    @SubTitle,
+    @ImportFromFeed,
+    @CountryId,
+	@Country,
+	@StateId,
+	@State,
+	@CityId,
+	@City,
+	@TownId,
+	@Town,
+	@VoteTitle,
+	@VoteRoles,
+	@MultipleChoice,
+	@VoteCookieDays,
+	@VoteExpireDate,
+	@ReadTrack,
+	@ShareType,
+	@Friends,
+	@Followers,
+	@Groups,
+	@Private,
+	@Protected,
+	@ProtectPassword,
+	@EventStart,
+	@EventEnd
+)
+
+DECLARE @ArticleId INT	
+SET @ArticleId = @@IDENTITY
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Tags)
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@ViewRoles)
+
+select @ArticleId
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]
+   @TypeId   int,
+   @CurrentUserID	int,
+   @Categories nvarchar(200),
+   @Authors nvarchar(100),
+   @ShowFeaturedOnly bit,
+   @ShowImageOnly bit,
+   @SearchTerm nvarchar(100),
+   @IgnoreSortIndex bit=0,
+   @SortField	nvarchar(100),
+   @PublishDateType int,
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @CultureCode nvarchar(30),
+   @PageSize int, 
+   @PageIndex int
+AS
+
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+SELECT
+	a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+ WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)))
+            ))--Categories      
+     and ( @Authors = '''' OR a.UserId in (
+             SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Authors))) --Authors  
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+	  and (a.[Private]=0) 
+      and (@ShowFeaturedOnly = 0 OR a.Featured = 1)
+      and (@ShowImageOnly=0 or ((a.Image is not null) and (a.Image<>'''')))
+       and (@searchTerm='''' or 
+        ( (@CultureCode='''' and a.[Title] like ''%''+@searchTerm+''%'')
+       or (a.[Id] in 
+       (select ArticleId from {databaseOwner}{objectQualifier}CrossArticle_Content_Article 
+        where [ArticleId]= a.[Id] and Lower([CultureCode])=LOWER(@CultureCode) and [Title] like ''%''+@searchTerm+''%'' ))))
+        
+      ORDER BY  
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+          case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+		  when ''EventStartAsc'' then a.[EventStart]
+		  when ''EventEndAsc'' then a.[EventEnd]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+		  when ''EventStartDesc'' then a.[EventStart]
+		  when ''EventEndDesc'' then a.[EventEnd]
+          end desc
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+  WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)))
+            ))--Categories      
+     and ( @Authors = '''' OR a.UserId in (
+             SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Authors))) --Authors  
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft 
+	  and (a.[Private]=0) 
+      and (@ShowFeaturedOnly = 0 OR a.Featured = 1)
+      and (@ShowImageOnly=0 or ((a.Image is not null) and (a.Image<>'''')))
+       and (@searchTerm='''' or 
+        ( (@CultureCode='''' and a.[Title] like ''%''+@searchTerm+''%'')
+       or (a.[Id] in 
+       (select ArticleId from {databaseOwner}{objectQualifier}CrossArticle_Content_Article 
+        where [ArticleId]= a.[Id] and Lower([CultureCode])=LOWER(@CultureCode) and [Title] like ''%''+@searchTerm+''%'' ))))
+      ORDER BY 
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+	      case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+		  when ''EventStartAsc'' then a.[EventStart]
+		  when ''EventEndAsc'' then a.[EventEnd]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+		  when ''EventStartDesc'' then a.[EventStart]
+		  when ''EventEndDesc'' then a.[EventEnd]
+          end desc
+
+SELECT
+		a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+       FROM {databaseOwner}{objectQualifier}CrossArticle_Article a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Update]
+	@Id int, 
+	@PortalId int, 
+	@UserId int, 
+	@TypeId int, 
+	@CreatedDate datetime, 
+	@Quote bit, 
+	@Title nvarchar(200), 
+	@Author nvarchar(200), 
+	@Source nvarchar(200), 
+	@Active bit, 
+	@Authed bit, 
+	@Featured bit, 
+	@Draft bit, 
+	@Thumbnail nvarchar(800), 
+	@Image nvarchar(800), 
+	@ImageDescription nvarchar(800), 
+	@Summary nvarchar(1000), 
+	@LinkUrl nvarchar(800), 
+	@Article ntext, 
+	@Views int, 
+	@PublishDate datetime, 
+	@ExpireDate datetime, 
+	@LastModifiedDate datetime, 
+	@SubmitDate datetime, 
+	@AuthedDate datetime, 
+	@AllowComment bit, 
+	@AllowRating bit, 
+	@AllowRecommend bit, 
+	@RatingRoles nvarchar(200), 
+	@CommentRoles nvarchar(200), 
+	@RecommendRoles nvarchar(200), 
+	@DownloadRoles nvarchar(200), 
+	@AutoAuthComment bit, 
+	@PinOrder int, 
+	@Field1 ntext, 
+	@Field2 ntext, 
+	@Field3 ntext, 
+	@Field4 ntext, 
+	@Field5 ntext,
+    @DetailPage int,
+    @Longitude nvarchar(40),
+    @Latitude nvarchar(40),
+    @FeedId int,
+    @GUID nvarchar(500),
+    @SubTitle nvarchar(500),
+    @ImportFromFeed bit,
+    @CountryId int,
+	@Country nvarchar(200),
+	@StateId int,
+	@State nvarchar(200),
+	@CityId int,
+	@City nvarchar(200),
+	@TownId int,
+	@Town nvarchar(200),
+	@VoteTitle nvarchar(800),
+	@VoteRoles nvarchar(200),
+	@MultipleChoice bit,
+	@VoteCookieDays int,
+	@VoteExpireDate datetime,
+	@ReadTrack bit,
+	@ShareType smallint,
+	@Friends bit,
+	@Followers bit,
+	@Groups nvarchar(200),
+	@Private bit,
+	@Protected bit,
+	@ProtectPassword nvarchar(50),
+	@EventStart datetime,
+	@EventEnd datetime,
+    @ViewRoles nvarchar(200), 
+    @Categories nvarchar(200),
+	@Tags nvarchar(200),
+    @RefreshRelation bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossArticle_Article SET
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[TypeId] = @TypeId,
+	[CreatedDate] = @CreatedDate,
+	[Quote] = @Quote,
+	[Title] = @Title,
+	[Author] = @Author,
+	[Source] = @Source,
+	[Active] = @Active,
+	[Authed] = @Authed,
+	[Featured] = @Featured,
+	[Draft] = @Draft,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[ImageDescription] = @ImageDescription,
+	[Summary] = @Summary,
+	[LinkUrl] = @LinkUrl,
+	[Article] = @Article,
+	[Views] = @Views,
+	[PublishDate] = @PublishDate,
+	[ExpireDate] = @ExpireDate,
+	[LastModifiedDate] = GetDate(),
+	[SubmitDate] = @SubmitDate,
+	[AuthedDate] = @AuthedDate,
+	[AllowComment] = @AllowComment,
+	[AllowRating] = @AllowRating,
+	[AllowRecommend] = @AllowRecommend,
+	[RatingRoles] = @RatingRoles,
+	[CommentRoles] = @CommentRoles,
+	[RecommendRoles] = @RecommendRoles,
+	[DownloadRoles] = @DownloadRoles,
+	[AutoAuthComment] = @AutoAuthComment,
+	[PinOrder] = @PinOrder,
+	[Field1] = @Field1,
+	[Field2] = @Field2,
+	[Field3] = @Field3,
+	[Field4] = @Field4,
+	[Field5] = @Field5,
+    [DetailPage] = @DetailPage,
+    [Longitude] = @Longitude,
+    [Latitude] = @Latitude,
+    [FeedId] = @FeedId,
+    [GUID] = @GUID,
+    [SubTitle] = @SubTitle,
+    [ImportFromFeed] = @ImportFromFeed,
+    [CountryId] = @CountryId,
+	[Country] = @Country,
+	[StateId] = @StateId,
+	[State] = @State,
+	[CityId] = @CityId,
+	[City] = @City,
+	[TownId] = @TownId,
+	[Town] = @Town,
+	[VoteTitle] = @VoteTitle,
+	[VoteRoles] = @VoteRoles,
+	[MultipleChoice] = @MultipleChoice,
+	[VoteCookieDays] = @VoteCookieDays,
+	[VoteExpireDate] = @VoteExpireDate,
+	[ReadTrack] = @ReadTrack,
+	[ShareType] = @ShareType,
+	[Friends] = @Friends,
+	[Followers] = @Followers,
+	[Groups] = @Groups,
+	[Private]=@Private,
+	[Protected]=@Protected,
+	[ProtectPassword]=@ProtectPassword,
+	[EventStart] = @EventStart,
+	[EventEnd] = @EventEnd
+WHERE
+	[Id] = @Id
+
+If (@RefreshRelation=1)
+   Begin
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)
+
+      DELETE from {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag
+      where [Id] in 
+      (select a.[Id] from {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag a, {databaseOwner}{objectQualifier}CrossArticle_Tag b
+       WHERE (a.[ArticleId] = @Id) 
+       and (a.[TagId] = b.[Id])
+       and (b.[CultureCode]=''''))
+       
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Tags)
+
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@ViewRoles)
+end
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Type_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Type_Add]
+	@PortalId int,
+	@Name nvarchar(80),
+	@Thumbnail nvarchar(200),
+	@Image nvarchar(200),
+	@ListPage int,
+	@DetailPage int,
+	@DisplayOrder int,
+	@EnableField1 bit,
+	@Field1Title nvarchar(50),
+	@Field1Default ntext,
+	@EnableField2 bit,
+	@Field2Title nvarchar(50),
+	@Field2Default ntext,
+	@EnableField3 bit,
+	@Field3Title nvarchar(50),
+	@Field3Default ntext,
+	@EnableField4 bit,
+	@Field4Title nvarchar(50),
+	@Field4Default ntext,
+	@EnableField5 bit,
+	@Field5Title nvarchar(50),
+	@Field5Default ntext,
+	@FieldEnable_Quote bit,
+	@FieldEnable_Author bit,
+	@FieldEnable_Source bit,
+	@FieldEnable_Image bit,
+	@FieldEnable_Summary bit,
+	@FieldEnable_LinkUrl bit,
+	@FieldEnable_Article bit,
+    @AllowGoogleMap bit,
+    @AllowLocation bit,
+	@AllowVote bit,
+	@AllowUpload_Client bit,
+	@UploadFileCount_Client int,
+	@UploadExtension_Client nvarchar(500),
+	@UploadSize_Client int,
+	@AllowUpload_Author bit,
+	@UploadSize_Author int,
+	@FieldEnable_EventStart bit,
+	@FieldEnable_EventEnd bit
+
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_Type (
+	[PortalId],
+	[Name],
+	[Thumbnail],
+	[Image],
+	[ListPage],
+	[DetailPage],
+	[DisplayOrder],
+	[EnableField1],
+	[Field1Title],
+	[Field1Default],
+	[EnableField2],
+	[Field2Title],
+	[Field2Default],
+	[EnableField3],
+	[Field3Title],
+	[Field3Default],
+	[EnableField4],
+	[Field4Title],
+	[Field4Default],
+	[EnableField5],
+	[Field5Title],
+	[Field5Default],
+	[FieldEnable_Quote],
+	[FieldEnable_Author],
+	[FieldEnable_Source],
+	[FieldEnable_Image],
+	[FieldEnable_Summary],
+	[FieldEnable_LinkUrl],
+	[FieldEnable_Article],
+    [AllowGoogleMap],
+    [AllowLocation],
+	[AllowVote],
+	[AllowUpload_Client],
+	[UploadFileCount_Client],
+	[UploadExtension_Client],
+	[UploadSize_Client],
+	[AllowUpload_Author],
+	[UploadSize_Author],
+	[FieldEnable_EventStart],
+	[FieldEnable_EventEnd]
+) VALUES (
+	@PortalId,
+	@Name,
+	@Thumbnail,
+	@Image,
+	@ListPage,
+	@DetailPage,
+	@DisplayOrder,
+	@EnableField1,
+	@Field1Title,
+	@Field1Default,
+	@EnableField2,
+	@Field2Title,
+	@Field2Default,
+	@EnableField3,
+	@Field3Title,
+	@Field3Default,
+	@EnableField4,
+	@Field4Title,
+	@Field4Default,
+	@EnableField5,
+	@Field5Title,
+	@Field5Default,
+	@FieldEnable_Quote,
+	@FieldEnable_Author,
+	@FieldEnable_Source,
+	@FieldEnable_Image,
+	@FieldEnable_Summary,
+	@FieldEnable_LinkUrl,
+	@FieldEnable_Article,
+    @AllowGoogleMap,
+    @AllowLocation,
+	@AllowVote,
+	@AllowUpload_Client,
+	@UploadFileCount_Client,
+	@UploadExtension_Client,
+	@UploadSize_Client,
+	@AllowUpload_Author,
+	@UploadSize_Author,
+	@FieldEnable_EventStart,
+	@FieldEnable_EventEnd
+)
+
+select SCOPE_IDENTITY()
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Type_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Type_Update]
+	@Id int, 
+	@PortalId int, 
+	@Name nvarchar(80), 
+	@Thumbnail nvarchar(200), 
+	@Image nvarchar(200), 
+	@ListPage int, 
+	@DetailPage int, 
+	@DisplayOrder int, 
+	@EnableField1 bit, 
+	@Field1Title nvarchar(50), 
+	@Field1Default ntext, 
+	@EnableField2 bit, 
+	@Field2Title nvarchar(50), 
+	@Field2Default ntext, 
+	@EnableField3 bit, 
+	@Field3Title nvarchar(50), 
+	@Field3Default ntext, 
+	@EnableField4 bit, 
+	@Field4Title nvarchar(50), 
+	@Field4Default ntext, 
+	@EnableField5 bit, 
+	@Field5Title nvarchar(50), 
+	@Field5Default ntext, 
+	@FieldEnable_Quote bit, 
+	@FieldEnable_Author bit, 
+	@FieldEnable_Source bit, 
+	@FieldEnable_Image bit, 
+	@FieldEnable_Summary bit, 
+	@FieldEnable_LinkUrl bit, 
+	@FieldEnable_Article bit,
+    @AllowGoogleMap bit,
+    @AllowLocation bit, 
+	@AllowVote bit,
+	@AllowUpload_Client bit,
+	@UploadFileCount_Client int,
+	@UploadExtension_Client nvarchar(500),
+	@UploadSize_Client int,
+	@AllowUpload_Author bit,
+	@UploadSize_Author int,
+	@FieldEnable_EventStart bit,
+	@FieldEnable_EventEnd bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossArticle_Type SET
+	[PortalId] = @PortalId,
+	[Name] = @Name,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[ListPage] = @ListPage,
+	[DetailPage] = @DetailPage,
+	[DisplayOrder] = @DisplayOrder,
+	[EnableField1] = @EnableField1,
+	[Field1Title] = @Field1Title,
+	[Field1Default] = @Field1Default,
+	[EnableField2] = @EnableField2,
+	[Field2Title] = @Field2Title,
+	[Field2Default] = @Field2Default,
+	[EnableField3] = @EnableField3,
+	[Field3Title] = @Field3Title,
+	[Field3Default] = @Field3Default,
+	[EnableField4] = @EnableField4,
+	[Field4Title] = @Field4Title,
+	[Field4Default] = @Field4Default,
+	[EnableField5] = @EnableField5,
+	[Field5Title] = @Field5Title,
+	[Field5Default] = @Field5Default,
+	[FieldEnable_Quote] = @FieldEnable_Quote,
+	[FieldEnable_Author] = @FieldEnable_Author,
+	[FieldEnable_Source] = @FieldEnable_Source,
+	[FieldEnable_Image] = @FieldEnable_Image,
+	[FieldEnable_Summary] = @FieldEnable_Summary,
+	[FieldEnable_LinkUrl] = @FieldEnable_LinkUrl,
+	[FieldEnable_Article] = @FieldEnable_Article,
+    [AllowGoogleMap] = @AllowGoogleMap,
+    [AllowLocation] = @AllowLocation,
+	[AllowVote] = @AllowVote,
+	[AllowUpload_Client] = @AllowUpload_Client,
+	[UploadFileCount_Client] = @UploadFileCount_Client,
+	[UploadExtension_Client] = @UploadExtension_Client,
+	[UploadSize_Client] = @UploadSize_Client,
+	[AllowUpload_Author] = @AllowUpload_Author,
+	[UploadSize_Author] = @UploadSize_Author,
+	[FieldEnable_EventStart] = @FieldEnable_EventStart,
+	[FieldEnable_EventEnd] = @FieldEnable_EventEnd
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+

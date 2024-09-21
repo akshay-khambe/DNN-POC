@@ -1,0 +1,347 @@
+{{if ThemeOptions.BootstrapVersion =="v4"}}
+<table class="responsive-setting-table">
+  <tbody>
+    <tr>
+      <th>
+        Device </th>
+      <th>
+        Padding </th>
+      <th>
+        Margin </th>
+      <th>
+        Width </th>
+      <th>
+        Text Align </th>
+    </tr>
+
+    {{each(device, deviceval) 
+      {"default":"",
+      "mobile":"sm-",
+      "tablet":"md-",
+      "laptop":"lg-",
+      "desktop":"xl-"}
+    }}
+    <tr>
+        <td>
+          <span title="Large">
+            {{if device =="default"}}
+            <b>Extra small</b>
+            {{/if}}
+
+            {{if device =="mobile"}}
+            <b>Small</b>
+            {{/if}}
+
+            {{if device =="tablet"}}
+            <b>Medium</b>
+            {{/if}}
+
+            {{if device =="laptop"}}
+            <b>Large</b>
+            {{/if}}
+
+            {{if device =="desktop"}}
+            <b>Extra large</b>
+            {{/if}}
+          </span> </td>
+        <td>
+  
+          <table class="responsive-setting-table-inline">
+            {{each(dir, dirval)
+            {"pt":"Top",
+            "pr":"Right",
+            "pb":"Bottom",
+            "pl":"Left"}
+            }}
+            <tr>
+              <th>${dirval}</th>
+              <td> <select data-name="css_padding_${dir}${deviceval}" data-value="${$data['css_padding_'+dir+deviceval]}" class="dnnOptions form-control">
+                  <option value="" selected="selected">{{if device =="default"}}Default{{else}}Inherit{{/if}}</option>
+                  {{each(prop, val) [0,1,2,3,4,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80]}}
+                  <option value="${dir}-${deviceval}${val}">{{if val =="auto"}}auto{{else}}${val}px{{/if}}</option>
+                  {{/each}}
+                </select></td>
+            </tr>
+            {{/each}}
+          </table>
+        </td>
+        <td>
+          <table class="responsive-setting-table-inline">
+            {{each(dir, dirval)
+            {"mt":"Top",
+            "mr":"Right",
+            "mb":"Bottom",
+            "ml":"Left"}
+            }}
+            <tr>
+              <th>${dirval}</th>
+              <td> <select data-name="css_margin_${dir}${deviceval}" data-value="${$data['css_margin_'+dir+deviceval]}" class="dnnOptions form-control">
+                  <option value="" selected="selected">{{if device =="default"}}Default{{else}}Inherit{{/if}}</option>
+                  {{each(prop, val) [0,1,2,3,4,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,"auto"]}}
+                  <option value="${dir}-${deviceval}${val}">{{if val =="auto"}}auto{{else}}${val}px{{/if}}</option>
+                  {{/each}}
+                </select></td>
+            </tr>
+            {{/each}}
+          </table>
+        </td>
+        <td>
+          <select data-name="css_width${deviceval}" data-value="${$data['css_width'+deviceval]}" class="dnnOptions form-control">
+            <option value="">{{if device =="default"}}Default{{else}}Inherit{{/if}}</option>
+            {{each(prop, val) [100,95,90,85,80,75,70,65,60,55,50,45,40,35,30,25,20,15,10]}}
+            <option value="width-${deviceval}${val}">${val}%</option>
+            {{/each}}
+          </select>
+        </td>
+        <td>
+          <select data-name="css_align${deviceval}" data-value="${$data['css_align'+deviceval]}"  class="dnnOptions form-control">
+            <option value="">{{if device =="default"}}Default{{else}}Inherit{{/if}}</option>
+            {{each(dir, dirval)
+            {"left":"Left",
+            "center":"Center",
+            "right":"Right"}
+            }}
+            <option value="text-${deviceval}${dir}">${dirval}</option>
+            {{/each}}
+          </select>
+        </td>
+
+        
+      </tr>
+    
+    {{/each}}
+
+
+  </tbody>
+</table>
+{{else}}
+<div class="row form-group">
+  <div class="col-sm-3">
+    <p>Padding Top:</p>
+    <select data-name="css_pt" data-value="${css_pt}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="pt-0">0px</option>
+      <option value="pt-5">5px</option>
+      <option value="pt-10">10px</option>
+      <option value="pt-15">15px</option>
+      <option value="pt-20">20px</option>
+      <option value="pt-25">25px</option>
+      <option value="pt-30">30px</option>
+      <option value="pt-35">35px</option>
+      <option value="pt-40">40px</option>
+      <option value="pt-45">45px</option>
+      <option value="pt-50">50px</option>
+      <option value="pt-55">55px</option>
+      <option value="pt-60">60px</option>
+      <option value="pt-65">65px</option>
+      <option value="pt-70">70px</option>
+      <option value="pt-75">75px</option>
+      <option value="pt-80">80px</option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <p>Padding Right:</p>
+    <select data-name="css_pr" data-value="${css_pr}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="pr-0">0px</option>
+      <option value="pr-5">5px</option>
+      <option value="pr-10">10px</option>
+      <option value="pr-15">15px</option>
+      <option value="pr-20">20px</option>
+      <option value="pr-25">25px</option>
+      <option value="pr-30">30px</option>
+      <option value="pr-35">35px</option>
+      <option value="pr-40">40px</option>
+      <option value="pr-45">45px</option>
+      <option value="pr-50">50px</option>
+      <option value="pr-55">55px</option>
+      <option value="pr-60">60px</option>
+      <option value="pr-65">65px</option>
+      <option value="pr-70">70px</option>
+      <option value="pr-75">75px</option>
+      <option value="pr-80">80px</option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <p>Padding Bottom:</p>
+    <select data-name="css_pb" data-value="${css_pb}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="pb-0">0px</option>
+      <option value="pb-5">5px</option>
+      <option value="pb-10">10px</option>
+      <option value="pb-15">15px</option>
+      <option value="pb-20">20px</option>
+      <option value="pb-25">25px</option>
+      <option value="pb-30">30px</option>
+      <option value="pb-35">35px</option>
+      <option value="pb-40">40px</option>
+      <option value="pb-45">45px</option>
+      <option value="pb-50">50px</option>
+      <option value="pb-55">55px</option>
+      <option value="pb-60">60px</option>
+      <option value="pb-65">65px</option>
+      <option value="pb-70">70px</option>
+      <option value="pb-75">75px</option>
+      <option value="pb-80">80px</option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <p>Padding Left:</p>
+    <select data-name="css_pl" data-value="${css_pl}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="pl-0">0px</option>
+      <option value="pl-5">5px</option>
+      <option value="pl-10">10px</option>
+      <option value="pl-15">15px</option>
+      <option value="pl-20">20px</option>
+      <option value="pl-25">25px</option>
+      <option value="pl-30">30px</option>
+      <option value="pl-35">35px</option>
+      <option value="pl-40">40px</option>
+      <option value="pl-45">45px</option>
+      <option value="pl-50">50px</option>
+      <option value="pl-55">55px</option>
+      <option value="pl-60">60px</option>
+      <option value="pl-65">65px</option>
+      <option value="pl-70">70px</option>
+      <option value="pl-75">75px</option>
+      <option value="pl-80">80px</option>
+    </select>
+  </div>
+</div>
+<div class="row form-group">
+  <div class="col-sm-3">
+    <p>Margin Top:</p>
+    <select data-name="css_mt" data-value="${css_mt}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="mt-0">0px</option>
+      <option value="mt-5">5px</option>
+      <option value="mt-10">10px</option>
+      <option value="mt-15">15px</option>
+      <option value="mt-20">20px</option>
+      <option value="mt-25">25px</option>
+      <option value="mt-30">30px</option>
+      <option value="mt-35">35px</option>
+      <option value="mt-40">40px</option>
+      <option value="mt-45">45px</option>
+      <option value="mt-50">50px</option>
+      <option value="mt-55">55px</option>
+      <option value="mt-60">60px</option>
+      <option value="mt-65">65px</option>
+      <option value="mt-70">70px</option>
+      <option value="mt-75">75px</option>
+      <option value="mt-80">80px</option>
+      <option value="mt-auto">Auto</option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <p>Margin Right:</p>
+    <select data-name="css_mr" data-value="${css_mr}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="mr-0">0px</option>
+      <option value="mr-5">5px</option>
+      <option value="mr-10">10px</option>
+      <option value="mr-15">15px</option>
+      <option value="mr-20">20px</option>
+      <option value="mr-25">25px</option>
+      <option value="mr-30">30px</option>
+      <option value="mr-35">35px</option>
+      <option value="mr-40">40px</option>
+      <option value="mr-45">45px</option>
+      <option value="mr-50">50px</option>
+      <option value="mr-55">55px</option>
+      <option value="mr-60">60px</option>
+      <option value="mr-65">65px</option>
+      <option value="mr-70">70px</option>
+      <option value="mr-75">75px</option>
+      <option value="mr-80">80px</option>
+      <option value="mr-auto">Auto</option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <p>Margin Bottom:</p>
+    <select data-name="css_mb" data-value="${css_mb}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="mb-0">0px</option>
+      <option value="mb-5">5px</option>
+      <option value="mb-10">10px</option>
+      <option value="mb-15">15px</option>
+      <option value="mb-20">20px</option>
+      <option value="mb-25">25px</option>
+      <option value="mb-30">30px</option>
+      <option value="mb-35">35px</option>
+      <option value="mb-40">40px</option>
+      <option value="mb-45">45px</option>
+      <option value="mb-50">50px</option>
+      <option value="mb-55">55px</option>
+      <option value="mb-60">60px</option>
+      <option value="mb-65">65px</option>
+      <option value="mb-70">70px</option>
+      <option value="mb-75">75px</option>
+      <option value="mb-80">80px</option>
+      <option value="mb-auto">Auto</option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <p>Margin Left:</p>
+    <select data-name="css_ml" data-value="${css_ml}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="ml-0">0px</option>
+      <option value="ml-5">5px</option>
+      <option value="ml-10">10px</option>
+      <option value="ml-15">15px</option>
+      <option value="ml-20">20px</option>
+      <option value="ml-25">25px</option>
+      <option value="ml-30">30px</option>
+      <option value="ml-35">35px</option>
+      <option value="ml-40">40px</option>
+      <option value="ml-45">45px</option>
+      <option value="ml-50">50px</option>
+      <option value="ml-55">55px</option>
+      <option value="ml-60">60px</option>
+      <option value="ml-65">65px</option>
+      <option value="ml-70">70px</option>
+      <option value="ml-75">75px</option>
+      <option value="ml-80">80px</option>
+      <option value="ml-auto">Auto</option>
+    </select>
+  </div>
+</div>
+<div class="row form-group">
+  <div class="col-sm-3">
+    <p>Width:</p>
+    <select data-name="css_width" data-value="${css_width}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="width-100">100%</option>
+      <option value="width-95">95%</option>
+      <option value="width-90">90%</option>
+      <option value="width-85">85%</option>
+      <option value="width-80">80%</option>
+      <option value="width-75">75%</option>
+      <option value="width-70">70%</option>
+      <option value="width-65">65%</option>
+      <option value="width-60">60%</option>
+      <option value="width-55">55%</option>
+      <option value="width-50">50%</option>
+      <option value="width-45">45%</option>
+      <option value="width-40">40%</option>
+      <option value="width-35">35%</option>
+      <option value="width-30">30%</option>
+      <option value="width-25">25%</option>
+      <option value="width-20">20%</option>
+      <option value="width-15">15%</option>
+      <option value="width-10">10%</option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <p>Text Align:</p>
+    <select data-name="css_text_align" data-value="${css_text_align}" class="dnnOptions form-control">
+      <option value="">Default</option>
+      <option value="text-left">Left</option>
+      <option value="text-center">Center</option>
+      <option value="text-right">Right</option>
+    </select>
+  </div>
+</div>
+
+{{/if}}

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Config>
+    <Name><![CDATA[ComingSoon]]></Name>
+    <Alias><![CDATA[Coming Soon]]></Alias>
+    <Icon><![CDATA[fa fa-wrench]]></Icon>
+    <Description><![CDATA[Coming Soon]]></Description>
+
+  </Config>
+
+  <Groups>
+
+    <Group>
+      <Name><![CDATA[Content Layout]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+
+
+  </Groups>
+
+
+  <Settings>
+ 
+    <Setting>
+      <Name><![CDATA[DateTime]]></Name>
+      <Alias><![CDATA[Date]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[2020-12-04T15:59]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[CustomBackground]]></Name>
+      <Alias><![CDATA[Custom Body Background]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit|Custom:custom]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[Backgroundcolor]]></Name>
+      <Alias><![CDATA[Background Color]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#4c61fe]]></DefaultValue>
+      <ControlType><![CDATA[Colorpicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[#Ctl_CustomBackground=='custom']]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[bgcolorimg]]></Name>
+      <Alias><![CDATA[Background Image]]></Alias>
+      <Width><![CDATA[522]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[Image]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[#Ctl_CustomBackground=='custom']]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[bgcolorattr]]></Name>
+      <Alias><![CDATA[Background]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[scroll,center,center,no-repeat,cover]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <CssClass><![CDATA[background-textbox]]></CssClass>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[(#Ctl_CustomBackground=='custom') && (#Ctl_bgcolorimg != '')]]></Condition>
+    </Setting>
+
+
+
+
+    <Setting>
+      <Name><![CDATA[FontColor]]></Name>
+      <Alias><![CDATA[Font Color]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#ffffff]]></DefaultValue>
+      <ControlType><![CDATA[Colorpicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+    </Setting>
+
+
+    <Setting>
+      <Name><![CDATA[TimeColor]]></Name>
+      <Alias><![CDATA[Time Color]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#08f1fa]]></DefaultValue>
+      <ControlType><![CDATA[Colorpicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+    </Setting>
+
+
+
+    <Setting>
+      <Name><![CDATA[format]]></Name>
+      <Alias><![CDATA[Format]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[d,h,m,s]]></DefaultValue>
+      <ControlType><![CDATA[CheckBoxList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[Years:y,Months:MM,Weeks:w,Days:d,Hours:h,Minutes:m,Seconds:s,Milliseconds:ms]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+    </Setting>
+
+
+
+
+
+
+  </Settings>
+</DNNGo_ThemePluginPro>
+
+
+

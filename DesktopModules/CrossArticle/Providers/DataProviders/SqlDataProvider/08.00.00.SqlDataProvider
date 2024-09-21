@@ -1,0 +1,1207 @@
+
+
+/******   alter table ******/
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_UDData add CultureCode nvarchar(30) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Tag add CultureCode nvarchar(30) NULL
+
+go
+
+
+/******   set default values  ******/
+Update {databaseOwner}{objectQualifier}CrossArticle_Tag set CultureCode='' where CultureCode is null
+
+go
+
+update {databaseOwner}{objectQualifier}CrossArticle_UDData set CultureCode='' where CultureCode is null
+
+Go
+
+
+/******   create new tables ******/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_Page]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_Page](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PortalId] [int] NOT NULL,
+	[CultureCode] [nvarchar](30) NULL,
+	[ModulePage_Admin] [int] NULL,
+	[ModuleId_Admin] [int] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_Content_Page] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_Misc]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_Misc](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TableId] [int] NOT NULL,
+	[FieldId] [int] NOT NULL,
+	[RecordId] [int] NOT NULL,
+	[CultureCode] [nvarchar](30) NOT NULL,
+	[Value] [ntext] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_Content_Misc] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_Type]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_Type](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TypeId] [int] NOT NULL,
+	[CultureCode] [nvarchar](30) NOT NULL,
+	[Name] [nvarchar](80) NOT NULL,
+	[ListPage] [int] NULL,
+	[DetailPage] [int] NULL,
+	[Field1Title] [nvarchar](50) NULL,
+	[Field1Default] [ntext] NULL,
+	[Field2Title] [nvarchar](50) NULL,
+	[Field2Default] [ntext] NULL,
+	[Field3Title] [nvarchar](50) NULL,
+	[Field3Default] [ntext] NULL,
+	[Field4Title] [nvarchar](50) NULL,
+	[Field4Default] [ntext] NULL,
+	[Field5Title] [nvarchar](50) NULL,
+	[Field5Default] [ntext] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_Content_Type] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_UDField]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_UDField](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UDFieldId] [int] NOT NULL,
+	[CultureCode] [nvarchar](30) NOT NULL,
+	[FieldTitle] [nvarchar](50) NULL,
+	[DefaultValue] [nvarchar](2000) NULL,
+	[OutputSettings] [nvarchar](2000) NULL,
+	[InputSettings] [nvarchar](2000) NULL,
+	[ValidationRule] [nvarchar](512) NULL,
+	[ValidationMessage] [nvarchar](512) NULL,
+	[HelpText] [nvarchar](512) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_Content_UDField] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_Article]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_Article](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ArticleId] [int] NOT NULL,
+	[CultureCode] [nvarchar](30) NOT NULL,
+	[Title] [nvarchar](200) NULL,
+	[Summary] [nvarchar](1000) NULL,
+	[Article] [ntext] NULL,
+	[ImageDescription] [nvarchar](800) NULL,
+	[Field1] [ntext] NULL,
+	[Field2] [ntext] NULL,
+	[Field3] [ntext] NULL,
+	[Field4] [ntext] NULL,
+	[Field5] [ntext] NULL,
+	[SubTitle] [nvarchar](500) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_Content_Article] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_Content_Article_CrossArticle_Article]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_Article]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_Article]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossArticle_Content_Article_CrossArticle_Article] FOREIGN KEY([ArticleId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossArticle_Article] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_Content_Article_CrossArticle_Article]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_Article]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_Article] CHECK CONSTRAINT [FK_{objectQualifier}CrossArticle_Content_Article_CrossArticle_Article]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_Content_Type_CrossArticle_Type]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_Type]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_Type]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossArticle_Content_Type_CrossArticle_Type] FOREIGN KEY([TypeId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossArticle_Type] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_Content_Type_CrossArticle_Type]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_Type]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_Type] CHECK CONSTRAINT [FK_{objectQualifier}CrossArticle_Content_Type_CrossArticle_Type]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_Content_UDField_CrossArticle_UDField]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_UDField]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_UDField]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossArticle_Content_UDField_CrossArticle_UDField] FOREIGN KEY([UDFieldId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossArticle_UDField] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossArticle_Content_UDField_CrossArticle_UDField]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Content_UDField]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Content_UDField] CHECK CONSTRAINT [FK_{objectQualifier}CrossArticle_Content_UDField_CrossArticle_UDField]
+GO
+
+
+/****** create index to improve performance ******/
+
+if not exists (select * from dbo.sysindexes where name='IX_{objectQualifier}CrossArticle_Content_Article_ArticleId')
+	begin
+		create NONCLUSTERED index IX_{objectQualifier}CrossArticle_Content_Article_ArticleId 
+			on {databaseOwner}[{objectQualifier}CrossArticle_Content_Article] ([ArticleId]) on [PRIMARY]  
+	end
+   go
+
+
+
+/******   drop legacy procedures ******/
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDData_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDData_Update]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDData_Copy]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDData_Copy]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDData_GetByArticle]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDData_GetByArticle]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDData_GetByFieldAndArticle]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDData_GetByFieldAndArticle]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDField_FillDefaultData]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDField_FillDefaultData]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_Add]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_Update]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_GetByType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_GetByType]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_GetByTag]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_GetByTag]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_ArticleToTag_GetByArticle]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_ArticleToTag_GetByArticle]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_GetWithPaging]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_GetWithPaging]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByParm]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByParm]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Update]
+GO
+
+/******   create new procedures ******/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_Update]
+	@Id int, 
+    @TypeId int,
+	@PortalId int, 
+	@UserId int, 
+	@Tag nvarchar(200), 
+	@CreatedDate datetime,
+	@CultureCode nvarchar(30) 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossArticle_Tag SET
+    [TypeId]=@TypeId,
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[Tag] = @Tag,
+	[CreatedDate] = @CreatedDate,
+	[CultureCode] = @CultureCode
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_GetByTag]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_GetByTag]
+	@Tag nvarchar(200),
+    @TypeId int,
+    @CultureCode nvarchar(30)
+AS
+Set rowcount 1
+
+SELECT a.*,
+       ''ArticleCounts''=0
+FROM {databaseOwner}{objectQualifier}CrossArticle_Tag a
+WHERE (TypeId=@TypeId) 
+and (Upper([Tag]) = Upper(@Tag))
+and (@CultureCode='''' or [CultureCode]=@CultureCode)
+	
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_Add]
+    @TypeId int,
+	@PortalId int,
+	@UserId int,
+	@Tag nvarchar(200),
+	@CultureCode nvarchar(30)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_Tag (
+    [TypeId],
+	[PortalId],
+	[UserId],
+	[Tag],
+	[CreatedDate],
+	[CultureCode]
+) VALUES (
+    @TypeId,
+	@PortalId,
+	@UserId,
+	@Tag,
+	getdate(),
+	@CultureCode
+)
+
+select SCOPE_IDENTITY()
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDField_FillDefaultData]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+    CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDField_FillDefaultData]
+    @TypeId         INT,
+    @FieldId          INT, /* can be null for any field */
+    @DefaultValue	  nvarchar(2000), /*can be Null to copy default expression (no evaluation!) */
+    @OriginalDefaultValue nvarchar(2000), /*original default value */
+    @CultureCode nvarchar(30)
+    AS
+    IF @DefaultValue is not Null and @DefaultValue<>''''
+      begin
+       /*find out rows which not have field and articleid yet */
+       Insert into {databaseOwner}{objectQualifier}CrossArticle_UDData(FieldId,ArticleId,FieldValue,CultureCode)
+       select @FieldId,a.Id,@DefaultValue,@CultureCode
+       from {databaseOwner}{objectQualifier}CrossArticle_Article a
+       where (a.TypeId=@TypeId) and
+             (a.Id not in 
+              ( SELECT DISTINCT ArticleId from {databaseOwner}{objectQualifier}CrossArticle_UDData b
+                where b.[FieldId]=@FieldId
+                and b.[CultureCode]=@CultureCode)
+              )
+    
+     IF @OriginalDefaultValue is not Null and @OriginalDefaultValue<>''''
+      begin
+       /*find out rows which have previous default value specified */
+       Update {databaseOwner}{objectQualifier}CrossArticle_UDData
+       set FieldValue=@DefaultValue
+       where (FieldId=@FieldId) 
+       and ([CultureCode] = @CultureCode) 
+       and  (Cast(FieldValue as nvarchar)=@OriginalDefaultValue)
+     end
+  end
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDData_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDData_Update]
+	@FieldId int, 
+	@ArticleId int, 
+	@FieldValue ntext,
+	@CultureCode nvarchar(30)  
+AS
+Declare @RecordCount int
+
+Select @RecordCount=count(Id) 
+from {databaseOwner}{objectQualifier}CrossArticle_UDData
+where (FieldId=@FieldId) and
+      (ArticleId=@ArticleId)  and
+      ([CultureCode]=@CultureCode)
+
+if (@RecordCount>0) 
+    begin
+    UPDATE {databaseOwner}{objectQualifier}CrossArticle_UDData 
+    SET [FieldValue] = @FieldValue
+    WHERE (FieldId=@FieldId) and
+          (ArticleId=@ArticleId)  and
+          ([CultureCode]=@CultureCode)
+    end
+else
+   begin
+     INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_UDData (
+	        [FieldId],
+	        [ArticleId],
+	        [FieldValue],
+	        [CultureCode]
+            ) VALUES (
+	        @FieldId,
+	        @ArticleId,
+	        @FieldValue,
+	        @CultureCode
+            )
+    end
+	
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDData_GetByCulture]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDData_GetByCulture]
+	@FieldId int,
+    @ArticleId int,
+    @CultureCode nvarchar(30)
+	
+AS
+set rowcount 1
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossArticle_UDData
+WHERE
+	[FieldId] = @FieldId and
+    [ArticleId]=@ArticleId and
+    [CultureCode] = @CultureCode
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDData_GetByArticle]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDData_GetByArticle]
+	@ArticleId int,
+	@CultureCode nvarchar(30)
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossArticle_UDData
+WHERE ([ArticleId]=@ArticleId)  and
+      ([CultureCode] = @CultureCode)
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_UDData_Copy]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_UDData_Copy]
+	@OriginalArticleId int, 
+	@newArticleId int
+AS
+     INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_UDData (
+	        [FieldId],
+	        [ArticleId],
+	        [FieldValue],
+	        [CultureCode]
+            ) 
+     select FieldId,@newArticleId,FieldValue,CultureCode
+     from {databaseOwner}{objectQualifier}CrossArticle_UDData
+     where ArticleId=@OriginalArticleId
+   
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_GetWithPaging]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_GetWithPaging]
+	@TypeId int,
+    @Tag nvarchar(200),
+    @CultureCode nvarchar(30),
+    @PageSize int, 
+    @PageIndex int  
+AS
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexId		int IdENTITY (1, 1) NOT NULL,
+	ItemId	int
+     )
+     ----Insert into temptable
+    insert into #PageIndex(ItemId)
+    SELECT a.[id]
+    FROM {databaseOwner}{objectQualifier}CrossArticle_Tag a
+    where a.[TypeId]=@TypeId 
+    and (@CultureCode=''all'' or [CultureCode]=@CultureCode) 
+    and (@Tag='''' or a.[Tag] like ''%''+@Tag+''%'') -- Tag search
+
+---Get needs rows
+     SELECT b.*,
+       ''ArticleCounts''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag where {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag.TagId=b.[Id])
+     FROM #PageIndex a,{databaseOwner}{objectQualifier}CrossArticle_Tag  b
+     where b.[id]=a.[ItemId] 
+     and  a.[IndexId]> @PageLowerBound	
+     and	 a.[IndexId]< @PageUpperBound	  
+     ORDER BY a.IndexId
+	
+	 --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexId) FROM #PageIndex
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Tag_GetByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Tag_GetByType]
+	@TypeId int,
+	@CultureCode nvarchar(30)
+AS
+
+SELECT a.*,
+       ''ArticleCounts''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag where {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag.TagId=a.Id)
+FROM {databaseOwner}{objectQualifier}CrossArticle_Tag  a
+WHERE ([TypeId]=@TypeId) and  
+      ([CultureCode] = @CultureCode)
+order by CreatedDate desc
+
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_ArticleToTag_UpdateWithCulture]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_ArticleToTag_UpdateWithCulture]
+	@ArticleId int,
+	@CultureCode nvarchar(30),
+	@Tags nvarchar(200)
+	
+AS
+
+DELETE from {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag
+where [Id] in 
+(select a.[Id] from {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag a, {databaseOwner}{objectQualifier}CrossArticle_Tag b
+WHERE (a.[ArticleId] = @ArticleId) 
+and (a.[TagId] = b.Id)
+and (b.[CultureCode]=@CultureCode)
+)
+
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Tags)
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_ArticleToTag_GetByArticle]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_ArticleToTag_GetByArticle]
+	@ArticleId int,
+	@CultureCode nvarchar(30)
+AS
+
+SELECT a.*,
+       b.[Tag]
+FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag a, {databaseOwner}{objectQualifier}CrossArticle_Tag b
+WHERE (a.[ArticleId]=@ArticleId)
+and (a.[TagId]=b.[Id])
+and (b.[CultureCode] = @CultureCode)
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByParm]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByParm]
+   @TypeId   int,
+   @CurrentUserID	int,
+   @CategoryId int,
+   @TagId	int,
+   @UserId int,
+   @SearchTerm nvarchar(100),
+   @IgnoreSortIndex bit=0,
+   @SortField	nvarchar(100),
+   @PublishDateType int,
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @CultureCode nvarchar(30),
+   @PageSize int, 
+   @PageIndex int
+AS
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+
+    SELECT
+	a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+WHERE (a.[TypeId] = @TypeId)--TypeId
+    and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+    AND ( @CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory 
+    WHERE {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryId=@CategoryId )
+            )--CategoryId
+      AND ( @TagId = -1 OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag 
+    WHERE {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag.TagId=@TagId )
+            )--TagId
+     and (@UserId=-1 or a.UserId=@UserId) -- UserId
+      and (@searchTerm='''' or 
+        ( (@CultureCode='''' and a.[Title] like ''%''+@searchTerm+''%'')
+       or (a.[Id] in 
+       (select ArticleId from {databaseOwner}{objectQualifier}CrossArticle_Content_Article 
+        where [ArticleId]= a.[Id] and Lower([CultureCode])=LOWER(@CultureCode) and [Title] like ''%''+@searchTerm+''%'' ))))
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      AND ( a.Authed = 1) -- Authorized
+      AND ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+       
+      ORDER BY 
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+	      case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+WHERE (a.[TypeId] = @TypeId)--TypeId
+    and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+    AND ( @CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory 
+    WHERE {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryId=@CategoryId )
+            )--CategoryId
+      AND ( @TagId = -1 OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag 
+    WHERE {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag.TagId=@TagId )
+            )--TagId
+     and (@UserId=-1 or a.UserId=@UserId) -- UserId
+      and (@searchTerm='''' or 
+        ( (@CultureCode='''' and a.[Title] like ''%''+@searchTerm+''%'')
+       or (a.[Id] in 
+       (select ArticleId from {databaseOwner}{objectQualifier}CrossArticle_Content_Article 
+        where [ArticleId]= a.[Id] and Lower([CultureCode])=LOWER(@CultureCode) and [Title] like ''%''+@searchTerm+''%'' ))))
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      AND ( a.Authed = 1) -- Authorized
+      AND ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+       ORDER BY 
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+	      case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc
+
+SELECT
+		a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+       FROM {databaseOwner}{objectQualifier}CrossArticle_Article a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]
+   @TypeId   int,
+   @CurrentUserID	int,
+   @Categories nvarchar(200),
+   @Authors nvarchar(100),
+   @ShowFeaturedOnly bit,
+   @ShowImageOnly bit,
+   @SearchTerm nvarchar(100),
+   @IgnoreSortIndex bit=0,
+   @SortField	nvarchar(100),
+   @PublishDateType int,
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @CultureCode nvarchar(30),
+   @PageSize int, 
+   @PageIndex int
+AS
+
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+SELECT
+	a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+ WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)))
+            ))--Categories      
+     and ( @Authors = '''' OR a.UserId in (
+             SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Authors))) --Authors  
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+      and (@ShowFeaturedOnly = 0 OR a.Featured = 1)
+      and (@ShowImageOnly=0 or ((a.Image is not null) and (a.Image<>'''')))
+       and (@searchTerm='''' or 
+        ( (@CultureCode='''' and a.[Title] like ''%''+@searchTerm+''%'')
+       or (a.[Id] in 
+       (select ArticleId from {databaseOwner}{objectQualifier}CrossArticle_Content_Article 
+        where [ArticleId]= a.[Id] and Lower([CultureCode])=LOWER(@CultureCode) and [Title] like ''%''+@searchTerm+''%'' ))))
+        
+      ORDER BY  
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+          case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+  WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)))
+            ))--Categories      
+     and ( @Authors = '''' OR a.UserId in (
+             SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Authors))) --Authors  
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+      and (@ShowFeaturedOnly = 0 OR a.Featured = 1)
+      and (@ShowImageOnly=0 or ((a.Image is not null) and (a.Image<>'''')))
+       and (@searchTerm='''' or 
+        ( (@CultureCode='''' and a.[Title] like ''%''+@searchTerm+''%'')
+       or (a.[Id] in 
+       (select ArticleId from {databaseOwner}{objectQualifier}CrossArticle_Content_Article 
+        where [ArticleId]= a.[Id] and Lower([CultureCode])=LOWER(@CultureCode) and [Title] like ''%''+@searchTerm+''%'' ))))
+      ORDER BY 
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+	      case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc
+
+SELECT
+		a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+       FROM {databaseOwner}{objectQualifier}CrossArticle_Article a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+' 
+END
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Update]
+	@Id int, 
+	@PortalId int, 
+	@UserId int, 
+	@TypeId int, 
+	@CreatedDate datetime, 
+	@Quote bit, 
+	@Title nvarchar(200), 
+	@Author nvarchar(200), 
+	@Source nvarchar(200), 
+	@Active bit, 
+	@Authed bit, 
+	@Featured bit, 
+	@Draft bit, 
+	@Thumbnail nvarchar(800), 
+	@Image nvarchar(800), 
+	@ImageDescription nvarchar(800), 
+	@Summary nvarchar(1000), 
+	@LinkUrl nvarchar(800), 
+	@Article ntext, 
+	@Views int, 
+	@PublishDate datetime, 
+	@ExpireDate datetime, 
+	@LastModifiedDate datetime, 
+	@SubmitDate datetime, 
+	@AuthedDate datetime, 
+	@AllowComment bit, 
+	@AllowRating bit, 
+	@AllowRecommend bit, 
+	@RatingRoles nvarchar(200), 
+	@CommentRoles nvarchar(200), 
+	@RecommendRoles nvarchar(200), 
+	@DownloadRoles nvarchar(200), 
+	@AutoAuthComment bit, 
+	@PinOrder int, 
+	@Field1 ntext, 
+	@Field2 ntext, 
+	@Field3 ntext, 
+	@Field4 ntext, 
+	@Field5 ntext,
+    @DetailPage int,
+    @Longitude nvarchar(40),
+    @Latitude nvarchar(40),
+    @FeedId int,
+    @GUID nvarchar(500),
+    @SubTitle nvarchar(500),
+    @ImportFromFeed bit,
+    @CountryId int,
+	@Country nvarchar(200),
+	@StateId int,
+	@State nvarchar(200),
+	@CityId int,
+	@City nvarchar(200),
+	@TownId int,
+	@Town nvarchar(200),
+	@VoteTitle nvarchar(800),
+	@VoteRoles nvarchar(200),
+	@MultipleChoice bit,
+	@VoteCookieDays int,
+	@VoteExpireDate datetime,
+	@ReadTrack bit,
+    @ViewRoles nvarchar(200), 
+    @Categories nvarchar(200),
+	@Tags nvarchar(200),
+    @RefreshRelation bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossArticle_Article SET
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[TypeId] = @TypeId,
+	[CreatedDate] = @CreatedDate,
+	[Quote] = @Quote,
+	[Title] = @Title,
+	[Author] = @Author,
+	[Source] = @Source,
+	[Active] = @Active,
+	[Authed] = @Authed,
+	[Featured] = @Featured,
+	[Draft] = @Draft,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[ImageDescription] = @ImageDescription,
+	[Summary] = @Summary,
+	[LinkUrl] = @LinkUrl,
+	[Article] = @Article,
+	[Views] = @Views,
+	[PublishDate] = @PublishDate,
+	[ExpireDate] = @ExpireDate,
+	[LastModifiedDate] = GetDate(),
+	[SubmitDate] = @SubmitDate,
+	[AuthedDate] = @AuthedDate,
+	[AllowComment] = @AllowComment,
+	[AllowRating] = @AllowRating,
+	[AllowRecommend] = @AllowRecommend,
+	[RatingRoles] = @RatingRoles,
+	[CommentRoles] = @CommentRoles,
+	[RecommendRoles] = @RecommendRoles,
+	[DownloadRoles] = @DownloadRoles,
+	[AutoAuthComment] = @AutoAuthComment,
+	[PinOrder] = @PinOrder,
+	[Field1] = @Field1,
+	[Field2] = @Field2,
+	[Field3] = @Field3,
+	[Field4] = @Field4,
+	[Field5] = @Field5,
+    [DetailPage] = @DetailPage,
+    [Longitude] = @Longitude,
+    [Latitude] = @Latitude,
+    [FeedId] = @FeedId,
+    [GUID] = @GUID,
+    [SubTitle] = @SubTitle,
+    [ImportFromFeed] = @ImportFromFeed,
+    [CountryId] = @CountryId,
+	[Country] = @Country,
+	[StateId] = @StateId,
+	[State] = @State,
+	[CityId] = @CityId,
+	[City] = @City,
+	[TownId] = @TownId,
+	[Town] = @Town,
+	[VoteTitle] = @VoteTitle,
+	[VoteRoles] = @VoteRoles,
+	[MultipleChoice] = @MultipleChoice,
+	[VoteCookieDays] = @VoteCookieDays,
+	[VoteExpireDate] = @VoteExpireDate,
+	[ReadTrack] = @ReadTrack
+WHERE
+	[Id] = @Id
+
+If (@RefreshRelation=1)
+   Begin
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)
+
+      DELETE from {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag
+      where [Id] in 
+      (select a.[Id] from {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag a, {databaseOwner}{objectQualifier}CrossArticle_Tag b
+       WHERE (a.[ArticleId] = @Id) 
+       and (a.[TagId] = b.[Id])
+       and (b.[CultureCode]=''''))
+       
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Tags)
+
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@ViewRoles)
+end
+
+' 
+END
+GO

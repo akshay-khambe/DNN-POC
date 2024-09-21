@@ -1,0 +1,1410 @@
+
+
+/******   create new tables ******/
+
+/****** Object:  Table {databaseOwner}[{objectQualifier}CrossArticle_Feed]    Script Date: 03/06/2014 16:22:39 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossArticle_Feed](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TypeId] [int] NOT NULL,
+	[UserId] [int] NULL,
+	[UserName] [nvarchar](80) NULL,
+	[FeedName] [nvarchar](80) NULL,
+	[FeedType] [int] NULL,
+	[FeedUrl] [varchar](800) NULL,
+	[CreatedDate] [datetime] NULL,
+	[LastRetrieve] [datetime] NULL,
+	[LastTry] [datetime] NULL,
+	[RetrieveInterval] [int] NULL,
+	[TryInterval] [int] NULL,
+	[Active] [bit] NULL,
+	[LoginUser] [nvarchar](80) NULL,
+	[LoginPassword] [nvarchar](80) NULL,
+	[MaxImport] [int] NULL,
+	[Authed] [bit] NULL,
+	[Default_Tag] [nvarchar](200) NULL,
+	[Default_Category] [nvarchar](200) NULL,
+	[Default_ViewRoles] [nvarchar](200) NULL,
+	[Default_AllowComment] [bit] NULL,
+	[Default_AllowRating] [bit] NULL,
+	[Default_AllowRecommend] [bit] NULL,
+	[Default_RatingRoles] [nvarchar](200) NULL,
+	[Default_CommentRoles] [nvarchar](200) NULL,
+	[Default_RecommendRoles] [nvarchar](200) NULL,
+	[Default_DownloadRoles] [nvarchar](200) NULL,
+	[Default_AutoAuthComment] [bit] NULL,
+	[Default_PinOrder] [int] NULL,
+	[Default_Quote] [bit] NULL,
+	[Default_Author] [nvarchar](200) NULL,
+	[Default_Source] [nvarchar](200) NULL,
+	[Default_Draft] [bit] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_Feed] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  ForeignKey [FK_{objectQualifier}CrossArticle_Feed_CrossArticle_Type]    Script Date: 03/06/2014 16:22:39 ******/
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Feed]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossArticle_Feed_CrossArticle_Type] FOREIGN KEY([TypeId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossArticle_Type] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossArticle_Feed] CHECK CONSTRAINT [FK_{objectQualifier}CrossArticle_Feed_CrossArticle_Type]
+GO
+
+/******   alter table CrossArticle_Article ******/
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add FeedId int NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add GUID nvarchar(500) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add SubTitle nvarchar(500) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Article add ImportFromFeed bit NULL
+
+/******   alter table CrossArticle_Role ******/
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Role add Types nvarchar(200) NULL
+
+alter table {databaseOwner}{objectQualifier}CrossArticle_Role add AllowImportFromRss bit NULL
+
+go
+
+
+/******   drop legacy procedures ******/
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Role_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Role_Add]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Role_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Role_Update]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Add]
+GO
+
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Update]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByType]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByParm]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByParm]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByMonth]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByMonth]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByDate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByDate]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetFlashImage]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetFlashImage]
+GO
+
+/******   create new procedures ******/
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Role_Update]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Role_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Role_Update]
+	@RoleId int, 
+	@PortalId int, 
+	@DiskQuote int, 
+	@ArticleCount int,
+	@Types nvarchar(200),
+	@AllowImportFromRss int 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossArticle_Role SET
+	[PortalId] = @PortalId,
+	[DiskQuote] = @DiskQuote,
+	[ArticleCount] = @ArticleCount,
+	[Types] = @Types,
+	[AllowImportFromRss] = @AllowImportFromRss
+WHERE
+	[RoleId] = @RoleId
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Role_Add]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Role_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Role_Add]
+    @RoleId int,
+	@PortalId int,
+	@DiskQuote int,
+	@ArticleCount int,
+	@Types nvarchar(200),
+	@AllowImportFromRss int
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_Role (
+    [RoleId],
+	[PortalId],
+	[DiskQuote],
+	[ArticleCount],
+	[Types],
+	[AllowImportFromRss]
+) VALUES (
+    @RoleId,
+	@PortalId,
+	@DiskQuote,
+	@ArticleCount,
+	@Types,
+	@AllowImportFromRss
+)
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Article_ArticleExist]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_ArticleExist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_ArticleExist]
+     @FeedId  int,
+	 @Title   nvarchar(200)
+AS
+   SELECT TotalRecords=Count(a.Id) 
+   From {databaseOwner}{objectQualifier}CrossArticle_Article a
+   where (a.[FeedId] = @FeedId) 
+   and  (a.[Title]=@Title)
+   
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Article_Update]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Update]
+	@Id int, 
+	@PortalId int, 
+	@UserId int, 
+	@TypeId int, 
+	@CreatedDate datetime, 
+	@Quote bit, 
+	@Title nvarchar(200), 
+	@Author nvarchar(200), 
+	@Source nvarchar(200), 
+	@Active bit, 
+	@Authed bit, 
+	@Featured bit, 
+	@Draft bit, 
+	@Thumbnail nvarchar(800), 
+	@Image nvarchar(800), 
+	@ImageDescription nvarchar(800), 
+	@Summary nvarchar(1000), 
+	@LinkUrl nvarchar(800), 
+	@Article ntext, 
+	@Views int, 
+	@PublishDate datetime, 
+	@ExpireDate datetime, 
+	@LastModifiedDate datetime, 
+	@SubmitDate datetime, 
+	@AuthedDate datetime, 
+	@AllowComment bit, 
+	@AllowRating bit, 
+	@AllowRecommend bit, 
+	@RatingRoles nvarchar(200), 
+	@CommentRoles nvarchar(200), 
+	@RecommendRoles nvarchar(200), 
+	@DownloadRoles nvarchar(200), 
+	@AutoAuthComment bit, 
+	@PinOrder int, 
+	@Field1 ntext, 
+	@Field2 ntext, 
+	@Field3 ntext, 
+	@Field4 ntext, 
+	@Field5 ntext,
+    @DetailPage int,
+    @Longitude nvarchar(40),
+    @Latitude nvarchar(40),
+    @FeedId int,
+    @GUID nvarchar(500),
+    @SubTitle nvarchar(500),
+    @ImportFromFeed bit,
+    @ViewRoles nvarchar(200), 
+    @Categories nvarchar(200),
+	@Tags nvarchar(200),
+    @RefreshRelation bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossArticle_Article SET
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[TypeId] = @TypeId,
+	[CreatedDate] = @CreatedDate,
+	[Quote] = @Quote,
+	[Title] = @Title,
+	[Author] = @Author,
+	[Source] = @Source,
+	[Active] = @Active,
+	[Authed] = @Authed,
+	[Featured] = @Featured,
+	[Draft] = @Draft,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[ImageDescription] = @ImageDescription,
+	[Summary] = @Summary,
+	[LinkUrl] = @LinkUrl,
+	[Article] = @Article,
+	[Views] = @Views,
+	[PublishDate] = @PublishDate,
+	[ExpireDate] = @ExpireDate,
+	[LastModifiedDate] = GetDate(),
+	[SubmitDate] = @SubmitDate,
+	[AuthedDate] = @AuthedDate,
+	[AllowComment] = @AllowComment,
+	[AllowRating] = @AllowRating,
+	[AllowRecommend] = @AllowRecommend,
+	[RatingRoles] = @RatingRoles,
+	[CommentRoles] = @CommentRoles,
+	[RecommendRoles] = @RecommendRoles,
+	[DownloadRoles] = @DownloadRoles,
+	[AutoAuthComment] = @AutoAuthComment,
+	[PinOrder] = @PinOrder,
+	[Field1] = @Field1,
+	[Field2] = @Field2,
+	[Field3] = @Field3,
+	[Field4] = @Field4,
+	[Field5] = @Field5,
+    [DetailPage] = @DetailPage,
+    [Longitude] = @Longitude,
+    [Latitude] = @Latitude,
+    [FeedId] = @FeedId,
+    [GUID] = @GUID,
+    [SubTitle] = @SubTitle,
+    [ImportFromFeed] = @ImportFromFeed
+WHERE
+	[Id] = @Id
+
+If (@RefreshRelation=1)
+   Begin
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)
+
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Tags)
+
+      DELETE {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole WHERE ArticleId = @Id
+      INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@ViewRoles)
+end
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Article_Add]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_Add]
+	@PortalId int,
+	@UserId int,
+	@TypeId int,
+	@CreatedDate datetime,
+	@Quote bit,
+	@Title nvarchar(200),
+	@Author nvarchar(200),
+	@Source nvarchar(200),
+	@Active bit,
+	@Authed bit,
+	@Featured bit,
+	@Draft bit,
+	@Thumbnail nvarchar(800),
+	@Image nvarchar(800),
+	@ImageDescription nvarchar(800),
+	@Summary nvarchar(1000),
+	@LinkUrl nvarchar(800),
+	@Article ntext,
+	@Views int,
+	@PublishDate datetime,
+	@ExpireDate datetime,
+	@LastModifiedDate datetime,
+	@SubmitDate datetime,
+	@AuthedDate datetime,
+	@AllowComment bit,
+	@AllowRating bit,
+	@AllowRecommend bit,
+	@RatingRoles nvarchar(200),
+	@CommentRoles nvarchar(200),
+	@RecommendRoles nvarchar(200),
+	@DownloadRoles nvarchar(200),
+	@AutoAuthComment bit,
+	@PinOrder int,
+	@Field1 ntext,
+	@Field2 ntext,
+	@Field3 ntext,
+	@Field4 ntext,
+	@Field5 ntext,
+    @DetailPage int,
+    @Longitude nvarchar(40),
+    @Latitude nvarchar(40),
+    @FeedId int,
+    @GUID nvarchar(500),
+    @SubTitle nvarchar(500),
+    @ImportFromFeed bit,
+    @ViewRoles nvarchar(200),
+    @Categories nvarchar(200),
+    @Tags nvarchar(200)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_Article (
+	[PortalId],
+	[UserId],
+	[TypeId],
+	[CreatedDate],
+	[Quote],
+	[Title],
+	[Author],
+	[Source],
+	[Active],
+	[Authed],
+	[Featured],
+	[Draft],
+	[Thumbnail],
+	[Image],
+	[ImageDescription],
+	[Summary],
+	[LinkUrl],
+	[Article],
+	[Views],
+	[PublishDate],
+	[ExpireDate],
+	[LastModifiedDate],
+	[SubmitDate],
+	[AuthedDate],
+	[AllowComment],
+	[AllowRating],
+	[AllowRecommend],
+	[RatingRoles],
+	[CommentRoles],
+	[RecommendRoles],
+	[DownloadRoles],
+	[AutoAuthComment],
+	[PinOrder],
+	[Field1],
+	[Field2],
+	[Field3],
+	[Field4],
+	[Field5],
+    [DetailPage],
+    [Longitude],
+    [Latitude],
+    [FeedId],
+    [GUID],
+    [SubTitle],
+    [ImportFromFeed]
+) VALUES (
+	@PortalId,
+	@UserId,
+	@TypeId,
+	@CreatedDate,
+	@Quote,
+	@Title,
+	@Author,
+	@Source,
+	@Active,
+	@Authed,
+	@Featured,
+	@Draft,
+	@Thumbnail,
+	@Image,
+	@ImageDescription,
+	@Summary,
+	@LinkUrl,
+	@Article,
+	@Views,
+	@PublishDate,
+	@ExpireDate,
+	GetDate(),
+	GetDate(),
+	@AuthedDate,
+	@AllowComment,
+	@AllowRating,
+	@AllowRecommend,
+	@RatingRoles,
+	@CommentRoles,
+	@RecommendRoles,
+	@DownloadRoles,
+	@AutoAuthComment,
+	@PinOrder,
+	@Field1,
+	@Field2,
+	@Field3,
+	@Field4,
+	@Field5,
+    @DetailPage,
+    @Longitude,
+    @Latitude,
+    @FeedId,
+    @GUID,
+    @SubTitle,
+    @ImportFromFeed
+)
+
+DECLARE @ArticleId INT	
+SET @ArticleId = @@IDENTITY
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Tags)
+INSERT INTO {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole SELECT @ArticleId, intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@ViewRoles)
+
+select @ArticleId
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByType]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByType]
+	 @TypeId   int,
+     @CategoryId   int,
+     @UserId int,
+     @UnAuthed bit=0,
+     @Featured bit=0,
+     @UnActive bit=0,
+     @Expired bit=0,
+     @SourceType int=-1,
+     @SearchTerm nvarchar(100),
+     @PageSize int, 
+     @PageIndex int
+AS
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+   WHERE  (a.TypeId = @TypeId) --TypeId   
+     and (@CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryId=@CategoryId
+)) --CategoryId
+     and (@UserId= -1 or a.UserId=@UserId) -- UserId
+     and (@UnAuthed=0 or a.Authed=0) --UnAuthed
+     and (@Featured =0 or a.Featured = 1)-- featured
+     and (@UnActive=0 or a.Active=0) --UnActive
+     and ( (@SourceType = -1) or 
+           ( @SourceType=0 and (a.[ImportFromFeed] is null or a.[ImportFromFeed] =0) ) or
+           (@SourceType=1 and a.[ImportFromFeed] =1) )
+     and (@Expired=0 or  (a.[ExpireDate] is not null and a.[ExpireDate] < GETDATE())) -- Expired
+     and (@searchTerm='''' or a.[Title] like ''%''+@searchTerm+''%'') -- Searchterm 
+    ORDER BY a.[PinOrder] asc,
+	          a.CreatedDate desc
+
+SELECT
+     a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+    ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+       FROM {databaseOwner}{objectQualifier}CrossArticle_Article a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+       ORDER BY c.IndexID
+	
+	     --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+' 
+END
+GO
+
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByParm]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByParm]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByParm]
+   @TypeId   int,
+   @CurrentUserID	int,
+   @CategoryId int,
+   @TagId	int,
+   @UserId int,
+   @SearchTerm nvarchar(100),
+   @IgnoreSortIndex bit=0,
+   @SortField	nvarchar(100),
+   @PublishDateType int,
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @PageSize int, 
+   @PageIndex int
+AS
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+
+    SELECT
+	a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+WHERE (a.[TypeId] = @TypeId)--TypeId
+    and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+    AND ( @CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory 
+    WHERE {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryId=@CategoryId )
+            )--CategoryId
+      AND ( @TagId = -1 OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag 
+    WHERE {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag.TagId=@TagId )
+            )--TagId
+     and (@UserId=-1 or a.UserId=@UserId) -- UserId
+     and (@searchTerm='''' or a.Title like ''%''+@searchTerm+''%'') -- Searchterm
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      AND ( a.Authed = 1) -- Authorized
+      AND ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+       
+      ORDER BY 
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+	      case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+WHERE (a.[TypeId] = @TypeId)--TypeId
+    and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+    AND ( @CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory 
+    WHERE {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryId=@CategoryId )
+            )--CategoryId
+      AND ( @TagId = -1 OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag 
+    WHERE {databaseOwner}{objectQualifier}CrossArticle_ArticleToTag.TagId=@TagId )
+            )--TagId
+     and (@UserId=-1 or a.UserId=@UserId) -- UserId
+     and (@searchTerm='''' or a.Title like ''%''+@searchTerm+''%'') -- Searchterm
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      AND ( a.Authed = 1) -- Authorized
+      AND ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+       ORDER BY 
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+	      case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc
+
+SELECT
+		a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+       FROM {databaseOwner}{objectQualifier}CrossArticle_Article a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByMonth]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByMonth]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByMonth]
+   @TypeId   int,
+   @CurrentUserId int,
+   @MonthDate datetime = null,
+   @SortField	nvarchar(100),
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @PageSize int, 
+   @PageIndex int
+AS
+
+If @MonthDate IS NULL SET @MonthDate = GetUTCDate()
+
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+SELECT
+		a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+WHERE (a.TypeId = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+    AND (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      AND (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.CreatedDate BETWEEN DATEADD(month, DATEDIFF(month, 0, @MonthDate), 0)  AND @MonthDate )--article date
+      AND ( a.Authed = 1) -- Authorized
+      AND ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+    
+      ORDER BY a.PinOrder asc,
+	    case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc 
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+ WHERE (a.TypeId = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   AND (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      AND (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.CreatedDate BETWEEN DATEADD(month, DATEDIFF(month, 0, @MonthDate), 0)  AND @MonthDate )--article date
+      AND ( a.Authed = 1) -- Authorized
+      AND ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+    
+      ORDER BY a.PinOrder asc,
+	   case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc 
+
+SELECT
+	a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+       FROM {databaseOwner}{objectQualifier}CrossArticle_Article a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+' 
+END
+GO
+
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByModuleSettings]
+   @TypeId   int,
+   @CurrentUserID	int,
+   @Categories nvarchar(200),
+   @Authors nvarchar(100),
+   @ShowFeaturedOnly bit,
+   @ShowImageOnly bit,
+   @SearchTerm nvarchar(100),
+   @IgnoreSortIndex bit=0,
+   @SortField	nvarchar(100),
+   @PublishDateType int,
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @PageSize int, 
+   @PageIndex int
+AS
+
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+SELECT
+	a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+ WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)))
+            ))--Categories      
+     and ( @Authors = '''' OR a.UserId in (
+             SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Authors))) --Authors  
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+      and (@ShowFeaturedOnly = 0 OR a.Featured = 1)
+      and (@ShowImageOnly=0 or ((a.Image is not null) and (a.Image<>'''')))
+      and (@searchTerm='''' or a.[Title] like ''%''+@searchTerm+''%'') -- Searchterm
+ ORDER BY  
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+          case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+  WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)))
+            ))--Categories      
+     and ( @Authors = '''' OR a.UserId in (
+             SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Authors))) --Authors  
+     and ( (@PublishDateType = -1) 
+            or ( @PublishDateType=0 and (a.[PublishDate] is null or 
+            a.[PublishDate]<GETDATE())) 
+            or (@PublishDateType = 1 and (a.[PublishDate] is not null and a.[PublishDate]>GETDATE())))
+      and ( a.[ExpireDate] is null or a.[ExpireDate]>GETDATE())
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+      and (@ShowFeaturedOnly = 0 OR a.Featured = 1)
+      and (@ShowImageOnly=0 or ((a.Image is not null) and (a.Image<>'''')))
+      and (@searchTerm='''' or a.[Title] like ''%''+@searchTerm+''%'') -- Searchterm
+    
+      ORDER BY 
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+          
+	      case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc
+
+SELECT
+		a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+       FROM {databaseOwner}{objectQualifier}CrossArticle_Article a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByDate]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetByDate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetByDate]
+   @TypeId   int,
+   @CurrentUserId int,
+   @ArticleDate datetime = null,
+   @SortField	nvarchar(100),
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @PageSize int, 
+   @PageIndex int
+AS
+
+If @ArticleDate IS NULL SET @ArticleDate = GetUTCDate()
+
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+SELECT
+	a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+    
+FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+WHERE (a.[TypeId] = @TypeId)--TypeId
+      and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+     AND (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      AND (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.CreatedDate BETWEEN @ArticleDate AND DateAdd( dd, 1, @ArticleDate ) )--article date
+      AND ( a.Authed = 1) -- Authorized
+      AND ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+    
+      ORDER BY a.PinOrder asc,
+	  case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc 
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+  WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+      AND (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      AND (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.CreatedDate BETWEEN @ArticleDate AND DateAdd( dd, 1, @ArticleDate ) )--article date
+      AND ( a.Authed = 1) -- Authorized
+      AND ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft
+    
+      ORDER BY a.PinOrder asc,
+	  case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc 
+
+SELECT
+		a.*,
+    ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+       FROM {databaseOwner}{objectQualifier}CrossArticle_Article a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossArticle_Article_GetFlashImage]    Script Date: 03/06/2014 16:55:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Article_GetFlashImage]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE    PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Article_GetFlashImage]
+   @TypeId   int,
+   @CurrentUserId int,
+   @Categories varchar(100),
+   @RecordCount	int, 
+   @Featured	bit,
+   @IgnoreSortIndex bit=0,
+   @SortField	varchar(100)
+AS
+   set rowcount @RecordCount
+SELECT
+	a.*,
+     ''UserName''=
+    (select UserName from {databaseOwner}{objectQualifier}Users where {databaseOwner}{objectQualifier}Users.UserId=a.UserId),
+    ''RatingTotal''=
+    (select sum(Rating) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''RatingVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Rating where {databaseOwner}{objectQualifier}CrossArticle_Rating.ArticleId=a.Id),
+    ''Comments''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Comment where {databaseOwner}{objectQualifier}CrossArticle_Comment.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Comment.IsPrivate=0),
+     ''UpVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=1),
+     ''DownVotes''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossArticle_Recommend where {databaseOwner}{objectQualifier}CrossArticle_Recommend.ArticleId=a.Id and {databaseOwner}{objectQualifier}CrossArticle_Recommend.Recommend=-1) 
+FROM {databaseOwner}{objectQualifier}CrossArticle_Article a
+WHERE (a.[TypeId] = @TypeId)
+  and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossArticle_ArticleToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+  and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT ArticleId FROM {databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory WHERE ({databaseOwner}{objectQualifier}CrossArticle_ArticleToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossArticle_csvToInt(@Categories)))
+            ))--Categories    
+     and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.Draft=0)--Draft    
+      and (@Featured = 0 OR a.Featured = 1)--Featured
+      and ((a.Image is not null) and (a.Image<>''''))
+      and ( (a.[PublishDate] is null) or (a.[PublishDate] <= GETDATE()))     
+      and ( (a.[ExpireDate] is null) or (a.[ExpireDate] > GETDATE()) )
+      ORDER BY 
+          case @IgnoreSortIndex
+          when 0 then a.[PinOrder]
+          end asc,
+         
+	      case @SortField
+          when ''TitleAsc'' then a.[Title]
+          end asc,
+          
+          case @SortField
+          when ''CreationDateAsc'' THEN a.[CreatedDate]
+          when ''PublishDateAsc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateAsc'' THEN a.[LastModifiedDate]
+          when ''ViewsAsc'' then a.[Views]
+          end asc,
+          
+	      case @SortField
+          when ''TitleDesc'' then a.[Title]
+          end desc,
+          
+          case @SortField
+          when ''CreationDateDesc'' THEN a.[CreatedDate]
+          when ''PublishDateDesc'' THEN a.[PublishDate] 
+		  when ''LastModifiedDateDesc'' THEN a.[LastModifiedDate]
+          when ''ViewsDesc'' then a.[Views]
+          end desc
+
+' 
+END
+GO
+
+
+/******   update existing data ******/
+
+Update  {databaseOwner}{objectQualifier}CrossArticle_Article
+Set [ImportFromFeed] = 0
+
+Go
+
+/******   Insert schedule item ******/
+
+Insert into {databaseOwner}[{objectQualifier}Schedule]
+(TypeFullName,TimeLapse,TimeLapseMeasurement,RetryTimeLapse,RetryTimeLapseMeasurement,RetainHistoryNum,AttachToEvent,CatchUpEnabled,Enabled,ObjectDependencies,FriendlyName)
+values
+('Cross.Modules.Article.Business.Schedule,Cross.Dnn.Modules.Article',60,'m',10,'m',50,'',0,1,'','Cross Article')
+GO
+
+/******   Insert schedule item   end ******/
+
+
+
+
+
+
+
+

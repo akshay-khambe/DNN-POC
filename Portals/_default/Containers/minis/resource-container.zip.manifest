@@ -1,0 +1,64 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path />
+      <name>Container.css</name>
+    </file>
+    <file>
+      <path />
+      <name>H1-Container.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H1-Container.jpg</name>
+    </file>
+    <file>
+      <path />
+      <name>H2-Container.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H2-Container.jpg</name>
+    </file>
+    <file>
+      <path />
+      <name>H3-Container.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H3-Container.jpg</name>
+    </file>
+    <file>
+      <path />
+      <name>H4-Container.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H4-Container.jpg</name>
+    </file>
+    <file>
+      <path />
+      <name>H5-Container.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H5-Container.jpg</name>
+    </file>
+    <file>
+      <path />
+      <name>H6-Container.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H6-Container.jpg</name>
+    </file>
+    <file>
+      <path />
+      <name>No Title.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>No Title.jpg</name>
+    </file>
+  </files>
+</dotnetnuke>

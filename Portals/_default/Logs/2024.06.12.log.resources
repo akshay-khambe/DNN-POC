@@ -1,0 +1,23 @@
+2024-06-12 23:12:17.438+05:30 [NIT-LPT-R577][D:2][T:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.ValidateServersAreActiveForScheduledItem(ScheduleItem scheduleItem)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.AddToScheduleQueue(ScheduleHistoryItem scheduleHistoryItem)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.WorkCompleted(SchedulerClient schedulerClient)
+2024-06-12 23:12:27.413+05:30 [NIT-LPT-R577][D:2][T:Scheduler Thread][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.ValidateServersAreActiveForScheduledItem(ScheduleItem scheduleItem)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.AddToScheduleQueue(ScheduleHistoryItem scheduleHistoryItem)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.LoadQueueFromTimer()
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.Start()
+2024-06-12 23:42:30.793+05:30 [NIT-LPT-R577][D:2][T:Scheduler Thread][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.ValidateServersAreActiveForScheduledItem(ScheduleItem scheduleItem)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.AddToScheduleQueue(ScheduleHistoryItem scheduleHistoryItem)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.LoadQueueFromTimer()
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.Start()
+2024-06-12 23:52:30.970+05:30 [NIT-LPT-R577][D:2][T:Scheduler Thread][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.ValidateServersAreActiveForScheduledItem(ScheduleItem scheduleItem)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.AddToScheduleQueue(ScheduleHistoryItem scheduleHistoryItem)
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.LoadQueueFromTimer()
+   at DotNetNuke.Services.Scheduling.Scheduler.CoreScheduler.Start()

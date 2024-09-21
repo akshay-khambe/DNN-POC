@@ -1,0 +1,100 @@
+/*!
+ * multiscroll.js 0.2.1
+ * https://github.com/alvarotrigo/multiscroll.js
+ * @license MIT licensed
+ *
+ * Copyright (C) 2016 alvarotrigo.com - A project by Alvaro Trigo
+ */
+ html, body {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    overflow: visible!important;
+}
+.ms-section {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ms-section.ms-table{
+    width: 100%;
+    height: 100%;
+}
+.ms-tableCell {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.ms-easing {
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
+}
+.ms-responsive .ms-hide{
+    display: none;
+}
+.ms-scrollable {
+    overflow: hidden;
+    position: relative;
+}
+.ms-scroller{
+    overflow: hidden;
+}
+.iScrollIndicator{
+    border: 0 !important;
+}
+
+#myContainer{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+html.mobile-phone  #myContainer{
+    height: auto;
+    overflow: visible;
+}
+
+
+.ms-tableCell > * {
+    margin: 0;
+    /*height: 100%;
+    -webkit-align-content: center;
+    align-content: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    min-height: 100vh; */
+    width: 100%;
+}
+.ContentPane > *{
+    width: 100%;
+}
+.ContentPane:before,
+.ContentPane:after{
+    content: '';
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+
+html.mobile-phone,
+html.mobile-phone body{
+    overflow: visible;
+}
+html.mobile-phone #myContainer .ms-section{
+    height: 100vh;
+}
+html.mobile-phone #myContainer .ms-section > *{
+    margin: 0;
+}
+ 
+

@@ -1,0 +1,50 @@
+<div class="form-group hide">
+  <label for="firstname" class="control-label">ID:</label>
+  <div class="control-cont">
+    <input type="text" class="dnnOptions form-control randomid" value="${id}" data-name="id">
+  </div>
+</div>
+
+
+<div class="form-group hide">
+  <label for="firstname" class="control-label">Style:</label>
+  <div class="control-cont">
+    <select class="dnnOptions form-control" id="searchstyle" data-name="style" data-value="${style}">
+      <option value="popup">Popup</option>
+      <option value="">Default</option>
+    </select>
+  </div>
+</div>
+
+
+
+<div class="form-group conditional" data-condition="#searchstyle=='popup'">
+    <label for="firstname" class="control-label">Placeholder:</label>
+    <div class="control-cont">
+      <input type="text" class="dnnOptions form-control" data-name="placeholder" value="${placeholder}"  {{if ThemeOptions.BootstrapVersion != "v4"}} data-default="START TYPING AND PRESS ENTER TO SEARCH" {{else}} data-default="Enter any key words to search"{{/if}}>
+    </div>
+  </div>
+
+
+  <div class="form-group conditional" data-condition="#searchstyle=='popup'">
+      <label for="firstname" class="control-label">Color:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" data-name="color" data-value="${color}">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+      </div>
+    </div>
+
+
+<div class="form-group colorpicker-box">
+  <label for="firstname" class="control-label">Accent Color:</label>
+  <select class="form-control" id="colorselect">
+    <option value="">Theme Options</option>
+    <option value="custom" {{if acccolor }} selected="selected" {{/if}}>Custom</option>
+  </select>
+  <div class="colorpicker-group conditional" data-condition="#colorselect == 'custom'">
+    <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="acccolor" value="${acccolor}">
+    <i style="background-color:${acccolor}"></i>
+  </div>
+</div>

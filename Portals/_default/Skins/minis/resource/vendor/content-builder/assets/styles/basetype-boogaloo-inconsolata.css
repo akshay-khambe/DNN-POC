@@ -1,0 +1,68 @@
+﻿@import url('https://fonts.googleapis.com/css?display=swap&family=Boogaloo');
+@import url('https://fonts.googleapis.com/css?display=swap&family=Inconsolata:400,700');
+
+
+/**********************************
+    General
+***********************************/
+
+ 
+.d-wrapper {
+    margin: 0;
+    font-family: 'Inconsolata', monospace;
+    font-size: 100%; 
+    line-height: 1.8;
+    font-weight: 400;
+}
+.d-wrapper p,.d-wrapper td,.d-wrapper li,.d-wrapper label {
+    font-size: 1.14rem; 
+    line-height: 1.8;
+    font-weight: 400;
+}
+.d-wrapper h1,.d-wrapper  h2,.d-wrapper  h3,.d-wrapper  h4,.d-wrapper  h5,.d-wrapper  .d-wrapper h6{
+    font-family: 'Boogaloo', cursive;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}        
+
+.d-wrapper h1{font-size: 2.4rem;margin: 0.14rem 0;}
+.d-wrapper h2{font-size: 2.1rem;margin: 0.27rem 0;}
+.d-wrapper h3{font-size: 1.8rem;margin: 0.35rem 0;}
+.d-wrapper h4{font-size: 1.6rem;margin: 0.49rem 0;}
+.d-wrapper h5{font-size: 1.4rem;margin: 0.59rem 0;}
+.d-wrapper h6{font-size: 1.4rem;margin: 0.6rem 0;text-transform: none;line-height:1.6;}
+.d-wrapper p{margin:0.67rem 0 1rem;}
+
+.d-wrapper .display{ margin-bottom: 0.5rem; }
+.d-wrapper .display h1{
+    font-size: 4rem;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0.4rem 0;
+}
+.d-wrapper .display p{
+    font-size: 1.4rem;
+    line-height: 2;
+    letter-spacing: 1px;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 640px) {
+    .d-wrapper .display h1{font-size: 2.5rem;}
+    .d-wrapper .display p{font-size: 1.4rem;}
+    .d-wrapper h1{font-size: 2.3rem;}
+    .d-wrapper h2{font-size: 2rem;}
+    .d-wrapper h3{font-size: 1.7rem;}
+    .d-wrapper h4{font-size: 1.4rem;}
+    .d-wrapper h5{font-size: 1.2rem;}
+    .d-wrapper h6{font-size: 1rem;} 
+}
+
+.d-wrapper .display-font1 {font-family: 'Boogaloo', cursive;}
+.d-wrapper .display-font2 {font-family: 'Inconsolata', monospace;}
+.d-wrapper .default-font1 {font-family: 'Boogaloo', cursive;}
+.d-wrapper .default-font2 {font-family: 'Inconsolata', monospace;}

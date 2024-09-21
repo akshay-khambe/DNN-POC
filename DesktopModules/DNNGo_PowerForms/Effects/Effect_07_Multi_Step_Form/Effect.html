@@ -1,0 +1,247 @@
+﻿<style type="text/css">
+#form_div_${ModuleID} .actionMenu{ display:none;}
+
+#form_div_${ModuleID} .form_row {
+  padding: 0px 0px ${xf.ViewXmlSetting("VerticalSpacing","10")}px ${xf.ViewXmlSetting("HorizontalSpacing","10")}px;
+}
+#form_div_${ModuleID} .form_list{
+	margin:0 0 0 -${xf.ViewXmlSetting("HorizontalSpacing","10")}px
+}
+.form_captcha{
+	position:relative;
+}
+.g-recaptcha-dnn{
+	padding-bottom:20px;
+}
+.form_captcha .g-recaptcha-msg{
+	position:absolute;
+	left:0;
+	bottom:0;
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+	white-space:nowrap;
+	line-height:1;
+}	
+
+#form_div_${ModuleID} .guide_anchor .text{
+	background-color:${xf.ViewXmlSetting("anchorbg","#eaeaea")};
+}
+#form_div_${ModuleID} .guide_anchor .text:before{
+	border-top-color:${xf.ViewXmlSetting("anchorbg","#eaeaea")};
+	border-bottom-color:${xf.ViewXmlSetting("anchorbg","#eaeaea")};
+}
+#form_div_${ModuleID} .guide_anchor .text:after{
+	border-left-color:${xf.ViewXmlSetting("anchorbg","#eaeaea")};
+}
+
+#form_div_${ModuleID} .guide_anchor .successful .text{
+	background-color:${xf.ViewXmlSetting("Companchorbg","#8CC63F")};
+}
+#form_div_${ModuleID} .guide_anchor .successful .text:before{
+	border-top-color:${xf.ViewXmlSetting("Companchorbg","#8CC63F")};
+	border-bottom-color:${xf.ViewXmlSetting("Companchorbg","#8CC63F")};
+}
+#form_div_${ModuleID} .guide_anchor .successful .text:after{
+	border-left-color:${xf.ViewXmlSetting("Companchorbg","#8CC63F")}
+}
+
+#form_div_${ModuleID} .guide_anchor .active .text{
+	background-color:${xf.ViewXmlSetting("Currentanchorbg","#EA8511")};
+}
+#form_div_${ModuleID} .guide_anchor  .active .text:before{
+	border-top-color:${xf.ViewXmlSetting("Currentanchorbg","#EA8511")};
+	border-bottom-color:${xf.ViewXmlSetting("Currentanchorbg","#EA8511")};
+}
+#form_div_${ModuleID} .guide_anchor .active .text:after{
+	border-left-color:${xf.ViewXmlSetting("Currentanchorbg","#EA8511")}
+}
+</style>
+
+
+<div class="$ThemeName" id="form_div_${ModuleID}" style="width:${xf.ViewXmlSetting("width","100%")};">
+#if(${xf.ViewXmlSetting("displayanchor",true)} )
+<div class="anchor">
+  <ul class="guide_anchor">
+    #foreach($GroupItem in $GroupList)
+    
+    <li  class=" #if($velocityCount ==1) active #end ${xf.ConditionalClass($GroupItem)}" ${xf.ConditionalRule($GroupItem)}>
+    <span class="number">$velocityCount</span>
+     <div class="text"> 
+     
+     #if(${xf.ViewCategorySetting($GroupItem,"AnchorDes","")} != "")
+     
+  	  ${xf.ViewCategorySetting($GroupItem,"AnchorDes","")}
+     
+    #else
+        Step $velocityCount
+    #end 
+     
+     
+     </div> </li>
+     
+    #end
+  </ul>
+  </div>
+#end  
+  #if(${DisplayForm})
+  
+  #if($GroupList.Count > 0)
+  <div class="guide_form"> #foreach($GroupItem in $GroupList)
+    #set($GroupFieldList = ${xf.ViewSearchFieldList($FieldList,$GroupItem)})
+    #if($GroupFieldList.Count > 0)
+    <fieldset  class="#if($velocityCount == 1) active #end ${xf.ConditionalClass($GroupItem)}" ${xf.ConditionalRule($GroupItem)}>
+      #if(${xf.ViewXmlSetting("displayname",true)} )
+      <legend>$GroupItem.Name</legend>
+      #end
+      #if($GroupItem.description !="" && ${xf.ViewXmlSetting("displaydes",true)})
+      <div class="group_description">$GroupItem.description</div>
+      #end
+      <ul class="form_list">
+        #foreach($FieldItem in $GroupFieldList)
+        <li style="width:${xf.ViewItemSetting($FieldItem,"Itemwidth","100")}%" class="${xf.ConditionalClass($FieldItem)}" ${xf.ConditionalRule($FieldItem)}> 
+        
+          #if(${xf.IsHtmlControl($FieldItem)})
+          <div class="form_row"> ${xf.ViewControl($FieldItem)}</div>
+          #else
+          <div class="form_row row${velocityCount}">
+              #if(${xf.ViewItemSetting($FieldItem,"DisplayTitle","true")}=="true")
+              <div class="form_label"> ${xf.ViewLable($FieldItem,":")}  #if($FieldItem.Required == 1)<span class="form_required">*</span>#end</div>
+              #end
+              <div class="form_input"> 
+               ${xf.ViewControl($FieldItem)}
+                #if( ${xf.ViewXmlSetting("DisplayTooltip","true")} == "true")
+                ${xf.ViewInputDefault($FieldItem)}
+                #end 
+              </div>
+          </div>  
+          #end
+        </li>
+        #end
+      </ul>
+    </fieldset>
+    #end
+    #end
+    
+    
+    #end   
+    #if(${xf.ViewSetting("PowerForms_ImageCaptcha_Enable",false)})
+ 
+        <div class="form-control-wrap">
+            <div class="form_row">
+              <div class="image-recaptcha-box">
+                <div class="recaptcha-image" id="image-captcha-${ModuleID}"><img src="${xf.GetImageCaptchaUrl(${xf.GetUtcTime().ToString("yy-MM-dd-HH-mm-ss")})}" data-src="${xf.GetImageCaptchaUrl("")}" /></div> 
+                <div class="sign">=</div> 
+                <input type="text" name="ImageCaptchaVal${ModuleID}" id="ImageCaptchaVal${ModuleID}" />
+                <button type="button"><svg viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"><path d="M1.6,16.5a1.3,1.3,0,0,1-.2-.015,1.251,1.251,0,0,1-1.04-1.43,17.277,17.277,0,0,1,33-4.014,1.25,1.25,0,1,1-2.3.969A14.777,14.777,0,0,0,2.833,15.441,1.25,1.25,0,0,1,1.6,16.5Z"></path> <path d="M33.426,13.43h-.01L23.6,13.355a1.25,1.25,0,0,1,.01-2.5h.01l8.568.065.065-8.568A1.25,1.25,0,0,1,33.5,1.111h.009a1.251,1.251,0,0,1,1.241,1.26l-.074,9.818a1.251,1.251,0,0,1-1.25,1.241Z"></path> <path d="M17.569,34.557A17.315,17.315,0,0,1,1.64,23.963a1.25,1.25,0,1,1,2.3-.969,14.777,14.777,0,0,0,28.222-3.435,1.25,1.25,0,0,1,2.47.39A17.314,17.314,0,0,1,17.569,34.557Z"></path> <path d="M1.5,33.889H1.491A1.25,1.25,0,0,1,.25,32.629l.075-9.818A1.251,1.251,0,0,1,1.584,21.57l9.819.076a1.25,1.25,0,0,1-.01,2.5h-.01L2.815,24.08,2.75,32.648A1.251,1.251,0,0,1,1.5,33.889Z"></path></svg></button>
+            </div>
+            </div>
+        </div>
+ 
+    #end
+
+    #if($Module.Settings_HoneypotField_Enable)
+    <div style="width:100%;" class="ContactEmail${ModuleID}">
+        <div class="form-control-wrap">
+            <div class="form_row">
+                <label for="ContactEmail${ModuleID}">Contact Email</label>
+                <div class="form_input">
+                    ${xf.ViewHoneypotFieldControl()}
+                </div>
+            </div>
+        </div>
+    </div>
+    #end
+
+    #if($Module.Settings_Recaptcha_Enable)
+    <fieldset #if($velocityCount ==1) class="active" #end>
+      <legend>Captcha</legend>
+      <ul class="form_list">
+        <li style="width:100%">
+          <div class="form_row">
+            <div class="form_input form_captcha"> ${xf.ViewCaptcha()}</div>
+          </div>
+        </li>
+      </ul>
+    </fieldset>
+    #end </div>
+  #if($ErrorMessage != '')
+  <div class="PowerForms_ErrorMessage">$ErrorMessage</div>
+  #end
+  <div class="form_verification">
+  </div>
+  <div class="form_submit"> 
+  
+  
+  
+  	#if(${xf.ViewXmlSetting("ButtonImage","Button")}=="Button")
+    <button type="button" class="#if(${xf.ViewXmlSetting("PrevButtonClass","")}!="") ${xf.ViewXmlSetting("PrevButtonClass","")} #else btn #end prev_but form_prev" disabled="disabled"><span class="angle-left"></span>  ${xf.ViewXmlSetting("PrevButtonText","Prev")}</button>
+    #else
+    <button type="button" class="submit_image prev_but form_prev" disabled="disabled" style="width: ${xf.ViewXmlSetting("buttonwidth","78")}px; height: ${xf.ViewXmlSetting("buttonheight","32")}px; background: url('${xf.PictureUrl("PrevButtonImage","")}') left top no-repeat; display: inline-block;"></button>
+    #end
+  	#if(${xf.ViewXmlSetting("ButtonImage","Button")}=="Button")
+    <button type="button" class="#if(${xf.ViewXmlSetting("NextButtonClass","")}!="") ${xf.ViewXmlSetting("NextButtonClass","")} #else btn #end next_but form_next">${xf.ViewXmlSetting("NextButtonText","Next")} <span class="angle-right"></span></button>
+    #else
+    <button type="button"  class="submit_image next_but form_next" style="width: ${xf.ViewXmlSetting("buttonwidth","78")}px; height: ${xf.ViewXmlSetting("buttonheight","32")}px; background: url('${xf.PictureUrl("NextButtonImage","")}') left top no-repeat; display: inline-block;"></button>
+    #end
+    
+    #if(${xf.ViewXmlSetting("SubmitButtonClass","")}!="")
+      ${xf.ViewButton(${xf.ViewXmlSetting("SubmitButtonClass","")})}
+    #else
+      ${xf.ViewButton("submit_but")}
+    #end
+
+    </div>
+    
+      
+    
+  #else
+  #if(${Module.UserId} > 0)
+  <div>${xf.ViewSetting("PowerForms_PromptAlreadySubmitted","You have already submitted the form.")}</div>
+  #else
+  <div>${xf.ViewSetting("PowerForms_PromptNotLogged","You need to log in to submit forms.")}</div>
+  #end
+  
+  #end </div>
+<script type="text/jscript">
+
+jQuery(document).ready(function ($) {
+
+	$("#form_div_${ModuleID}").dnngoguide({
+		validationEngine_file: validationFile${ModuleID}()
+	})
+})
+
+</script> 
+<style type="text/css">
+  .form_div_${ModuleID} .ContactEmail${ModuleID}{
+    position: absolute; 
+    inset-inline: -9999px;
+    width: 200px;
+ }
+  #form_div_${ModuleID} .formError .formErrorContent,
+  #form_div_${ModuleID} .formError .formErrorArrow div{
+      color: ${xf.ViewXmlSetting("Promptcolor","#ffffff")};
+      background-color: ${xf.ViewXmlSetting("Promptbgcolor","#ee0101")};
+  }
+
+</style>
+#if(${xf.ViewSetting("PowerForms_ImageCaptcha_Enable",false)})
+<script>
+    $("#form_div_${ModuleID}").find(".recaptcha-image").each(function () {
+        let e = $(this);
+        e.data("src", e.children("img").attr("src")).on("click", function () {
+            e.children("img").attr("src", e.data("src") + "&v=" + (new Date()).getTime());
+            e.siblings("input").val("").trigger("focus");
+            $(this).addClass("active");
+        }).on("mouseout", function () {
+            $(this).removeClass("active");
+        });
+        e.siblings("button").on("click", function (event) {
+            event.preventDefault();
+            e.children("img").attr("src", e.data("src") + "&v=" + (new Date()).getTime());
+            e.siblings("input").val("").trigger("focus");
+        });
+
+    });
+</script>
+#end

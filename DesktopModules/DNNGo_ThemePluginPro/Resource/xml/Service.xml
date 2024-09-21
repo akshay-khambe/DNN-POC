@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Services>
+  <Service>
+    <Token>PictureItem</Token>
+    <Name>PictureItem JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServicePictureItemJSON</typeName>
+  </Service>
+  <Service>
+    <Token>PictureList</Token>
+    <Name>PictureList JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServicePictureListJSON</typeName>
+  </Service>
+  <Service>
+    <Token>ServiceSavePanl</Token>
+    <Name>ServiceSavePanl JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceSavePanlJSON</typeName>
+  </Service>
+  <Service>
+    <Token>ServiceSaveRow</Token>
+    <Name>ServiceSaveRow JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceSaveRowJSON</typeName>
+  </Service>
+
+  <Service>
+    <Token>ServiceGetPanls</Token>
+    <Name>ServiceGetPanls JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceGetPanlJSON</typeName>
+  </Service>
+
+  <Service>
+    <Token>ServiceDeletePanl</Token>
+    <Name>ServiceDeletePanl JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceDeletePanlJSON</typeName>
+  </Service>
+
+
+  <Service>
+    <Token>ServiceDeleteRow</Token>
+    <Name>ServiceDeleteRow JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceDeleteRowJSON</typeName>
+  </Service>
+
+  
+
+  <Service>
+    <Token>ServiceGetTabs</Token>
+    <Name>ServiceGetTabs JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceGetTabJSON</typeName>
+  </Service>
+  <Service>
+    <Token>ServiceGetModules</Token>
+    <Name>ServiceGetModules JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceGetModuleJSON</typeName>
+  </Service>  
+  <Service>
+    <Token>ServiceSortPanlRow</Token>
+    <Name>ServiceSortPanlRow JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceSortPanlRowJSON</typeName>
+  </Service>
+  <Service>
+    <Token>ServiceGetTabModules</Token>
+    <Name>ServiceGetTabModules JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceGetTabModulesJSON</typeName>
+  </Service>
+	<Service>
+		<Token>ServiceGetFormBuilders</Token>
+		<Name>ServiceGetFormBuilders JSON</Name>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<typeName>DNNGo.Modules.ThemePluginPro.ServiceGetFormBuildersJSON</typeName>
+	</Service>
+
+
+
+  <Service>
+    <Token>SaveLayoutItem</Token>
+    <Name>Save LayoutItem JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceSaveLayoutItemJSON</typeName>
+  </Service>
+
+
+  <Service>
+    <Token>ServiceSaveContent</Token>
+    <Name>Service Save ContentBuilder JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceContentBuilder</typeName>
+  </Service>
+
+  <Service>
+    <Token>ServiceSaveImage</Token>
+    <Name>Service Save Image JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceSaveImage</typeName>
+  </Service>
+  <Service>
+    <Token>ServiceCutImage</Token> 
+    <Name>Service Cut Image JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceCutImage</typeName>
+  </Service>
+	<Service>
+		<Token>ServiceSaveBase64Image</Token>
+		<Name>Service Save Base64 Image JSON</Name>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<typeName>DNNGo.Modules.ThemePluginPro.ServiceSaveBase64Image</typeName>
+	</Service>
+	<Service>
+		<Token>ServiceDeleteFile</Token>
+		<Name>ServiceDeleteFile JSON</Name>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<typeName>DNNGo.Modules.ThemePluginPro.ServiceDeleteFile</typeName>
+	</Service>
+
+  <Service>
+    <Token>ServiceSaveContent</Token>
+    <Name>Service Save ContentBuilder JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceContentBuilder</typeName>
+  </Service>
+
+
+  <Service>
+    <Token>ServiceSaveSection</Token>
+    <Name>Service Save Section Template JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceSaveSection</typeName>
+  </Service>
+  <Service>
+    <Token>ServiceDeleteSection</Token>
+    <Name>Service Delete Section Template JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceDeleteSection</typeName>
+  </Service>
+  <Service>
+    <Token>ServiceGetSectionJSON</Token>
+    <Name>Service Get Section List JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceGetSectionJSON</typeName>
+  </Service>
+  <Service>
+    <Token>ServiceGetSectionDetailJSON</Token>
+    <Name>Service Get Section Detail JSON</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceGetSectionDetailJSON</typeName>
+  </Service>
+
+  <Service>
+    <Token>ServiceSectionExport</Token>
+    <Name>Service Export Section</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceSectionExport</typeName>
+  </Service>
+  <Service>
+    <Token>ServiceSectionImport</Token>
+    <Name>Service Import Section</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceSectionImport</typeName>
+  </Service>
+  
+   <Service>
+    <Token>ServiceAnalyzing</Token>
+    <Name>Analyzing</Name>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceAnalyzing</typeName>
+  </Service>
+	<Service>
+		<Token>ServiceAddModuleAnalyzing</Token>
+		<Name>AddModuleAnalyzing</Name>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<typeName>DNNGo.Modules.ThemePluginPro.ServiceAddModuleAnalyzing</typeName>
+	</Service>
+	<Service>
+		<Token>ServiceWebpConvert</Token>
+		<Name>WebpConvert</Name>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<Validate>false</Validate>
+		<Login>false</Login>
+		<typeName>DNNGo.Modules.ThemePluginPro.ServiceWebpConvert</typeName>
+	</Service>
+  <Service>
+    <Token>Thumbnail</Token>
+    <Name>Thumbnail</Name>
+    <Validate>false</Validate>
+    <Login>false</Login>
+    <assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+    <typeName>DNNGo.Modules.ThemePluginPro.ServiceThumbnail</typeName>
+  </Service>
+  	<Service>
+		<Token>ServicePixabayProxy</Token>
+		<Name>PixabayProxy</Name>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<Validate>false</Validate>
+		<Login>false</Login>
+		<typeName>DNNGo.Modules.ThemePluginPro.ServicePixabayPhotos</typeName>
+	</Service>
+	<Service>
+		<Token>ServicePixabaySave</Token>
+		<Name>Pixabay Proxy Save</Name>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<typeName>DNNGo.Modules.ThemePluginPro.ServicePixabaySave</typeName>
+	</Service>
+	<Service>
+		<Token>ServiceSaveThemeSettings</Token>
+		<Name>Save Theme Settings</Name>
+		<assemblyName>DNNGo.Modules.ThemePluginPro</assemblyName>
+		<typeName>DNNGo.Modules.ThemePluginPro.ServiceSaveThemeSettings</typeName>
+	</Service>
+</Services>

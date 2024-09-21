@@ -1,0 +1,65 @@
+﻿@import url('https://fonts.googleapis.com/css?display=swap&family=Pinyon+Script');
+@import url('https://fonts.googleapis.com/css?display=swap&family=Fira+Sans:200,200i,500');
+@import url('https://fonts.googleapis.com/css?display=swap&family=Six+Caps');
+
+
+/**********************************
+    General
+***********************************/
+
+ 
+.d-wrapper {
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 100%; 
+    line-height: 2.2;
+    font-weight: 200;
+}
+.d-wrapper p,.d-wrapper td,.d-wrapper li,.d-wrapper label {
+    font-size: 1.14em;
+    line-height: 2.2;
+    font-weight: 200;
+}
+.d-wrapper h1,.d-wrapper  h2,.d-wrapper  h3,.d-wrapper  h4,.d-wrapper  h5,.d-wrapper  .d-wrapper h6{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 200;
+    line-height: 1.4;
+}        
+
+.d-wrapper h1{font-size: 3.2em;margin: 0.08em 0 0.2em;}
+.d-wrapper h2{font-size: 2.5em;margin: 0.2em 0 0.2em;}
+.d-wrapper h3{font-size: 1.9em;margin: 0.4em 0 0.2em;}
+.d-wrapper h4{font-size: 1.6em;margin: 0.5em 0 0.2em;line-height: 1.6;}
+.d-wrapper h5{font-size: 1.4em;margin: 0.5em 0 0.2em;line-height: 1.8;}
+.d-wrapper h6{font-size: 1.14em;margin: 0.6em 0 0.2em;font-weight: bold;line-height: 2;}
+.d-wrapper p{margin:0.49em 0 1em;}
+
+.d-wrapper .display{ margin-bottom: 0.5em; }
+.d-wrapper .display h1{
+    font-family: 'Pinyon Script', cursive;
+    font-size: 6em;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0.4em 0;
+}
+.d-wrapper .display p{
+    font-family: 'Six Caps', cursive;
+    font-size: 2.7em;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 640px) {
+    .d-wrapper .display h1{font-size: 2.5em;}
+    .d-wrapper .display p{font-size: 1.4em;}
+    .d-wrapper h1{font-size: 2.3em;}
+    .d-wrapper h2{font-size: 2em;}
+    .d-wrapper h3{font-size: 1.7rem;}
+    .d-wrapper h4{font-size: 1.4em;}
+    .d-wrapper h5{font-size: 1.2rem;}
+    .d-wrapper h6{font-size: 1em;} 
+}

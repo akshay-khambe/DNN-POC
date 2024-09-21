@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_ThemePluginPro>
+  <Config>
+    <Name><![CDATA[PageOptions]]></Name>
+    <Alias><![CDATA[Page Options]]></Alias>
+    <Icon><![CDATA[fa fa-wrench]]></Icon>
+    <Description><![CDATA[One Page]]></Description>
+  </Config>
+  <Groups>
+    <Group>
+      <Name><![CDATA[Header Layout]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Header Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+    <Group>
+      <Name><![CDATA[Content Layout]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+     <Group>
+      <Name><![CDATA[Container Width]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+    <Group>
+      <Name><![CDATA[Page Title Layout]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+    <Group>
+      <Name><![CDATA[Sidebar Layout]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Sidebar Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+
+    <Group>
+      <Name><![CDATA[Footer Layout]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[Footer Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+    <Group>
+      <Name><![CDATA[One Page]]></Name>
+      <Description><![CDATA[]]></Description>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Group>
+
+  </Groups>
+  <Settings>
+    <Setting>
+      <Name><![CDATA[HeaderLayout]]></Name>
+      <Alias><![CDATA[Header Layout]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList_Layout]]></ControlType>
+      <Direction><![CDATA[Header]]></Direction>
+      <ListContent><![CDATA[Inherit|None]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Header Layout]]></Group>
+      <Categories><![CDATA[Header Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting> 
+    <Setting>
+      <Name><![CDATA[ContentLayout]]></Name>
+      <Alias><![CDATA[Content Layouts]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList_Layout]]></ControlType>
+      <Direction><![CDATA[Content]]></Direction>
+      <ListContent><![CDATA[Inherit]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[CustomBackground]]></Name>
+      <Alias><![CDATA[Custom Body Background]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit|Custom:custom]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[Backgroundcolor]]></Name>
+      <Alias><![CDATA[Background Color]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#FFFFFF]]></DefaultValue>
+      <ControlType><![CDATA[Colorpicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[#Ctl_CustomBackground=='custom']]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[bgcolorimg]]></Name>
+      <Alias><![CDATA[Background Image]]></Alias>
+      <Width><![CDATA[522]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[Image]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[#Ctl_CustomBackground=='custom']]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[bgcolorattr]]></Name>
+      <Alias><![CDATA[Background]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[scroll,center,center,no-repeat,cover]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <CssClass><![CDATA[background-textbox]]></CssClass>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[(#Ctl_CustomBackground=='custom') && (#Ctl_bgcolorimg != '')]]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[ContentMargin]]></Name>
+      <Alias><![CDATA[Content Margin( Top&Bottom )]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit|Custom:custom]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting> 
+    <Setting>
+      <Name><![CDATA[ContentMarginTop]]></Name>
+      <Alias><![CDATA[Content Margin (Top)]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <DefaultValue><![CDATA[,,,,0]]></DefaultValue>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[number]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[#Ctl_ContentMargin == 'custom']]></Condition>
+      <CssClass><![CDATA[responsive-textbox inverted]]></CssClass>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[ContentMarginBottom]]></Name>
+      <Alias><![CDATA[Content Margin (Bottom)]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[,,,,0]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[number]]></Verification>
+      <Group><![CDATA[Content Layout]]></Group>
+      <Categories><![CDATA[Content Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[#Ctl_ContentMargin == 'custom']]></Condition>
+      <CssClass><![CDATA[responsive-textbox inverted]]></CssClass>
+   </Setting>
+    <Setting>
+      <Name><![CDATA[CustomContWidth]]></Name>
+      <Alias><![CDATA[Custom Width]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit|Custom:custom]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Container Width]]></Group>
+     <Categories><![CDATA[Content Layout]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[ContainerWidth]]></Name>
+      <Alias><![CDATA[Container Width]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[1200px,1200px,960px,760px,540px,auto]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Container Width]]></Group>
+     <Categories><![CDATA[Content Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[#Ctl_CustomContWidth == 'custom']]></Condition>
+      <CssClass><![CDATA[responsive-textbox inverted responsive-1600 required-all]]></CssClass>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[pageTitleLayout]]></Name>
+      <Alias><![CDATA[Page Title Layout]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,ON:on,OFF:off]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting> 
+    <Setting>
+      <Name><![CDATA[Custompagetitlebg]]></Name>
+      <Alias><![CDATA[Custom Background]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit|Custom:custom]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[TitleDisplayTitle]]></Name>
+      <Alias><![CDATA[Display Title]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit|ON:on|OFF:off]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[ptbgcolor]]></Name>
+      <Alias><![CDATA[Background Color]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[#FFFFFF]]></DefaultValue>
+      <ControlType><![CDATA[Colorpicker]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[rgba]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[#Ctl_Custompagetitlebg == 'custom']]></Condition>
+    </Setting>    
+    <Setting>
+      <Name><![CDATA[ptbgtype]]></Name>
+      <Alias><![CDATA[Background Type]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[Image]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Image,Video]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[#Ctl_Custompagetitlebg == 'custom']]></Condition>
+   </Setting>
+    
+    <Setting>
+      <Name><![CDATA[ptbgcolorimg]]></Name>
+      <Alias><![CDATA[Background Image]]></Alias>
+      <Width><![CDATA[522]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[Image]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[#Ctl_Custompagetitlebg == 'custom' && #Ctl_ptbgtype == 'Image']]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[ptbgcolorattr]]></Name>
+      <Alias><![CDATA[Background]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[scroll,center,center,no-repeat,cover]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <CssClass><![CDATA[background-textbox]]></CssClass>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[(#Ctl_Custompagetitlebg == 'custom') && (#Ctl_ptbgcolorimg != '' && #Ctl_ptbgtype == 'Image')]]></Condition>
+    </Setting>
+
+
+    <Setting>
+      <Name><![CDATA[ptmp4url]]></Name>
+      <Alias><![CDATA[MP4 URL]]></Alias>
+      <Width><![CDATA[522]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[Image]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[(#Ctl_Custompagetitlebg == 'custom') && (#Ctl_ptbgtype == 'Video')]]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[ptVideoPoster]]></Name>
+      <Alias><![CDATA[Video Poster]]></Alias>
+      <Width><![CDATA[522]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[Image]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[(#Ctl_Custompagetitlebg == 'custom') && (#Ctl_ptbgtype == 'Video')]]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[pageBreadcrumbs]]></Name>
+      <Alias><![CDATA[Page Breadcrumbs]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,ON:on,OFF:off]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting> 
+
+
+    <Setting>
+      <Name><![CDATA[TitleHeight]]></Name>
+      <Alias><![CDATA[Height]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,Custom:custom,Full Height:fullheight]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+   </Setting>
+   <Setting>
+      <Name><![CDATA[TitleCustomHeight]]></Name>
+      <Alias><![CDATA[Custom Height]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[200]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[integer]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[#Ctl_TitleHeight=='custom']]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[TitleScrolling]]></Name>
+      <Alias><![CDATA[Scrolling Text Animation]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,ON:on,OFF:off]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+   </Setting>
+  <Setting>
+      <Name><![CDATA[ptColorOverlay]]></Name>
+      <Alias><![CDATA[Color Overlay]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,OFF:off,Light:light,Dark:dark]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+   </Setting>
+    <Setting>
+      <Name><![CDATA[ptOverlayOpacity]]></Name>
+      <Alias><![CDATA[Overlay Opacity]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[10%:10,20%:20,30%:30,40%:40,50%:50,60%:60,70%:70,80%:80,90%:90]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[#Ctl_ptColorOverlay!='off' && #Ctl_ptColorOverlay!='inherit']]></Condition>
+   </Setting>
+    <Setting>
+      <Name><![CDATA[ptFontColor]]></Name>
+      <Alias><![CDATA[Font Color]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,Light:light,Dark:dark]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+   </Setting>
+    <Setting>
+      <Name><![CDATA[bgincludeheader]]></Name>
+      <Alias><![CDATA[Background Region]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,ON:on,OFF:off]]></ListContent>
+      <Description><![CDATA[PageTitle And Header]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Page Title Layout]]></Group>
+      <Categories><![CDATA[Page Title Layout]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+   </Setting>
+
+
+
+
+
+    <Setting>
+      <Name><![CDATA[Sidebarenabled]]></Name>
+      <Alias><![CDATA[Enabled]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,ON:on,OFF:off]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Sidebar Layout]]></Group>
+      <Categories><![CDATA[Sidebar Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[SidebarPosition]]></Name>
+      <Alias><![CDATA[Sidebar Position]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,Right:right,Left:left]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Sidebar Layout]]></Group>
+      <Categories><![CDATA[Sidebar Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[customSpacing]]></Name>
+      <Alias><![CDATA[Sidebar Spacing]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,Custom:custom]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Sidebar Layout]]></Group>
+      <Categories><![CDATA[Sidebar Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[SidebarSpacing]]></Name>
+      <Alias><![CDATA[Spacing]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[,,,]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Sidebar Layout]]></Group>
+      <Categories><![CDATA[Sidebar Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <CssClass><![CDATA[spacing-textbox]]></CssClass>
+      <Condition><![CDATA[#Ctl_customSpacing == 'custom']]></Condition>
+    </Setting>
+ 
+    <Setting>
+      <Name><![CDATA[displaySidebarMenu]]></Name>
+      <Alias><![CDATA[Display Sidebar Menu]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[inherit]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[Inherit:inherit,ON:on,OFF:off]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Sidebar Layout]]></Group>
+      <Categories><![CDATA[Sidebar Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+
+
+
+    <Setting>
+      <Name><![CDATA[FooterLayout]]></Name>
+      <Alias><![CDATA[Footer Layouts]]></Alias>
+      <Width><![CDATA[400]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList_Layout]]></ControlType>
+      <Direction><![CDATA[Footer]]></Direction>
+      <ListContent><![CDATA[Inherit|None]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[True]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[Footer Layout]]></Group>
+      <Categories><![CDATA[Footer Layout]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+    </Setting>
+
+
+
+    <Setting>
+      <Name><![CDATA[Navigation]]></Name>
+      <Alias><![CDATA[Navigation]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[true]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[ON:true,OFF:false]]></ListContent>
+      <Description><![CDATA[If set to on, it will show a navigation bar made up of small circles.]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[NavigationPosition]]></Name>
+      <Alias><![CDATA[Navigation Position]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[right]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[Left:left,Right:right]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[#Ctl_Navigation == 'true']]></Condition>
+    </Setting>
+     <Setting>
+      <Name><![CDATA[NavigationStyle]]></Name>
+      <Alias><![CDATA[Navigation Style]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[style01]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[style01:style01,style02:style02,style03:style03]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[#Ctl_Navigation == 'true']]></Condition>
+    </Setting>
+     <Setting>
+      <Name><![CDATA[easing]]></Name>
+      <Alias><![CDATA[Easing Animation]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[swing]]></DefaultValue>
+      <ControlType><![CDATA[DropDownList]]></ControlType>
+      <Direction><![CDATA[Horizontal]]></Direction>
+      <ListContent><![CDATA[linear,swing,easeInQuad,easeInCubic,easeInQuart,easeInQuint,easeInSine,easeInExpo,easeInCirc,easeInBack,easeOutQuad,easeOutCubic,easeOutQuart,easeOutQuint,easeOutSine,easeOutExpo,easeOutCirc,easeOutBack,easeInOutQuad,easeInOutCubic,easeInOutQuart,easeInOutQuint,easeInOutSine,easeInOutExpo,easeInOutCirc,easeInOutBack]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Layout><![CDATA[Left]]></Layout>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[duration]]></Name>
+      <Alias><![CDATA[Duration]]></Alias>
+      <Width><![CDATA[208]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[600]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[number]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Condition><![CDATA[]]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[HeaderAnchor]]></Name>
+      <Alias><![CDATA[Header Anchor]]></Alias>
+      <Width><![CDATA[100]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[false]]></DefaultValue>
+      <ControlType><![CDATA[CheckBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[HeaderAnchorID]]></Name>
+      <Alias><![CDATA[Anchor ID]]></Alias>
+      <Width><![CDATA[300]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Condition><![CDATA[#Ctl_HeaderAnchor]]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[HeaderAnchorTitle]]></Name>
+      <Alias><![CDATA[Anchor Title]]></Alias>
+      <Width><![CDATA[300]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Condition><![CDATA[#Ctl_HeaderAnchor]]></Condition>
+    </Setting>
+
+    <Setting>
+      <Name><![CDATA[FooterAnchor]]></Name>
+      <Alias><![CDATA[Footer Anchor]]></Alias>
+      <Width><![CDATA[100]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[false]]></DefaultValue>
+      <ControlType><![CDATA[CheckBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[FooterAnchorID]]></Name>
+      <Alias><![CDATA[Anchor ID]]></Alias>
+      <Width><![CDATA[300]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Condition><![CDATA[#Ctl_FooterAnchor]]></Condition>
+    </Setting>
+    <Setting>
+      <Name><![CDATA[FooterAnchorTitle]]></Name>
+      <Alias><![CDATA[Anchor Title]]></Alias>
+      <Width><![CDATA[300]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <ControlType><![CDATA[TextBox]]></ControlType>
+      <Direction><![CDATA[Vertical]]></Direction>
+      <ListContent><![CDATA[]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[]]></Verification>
+      <Group><![CDATA[One Page]]></Group>
+      <Categories><![CDATA[One Page]]></Categories>
+      <Condition><![CDATA[#Ctl_FooterAnchor]]></Condition>
+    </Setting>
+
+
+  </Settings>
+</DNNGo_ThemePluginPro>
+
+
+

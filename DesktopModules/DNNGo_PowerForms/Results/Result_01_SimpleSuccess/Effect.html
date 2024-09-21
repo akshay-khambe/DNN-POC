@@ -1,0 +1,36 @@
+﻿<div class="$ThemeName form-align-${xf.ViewResultSetting("align","left")} ${ThemeName}_${ModuleID}" id="result${ModuleID}" >
+	<div class="result_form">
+
+		#if(${xf.ViewResultSetting("resultitle","Email Sent Successfully.")}!="")
+			<${xf.ViewResultSetting("Titlelabel","h3")} style="color:${xf.ViewResultSetting("Titlecolor","#333333")}">${xf.ViewResultSetting("resultitle","Email Sent Successfully.")}</${xf.ViewResultSetting("Titlelabel","h1")}>
+		#end
+
+		#if(${xf.ViewResultSetting("resultcontent","Thank you, your message has been submitted to us.")}!="")
+			<div class="form_row" style="color:${xf.ViewResultSetting("contentcolor","#666666")}">${xf.ViewResultSetting("resultcontent","Thank you, your message has been submitted to us.")}</div>
+		#end
+		
+		<div class="form_submit">
+			#if(${xf.ViewResultSetting("ReturnButtonclass","")}!="")
+
+
+				${xf.ViewReturnButton(${xf.ViewResultSetting("ReturnButtonclass","")})}
+			#else
+				${xf.ViewReturnButton("return-btn")}
+			#end
+	
+		</div>
+		
+	</div>
+</div>
+
+
+<script> 
+	jQuery(document).ready(function() {
+		jQuery('html,body').stop().animate({scrollTop: jQuery(".${ThemeName}_${ModuleID}").offset().top - 100}, 10);
+	})
+</script>
+
+
+
+
+

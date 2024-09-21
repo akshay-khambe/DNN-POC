@@ -1,0 +1,33 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Create Table **/
+
+  
+/** ALTER TABLE DNNGo_ThemePluginPro_Multimedia  **/
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_Multimedia]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+BEGIN
+	if not exists (select * from dbo.syscolumns where id=object_id(N'{databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_Multimedia]') and name='Source' )
+	BEGIN
+		ALTER TABLE {databaseOwner}[{objectQualifier}DNNGo_ThemePluginPro_Multimedia] ADD
+			[Source] [nvarchar](256) NULL
+	END
+END
+GO
+
+  
+ 
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/
+
+
+

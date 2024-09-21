@@ -1,0 +1,232 @@
+<div class="layout-css-box">
+  {{if ThemeOptions.BootstrapVersion !="v4"}}
+  <div class="layout-css-margin">
+    <div class="info">Margin (px)</div>
+    <div class="layout-top">
+      <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="mtop" value="${mtop}"
+        placeholder="-">
+    </div>
+    <div class="layout-right">
+      <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="mright" value="${mright}"
+        placeholder="-">
+    </div>
+    <div class="layout-bottom">
+      <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="mbottom" value="${mbottom}"
+        placeholder="-">
+    </div>
+    <div class="layout-left">
+      <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="mleft" value="${mleft}"
+        placeholder="-">
+    </div>
+    <div class="layout-css-border">
+      <div class="info">Border [Width] [Style] [Color] [Radius]</div>
+      <div class="info2"></div>
+      <div class="layout-top">
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="bwtop" value="${bwtop}"
+          placeholder="-">
+        <select class="dnnOptions form-control" data-name="bstop" data-value="${bstop}" placeholder="-">
+          <option value="">-</option>
+          <option value="solid">Solid</option>
+          <option value="dotted">Dotted</option>
+          <option value="dashed">Dashed</option>
+          <option value="none">None</option>
+          <option value="hidden">Hidden</option>
+          <option value="double">Double</option>
+          <option value="groove">Groove</option>
+          <option value="ridge">Ridge</option>
+          <option value="inset">Inset</option>
+          <option value="outset">Outset</option>
+          <option value="initial">Initial</option>
+          <option value="inherit">Inherit</option>
+        </select>
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="bctop"
+            value="${bctop}" placeholder="-">
+          <i style="background-color:${bctop}"></i></div>
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="brstop" value="${brstop}"
+          placeholder="-">
+      </div>
+      <div class="layout-right">
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="bwright" value="${bwright}"
+          placeholder="-">
+        <select class="dnnOptions form-control" data-name="bsright" data-value="${bsright}">
+          <option value="">-</option>
+          <option value="solid">Solid</option>
+          <option value="dotted">Dotted</option>
+          <option value="dashed">Dashed</option>
+          <option value="none">None</option>
+          <option value="hidden">Hidden</option>
+          <option value="double">Double</option>
+          <option value="groove">Groove</option>
+          <option value="ridge">Ridge</option>
+          <option value="inset">Inset</option>
+          <option value="outset">Outset</option>
+          <option value="initial">Initial</option>
+          <option value="inherit">Inherit</option>
+        </select>
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="bcright"
+            value="${bcright}" placeholder="-">
+          <i style="background-color:${bcright}"></i></div>
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="brsright" value="${brsright}"
+          placeholder="-">
+      </div>
+      <div class="layout-bottom">
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="bwbottom" value="${bwbottom}"
+          placeholder="-">
+        <select name="gap" class="dnnOptions form-control" data-name="bsbottom" data-value="${bsbottom}" placeholder="-">
+          <option value="">-</option>
+          <option value="solid">Solid</option>
+          <option value="dotted">Dotted</option>
+          <option value="dashed">Dashed</option>
+          <option value="none">None</option>
+          <option value="hidden">Hidden</option>
+          <option value="double">Double</option>
+          <option value="groove">Groove</option>
+          <option value="ridge">Ridge</option>
+          <option value="inset">Inset</option>
+          <option value="outset">Outset</option>
+          <option value="initial">Initial</option>
+          <option value="inherit">Inherit</option>
+        </select>
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="bcbottom"
+            value="${bcbottom}" placeholder="-">
+          <i style="background-color:${bcbottom}"></i></div>
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="brsbottom" value="${brsbottom}"
+          placeholder="-">
+      </div>
+      <div class="layout-left">
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="bwleft" value="${bwleft}"
+          placeholder="-">
+        <select name="gap" class="dnnOptions form-control" data-name="bsleft" data-value="${bsleft}" placeholder="-">
+          <option value="">-</option>
+          <option value="solid">Solid</option>
+          <option value="dotted">Dotted</option>
+          <option value="dashed">Dashed</option>
+          <option value="none">None</option>
+          <option value="hidden">Hidden</option>
+          <option value="double">Double</option>
+          <option value="groove">Groove</option>
+          <option value="ridge">Ridge</option>
+          <option value="inset">Inset</option>
+          <option value="outset">Outset</option>
+          <option value="initial">Initial</option>
+          <option value="inherit">Inherit</option>
+        </select>
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="bcleft"
+            value="${bcleft}" placeholder="-">
+          <i style="background-color:${bcleft}"></i></div>
+        <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="brsleft" value="${brsleft}"
+          placeholder="-">
+      </div>
+      <div class="layout-css-padding">
+        <div class="info">Padding (px)</div>
+        <div class="layout-top">
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="ptop" value="${ptop}"
+            placeholder="-">
+        </div>
+        <div class="layout-right">
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="pright" value="${pright}"
+            placeholder="-">
+        </div>
+        <div class="layout-bottom">
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="pbottom" value="${pbottom}"
+            placeholder="-">
+        </div>
+        <div class="layout-left">
+          <input type="text" class="dnnOptions form-control validate[custom[number]]" data-name="pleft" value="${pleft}"
+            placeholder="-">
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  <div class="layout-css-other">
+    <div class="form-group">
+      <label for="firstname" class="control-label">Background Color:</label>
+      <div class="control-cont">
+        <div class="colorpicker-group">
+          <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="bgcolor"
+            value="${bgcolor}">
+          <i style="background-color:${bgcolor}"></i></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="control-label">Background Images:</label>
+      <div class="control-cont"> 
+        {{tmpl($data,options ={imgid:"bgimages"}) '#tmpl-image'}}
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#id_bgimages != ''">
+      <label for="firstname" class="control-label">Background Position:</label>
+      <div class="control-cont"> <select class="dnnOptions form-control" id="bgposition" data-name="bgposition"
+          data-value="${bgposition}">
+          <option value="center top">center top</option>
+          <option value="center right">center right</option>
+          <option value="center bottom">center bottom</option>
+          <option value="center center" selected="selected">center center</option>
+          <option value="left top">left top</option>
+          <option value="left center">left center</option>
+          <option value="left bottom">left bottom</option>
+          <option value="right top">right top</option>
+          <option value="right center">right center</option>
+          <option value="right bottom">right bottom</option>
+          <option value="percentage">(x%, y%)</option>
+        </select>
+        <div class="row row-sm-space conditional" data-condition="#bgposition == 'percentage' && #id_bgimages != ''">
+          <div class="col-sm-6">
+            <input type="text" class="dnnOptions form-control" data-name="bgpositionx" value="${bgpositionx}">
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="dnnOptions form-control" data-name="bgpositiony" value="${bgpositiony}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#id_bgimages != ''">
+      <label for="firstname" class="control-label">Background Attachment:</label>
+      <div class="control-cont">
+        <select class="dnnOptions form-control" id="bgattachment" data-name="bgattachment" data-value="${bgattachment}">
+          <option value="">background-attachment</option>
+          <option value="fixed">Fixed</option>
+          <option value="scroll">Scroll</option>
+          <option value="inherit">Inherit</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#id_bgimages != ''">
+      <label for="firstname" class="control-label">Background Size:</label>
+      <div class="control-cont"> <select class="dnnOptions form-control" data-name="bgsize" data-value="${bgsize}">
+          <option value="">Theme defaults</option>
+          <option value="cover">Cover</option>
+          <option value="contain">Contain</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group conditional" data-condition="#id_bgimages != ''">
+      <label for="firstname" class="control-label">Background Repeat:</label>
+      <div class="control-cont"> <select class="dnnOptions form-control" data-name="bgrepeat" data-value="${bgrepeat}">
+          <option value="">Repeat</option>
+        <option value="no-repeat">No Repeat</option>
+        <option value="repeat-x">Repeat X</option>
+        <option value="repeat-y">Repeat Y</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+</div> 
+
+
+
+
+
+
+
+
+
+
+

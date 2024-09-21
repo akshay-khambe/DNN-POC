@@ -1,0 +1,249 @@
+<div class="form-group">
+  <div class="control-cont"> <label class="control-label">Background Style:</label>
+    <select class="dnnOptions form-control" id="bgstyle" data-name="bgstyle" data-value="${bgstyle}">
+      <option value="">Default</option>
+      <option value="single">Single Color</option>
+      <option value="gradient">Gradient Color</option>
+      <option value="image">Image</option>
+      <option value="parallax">Parallax</option>
+      <option value="youtube">YouTube Video</option>
+      <option value="video">Hosted Video</option>
+    </select>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#bgstyle == 'single'">
+  <div class="control-cont"> <label class="control-label">Background Color:</label>
+    <div class="colorpicker-group">
+      <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="paxcolor"
+        value="${paxcolor}">
+      <i style="background-color:${paxcolor}"></i>
+    </div>
+  </div>
+</div>
+
+<div class="form-group conditional" data-condition="#bgstyle == 'gradient'">
+  <div class="control-cont"> 
+   
+
+    <div class="row">
+      <div class="col-sm-6"> <label class="control-label">Gradient Type:</label>
+    <select class="dnnOptions form-control" id="paxgradienttype" data-name="paxgradienttype" data-value="${paxgradienttype}">
+      <option value="top">Vertical</option>
+      <option value="left">Horizontal</option>
+      <option value="custom">Custom</option>
+    </select>
+      </div>
+      <div class="col-sm-6 conditional" data-condition="#paxgradienttype == 'custom'"> <label class="control-label">Degree:</label>
+        <input type="number" class="dnnOptions form-control " id="paxgradientdeg" data-name="paxgradientdeg" data-value="${paxgradientdeg}" placeholder="45">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#bgstyle == 'gradient'">
+  <div class="control-cont"> <label class="control-label">Gradient Start Color:</label>
+    <div class="colorpicker-group">
+      <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="paxgradientstart"
+        value="${paxgradientstart}">
+      <i style="background-color:${paxgradientstart}"></i>
+    </div>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#bgstyle == 'gradient'">
+  <div class="control-cont"> <label class="control-label">Gradient End Color:</label>
+    <div class="colorpicker-group">
+      <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="paxgradientend"
+        value="${paxgradientend}">
+      <i style="background-color:${paxgradientend}"></i>
+    </div>
+  </div>
+</div>
+
+<div class="form-group conditional" data-condition="(#bgstyle == 'image') || (#bgstyle == 'parallax')">
+  <div class="control-cont"> <label class="control-label">Background Images:</label>
+    {{tmpl($data,options ={imgid:"paximages"}) '#tmpl-image'}}
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#bgstyle == 'parallax'">
+  <div class="control-cont"> <label class="control-label">Parallax Style:</label>
+    <select class="dnnOptions form-control" data-name="parallax" data-value="${parallax}" id="parallax">
+      <option value="auto">Fixed at its position</option>
+      <option value="js">Parallax on scroll</option>
+    </select>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="(#bgstyle == 'parallax') && (#parallax == 'js')">
+  <div class="control-cont"> <label class="control-label">Parallax Factor:</label>
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Factor:</p>
+        <input type="number" class="dnnOptions form-control" step="0.01" data-name="paxspeed" value="${paxspeed}" data-default="0.3">
+      </div>
+      <div class="col-sm-2">
+        <p>Extra Large:</p>
+        <input type="number" class="dnnOptions form-control" step="0.01" data-name="paxspeedxl" value="${paxspeedxl}" data-default="0.3">
+      </div>
+      <div class="col-sm-2">
+        <p>Large:</p>
+        <input type="number" class="dnnOptions form-control" step="0.01" data-name="paxspeedlg" value="${paxspeedlg}" data-default="0.3">
+      </div>
+      <div class="col-sm-2">
+        <p>Medium:</p>
+        <input type="number" class="dnnOptions form-control" step="0.01" data-name="paxspeedmd" value="${paxspeedmd}" data-default="0.2">
+      </div>
+      <div class="col-sm-2">
+        <p>Small:</p>
+        <input type="number" class="dnnOptions form-control" step="0.01" data-name="paxspeedsm" value="${paxspeedsm}" data-default="0.1">
+      </div>
+      <div class="col-sm-2">
+        <p>Extra small:</p>
+        <input type="number" class="dnnOptions form-control" step="0.01" data-name="paxspeedxs" value="${paxspeedxs}" data-default="0">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="((#parallax == 'auto') && (#bgstyle == 'parallax')) || (#bgstyle == 'image')">
+  <label for="firstname" class="control-label">Background Position:</label>
+  <div class="control-cont"> <select class="dnnOptions form-control" id="paxposition" data-name="paxposition" data-value="${paxposition}">
+      <option value="center top">center top</option>
+      <option value="center right">center right</option>
+      <option value="center bottom">center bottom</option>
+      <option value="center center" selected="selected">center center</option>
+      <option value="left top">left top</option>
+      <option value="left center">left center</option>
+      <option value="left bottom">left bottom</option>
+      <option value="right top">right top</option>
+      <option value="right center">right center</option>
+      <option value="right bottom">right bottom</option>
+      <option value="percentage">(x%, y%)</option>
+    </select>
+    <div class="row row-sm-space conditional" data-condition="(#paxposition == 'percentage')">
+      <div class="col-sm-6">
+        <input type="text" class="dnnOptions form-control" data-name="paxpositionx" value="${paxpositionx}">
+      </div>
+      <div class="col-sm-6">
+        <input type="text" class="dnnOptions form-control" data-name="paxpositiony" value="${paxpositiony}">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group conditional" data-condition="(#bgstyle == 'image') || (#bgstyle == 'parallax')">
+  <div class="control-cont"> <label class="control-label">Background Image Repeat:</label>
+    <select class="dnnOptions form-control" data-name="paxrepeat" data-value="${paxrepeat}">
+      <option value="">Repeat</option>
+      <option value="repeat-x">Repeat X</option>
+      <option value="repeat-y">Repeat Y</option>
+      <option value="no-repeat">No Repeat</option>
+    </select>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="(#bgstyle == 'image') || (#bgstyle == 'parallax')">
+  <div class="control-cont"> <label class="control-label">Background Image Size:</label>
+    <select class="dnnOptions form-control" id="paxsize" data-name="paxsize" data-value="${paxsize}">
+      <option value="cover">Cover - Image to be as large as possible</option>
+      <option value="contain">Contain - Image will try to fit inside the container area</option>
+      <option value="initial">Initial</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group conditional" data-condition="#bgstyle == 'youtube'">
+  <div class="control-cont"> <label class="control-label">YouTube ID:</label>
+    <input type="text" class="dnnOptions form-control" data-name="paxyoutube" value="${paxyoutube}">
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#bgstyle == 'video'">
+  <div class="control-cont"> <label class="control-label">Link to the video in MP4 Format:</label>
+    <input type="text" class="dnnOptions form-control" data-name="paxmp4" value="${paxmp4}">
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#bgstyle == 'video'">
+  <div class="control-cont"> <label class="control-label">Link to the video in Ogg Format:</label>
+    <input type="text" class="dnnOptions form-control" data-name="paxogg" value="${paxogg}">
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#bgstyle == 'video'">
+  <div class="control-cont"> <label class="control-label">Link to the video in WebM Format:</label>
+    <input type="text" class="dnnOptions form-control" data-name="paxwebm" value="${paxwebm}">
+  </div>
+</div>
+<div class="form-group conditional" data-condition="(#bgstyle == 'youtube') || (#bgstyle == 'video')">
+  <div class="control-cont"> <label class="control-label">Placeholder Images:</label>
+    {{tmpl($data,options ={imgid:"paxyoutubecover"}) '#tmpl-image'}}
+  </div>
+</div>
+<div class="form-group conditional" data-condition="(#bgstyle == 'youtube') || (#bgstyle == 'video')">
+  <div class="control-cont"> <label class="control-label">Extra Options:</label>
+    <div>
+      <input type="checkbox" class="dnnOptions" data-name="paxloop" ${paxloop} data-default="checked" /> Loop &nbsp;
+      <input type="checkbox" class="dnnOptions" data-name="paxmuted" ${paxmuted} data-default="checked" /> Muted
+    </div>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#bgstyle == 'youtube'">
+  <div class="control-cont"> <label class="control-label">Start Time(s):</label>
+    <input type="number" class="dnnOptions form-control" data-name="paxstart" value="${paxstart}">
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#bgstyle == 'youtube'">
+  <div class="control-cont"> <label class="control-label">End Time(s):</label>
+    <input type="number" class="dnnOptions form-control" data-name="paxend" value="${paxend}">
+  </div>
+</div>
+<div class="form-group conditional" data-condition="(#bgstyle == 'youtube') || (#bgstyle == 'video')">
+  <div class="control-cont"> <label class="control-label">Play video only when in viewport:</label>
+    <div>
+      <input type="checkbox" class="dnnOptions" data-name="paxviewport" ${paxviewport} data-default="checked" />
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-cont"> <label class="control-label">Display Color Overlay:</label>
+    <div>
+      <input type="checkbox" class="dnnOptions" id="masklayer" data-name="masklayer" ${masklayer}/>
+    </div>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#masklayer">
+  <div class="control-cont"> <label class="control-label">Color:</label>
+    <div class="colorpicker-group">
+      <input type="text" class="dnnOptions form-control colorpicker" data-color-format="rgba" data-name="masklayercolor"
+        value="${masklayercolor}">
+      <i style="background-color:${masklayercolor}"></i>
+    </div>
+  </div>
+</div>
+ 
+<div class="form-group">
+  <div class="control-cont"> <label class="control-label">Enable slanted background:</label>
+    <div>
+      <input type="checkbox" class="dnnOptions" id="tilt" data-name="tilt" ${tilt}/>
+    </div>
+  </div>
+</div>
+<div class="form-group conditional" data-condition="#tilt">
+  <div class="control-cont"> <label class="control-label">Degree:</label>
+    <div>
+      <input type="number" class="dnnOptions form-control" id="tiltdegree" data-name="tiltdegree" value="${tiltdegree}" placeholder="deg"  data-default="-5.8">
+    </div>
+  </div>
+</div>
+ 
+ 
+<div class="form-group conditional" data-condition="#tilt">
+  <label for="firstname" class="control-label">Transform Origin:</label>
+  <div class="control-cont"> <select class="dnnOptions form-control" id="tiltorigin" data-name="tiltorigin" data-value="${tiltorigin}">
+      <option value="center top">center top</option>
+      <option value="center right">center right</option>
+      <option value="center bottom">center bottom</option>
+      <option value="center center" selected="selected">center center</option>
+      <option value="left top">left top</option>
+      <option value="left center">left center</option>
+      <option value="left bottom">left bottom</option>
+      <option value="right top">right top</option>
+      <option value="right center">right center</option>
+      <option value="right bottom">right bottom</option>
+    </select>
+  </div>
+</div>

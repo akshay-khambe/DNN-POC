@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlDB DBName="LayoutDB.Header.home12" DBVersion="1">
+  <LayoutDB>
+    <PrimaryGuid>df7a2667ea8f4e68be32a5501e9fdb3b</PrimaryGuid>
+    <Name>home12</Name>
+    <Alias>home12</Alias>
+    <Description></Description>
+    <CSSData> 
+			.has-menu-3d-popup.popup-animate-3 body {
+				background-color:#d3f8ff;
+			}
+			#menu-3d-popup-box390055 .icon, 
+			#menu-3d-popup-main390055 .menu-3d-popup-close{
+				color:var(--accent-color) !important;
+			}
+			#menu-3d-popup-main390055 .menu-3d-popup-text::before,
+			#menu-3d-popup-main390055 .homepage08-header-text::before{
+				border-top-color:var(--accent-color);
+			}
+			#menu-3d-popup-main390055 .gomenu &gt; ul &gt;li.dir &gt; a &gt;span::after{
+				border-bottom-color:var(--accent-color);
+			}
+			#menu-3d-popup-main390055 .gomenu &gt; ul li li ul{
+				background-color:var(--accent-color);
+			}
+			#menu-3d-popup-main390055 .gomenu &gt; ul a span:not(.menu_arrow)::before{
+				background-color:var(--accent-color);
+			}
+			
+	#search-popup-box623472 a.search:hover,
+	#search-popup-box623472 .popup-close:hover{
+		color:var(--accent-color);
+	}
+	
+	#search-popup-box123587 a.search:hover,
+	#search-popup-box123587 .popup-close:hover{
+		color:var(--accent-color);
+	}
+	#logo712896 img{max-height:40px!important;}#mobilemenu11098 .mobileclose,
+		#mobilemenu11098 .gomenu &gt; ul &gt; li &gt; a &gt; span,
+		#mobilemenu11098 .gomenu li .arrows{color:#272727;font-size:20px;font-weight:600;}#mobilemenu11098 .sub-menu&gt; li &gt; a &gt; span{color:#272727;font-size:20px;font-weight:600;}#mobilemenu11098 .sub-menu li ul li a{color:#484848;font-size:18px;font-weight:600;}#mobilemenu11098 .sub-menu li ul li li a{color:#787878;font-size:16px;font-weight:600;}#mobilemenu11098 .sub-menu li ul li li li a{color:#787878;font-size:16px;font-weight:600;}
+				#mobilemenu11098 .sub-menu .arrows{
+					background-color:  var(--accent-color);
+				}
+				#mobilemenu11098 .menutitle,
+				#mobilemenu11098 .sub-menu li ul .arrows,
+				#mobilemenu11098 a:hover span,
+				#mobilemenu11098 .current &gt; a &gt; span,
+				#mobilemenu11098 .arrows.active + a span,
+				#mobilemenu11098 .subcurrent &gt; a &gt; span{
+					color:  var(--accent-color)!important;
+				}
+				#headerrow-349356{background-color:rgba(255,255,255,0);}#headerrow-349356 .dngTextBox,
+		#headerrow-349356 .header-content-wrap &gt;*:not(.nav-bar),
+		#headerrow-349356 .Normal,
+		#headerrow-349356 .Normal &gt; a,
+		#headerrow-349356 .Normal &gt; a:link,
+		#headerrow-349356 .Normal &gt; a:active,
+		#headerrow-349356 .Normal &gt; a:visited,
+		#headerrow-349356 .dngTextBox a,
+		#headerrow-349356 .dngTextBox a:link,
+		#headerrow-349356 .dngTextBox a:active,
+		#headerrow-349356 .dngTextBox a:visited{color:#ffffff;font-size:18px;line-height:18px;}#headerrow-349356,#headerrow-349356 .header-center,#headerrow-349356 .header-center .logo{height:100px}#headerrow-349356 .header-center .logo{line-height:100px!important}#headerrow-349356 &gt; .container,#megamenuWidthBox {width: auto!important;}#megamenuWidthBox{margin:0 30px;}
+			#headerrow-349356 .area-left{
+				padding-right:8px;
+			}
+			#headerrow-349356 .area-center{
+				padding-left:8px;
+				padding-right:8px;
+			}
+			#headerrow-349356 .area-right{
+				padding-left:8px;
+			}
+			#headerrow-349356 .area-left .header-content-wrap &gt; div{
+				margin-right:62px;
+			}
+			#headerrow-349356 .area-center .header-content-wrap &gt; div,
+			#headerrow-349356 .area-right .header-content-wrap &gt; div{
+				margin-left:62px;
+			}
+		
+			 .floating-active #headerrow-349356:after{
+			   content:"";
+			   position:absolute;
+			   top: 0;
+			   left: -20px;
+			   bottom: 0;
+			   right: 0;
+			   z-index: -1;
+			   pointer-events:none; 
+			   -webkit-box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			   box-shadow: 10px 10px 10px -11px rgba(0,0,0,0.2);
+			 }
+			 .floating-active #headerrow-349356{background-color:#ffffff!important;
+}#headerrow-349356 .Normal &gt; a:hover,
+			#headerrow-349356 .dngTextBox a:hover,
+			#headerrow-349356 .hover-accent:hover,
+			#headerrow-349356 .Login a:hover,
+			#headerrow-349356 .Login a.active{
+				color:var(--accent-color)
+			}
+			#headerrow-349356 .Login .userProfile .userMessages,
+			#headerrow-349356 .Login .userProperties ul.userMenu a span{
+				background-color:var(--accent-color)
+			}
+				.floating-nav.floating-active #headerrow-349356 .header-container-box,
+				.floating-nav.floating-active #headerrow-349356 .header-bg-box,
+				.floating-nav.floating-active #headerrow-349356 {
+					height:70px;
+				}
+				.floating-nav.floating-active #headerrow-349356 .logo{
+					height:70px;
+					line-height:70px!important;
+				}
+			#mobileheader-639685{background-color:#ffffff;}
+			#mobileheader-639685,#mobileheader-639685 .header-area{height:66px}
+			#mobileheader-639685 .dng-mobilemenu.mobile_menu.mm-menu{
+				top:66px
+			}
+			#mobileheader-639685 .header-area .logo img{max-height:58px}
+			#mobileheader-639685 .dngTextBox,
+		#mobileheader-639685 .header-content-wrap &gt;*:not(.nav-bar),
+		#mobileheader-639685 .Normal,
+		#mobileheader-639685 .Normal &gt; a,
+		#mobileheader-639685 .Normal &gt; a:link,
+		#mobileheader-639685 .Normal &gt; a:active,
+		#mobileheader-639685 .Normal &gt; a:visited,
+		#mobileheader-639685 .dngTextBox a,
+		#mobileheader-639685 .dngTextBox a:link,
+		#mobileheader-639685 .dngTextBox a:active,
+		#mobileheader-639685 .dngTextBox a:visited{color:#272727;}#mobileheader-639685 .header-content-wrap .Normal &gt; a:hover,
+				#mobileheader-639685 .header-content-wrap .dngTextBox a:hover,
+				#mobileheader-639685 .Normal &gt; a:hover,
+				#mobileheader-639685 .dngTextBox a:hover,
+				#mobileheader-639685 .hover-accent:hover,
+				#mobileheader-639685 .search-popup-box .icon.active,
+				#mobileheader-639685 .search-popup-box:hover .icon,
+				#mobileheader-639685 .mobile-menu-icon:hover .fa-bars:before,
+				#mobileheader-639685 .search-popup-box .submit:hover,
+				#mobileheader-639685 .search-popup-box .popup-close:hover,
+				#mobileheader-639685 .shop-cart-list .shop-list .remove:hover,
+				#mobileheader-639685 .shop-cart-list .shop-list .price-info span,
+				#mobileheader-639685 .shop-cart-list .shop-list .number-box .number-up:hover,
+				#mobileheader-639685 .mobile-header .shop-cart-list .shop-list .number-box .number-down:hover,
+				#mobileheader-639685 .search-popup-box .icon:hover{
+					color:var(--accent-color);
+				}</CSSData>
+    <HTMLData>&lt;div class="header-replace header-position"&gt;&lt;header class="header_bg header-wrap header-default floating-nav floating-nav-sticky"&gt;&lt;div id="megamenuWidthBox" class="container"&gt;&lt;/div&gt;  &lt;div class="header-center-bg floating-dark-color header-bg-box" data-height="70"  id="headerrow-349356"&gt;&lt;div class="container"&gt;&lt;div class="header-center header-container-box"&gt; &lt;div class="header-area area-left header-horizontal  pl-30 header-horizontal"   id="column-645135"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="menu-3d-popup-box" id="menu-3d-popup-box390055" data-brushcolor="var(--accent-color2)"&gt;&lt;div class="icon hover-accent"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-reveal color-dark "&gt;&lt;/div&gt;&lt;div class="menu-3d-popup-main" id="menu-3d-popup-main390055"&gt;&lt;div class="menu-3d-popup-close"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="container"&gt;&lt;div class="popup-top"&gt;&lt;div class="logo"&gt;&lt;dnn:LOGO runat="server" id="dnnLOGO390055" BorderWidth="0" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="popup-center"&gt;&lt;dnn:LEFTGOMENU runat="server" id="dnnGOMENU390055" Effect="HTML" /&gt;&lt;/div&gt;&lt;div class="popup-bottom"&gt;&lt;div class="homepage08-header-text"&gt;
+&lt;p&gt;&lt;b&gt;Email:&lt;/b&gt; service.simple@gmail.com&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Contact:&lt;/b&gt; (845) 359-7777&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/menu3dpopup/menu3dpopup.css" PathNameAlias="SkinPath" Priority="322" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+	&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/menu3dpopup/menu3dpopup.js" ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="9" HtmlAttributesAsString="async:'async'"   /&gt;	
+	&lt;div class="logo" id="logo575027"&gt;&lt;a href="&lt;%=DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId).ToString()%&gt;" title="&lt;%=PortalSettings.PortalName %&gt;"&gt;&lt;img src="/Portals/_default/ContentBuilder/minis-page/home08/homepage08-logo.png"  class="header-logo" alt="&lt;%=PortalSettings.PortalName %&gt;" /&gt;&lt;/a&gt;&lt;dnn:LOGO runat="server" id="floatingLOGO575027" cssClass="floating-header-logo" BorderWidth="0" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-center header-vertical text-right header-vertical text-right"   id="column-930454"&gt;&lt;div class="header-content-wrap"&gt; &lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-right header-horizontal  pr-30 header-horizontal"   id="column-722316"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="dngTextBox"&gt;&lt;strong&gt;Contact: (845) 359-7777&lt;/strong&gt;&lt;/div&gt;&lt;div class="search-popup-box" id="search-popup-box623472" placeholder="Enter any key words to search"&gt;&lt;div class="icon hover-accent"&gt;&lt;span class="magnifier"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-reveal color-dark "&gt;&lt;/div&gt;&lt;div class="popup-content color-dark bg-accent"&gt;&lt;div class="popup-close hover-accent"&gt;&lt;span class="icon-cross"&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-center"&gt;&lt;dnn:SEARCH runat="server" id="dnnSEARCH623472" CssClass="search"  ShowSite="False" ShowWeb="False"  submit=" " /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+		&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/search-popup/search-popup.css" PathNameAlias="SkinPath" Priority="318" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+		&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/search-popup/search-popup.js"  ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="9" HtmlAttributesAsString="async:'async'"   /&gt;	
+		&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;  &lt;/header&gt;&lt;/div&gt;&lt;div class="mobile-header-replace"&gt;&lt;header class="mobile-header floating-nav"&gt; &lt;div class="header-mobile-bg mobile-header-shadow" id="mobileheader-639685"&gt;&lt;div class="header-mobile"&gt; &lt;div class="header-area area-left header-horizontal text-left header-horizontal text-left"   id="column-615625"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="search-popup-box" id="search-popup-box123587" placeholder="Enter any key words to search"&gt;&lt;div class="icon hover-accent"&gt;&lt;span class="magnifier"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-reveal color-dark "&gt;&lt;/div&gt;&lt;div class="popup-content color-dark bg-accent"&gt;&lt;div class="popup-close hover-accent"&gt;&lt;span class="icon-cross"&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="popup-center"&gt;&lt;dnn:SEARCH runat="server" id="dnnSEARCH123587" CssClass="search"  ShowSite="False" ShowWeb="False"  submit=" " /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+		&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/search-popup/search-popup.css" PathNameAlias="SkinPath" Priority="318" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+		&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/search-popup/search-popup.js"  ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="9" HtmlAttributesAsString="async:'async'"   /&gt;	
+		&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-center header-horizontal  header-horizontal"   id="column-946586"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="logo" id="logo712896"&gt;&lt;dnn:LOGO runat="server" id="dnnLOGO712896" cssClass="header-logo floating-header-logo" BorderWidth="0" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="header-area area-right header-horizontal text-right header-horizontal text-right"   id="column-62191"&gt;&lt;div class="header-content-wrap"&gt; &lt;div class="mobile-menu-icon"&gt;&lt;span class="dg-menu-anime"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;
+	&lt;div class="mobilemenu-main" id="mobilemenu11098" data-title="Menu"&gt;&lt;span class="mobileclose"&gt;&lt;/span&gt;
+	&lt;div class="m-menu"&gt;
+	&lt;dnn:LEFTGOMENU runat="server" id="MOBILEMENU11098" Effect="HTML"/&gt; 
+	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;dnn:DnnCssInclude runat="server" FilePath="resource/header/mobilemenu/mobilemenu.css" PathNameAlias="SkinPath" Priority="317" HtmlAttributesAsString="media:'none',title:'all',onload:'this.media=this.title"  /&gt;
+	&lt;dnn:DnnJsInclude runat="server" FilePath="resource/header/mobilemenu/mobilemenu.js" ForceProvider ="DnnFormBottomProvider" PathNameAlias="SkinPath" Priority="17" HtmlAttributesAsString="async:'async'"   /&gt;	
+	&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt; &lt;/header&gt;&lt;/div&gt;</HTMLData>
+    <LabelData>[header sticky='checked' stickytype='sticky' position='floating' id='892413' ] [headerrow layout='boxed' name='Header Top' areaname='header-top' space='8' space2='25' line='off' bottomline='off' height='42' bgcolor='#f4f4f4' '='' id='349354' color='#424242' bgposition='center center' ] [headercolumn col='4' name='Left' areaname='area-left' id='317022' ] [/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='250649' ] [/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' id='727368' ] [/headercolumn] [/headerrow] [headerrow layout='wide' active='active' name='Header Middle' areaname='header-center' height='100' space='8' space2='62' line='off' bottomline='off' id='349356' bgcolor='rgba(255,255,255,0)' hidesticky='checked' styheight='70' styshadow='checked' color='#ffffff' stybgcolor='#ffffff' modulepath='/DesktopModules/DNNGo_ThemePluginPro/' stycolor='dark' fontsize='18px' lineheight='18px' ] [headercolumn col='4' name='Left' areaname='area-left' id='645135' dir='horizontal' classname='pl-30' ] [menu3dpopup id='390055' bgcolor='#d3f8ff' content='PGRpdiBjbGFzcz0iaG9tZXBhZ2UwOC1oZWFkZXItdGV4dCI+CjxwPjxiPkVtYWlsOjwvYj4gc2VydmljZS5zaW1wbGVAZ21haWwuY29tPC9wPgo8cD48Yj5Db250YWN0OjwvYj4gKDg0NSkgMzU5LTc3Nzc8L3A+CjwvZGl2Pg==' source='dnn' /][logo stysource='default' id='575027' source='url' url='%2FPortals%2F_default%2FContentBuilder%2Fminis-page%2Fhome08%2Fhomepage08-logo.png' /][/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='930454' dir='vertical' align='right' ] [/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' dir='horizontal' id='722316' classname='pr-30' ] [textarea content='PHN0cm9uZz5Db250YWN0OiAoODQ1KSAzNTktNzc3Nzwvc3Ryb25nPg==' id='954710' /][search style='popup' placeholder='Enter any key words to search' color='dark' id='623472' /][/headercolumn] [/headerrow] [headerrow layout='boxed' name='Header Bottom' areaname='header-bottom' space='8' space2='15' line='off' bottomline='off' height='42' bgcolor='#f4f4f4' id='349357' color='#424242' ] [headercolumn col='4' name='Left' areaname='area-left' id='691394' ] [/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='544614' ] [/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' id='346590' ] [/headercolumn] [/headerrow] [/header][mobileheader id='583761' sticky='checked' ] [mobileheaderrow layout='4+4+4' active='active' name='Mobile Header' areaname='header-mobile' line='off' bottomline='off' id='639685' bgcolor='#ffffff' shadow='checked' color='#272727' hidesticky='checked' stybgcolor='#7a2727' height='66' ] [headercolumn col='4' name='Left' areaname='area-left' id='615625' dir='horizontal' align='left' ] [search style='popup' placeholder='Enter any key words to search' color='dark' id='123587' /][/headercolumn] [headercolumn col='4' name='Middle' areaname='area-center' id='946586' dir='horizontal' ] [logo id='712896' stysource='main' height='40' /][/headercolumn] [headercolumn col='4' name='Right' areaname='area-right' dir='horizontal' id='62191' align='right' ] [mobilemenu color='#ffffff' fontsize='18px' bgcolor='#2c5cda' lv1color='#272727' lv1fontsize='20px' ticolor='#ffffff' tifontsize='18px' linecolor='rgba(255,255,255,0.2)' navbartitle='Menu' id='11098' tiweight='600' lv1weight='600' accentcolor='#ffffff' weight='400' current='#901dd6' currentcolor='#f8f363' lv2color='#272727' lv2weight='600' lv2fontsize='20px' lv3color='#484848' lv3weight='600' lv3fontsize='18px' lv4color='#787878' lv4weight='600' lv4fontsize='16px' lv5color='#787878' lv5weight='600' lv5fontsize='16px' /][/headercolumn] [/mobileheaderrow] [/mobileheader]</LabelData>
+    <Type>Header</Type>
+    <Version>02.00.00</Version>
+    <ImageUrl>resource/thumbnails/header/home12.jpg</ImageUrl>
+    <Groups>custom</Groups>
+    <Sort>16</Sort>
+    <CreateTime>2024-05-22T18:37:18</CreateTime>
+    <UpdateTime>2024-05-22T18:37:18</UpdateTime>
+    <Enable>True</Enable>
+  </LayoutDB>
+</XmlDB>

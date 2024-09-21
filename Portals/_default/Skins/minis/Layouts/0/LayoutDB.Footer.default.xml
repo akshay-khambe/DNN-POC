@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlDB DBName="LayoutDB.Footer.default" DBVersion="1">
+  <LayoutDB>
+    <PrimaryGuid>006f630dbab941978f878f623d8bbd23</PrimaryGuid>
+    <Name>default</Name>
+    <Alias>Default</Alias>
+    <Description></Description>
+    <CSSData> #footerinfo628747,
+	#footerinfo628747 a,  
+	#footerinfo628747 a:link,   
+	#footerinfo628747 a:active,   
+	#footerinfo628747 a:visited{color:rgba(170,170,170,1);}
+		#footerinfo628747 .sep{
+			margin:0px 5px;
+		}
+		
+		#footerinfo628747 a:hover{
+			color: #1abc9c;
+			text-decoration: none;
+		}#row-514475{background-color:rgba(30,30,30,1)!important;}
+			#row-514475,
+			#row-514475 .Normal{color:rgba(255,255,255,1);}#row-781151{padding-top:25px;padding-bottom:25px;}#row-781151{background-color:rgba(18,18,18,1)!important;}
+			#row-781151,
+			#row-781151 .Normal{color:rgba(170,170,170,1);}</CSSData>
+    <HTMLData> &lt;div class="container-fluid row-no-spacing " id="row-514475"&gt;&lt;div class="container"&gt;&lt;div class="column-gap-0 dng-row row"&gt; &lt;div class="dng-column col-sm-3"&gt;&lt;div class="dng-column-inner " id="column-102978" &gt; &lt;div class="panebox FooterPaneA" id="FooterPaneA" runat="server"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="dng-column col-sm-3"&gt;&lt;div class="dng-column-inner " id="column-933543" &gt; &lt;div class="panebox FooterPaneB" id="FooterPaneB" runat="server"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="dng-column col-sm-3"&gt;&lt;div class="dng-column-inner " id="column-39798" &gt; &lt;div class="panebox FooterPaneC" id="FooterPaneC" runat="server"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="dng-column col-sm-3"&gt;&lt;div class="dng-column-inner " id="column-456323" &gt; &lt;div class="panebox FooterPaneD" id="FooterPaneD" runat="server"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="container-fluid row-no-spacing " id="row-781151"&gt;&lt;div class="container"&gt;&lt;div class="column-gap-0 dng-row row"&gt; &lt;div class="dng-column col-sm-8"&gt;&lt;div class="dng-column-inner " id="column-64895" &gt; &lt;div class="footer-info-box" id="footerinfo628747"&gt;&lt;dnn:COPYRIGHT runat="server" id="dnnCOPYRIGHT628747" CssClass="footer" /&gt;&lt;span class="sep"&gt;|&lt;/span&gt;&lt;dnn:PRIVACY runat="server" id="dnnPRIVACY628747" CssClass="terms" text="" /&gt;&lt;span class="sep"&gt;|&lt;/span&gt;&lt;dnn:TERMS runat="server" id="dnnTERMS628747" CssClass="terms"  text="" /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="dng-column col-sm-4"&gt;&lt;div class="dng-column-inner " id="column-703667" &gt; &lt;div class="panebox FooterPaneE" id="FooterPaneE" runat="server"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt; </HTMLData>
+    <LabelData> [row layout='3/12+3/12+3/12+3/12' gap='0' id='514475' bgstyle='single' paxcolor='rgba(30,30,30,1)' fullwidth='stretch_row' color='rgba(255,255,255,1)' ] [column col='3/12' id='102978' ] [pane name='FooterPaneA' css_mb='mb-50' id='653182' css_mt='mt-50' /][/column][column col='3/12' id='933543' ] [pane name='FooterPaneB' css_mb='mb-50' id='980315' css_mt='mt-50' /][/column][column col='3/12' id='39798' ] [pane name='FooterPaneC' css_mb='mb-50' id='187758' css_mt='mt-50' /][/column][column col='3/12' id='456323' ] [pane name='FooterPaneD' css_mb='mb-50' id='35654' css_mt='mt-50' /][/column] [/row] [row layout='8/12+4/12' gap='0' id='781151' fullwidth='stretch_row' bgstyle='single' paxcolor='rgba(18,18,18,1)' ptop='25' pbottom='25' color='rgba(170,170,170,1)' ] [column col='8/12' id='64895' ] [copyright copyright='checked' privacy='checked' terms='checked' itemspacing='5' privacylink='Default' termslink='Default' id='628747' color='rgba(170,170,170,1)' /][/column] [column col='4/12' id='703667' css_text_align='text-right' ] [pane name='FooterPaneE' id='734762' /][/column] [/row] </LabelData>
+    <Type>Footer</Type>
+    <Version>01.00.00</Version>
+    <ImageUrl></ImageUrl>
+    <Groups>custom</Groups>
+    <Sort>23</Sort>
+    <CreateTime>2024-05-22T18:37:18</CreateTime>
+    <UpdateTime>2024-05-22T18:37:18</UpdateTime>
+    <Enable>True</Enable>
+  </LayoutDB>
+</XmlDB>

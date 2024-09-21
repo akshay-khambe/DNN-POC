@@ -1,0 +1,63 @@
+/** Drop Stored Procedures **/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Comment_GetByArticle]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Comment_GetByArticle]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossArticle_Comment_GetByArticle]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossArticle_Comment_GetByArticle]
+	@ArticleId int,
+     @PageSize int, 
+     @PageIndex int,
+     @Auth  bit,
+     @IsPrivate bit
+AS
+
+  Declare @PageLowerBound int
+  DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	CommentId	int
+     )
+----Insert into temptable
+    insert into #PageIndex(CommentId)
+    SELECT
+	[id]
+    FROM {databaseOwner}{objectQualifier}CrossArticle_Comment
+    WHERE [ArticleId]=@ArticleId
+    and(@auth=1 or authed=1)
+    and(@IsPrivate=1 or IsPrivate=0)
+    order by [id] asc
+
+
+---Get needs rows
+   SELECT
+	b.*,
+	c.[Title] as ArticleTitle
+    FROM #PageIndex a, {databaseOwner}{objectQualifier}CrossArticle_Comment b,{databaseOwner}{objectQualifier}CrossArticle_Article c
+    where b.id=a.CommentId 
+    and   b.ArticleId=c.id
+    and  a.IndexID> @PageLowerBound	
+    and	 a.IndexID< @PageUpperBound	  
+    ORDER BY a.IndexID
+	
+	     --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+
+' 
+END
+GO
+

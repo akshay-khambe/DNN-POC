@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="secGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="plImageWidth.Text" xml:space="preserve">
+    <value>Image Width</value>
+  </data>
+  <data name="plImageWidth.Help" xml:space="preserve">
+    <value>Set article image width (px), it works when "Force Image Width" option is checked.</value>
+  </data>
+  <data name="plTemplate.Text" xml:space="preserve">
+    <value>List Template </value>
+  </data>
+  <data name="plTemplate.Help" xml:space="preserve">
+    <value>Select which template is used to display article list</value>
+  </data>
+  <data name="plShowImageOnly.Text" xml:space="preserve">
+    <value>Records With Image Only</value>
+  </data>
+  <data name="plShowImageOnly.Help" xml:space="preserve">
+    <value>Check to only show articles which have image specified</value>
+  </data>
+  <data name="plShowImage.Text" xml:space="preserve">
+    <value>Show Article Image</value>
+  </data>
+  <data name="plShowImage.Help" xml:space="preserve">
+    <value>show article image in list. Note, if this option is checked, module will ignore "show prefix image" option.</value>
+  </data>
+  <data name="plMoreArticlesLink.Help" xml:space="preserve">
+    <value>Select link page when "More Articles" link is clicked.</value>
+  </data>
+  <data name="plMoreArticlesLink.Text" xml:space="preserve">
+    <value>"More Articles" Page</value>
+  </data>
+  <data name="plFeatured.Text" xml:space="preserve">
+    <value>Show Featured Articles Only</value>
+  </data>
+  <data name="plFeatured.Help" xml:space="preserve">
+    <value>Check to display articles which are marked as featured.</value>
+  </data>
+  <data name="plMoreArticlesText.Help" xml:space="preserve">
+    <value>Enter the text which will display for the "More Articles" link (e.g. Archived Articles, ...)</value>
+  </data>
+  <data name="plPaging.Text" xml:space="preserve">
+    <value>Show Paging Control</value>
+  </data>
+  <data name="plPaging.Help" xml:space="preserve">
+    <value>Display paging navigation</value>
+  </data>
+  <data name="plRowCount.Text" xml:space="preserve">
+    <value>Rows Per Page</value>
+  </data>
+  <data name="plRowCount.Help" xml:space="preserve">
+    <value>Enter how many rows will display in one page</value>
+  </data>
+  <data name="plColCount.Text" xml:space="preserve">
+    <value>Records Per Row</value>
+  </data>
+  <data name="plColCount.Help" xml:space="preserve">
+    <value>Records Per Row</value>
+  </data>
+  <data name="plPageSpan.Text" xml:space="preserve">
+    <value>Paging Navigate Span</value>
+  </data>
+  <data name="plPageSpan.Help" xml:space="preserve">
+    <value>Paging navigate span</value>
+  </data>
+  <data name="plRoll.Text" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="plRoll.Help" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="plMarHeight.Text" xml:space="preserve">
+    <value>Marquee Height</value>
+  </data>
+  <data name="plMarHeight.Help" xml:space="preserve">
+    <value>Marquee Height</value>
+  </data>
+  <data name="plScrollAmount.Text" xml:space="preserve">
+    <value>Scroll Amount</value>
+  </data>
+  <data name="plScrollAmount.Help" xml:space="preserve">
+    <value>Set scroll amount, high value reprents high speed</value>
+  </data>
+  <data name="plDirection.Text" xml:space="preserve">
+    <value>Roll Direction</value>
+  </data>
+  <data name="plDirection.Help" xml:space="preserve">
+    <value>Roll Direction</value>
+  </data>
+  <data name="li_Direction_Up.Text" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="li_Direction_Down.Text" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="li_Direction_Left.Text" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="li_Direction_Right.Text" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="plMoreArticles.Text" xml:space="preserve">
+    <value>Display "More Articles" Link</value>
+  </data>
+  <data name="plMoreArticlesText.Text" xml:space="preserve">
+    <value>"More Articles" Text</value>
+  </data>
+  <data name="plShowTitle.Text" xml:space="preserve">
+    <value>Show Title</value>
+  </data>
+  <data name="plShowTitle.Help" xml:space="preserve">
+    <value>Check to show article title</value>
+  </data>
+  <data name="plSortField.Text" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="plSortField.Help" xml:space="preserve">
+    <value>Sort Fields</value>
+  </data>
+  <data name="plMoreArticles.Help" xml:space="preserve">
+    <value>Check to display a "more articles" link at the bottom of the articles list. That link will navigate to the page specified in the "more articles link".</value>
+  </data>
+  <data name="ControlTitle_edit.Text" xml:space="preserve">
+    <value>Article List Settings</value>
+  </data>
+  <data name="secCategory.Text" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="secImage.Text" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="secPaging.Text" xml:space="preserve">
+    <value>Paging</value>
+  </data>
+  <data name="secRoll.Text" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="secContent.Text" xml:space="preserve">
+    <value>Display Contents</value>
+  </data>
+  <data name="secMoreArticles.Text" xml:space="preserve">
+    <value>More Articles</value>
+  </data>
+  <data name="plLinkTarget.Text" xml:space="preserve">
+    <value>Link Target</value>
+  </data>
+  <data name="plLinkTarget.Help" xml:space="preserve">
+    <value>Set how to open article detail page</value>
+  </data>
+  <data name="li_LinkTarget_Blank.Text" xml:space="preserve">
+    <value>_Blank (New Page)</value>
+  </data>
+  <data name="li_LinkTarget_Self.Text" xml:space="preserve">
+    <value>_Self (Same Page)</value>
+  </data>
+  <data name="li_ListStyle_Grid.Text" xml:space="preserve">
+    <value>Data Grid (one record per row)</value>
+  </data>
+  <data name="li_ListStyle_List.Text" xml:space="preserve">
+    <value>Data List (supports multiple records per row)</value>
+  </data>
+  <data name="plListType.Help" xml:space="preserve">
+    <value>Select article list style</value>
+  </data>
+  <data name="plListType.Text" xml:space="preserve">
+    <value>Data List Style</value>
+  </data>
+  <data name="plShowPublishDate.Text" xml:space="preserve">
+    <value>Show Publish Date</value>
+  </data>
+  <data name="plShowFeaturedField.Text" xml:space="preserve">
+    <value>Show Featured Status</value>
+  </data>
+  <data name="plShowViews.Text" xml:space="preserve">
+    <value>Show Views</value>
+  </data>
+  <data name="chkForceImageHeight.Text" xml:space="preserve">
+    <value>Force Image height</value>
+  </data>
+  <data name="chkForceImageWidth.Text" xml:space="preserve">
+    <value>Force Image Width</value>
+  </data>
+  <data name="plImageHeight.Help" xml:space="preserve">
+    <value>Set article image height (px), it works when "Force Image Height" option is checked.</value>
+  </data>
+  <data name="plImageHeight.Text" xml:space="preserve">
+    <value>Image Height</value>
+  </data>
+  <data name="plUseLightBoxEffect.Help" xml:space="preserve">
+    <value>If this option is checked, module will popup the article image using the light box effect, and it will not navigate to article detail page.</value>
+  </data>
+  <data name="plUseLightBoxEffect.Text" xml:space="preserve">
+    <value>Light Box Effect Popup</value>
+  </data>
+  <data name="plShowUserName.Help" xml:space="preserve">
+    <value>Check to show creator in article list</value>
+  </data>
+  <data name="plShowUserName.Text" xml:space="preserve">
+    <value>Show Creator</value>
+  </data>
+  <data name="plShowAuthor.Help" xml:space="preserve">
+    <value>Check to show article "Author" field in list. Note, if current department disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowAuthor.Text" xml:space="preserve">
+    <value>Show Author</value>
+  </data>
+  <data name="plShowSummary.Help" xml:space="preserve">
+    <value>Check to show summary in article list. Note, if current department disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowSummary.Text" xml:space="preserve">
+    <value>Show Summary</value>
+  </data>
+  <data name="plShowPublishDate.Help" xml:space="preserve">
+    <value>Show article publish date</value>
+  </data>
+  <data name="plShowFeaturedField.Help" xml:space="preserve">
+    <value>Show article featured status</value>
+  </data>
+  <data name="plShowViews.Help" xml:space="preserve">
+    <value>Show number of views in list</value>
+  </data>
+  <data name="Required.Text" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="plShowSource.Help" xml:space="preserve">
+    <value>Show article source in list. Note, if current department disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowSource.Text" xml:space="preserve">
+    <value>Show Source</value>
+  </data>
+  <data name="plRatingImage.Help" xml:space="preserve">
+    <value>Choose rating image.</value>
+  </data>
+  <data name="plRatingImage.Text" xml:space="preserve">
+    <value>Rating Image</value>
+  </data>
+  <data name="plShowRating.Help" xml:space="preserve">
+    <value>Show article rating result.</value>
+  </data>
+  <data name="plShowRating.Text" xml:space="preserve">
+    <value>Show Rating</value>
+  </data>
+  <data name="MoreArticles.Text" xml:space="preserve">
+    <value>More..</value>
+  </data>
+  <data name="plShowPageInfo.Help" xml:space="preserve">
+    <value>Check this option to show paging detail information (e.g. record counts, page size, page count, page counts).</value>
+  </data>
+  <data name="plShowPageInfo.Text" xml:space="preserve">
+    <value>Show Paging Info</value>
+  </data>
+  <data name="plDetailTab.Help" xml:space="preserve">
+    <value>Select which page to display article detail,that page should have a CrossArticle_Detail sub module instance on it. If you don't specify it, module will use the default detail tab to display.</value>
+  </data>
+  <data name="plDetailTab.Text" xml:space="preserve">
+    <value>CrossArticle_Detail Sub Module Page</value>
+  </data>
+  <data name="plShowRecommend.Help" xml:space="preserve">
+    <value>Show recommend information in list.</value>
+  </data>
+  <data name="plShowRecommend.Text" xml:space="preserve">
+    <value>Show Recommend</value>
+  </data>
+  <data name="plSummaryLength.Help" xml:space="preserve">
+    <value>Enter sumary length while displaying, enter 0 to display full summary.</value>
+  </data>
+  <data name="plSummaryLength.Text" xml:space="preserve">
+    <value>Summary Length</value>
+  </data>
+  <data name="plAcceptSearchParm.Help" xml:space="preserve">
+    <value>Select whether to response url parameter like ArticleSearchTerm/ArticleCategoryId/ArticleTagId. For example, if this option is checked and user pass a "ArticleSearchTerm" like http://DnnModule.com/tabid/23/default.aspx?ArticleSearchTerm=dnn, then module will display article list which title contains "dnn".</value>
+  </data>
+  <data name="plAcceptSearchParm.Text" xml:space="preserve">
+    <value>Accept Search Parm</value>
+  </data>
+  <data name="plTitleLength.Help" xml:space="preserve">
+    <value>Enter article title length while displaying, enter 0 to display full title.</value>
+  </data>
+  <data name="plTitleLength.Text" xml:space="preserve">
+    <value>Title Length</value>
+  </data>
+  <data name="plPrefixImage.Help" xml:space="preserve">
+    <value>Prefix image locates under Desktopmodules/CrossArticle/Images/Prefix folder, you can upload your own prefix image under it.</value>
+  </data>
+  <data name="plPrefixImage.Text" xml:space="preserve">
+    <value>Prefix Image</value>
+  </data>
+  <data name="plShowPrefixImage.Help" xml:space="preserve">
+    <value>Check to show prefix image before article title.</value>
+  </data>
+  <data name="plShowPrefixImage.Text" xml:space="preserve">
+    <value>Show Prefix Image</value>
+  </data>
+  <data name="plDisplayRss.Help" xml:space="preserve">
+    <value>Display RSS link below artilce list.</value>
+  </data>
+  <data name="plDisplayRss.Text" xml:space="preserve">
+    <value>Display RSS</value>
+  </data>
+  <data name="secRss.Text" xml:space="preserve">
+    <value>RSS</value>
+  </data>
+  <data name="plCategory.Help" xml:space="preserve">
+    <value>Specifies the categories from which articles are displayed. Uncheck all of them will display articles from all categories</value>
+  </data>
+  <data name="plCategory.Text" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="plType.Help" xml:space="preserve">
+    <value>Select department which articles belongs.</value>
+  </data>
+  <data name="plType.Text" xml:space="preserve">
+    <value>Select Department</value>
+  </data>
+  <data name="plUDFieldList.Help" xml:space="preserve">
+    <value>Choose user defined fields which will be displayed in built in template. Note, it works only when "Use built-in template" option is checked.</value>
+  </data>
+  <data name="plUDFieldList.Text" xml:space="preserve">
+    <value>Display Fields</value>
+  </data>
+  <data name="plUDField_ImageHeight.Help" xml:space="preserve">
+    <value>Control the image height of user defined fields.</value>
+  </data>
+  <data name="plUDField_ImageHeight.Text" xml:space="preserve">
+    <value>"Image" Field Height</value>
+  </data>
+  <data name="plUDField_ImageWidth.Help" xml:space="preserve">
+    <value>Control the image width of user defined fields. </value>
+  </data>
+  <data name="plUDField_ImageWidth.Text" xml:space="preserve">
+    <value>"Image" Field Width</value>
+  </data>
+  <data name="plUseBuiltInTemplate.Help" xml:space="preserve">
+    <value>Use built-in tempate to display user defined fields. Uncheck this option if you want to display user defined fields via your own tempaltes. For more detail about customize template, please see user guide document.</value>
+  </data>
+  <data name="plUseBuiltInTemplate.Text" xml:space="preserve">
+    <value>Use Built-In Template</value>
+  </data>
+  <data name="plAuthor.Help" xml:space="preserve">
+    <value>Specifies the creators from which articles are displayed. Uncheck all items will display articles from all authors.</value>
+  </data>
+  <data name="plAuthor.Text" xml:space="preserve">
+    <value>Creators</value>
+  </data>
+  <data name="secUDField.Text" xml:space="preserve">
+    <value>Custom Attributes</value>
+  </data>
+  <data name="secAuthor.Text" xml:space="preserve">
+    <value>Creators</value>
+  </data>
+  <data name="Tip_Author.Text" xml:space="preserve">
+    <value>Specifies the creators from which articles are displayed. Uncheck all items will display articles from all creators.</value>
+  </data>
+  <data name="Tip_Category.Text" xml:space="preserve">
+    <value>Specifies the categories from which articles are displayed. Uncheck all of them will display articles from all categories</value>
+  </data>
+  <data name="Tip_DetailTab.Text" xml:space="preserve">
+    <value>Select which page to display article detail, that page should have a CrossArticle_Detail sub module instance on it. If you don't specify it, module will use the default detail page for selected department (which specified in "CrossArticle_Admin sub module - System Data - Departments") to display.</value>
+  </data>
+  <data name="Tip_DisplayContent.Text" xml:space="preserve">
+    <value>Choose data fields which will be displayed in article list. For example, if you want to show article views in list, you can check on "Show Views" option.</value>
+  </data>
+  <data name="Tip_MoreArticle.Text" xml:space="preserve">
+    <value>Use "More Articles" feature to link articles which in different page. For example, if you use CrossArticle_List sub module to display a few featured articles in "Home"page, and you want to user view all articles at "Article" page (which also has a CrossArticle_List sub module on it to show more articles). You can check on "Display more articles link" option and set "More articles link" to "Article" page. Visit &lt;a href="http://DnnModule.com" target="_blank"&gt;http://DnnModule.com&lt;/a&gt; for live demo.</value>
+  </data>
+  <data name="Tip_AcceptSearchParm.Text" xml:space="preserve">
+    <value>Select whether to response url parameter like ArticleSearchTerm/ArticleCategoryId/ArticleTagId/ArticleTypeId. For example,if this option is checked and user pass a "ArticleSearchTerm" like http://DnnModule.com/tabid/23/default.aspx?ArticleSearchTerm=dnn, then module will display articles which title contains "dnn".</value>
+  </data>
+  <data name="Tip_UdField.Text" xml:space="preserve">
+    <value>Custom attributes are created in "CrossArticle_Admin sub module - Admin Control Panel - Configurations - System Data - Attributes". You can use built-in tempate to display these attributes. Uncheck this option if you want to display these fields via your own tempaltes. For more detail about customize template, please see "Cross Article User Guide" document.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_Enabled.Help" xml:space="preserve">
+    <value>If you use check box list (or radion button list) to display custom attributes, they will display as disabled by default to avoid visitor select. However, if they look too dim ,you can check on this option to enable it.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_Enabled.Text" xml:space="preserve">
+    <value>Check Box List Enabled</value>
+  </data>
+  <data name="plUDField_CheckBoxList_RepeatColumns.Help" xml:space="preserve">
+    <value>If you use check box list (or radion button list) to display custom attributes, they will display as 1 column per row by default. You can specify more columns per row to let it looks good.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_RepeatColumns.Text" xml:space="preserve">
+    <value>Check Box List Repeat</value>
+  </data>
+  <data name="li_PublishDateType_All.Text" xml:space="preserve">
+    <value>Show All (ignore article publish date)</value>
+  </data>
+  <data name="li_PublishDateType_Future.Text" xml:space="preserve">
+    <value>Future Articles (publish date &gt; Today)</value>
+  </data>
+  <data name="li_PublishDateType_Past.Text" xml:space="preserve">
+    <value>Past Articles (publish date &lt; Today)</value>
+  </data>
+  <data name="plPublishDateType.Help" xml:space="preserve">
+    <value>Choose article publish date limitation</value>
+  </data>
+  <data name="plPublishDateType.Text" xml:space="preserve">
+    <value>Article Publish Date Limitation</value>
+  </data>
+  <data name="Tip_PublishDateType.Text" xml:space="preserve">
+    <value>You can use "Article publish date limitation" option to show articles to some user roles in a certain period, and display these articles to all visitors after these days. This is useful if you want to charge for your articles. For example, if you only allow "Vip" role to read an article in 30 days, then normal users can read it. You can do it as follows:
+&lt;br/&gt;&lt;br/&gt;
+1. Edit article in "CrossArticle_Admin sub module - My Articles", specify its "Publish Date" as 30 days later. For example, if today is 1/1/2014, then specify its "Publish Date" as 1/31/2014.&lt;br/&gt;
+2. Choose "Article publish date limitation" below value as "Future Articles (publish date &gt; Today)" (the "Show All (Ignore article publish date)" value also works).&lt;br/&gt;
+3. Click the DNN built-in module action menu "Settings" of current CrossArticle_List sub module instance, select "Permissions" tab, check on "Vip Role" for "View Module" permission. Note, you may need to uncheck "Inherit View permissions from Page" option first in some cases. And click "Update" button to save it.&lt;br/&gt;
+4. Put another instance of CrossArticle_List sub module on other page, select "Article publish date limitation" value as "Past Articles (publish date &lt; Today)" for that instance.&lt;br/&gt;
+5. This way only users who belong to "Vip" role can access these future published artilces (via current CrossArticle_List module instance). However, other users can access these articles after 30 days (via another CrossArticle_List module instance).&lt;br/&gt;
+6. You can then sell "Vip" role via other store module (e.g, our Classified Pro module at http://DnnModule.com), so user needs to pay before become as "Vip" role.
+</value>
+  </data>
+  <data name="plIgnoreSortIndex.Help" xml:space="preserve">
+    <value>By default, module will take article sort index property as the first sort factor. For example, if the "Sort Index" property of an article is 1, then it will be always displayed first to pubic. Check on this option to bypass the "Sort Index" property.</value>
+  </data>
+  <data name="plIgnoreSortIndex.Text" xml:space="preserve">
+    <value>Ignore Article "Sort Index" Property</value>
+  </data>
+  <data name="plBasic_TitleInputWidth.Help" xml:space="preserve">
+    <value>Enter the article title input width, default value is 200.</value>
+  </data>
+  <data name="plBasic_TitleInputWidth.Text" xml:space="preserve">
+    <value>Title Input Width</value>
+  </data>
+  <data name="plBasic_ShowPageInSearch.Text" xml:space="preserve">
+    <value>Show "Paging Size" In Search</value>
+  </data>
+  <data name="plBasic_ShowSortInSearch.Text" xml:space="preserve">
+    <value>Show "Sort By" In Search</value>
+  </data>
+  <data name="Tip_ImageSize.Text" xml:space="preserve">
+    <value>Specify image width (height) and check on "Force Image Width (Height)" to limit article image size.</value>
+  </data>
+  <data name="li_SearchMode_Advanced.Text" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="li_SearchMode_Basic.Text" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="li_SearchMode_None.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="plBasic_ShowPageInSearch.Help" xml:space="preserve">
+    <value>Show "Paging" options in search</value>
+  </data>
+  <data name="plBasic_ShowSortInSearch.Help" xml:space="preserve">
+    <value>Show "Sort By" options in search</value>
+  </data>
+  <data name="plBuiltInField_Author.Help" xml:space="preserve">
+    <value>Check on to allow user search by article creator</value>
+  </data>
+  <data name="plBuiltInField_Author.Text" xml:space="preserve">
+    <value>Creator</value>
+  </data>
+  <data name="plBuiltInField_Category.Help" xml:space="preserve">
+    <value>Check on to allow user search by article category</value>
+  </data>
+  <data name="plBuiltInField_Category.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="plBuiltInField_CreatedDate.Help" xml:space="preserve">
+    <value>Check on to allow user search by article created date</value>
+  </data>
+  <data name="plBuiltInField_CreatedDate.Text" xml:space="preserve">
+    <value>Created Date</value>
+  </data>
+  <data name="plBuiltInField_ExpireDate.Help" xml:space="preserve">
+    <value>Check on to allow user search by article expire date</value>
+  </data>
+  <data name="plBuiltInField_ExpireDate.Text" xml:space="preserve">
+    <value>Expire Date</value>
+  </data>
+  <data name="plBuiltInField_Paging.Help" xml:space="preserve">
+    <value>Check on to allow user to choose "Page Size"</value>
+  </data>
+  <data name="plBuiltInField_Paging.Text" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+  <data name="plBuiltInField_PublishDate.Help" xml:space="preserve">
+    <value>Check on to allow user search by article publish date</value>
+  </data>
+  <data name="plBuiltInField_PublishDate.Text" xml:space="preserve">
+    <value>Publish Date</value>
+  </data>
+  <data name="plBuiltInField_RatingAverage.Help" xml:space="preserve">
+    <value>Check on to allow user search by article average rating</value>
+  </data>
+  <data name="plBuiltInField_RatingAverage.Text" xml:space="preserve">
+    <value>Rating Average</value>
+  </data>
+  <data name="plBuiltInField_Sort.Help" xml:space="preserve">
+    <value>Check on to allow user to choose "Sort By"</value>
+  </data>
+  <data name="plBuiltInField_Sort.Text" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="plBuiltInField_Title.Help" xml:space="preserve">
+    <value>Check on to allow user search by article title</value>
+  </data>
+  <data name="plBuiltInField_Title.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="plBuiltInField_Views.Help" xml:space="preserve">
+    <value>Check on to allow user search by article views</value>
+  </data>
+  <data name="plBuiltInField_Views.Text" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="plRepeatColumns.Help" xml:space="preserve">
+    <value>If an attribute uses check box list (or radio button list) to display its value, specify check box list (or radio button list) repeat columns here.</value>
+  </data>
+  <data name="plRepeatColumns.Text" xml:space="preserve">
+    <value>Repeat Columns</value>
+  </data>
+  <data name="plSearchMode.Help" xml:space="preserve">
+    <value>Choose search mode in list</value>
+  </data>
+  <data name="plSearchMode.Text" xml:space="preserve">
+    <value>Search Mode</value>
+  </data>
+  <data name="plUDT_1.Help" xml:space="preserve">
+    <value>Select custom attribute 1 which allow user to search</value>
+  </data>
+  <data name="plUDT_1.Text" xml:space="preserve">
+    <value>Custom Attribute 1</value>
+  </data>
+  <data name="plUDT_10.Help" xml:space="preserve">
+    <value>Select custom attribute 10 which allow user to search</value>
+  </data>
+  <data name="plUDT_10.Text" xml:space="preserve">
+    <value>Custom Attribute 10</value>
+  </data>
+  <data name="plUDT_2.Help" xml:space="preserve">
+    <value>Select custom attribute 2 which allow user to search</value>
+  </data>
+  <data name="plUDT_2.Text" xml:space="preserve">
+    <value>Custom Attribute 2</value>
+  </data>
+  <data name="plUDT_3.Help" xml:space="preserve">
+    <value>Select custom attribute 3 which allow user to search</value>
+  </data>
+  <data name="plUDT_3.Text" xml:space="preserve">
+    <value>Custom Attribute 3</value>
+  </data>
+  <data name="plUDT_4.Help" xml:space="preserve">
+    <value>Select custom attribute 4 which allow user to search</value>
+  </data>
+  <data name="plUDT_4.Text" xml:space="preserve">
+    <value>Custom Attribute 4</value>
+  </data>
+  <data name="plUDT_5.Help" xml:space="preserve">
+    <value>Select custom attribute 5 which allow user to search</value>
+  </data>
+  <data name="plUDT_5.Text" xml:space="preserve">
+    <value>Custom Attribute 5</value>
+  </data>
+  <data name="plUDT_6.Help" xml:space="preserve">
+    <value>Select custom attribute 6 which allow user to search</value>
+  </data>
+  <data name="plUDT_6.Text" xml:space="preserve">
+    <value>Custom Attribute 6</value>
+  </data>
+  <data name="plUDT_7.Help" xml:space="preserve">
+    <value>Select custom attribute 7 which allow user to search</value>
+  </data>
+  <data name="plUDT_7.Text" xml:space="preserve">
+    <value>Custom Attribute 7</value>
+  </data>
+  <data name="plUDT_8.Help" xml:space="preserve">
+    <value>Select custom attribute 8 which allow user to search</value>
+  </data>
+  <data name="plUDT_8.Text" xml:space="preserve">
+    <value>Custom Attribute 8</value>
+  </data>
+  <data name="plUDT_9.Help" xml:space="preserve">
+    <value>Select custom attribute 9 which allow user to search</value>
+  </data>
+  <data name="plUDT_9.Text" xml:space="preserve">
+    <value>Custom Attribute 9</value>
+  </data>
+  <data name="plWidth_Input.Help" xml:space="preserve">
+    <value>Enter the input width</value>
+  </data>
+  <data name="plWidth_Input.Text" xml:space="preserve">
+    <value>Input Width</value>
+  </data>
+  <data name="plWidth_Label.Help" xml:space="preserve">
+    <value>Enter the label width</value>
+  </data>
+  <data name="plWidth_Label.Text" xml:space="preserve">
+    <value>Label Width</value>
+  </data>
+  <data name="plWidth_Operator.Help" xml:space="preserve">
+    <value>Specify the operator (=, &lt;, &gt;, like, unlike) width</value>
+  </data>
+  <data name="plWidth_Operator.Text" xml:space="preserve">
+    <value>Operator Width</value>
+  </data>
+  <data name="secSearch_Advanced.Text" xml:space="preserve">
+    <value>Advanced Search Options (works when "Search Mode" is "Advanced")</value>
+  </data>
+  <data name="secSearch_Basic.Text" xml:space="preserve">
+    <value>Basic Search Options (works when "Search Mode" is "Basic")</value>
+  </data>
+  <data name="Tip_Advanced_BuiltInField.Text" xml:space="preserve">
+    <value>Specify the built-in fields which allow user to search below. For example, if you check on "Publish Date", then user can search articles based their publish date.</value>
+  </data>
+  <data name="Tip_Advanced_Input.Text" xml:space="preserve">
+    <value>Specify the width of lable / input / perator below. For example, if you enter 300 as "Input Width", then all input controls (text box, drop down list, etc) will take 300px as their width.</value>
+  </data>
+  <data name="Tip_Advanced_UDT.Text" xml:space="preserve">
+    <value>Besides the built-in fields, you can also specify up to 10 custom attributes below to let user to search. For example, if you create a "Color" attribute and limit its value as "Red", "White", "Green" at "CrossArticle_Admin sub module - Admin Control Panel - System Data - Attributes", you can select "Custom Attribute 1" as "Color" below, then user will see a "Color" search condition, and can select its value from "Red", "White", "Green" drop down list.</value>
+  </data>
+  <data name="Tip_SearchMode.Text" xml:space="preserve">
+    <value>Choose "None" mode to remove the search feature from list. Choose "Advanced" mode if you want to allow user to search custom attributes (which are created at "CrossArticle_Admin sub module - Admin control panel - System Data - Attributes")</value>
+  </data>
+  <data name="Tip_RepeatColumns.Text" xml:space="preserve">
+    <value>If an attribute uses check box list (or radio button list) to display its value, specify check box list (or radio button list) repeat columns here. Enter -1 to ignore this setting.</value>
+  </data>
+  <data name="Tip_Template.Text" xml:space="preserve">
+    <value>&lt;p&gt;All sub modules on Cross Article package are template based, you can customize your desired display effect by create different templates. See "Cross Article user guide.pdf" for more detail. Note, these templates (e.g, the &lt;font color="red"&gt;"default/ArticleList_Responsive"&lt;/font&gt; template) can also support &lt;font color="red"&gt;Responsive Layout&lt;/font&gt;, so in combination with responsive skins they will adjust to smartphone and tablet screens.&lt;br /&gt;&lt;br /&gt;
+
+Try verify the responsive layout support as follows: &lt;br /&gt;
+1. Select template as "default/ArticleList_Responsive", expand "Paging" section, enter 4 as "Items per row".&lt;br /&gt;
+2. Click "Update" to save settings.&lt;br /&gt;
+3. Visit current page with Firefox, you will see module show 4 items per row by default.&lt;br /&gt;
+4. Now press ctrl + shift + m to simulate the mobile and tablet, you will see module changes layout according to screen width. For example, in 320 * 480, it will show only 1 item per row.&lt;br /&gt;&lt;br /&gt;
+Note: (a) Your skin must support responsive layout first. (b) Only Firefox browser supports mobile simulate (by press ctrl+shift+m), of course, you can also try visit current page with iPhone/iPad, to verify the responsive effect. (c) Most templates use asp.net data list control (and data grid control) to show data. The ArticleList_Reapter template uses asp.net Reapter control instead, you can try modify it to generate more flexible layout (for example, div + css layout). 
+&lt;/p&gt;</value>
+  </data>
+  <data name="plBuiltInField_City.Help" xml:space="preserve">
+    <value>Search City</value>
+  </data>
+  <data name="plBuiltInField_City.Text" xml:space="preserve">
+    <value>Search City</value>
+  </data>
+  <data name="plBuiltInField_Country.Help" xml:space="preserve">
+    <value>Allow to search country</value>
+  </data>
+  <data name="plBuiltInField_Country.Text" xml:space="preserve">
+    <value>Search Country</value>
+  </data>
+  <data name="plBuiltInField_State.Help" xml:space="preserve">
+    <value>Search State/Province</value>
+  </data>
+  <data name="plBuiltInField_State.Text" xml:space="preserve">
+    <value>Search State/Province</value>
+  </data>
+  <data name="plBuiltInField_Town.Help" xml:space="preserve">
+    <value>Search Town</value>
+  </data>
+  <data name="plBuiltInField_Town.Text" xml:space="preserve">
+    <value>Search Town</value>
+  </data>
+  <data name="plShowAuthorCompany.Help" xml:space="preserve">
+    <value>Check to show user company</value>
+  </data>
+  <data name="plShowAuthorCompany.Text" xml:space="preserve">
+    <value>Show user company</value>
+  </data>
+  <data name="plShowLocation_City.Help" xml:space="preserve">
+    <value>Show City</value>
+  </data>
+  <data name="plShowLocation_City.Text" xml:space="preserve">
+    <value>Show City</value>
+  </data>
+  <data name="plShowLocation_Country.Help" xml:space="preserve">
+    <value>Show Country</value>
+  </data>
+  <data name="plShowLocation_Country.Text" xml:space="preserve">
+    <value>Show Country</value>
+  </data>
+  <data name="plShowLocation_State.Help" xml:space="preserve">
+    <value>Show State/Province</value>
+  </data>
+  <data name="plShowLocation_State.Text" xml:space="preserve">
+    <value>Show State/Province</value>
+  </data>
+  <data name="plShowLocation_Town.Help" xml:space="preserve">
+    <value>Show Town</value>
+  </data>
+  <data name="plShowLocation_Town.Text" xml:space="preserve">
+    <value>Show Town</value>
+  </data>
+  <data name="Tip_Advanced_Location.Text" xml:space="preserve">
+    <value>Module also allows you to search based location. For example, search articles (listings) which country = USA, state/province = California, city = Los Angeles, town = Bell. Note, 1. Current department must enable "Location" property (can be modified at "CrossArticle_Admin sub module - Admin control panel - System Data - Departments"). 2. If there is only 1 country (specified at ""CrossArticle_Admin sub module - Admin control panel - Configurations - Location"), then the country drop down list will be hidden even "Search Country" option is checked.</value>
+  </data>
+  <data name="Tip_ShowLocation.Text" xml:space="preserve">
+    <value>Check to show article (listing) location in list. For example, country = USA, state/province = California, city = Los Angeles, town = Bell. Note, current department must enable "Location" property (can be modified at "CrossArticle_Admin sub module - Admin control panel - System Data - Departments").</value>
+  </data>
+  <data name="plUserIdMapping.Help" xml:space="preserve">
+    <value>Enter a user id mapping in url, and show articles which belong to that user id parameter value.</value>
+  </data>
+  <data name="plUserIdMapping.Text" xml:space="preserve">
+    <value>User ID Mapping</value>
+  </data>
+  <data name="Tip_UserIdMapping.Text" xml:space="preserve">
+    <value>The "User Id Mapping" property allows you to define a specific user id parameter in the browser url, and shows articles which belong to this user. For example, you can put this sub module to the built-in DNN user profile page, and input "userid" as "User Id Mapping", then module will show articles which belong to that "userid" value. For example, if user profile url is http://localhost/dnn8dev/Activity-Feed/userId/1 (in this url, userid = 1), then module will show articles which are created by that user. Note, (1) the "Accept Search Parm" option also needs to be checked to activate this feature. (2) the DNN profile page uses "UserId" parameter, other DNN modules (pages) may use other pamater. For example, if you want to accept http://localhost/dnn8dev/CpUserId/1 (in this url, CpUserId represents the user id), you should input "CpUserId" as "User Id Mapping".</value>
+  </data>
+  <data name="plGroupIdMapping.Help" xml:space="preserve">
+    <value>Enter a group id mapping, to filter articles which are shared between this group.</value>
+  </data>
+  <data name="plGroupIdMapping.Text" xml:space="preserve">
+    <value>Group Id Mapping</value>
+  </data>
+  <data name="Tip_GroupIdMapping.Text" xml:space="preserve">
+    <value>When creating an article, author can mark that article as private/protected, or share between his friends/followers/social groups. The "Group Id Mapping" property allows you to define a specific group id parameter in the browser url, and shows articles which are shared between this group. For example:&lt;br/&gt;&lt;br/&gt; 1. You can add the DNN built-in "Social Group" module to a page, and create some groups (like "Football", "Music", "Guitar").&lt;br/&gt; 2. When creating an article, you can then share it in certain groups (e.g, share it in "Football" group only). &lt;br/&gt;3. Put "CrossArticle_List" sub module to the group detail page (the DNN built-in "Social Group" module will create two pages, one is used to show the group list. Click a group, it will navigate to the group detail page), give it a significative module title (like "Group Articles"), and input "groupid" as "Group Id Mapping", then CrossArticle_List sub module will show articles which are shared to that "groupid" value. For example, if group detail url is http://localhost/dnn8dev/Social/Group-Activity/groupid/5 (in this url, groupid = 5), then module will show articles which are shared between that group. </value>
+  </data>
+  <data name="plShowEventEnd.Help" xml:space="preserve">
+    <value>Check to show "Event End" data field in article list.</value>
+  </data>
+  <data name="plShowEventEnd.Text" xml:space="preserve">
+    <value>Show Event End</value>
+  </data>
+  <data name="plShowEventStart.Help" xml:space="preserve">
+    <value>Check to show "Event Start" data field in article list.</value>
+  </data>
+  <data name="plShowEventStart.Text" xml:space="preserve">
+    <value>Show Event Start</value>
+  </data>
+  <data name="plBuiltInField_EventEnd.Help" xml:space="preserve">
+    <value>Show event end search</value>
+  </data>
+  <data name="plBuiltInField_EventEnd.Text" xml:space="preserve">
+    <value>Event End</value>
+  </data>
+  <data name="plBuiltInField_EventStart.Help" xml:space="preserve">
+    <value>Show event start search</value>
+  </data>
+  <data name="plBuiltInField_EventStart.Text" xml:space="preserve">
+    <value>Event Start</value>
+  </data>
+</root>
